@@ -1,0 +1,486 @@
+%++++++++++++++++++++++++++++++++++++++++
+% Don't modify this section unless you know what you're doing!
+\documentclass[letterpaper,12pt]{article}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{authblk}  % for authors
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage{color}
+\usepackage[margin=1in,letterpaper]{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+\definecolor{orange}{RGB}{255,127,0}
+\newenvironment{centerverbatim}{%
+  \par
+  \centering
+  \varwidth{\linewidth}%
+  \verbatim
+}{%
+  \endverbatim
+  \endvarwidth
+  \par
+}
+%++++++++++++++++++++++++++++++++++++++++
+
+
+\begin{document}
+
+\title{\textbf{HERACLES and DJANGOH : Event Generation of $lp$ Interactions including Radiative Processes}}
+\author[1,2]{\textbf{N. Pierre}}
+\author[3]{\textbf{H. Spiesberger}}
+\affil[1]{\textit{CEA IRFU/SPhN Saclay, 91191 Gif-sur-Yvette, France}}
+\affil[2]{\textit{Universit\"at Mainz, Institut f\"ur Kernphysik, 55099 Mainz, Germany}}
+\affil[3]{\textit{Universit\"at Mainz, Institut f\"ur Physik, 55099 Mainz, Germany}}
+\maketitle
+
+\begin{abstract}
+  Monte Carlo event simulation of neutral and charged current $lp$ interactions with
+  with the event generator HERACLES and DJANGOH is described. The emphasis is put
+  on the inclusion of radiative corrections, comprising single photon emission from
+  the lepton and the quark line as well as self-energy corrections and the complete
+  set of one-loop weak corrections. The event generator HERACLES optionnally treats
+  the $lp$ scattering either by means of structure function parametrization of on the
+  basis of parton distribution functions in the framework of the quark-parton model.
+  The background from radiative elastic scattering $lp \rightarrow lp\gamma$ is also
+  included. The event generator DJANGOH simulates deep inelastic lepton-proton
+  scattering including both QED and QCD radiative effects. DJANGOH is an interface
+  of the Monte Carlo programs HERACLES and LEPTO. Alternatively, parton cascades
+  can be genrated also with the help of ARIADNE. The LUND string fragmentation as
+  implemented in the event simulation program JETSET is used to obtain the complete
+  hadro-nic final state, provided there is enough hadronic mass. Otherwise SOPHIA is
+  used to generate low-mass hadronic final states. TDJANGOH, the C++ interface around
+  HERACLES and DJANGOH is also described.
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+
+The very important physical effect has applications to astronomy, nuclear physics, condensed matter, and more.
+
+
+
+\newpage
+\section{DJANGOH : a Monte-Carlo generator with radiative corrections}
+
+\subsection{Presentation of DJANGOH}
+\textbf{What is DJANGOH ?}
+\begin{itemize}
+\item DJANGOH\cite{DJANGOH} is at first a Monte-Carlo event simulation tool for neutral and charged current
+$ep$ interactions at HERA with the event generators HERACLES and DJANGO6.
+\item The emphasis is put on the inclusion of QED radiative corrections
+(single photon emission from the lepton or the quark line, self energy correction, complete
+set of one-loop weak corrections). The background from radiative elastic scattering
+$\mu p\rightarrow \mu p\gamma$ is also included.
+\item HERACLES is treating the $lp$ scattering by means of structure function parametrizations
+or parton distribution functions in the quark-parton model framework.
+\item DJANGO6 is simulating deep inelastic scattering including both QED and QCD radiative effects.
+\item DJANGOH is an interface to LEPTO\cite{LEPTO}, ARIADNE\cite{ARIADNE} (for parton cascades), PYTHIA\cite{PYTHIA6} (LUND
+string fragmentation in JETSET\cite{JETSET} for hadronic final state) and SOPHIA\cite{SOPHIA} (for low-mass
+hadronic final states).
+\end{itemize}
+\textbf{What can one do with DJANGOH ?}
+\begin{itemize}
+\item Generation of $lp$ scattering with and without fragmentation for the final state with radiative events.
+\item Calculation of cross-sections (radiative, born)
+\item Calculation of radiative correction factors (inclusive, semi-inclusive)
+\item Use it as an event generator in a Monte-Carlo chain
+\end{itemize}
+
+\subsection{Forewords : Technical description of DJANGOH}
+
+The computational procedures applied in DJANGOH are based on the methods used in AXO\cite{AXO}
+library for Monte-Carlo integration and event generation. AXO relies on the Monte-Carlo
+integration algorithm VEGAS\cite{VEGAS}. The computation is made in this order :
+
+\begin{itemize}
+\item Integration of the different contributions : partial cross-sections are determined
+according to the defined phase-space region. They give the relative weight of the
+corresponding contribution in the final step of event sampling. Moreover, the integration
+procedure supplies information for the construction of the distribution function
+applied for an event generation.
+\item Estimation of the local maxima of the distribution function in a predefined number
+of hypercubes.
+\item According to the partial cross-sections that were calculated, events are generated
+randomly from the individual contributions. HERACLES is only taking care of the scattered
+lepton and the potential radiative photon. DJANGO is simulating the QCD effect and generates
+the hadronic part of the event.
+\end{itemize}
+
+\section{Upgrading DJANGOH : paradigm shift and TDJANGOH interface}
+
+An upgrade to the original DJANGOH is the possibility to use different input energies for
+the incoming lepton for mutiple event generation. It was before only allowed to
+specify one input energy at the launch of the program. DJANGOH is now capable to take
+into account a new beam energy at each new event.
+Nonetheless, using different input energies for event generation is causing a problem :
+the cross-sections that are needed for event generation are depending on this input energy.
+The naive way would be to recompute the cross-section for each event but this solution
+takes much time due to the computation of the cross-section being the slowest part of
+the generation.
+
+A solution to circumvent this problem is the use
+of a grid of cross-sections. This grid is initialized after a rough specification of the
+type of dispersion in energy of the considered beam.
+Basically, the grid needs to have
+a mean energy and the standard deviation of energy to this mean energy, as well as the
+number of bins in the grid. Then for each bin, the energy of the center of the bin is taken
+and the cross-section corresponding to this energy is computed. The narrower the bins are
+the more accurate the cross-section is for the considered bin. As shown in Fig. \ref{fig:gridxs}, with a
+mean energy of 160 GeV, a distribution width of 20 GeV and 20 bins, the grid is giving an
+accurate map of the cross-sections. Though the difference of cross-section is not very large (13.9 nB, 2\% of
+the total cross-section), it has to be taken into account for a proper event generation.
+
+The user can communicate with the program by setting initial condition via codewords.
+Principal useful codewords from the HERACLES part are :
+\begin{itemize}
+\item \textbf{EL-BEAM : Quantities defining the properties of the lepton beam.}
+\begin{description}
+\item[polari] : Polarisation of the beam
+\item[beam] : Particle of the beam ($e^+$,$e^-$,$\mu^+$,$\mu^-$)
+\end{description}
+\item \textbf{KINEM-CUTS : Definition of the kinematical cuts. These cuts are applied to the
+leptonic variables $x_l$, $y_l$, $Q^2_l$, defined by the momentum of the final-state
+lepton and the mass of the hadron.}
+\begin{description}
+\item[icut] : Determine the number of active cuts (D=3)
+\begin{description}
+\item=1 : cuts in $x_{l}$ and lower cut in $Q^2_l$
+\item=2 : cuts in $x_{l}$, lower cut in $Q^2_l$ and lower cut in $W_h$,
+\item=3 : cuts in $x_l$, $y_l$, $Q^2_l$ and $W_h$)
+\end{description}
+\item[ixmin] : Minimal $x_l$
+\item[ixmax] : Maximal $x_l$
+\item[iymin] : Minimal $y_l$
+\item[iymax] : Maximal $y_l$
+\item[iq2min] : Minimal $Q^2_l$
+\item[iq2max] : Maximal $Q^2_l$
+\item[iwmin] : Minimal $W_h$
+\end{description}
+\item \textbf{GSW-PARAM : Monitoring the definition of the electroweak parameters and the
+inclusion of the different virtual corrections.}
+\begin{description}
+\item[lparin1] : (D=2)
+\begin{description}
+\item=1 : Electroweak parameters set with fixed values forthe boson masses $M_W$, $M_Z$)
+\item=2 : Electroweak parameters calculated from fixed $M_Z$, $G_\mu$
+\end{description}
+\item[lparin2] : (D=1)
+\begin{description}
+\item=0 : Only Born cross section without electromagnetic or weak corrections is integrated
+\item=1 : Born cross section including corrections is determined by the values of lparin[3] to lparin[11]
+\end{description}
+\item[lparin3] : Flag for inclusion of higher order contributions (D=3)
+\begin{description}
+\item=0 : No higher order corrections
+\item$\geq1$ : Terms of $O(\alpha^2m_t^4)$ included
+\item$\geq2$ : Terms of $O(\alpha\alpha_sm_t^4)$ included
+\item$\geq3$ : Running $O(Q^2)$ is used for the radiative cross section
+\end{description}
+\item[lparin4] : Leptonic QED corrections (D=1)
+\item[lparin5] : Quarkonic QED correction (D=0)
+\item[lparin6] : Lepton-quark interference (D=0)
+\newpage
+\item[lparin7] : Fermionic contribution to the photon self-energy $\Sigma^\gamma$ (D=2)
+\begin{description}
+\item=0 : Not included
+\item=1 : Parametrization with the help of quark masses
+\item=2 : Parametrization from ref 20
+\end{description}
+\item[lparin8] : Fermionic contribution to the $\gamma - Z$ mixing (D=0)
+\item[lparin9] : Fermionic contribution to the self-energy of the Z boson (D=0)
+\item[lparin10] : Fermionic contribution to the self-energy of the W boson (D=0)
+\item[lparin11] : Purely weak contributions to the self-energy, vertex corrections and boxes (D=0)
+\end{description}
+\item \textbf{GD-OPT : Definition of the size of the cross-section grid.}
+\begin{description}
+\item[gdmean] : Central value of the energy distribution
+\item[gdsddv] : Width of the energy distribution
+\item[gdsize] : Number of bins in the grid
+\end{description}
+\item \textbf{EGAM-MIN : Definition of a lower cutoff energy for bremsstrahlung photons (in GeV).}
+\begin{description}
+\item[egam] : Value of the cutoff
+\end{description}
+\item \textbf{INT-OPT-NC : Defines the contributions to the neutral current interactions for which
+the integrated cross-section is asked to be calculated.}
+\begin{description}
+\item[inc2] : Integration for the non-radiative contribution (Born term including virtual and soft corrections) (D=1)
+\item[inc31] : Number of iteration for integration of the contribution from initial state leptonic bremsstrahlung by VEGAS (D=18)
+[NB : There are subtle difference at different scale of iteration (<100, <200). These are explicited in DJANGOH manual. This remark
+is valid for all other integration that does iteration.]
+\item[inc32] : Number of iteration for integration of the contribution from final state leptonic bremsstrahlung by VEGAS (D=18)
+\item[inc33] : Number of iteration for integration of the Compton contribution by VEGAS (D=18)
+\item[inc34] : Number of iteration for integration of the contribution from radiation from the quark line by VEGAS (not active in DJANGOH, D=0)
+\item[iel2] : Integration of the elastic scattering $lp\rightarrow lp$ (D=1)
+\item[iel31] : Number of iteration for integration of the quasielastic tail $lp\rightarrow lp\gamma$ from initial state leptonic bremsstrahlung by VEGAS (D=18)
+\item[iel32] : Number of iteration for integration of the quasielastic tail $lp\rightarrow lp\gamma$ from final state leptonic bremsstrahlung by VEGAS (D=18)
+\item[iel33] : Number of iteration for integration of the quasielastic tail $lp\rightarrow lp\gamma$ from the Compton contribution by VEGAS (D=18)
+\end{description}
+\item \textbf{INT-POINTS : Upper limit for the number of integration points used by VEGAS (D=10000).}
+\item \textbf{SAM-OPT-NC : Monitors the inclusion of individual contributions to the neutral current
+cross-section for event sampling.}
+\begin{description}
+\item[isnc2] : Non-radiative contribution (D=1)
+\item[isnc31] : Initial state leptonic bremsstrahlung (D=1)
+\item[isnc32] : Final state leptonic bremsstrahlung (D=1)
+\item[isnc33] : Compton contribution (D=1)
+\item[isnc34] : Quarkonic radiation (D=0)
+\item[isel2] : Elastic scattering $lp\rightarrow lp$ (D=1)
+\newpage
+\item[isel31] : Initial state leptonic radiation for $lp\rightarrow lp\gamma$ (D=1)
+\item[isel32] : Final state leptonic radiation for $lp\rightarrow lp\gamma$ (D=1)
+\item[isel33] : Compton contribution for $lp\rightarrow lp\gamma$ (D=1)
+\end{description}
+\item \textbf{NUCLEUS : Type and energy of the nucleus.}
+\begin{description}
+\item[epro] : Energy of the nucleus
+\item[hpolar] : Polarization of the nucleus
+\item[hna] : Number of nucleons in the nucleus
+\item[hnz] : Number of protons in the nucleus
+\end{description}
+\item \textbf{STRUCTFUNC : Defines the parametrization of the parton densities or structure functions
+applied.}
+\begin{description}
+\item[ilib] : (D=2, icode=10150)
+\begin{description}
+\item=1 : to choose PDFs from PYTHIA. For more infos on the different values for icode, please
+refer to DJANGOH manual.
+\item=2 : to use PDFLIB\cite{PDFLIB}. Same remark than previously.
+\end{description}
+\item[ilqmod] : The options with ilqmod$\geq2$ do not allow event generation (D=0)
+\begin{description}
+\item=0 : Use unmodified PDFs for all $Q^2$
+\item=1 : Apply exponentially low $Q^2$ suppression factor to PDFs.
+\item=2 : For $Q^2<6$ GeV$^2$, $F_1$ and $F_2$ parametrizations from Brasse.
+\item=3 : For $Q^2<6$ GeV$^2$, $F_1$ and $F_2$ parametrizations from Abramowicz, Levy, Levin and Maor.
+Brasse is used for $W<2$ GeV.
+\item=4 : For $x<0.1$ and $\nu>10$ GeV, $F_1$ and $F_2$ parametrizations from Badelek and Kwiecinski.
+For $x<0.1$ and $\nu<10$ GeV, Brasse and Stein parametrization is used.
+\item=5 : For $Q^2<10$ GeV$^2$, $F_1$ and $F_2$ parametrizations from Donnachie-Landschoff together with
+PDFs.
+\item=6 : $F_1$, $F_2$ and $R$ parametrizations from TERAD.
+\end{description}
+\end{description}
+\item \textbf{FLONG : Inclusion of the longitudinal structure function $F_L$.}
+\begin{description}
+\item[iflopt] = LQCD + LTM*10 + LHT*100, where LQCD, LTM, LHT specifies whether QCD contributions,
+target mass effects and higher twists should be included. See manual of LEPTO 6.5.1 for more details. (D=111)
+\item[parl111] : Accuracy for the integration needed to calculate $F_L$. (D=0.01)
+\item[parl19] : $\kappa^2$, the scale parameter for higher-twist contributions in $F_L$. (D=0.03)
+\end{description}
+\item \textbf{ALFAS : Define the value of $\alpha_s$ needed for the inclusion of $F_L$.}
+\begin{description}
+\item[mst111] : Order of $\alpha_s$ evaluation (D=1)
+\begin{description}
+\item=0 : fixed $\alpha_s$ at the value of par111
+\item=1 : first-order running $\alpha_s$
+\item=2 : second-order running $\alpha_s$
+\end{description}
+\end{description}
+\begin{description}
+\item[mst115] : Treatment of the $\alpha_s$ singularity at $Q^2 \rightarrow 0$ (D=0)
+\begin{description}
+\item=0 : allow it to diverge like $1/ln(Q^2/\Lambda^2)$
+\item=1 : soften the divergence to $1/ln(1+Q^2/\Lambda^2)$
+\item=2 : freeze $Q^2$ evolution below $Q^2_0=4$ GeV$^2$
+\end{description}
+\end{description}
+\item \textbf{NFLAVORS : Minimal and maximal number of flavor to be included in cross-section} (DMin=1,DMax=6)
+\end{itemize}
+\newpage
+Principal useful codewords from the DJANGO part are :
+\begin{itemize}
+\item \textbf{FRAG : Activation of the fragmentation.}
+\begin{description}
+\item[lst7] : (D=1)
+\begin{description}
+\item=-1 : no generation of parton cascades and no fragmentation
+\item=0 : event generation at the parton level, no hadronization
+\item=1 : event generation including hadronization and decays of unstable particles
+\end{description}
+\end{description}
+\item \textbf{CASCADES : Describes the part of the event simulation which is determined by
+perturbative QCD.}
+\begin{description}
+\item[lst8] : (D=12)
+\begin{description}
+\item=0 : no QCD effects, no gluon radiation or boson-gluon fusion
+\item=1 : including QCD processes (gluon radiation and boson-gluon fusion) according
+to the first-order matrix elements
+\item=2 : QCD parton cascade evolution of the initial and final quark
+\item=3 : QCD parton cascade evolution of the initial quark only
+\item=4 : QCD parton cascade evolution of the final quark only
+\item=5 : QCD switched off but target treatment exactly as in parton cascade case
+\item=9 : simulating QCD cascades in the colour dipole model (as implemented in ARIADNE)
+\item=12-15 : as 2-5 but parton shower added to the event as obtained from first-order matrix elements
+\end{description}
+\end{description}
+\item \textbf{MAX-VIRT : Maximal virtuality in parton cascades.}
+\begin{description}
+\item[lst9] : (D=5)
+\begin{description}
+\item=1 : $Q^2$
+\item=2 : $W^2$
+\item=3 : $W.Q$
+\item=4 : $Q^2(1-x)$
+\item=5 : $Q^2(1-x)max(1,ln(1/x))$
+\item=6 : $x_0W^2$
+\item=9 : $W^{4/3}$, similar as in the colour dipole model
+\end{description}
+\end{description}
+\item \textbf{SOPHIA : Defines the upper limit for the hadronic mass below which SOPHIA is
+called for the generation of the hadronic final state} (D=1.4)
+\end{itemize}
+
+\subsection{Implementing DJANGOH in TGEANT}
+
+The original DJANGOH is a FORTRAN framework. The main problem I encountered is that
+DJANGOH was supposed to be used in the Monte-Carlo simulation of the COMPASS apparatus,
+TGEANT. As the whole simulation is coded in C++, the inclusion of a new generator inside
+the chain is done via the integration of a plugin in C++ containing the generator.
+Thus, in order to include DJANGOH into TGEANT, I had to modify DJANGOH so that it
+can be used as a C++ plugin generator by TGEANT.
+
+Fig. \ref{fig:evtgenTG} shows the principal way of event generation in TGEANT.
+
+First, a particle is selected with the T4PrimaryGen class, that reads a given beamfile,
+and pick a particle at random. Then the T4ProcessBackEnd class generates
+the given process and creates the outgoing particles that will be detected afterwards
+by the detectors. This T4ProcessBackEnd class is purely virtual and is replaced by
+every generator class implemented in TGEANT.
+
+\newpage
+There are two ways to implement a generator in TGEANT :
+\begin{itemize}
+\item As an internal generator (Pythia and HEPGEN++ way) : a C++ interface to the
+generator is needed, the conservation of $P(p,E)$ is perfect and it only needs a
+beamfile for the primary generator.
+\item As an external generator (Lepto) : the beamfile is read by the standalone
+generator, the primary generation and process infos are stored inside a file and
+TGEANT has to do an extrapolation to -9 meters as the primary generation was done
+outside of it, occasioning $P(p,E)$ being not perfectly conserved.
+\end{itemize}
+
+The external implementation is quite complicated as three classes are needed in order
+to use the generator in TGEANT. First, the beamfile has to be read by the generator
+which then outputs a file containing the beamfile infos but in its own format.
+Then a first class has to be dedicated to the reading of the beamfile, recovering
+the information about the selected muon in the file. A second class takes care of
+passing of information between the generator and TGEANT. The last class is the
+class of the generator itself (Fig. \ref{fig:leptoex}).
+
+\newpage
+If you apply this method to DJANGOH, then you encounter several critical problems :
+\begin{itemize}
+\item A new file format for the converted beamfile has to be created.
+\item DJANGOH has to be modified to allow backward propagation of the incoming muon.
+\item The result of fragmentation (LUJETS) has to be recovered in a file.
+\end{itemize}
+This results in many file accesses and consequently it is a non-efficient way to
+implement DJANGOH inside TGEANT.
+
+The internal implementation recquires perhaps more work on the generator itself however
+this solution is much more efficient. Here, only two class are needed. One is the
+interface class that creates instances of DJANGOH that can be manipulated in any C++
+environment. This class is a C++ interface that is handling the FORTRAN part of DJANGOH.
+The other class is taking care of passing the information between the interface to the
+generator and TGEANT (Fig. \ref{fig:pythiaex}).
+
+This second method was used to implement DJANGOH inside TGEANT.
+
+\subsection{TDJANGOH : a C++ interface to DJANGOH}
+
+In order to create a C++ class (called TDJANGOH) that plays the role of an interface, I had to modify some
+FORTRAN parts of DJANGOH, especially the input method. DJANGOH is working with an input
+file where codewords with set values are specified in order to configure the generator.
+This was not convenient for the idea of an interface. Thus I have drawn
+correspondances between Common Blocks in FORTRAN and structures in C++ so that I can specify
+values in the C++ structure and the change is repercuted in the FORTRAN code and vice-versa.
+It is useful to specify the values for the input but also to recover the results of the
+hadronization that are located in the LUJETS Common Block.
+The idea is that within TGEANT the user specifies the input for DJANGOH, the interface
+pass it to the generator and the interface recovers the results of the generator and gives
+it to TGEANT.
+
+\newpage
+
+The principal and most useful methods that are included in the interface are :
+\begin{itemize}
+\item \textbf{{\color{orange}static} TDjangoh *Instance()} : Allow the creation of an instance of TDJANGOH. Only one
+instance at a time is permitted.
+\item \textbf{{\color{orange}void} ReadXMLFile(const string pFilename)} : Read an XML file in order to initialize the input
+parameters of DJANGOH.
+\item \textbf{{\color{orange}void} Initialize()} : Initialize the generator with previously defined values and computes cross-sections.
+\item \textbf{{\color{orange}void} GenerateEvent()} : Generates an event. Always use after having called Initialize() !
+\end{itemize}
+
+Some unavoidable toolbox methods are also present :
+\begin{itemize}
+\item \textbf{{\color{orange}void} SetParticle(const char* pname)} : Modify the beam particle (useful to switch between $\mu^{+}$ and $\mu^{-}$)
+\item \textbf{{\color{orange}void} Configure(float beam\_e, float pol)} : Modify the beam properties (energy, polarisation)
+\item \textbf{{\color{orange}void} BornWOqelNC()} : Call for event generation only taking into account the Born cross-section without quasi-elastic.
+\item \textbf{{\color{orange}void} RClepWOqelNC()} : Call for event generation taking into account the Born cross-section + ISR,FSR and Compton, without quasi-elastic.
+\item \textbf{{\color{orange}void} EndRecap()} : Print a recap in TDjangoh\_out.dat at the end of the generation.
+\item \textbf{{\color{orange}void} Clean\_File()} : Clean all the .dat files created by the generator.
+\end{itemize}
+
+For informations about the other methods that are available within the interface, please refer to the
+doxyfile of TDJANGOH.
+
+\newpage
+\section{TDJANGOH : How to ?}
+
+In order to get TDJANGOH running, recover a version in the following git repository :
+
+In the test programs :
+\begin{itemize}
+\item test allows you to do full event generation. You have some options if you enter
+some flags, do bin/test -h to have more infos about it.
+\item xsgen allows you to compute cross-section rapidly, without any hadronisation in
+order to gain time. Do bin/xsgen -h for more infos.
+\end{itemize}
+
+In the utilitaries :
+\begin{itemize}
+\item rc\_calc allows you to plot the inclusive radiative corrections after different kind of inputs. The most
+convenient one is to use the results from xsgen and feed it directly with the -sigf option.
+\item sirc allows you to plot the multiplicities for Born and Born+o($\alpha$) and see the comparison between
+the two. The distribution are in $(x_{Bj},y,z)$ and $(x_{Bj},y,p_T)$
+\item pdist allows you to plot various information about the radiative photons, like the energy distribution,
+angle distribution, etc.
+\item lowQ2 is a test code for plotting 3D plots of $F_2$ functions in $(x,Q^2)$. Its usefulness is limited,
+but can be informative when comparing different parametrization of $F_2$.
+\end{itemize}
+
+The XML configuration files are located in the utils/ directory.
+
+
+\section{Conclusions}
+Here you briefly summarize your findings.
+
+%++++++++++++++++++++++++++++++++++++++++
+% References section will be created automatically
+% with inclusion of "thebibliography" environment
+% as it shown below. See text starting with line
+% \begin{thebibliography}{99}
+% Note: with this approach it is YOUR responsibility to put them in order
+% of appearance.
+
+\begin{thebibliography}{99}
+
+% \bibitem{melissinos}
+% A.~C. Melissinos and J. Napolitano, \textit{Experiments in Modern Physics},
+% (Academic Press, New York, 2003).
+
+\end{thebibliography}
+
+
+\end{document}
