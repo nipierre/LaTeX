@@ -1,0 +1,91 @@
+\BOOKMARK [1][-]{Dedication.1}{Dedication}{}% 1
+\BOOKMARK [1][-]{Abstract.1}{Abstract}{}% 2
+\BOOKMARK [1][-]{Publications.1}{Publications}{}% 3
+\BOOKMARK [1][-]{Acknowledgements.1}{Acknowledgements}{}% 4
+\BOOKMARK [1][-]{tableofcontents.1}{Contents}{}% 5
+\BOOKMARK [1][-]{lof.1}{List of Figures}{}% 6
+\BOOKMARK [1][-]{lot.1}{List of Tables}{}% 7
+\BOOKMARK [1][-]{lol.1}{Listings}{}% 8
+\BOOKMARK [1][-]{acronyms.1}{Acronyms}{}% 9
+\BOOKMARK [-1][]{part.1}{Theoretical part}{}% 10
+\BOOKMARK [0][]{chapter.1}{1 Theoretical framework}{part.1}% 11
+\BOOKMARK [1][-]{section.1.1}{1.1 Structure of the nucleon}{chapter.1}% 12
+\BOOKMARK [2][-]{subsection.1.1.1}{1.1.1 Subsection Title}{section.1.1}% 13
+\BOOKMARK [2][-]{subsection.1.1.2}{1.1.2 Subsection Title}{section.1.1}% 14
+\BOOKMARK [1][-]{section.1.2}{1.2 Hadronisation}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.3}{1.3 Measurement of Fragmentation Functions}{chapter.1}% 16
+\BOOKMARK [0][]{chapter.2}{2 Renormalization and QED Radiative Corrections}{part.1}% 17
+\BOOKMARK [1][-]{section.2.1}{2.1 Renormalization in QED}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.1.1}{2.1.1 Subsection Title}{section.2.1}% 19
+\BOOKMARK [2][-]{subsection.2.1.2}{2.1.2 Subsection Title}{section.2.1}% 20
+\BOOKMARK [1][-]{section.2.2}{2.2 QED Radiative Corrections}{chapter.2}% 21
+\BOOKMARK [-1][]{part.2}{Experimental Part}{}% 22
+\BOOKMARK [0][]{chapter.3}{3 The COMPASS experiment}{part.2}% 23
+\BOOKMARK [1][-]{section.3.1}{3.1 Beam}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Subsection Title}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Subsection Title}{section.3.1}% 26
+\BOOKMARK [1][-]{section.3.2}{3.2 Beam Telescope}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.3}{3.3 Target Region}{chapter.3}% 28
+\BOOKMARK [1][-]{section.3.4}{3.4 Spectrometer}{chapter.3}% 29
+\BOOKMARK [1][-]{section.3.5}{3.5 Data Acquisition and Online Monitoring}{chapter.3}% 30
+\BOOKMARK [0][]{chapter.4}{4 The COMPASS muon trigger}{part.2}% 31
+\BOOKMARK [1][-]{section.4.1}{4.1 Trigger Principles}{chapter.4}% 32
+\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Subsection Title}{section.4.1}% 33
+\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Subsection Title}{section.4.1}% 34
+\BOOKMARK [1][-]{section.4.2}{4.2 Hodoscopes and Veto detectors}{chapter.4}% 35
+\BOOKMARK [-1][]{part.3}{DJANGOH : a Monte-Carlo generator with Radiative Corrections}{}% 36
+\BOOKMARK [0][]{chapter.5}{5 Motivations}{part.3}% 37
+\BOOKMARK [1][-]{section.5.1}{5.1 RADGEN issues}{chapter.5}% 38
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Subsection Title}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Subsection Title}{section.5.1}% 40
+\BOOKMARK [1][-]{section.5.2}{5.2 Comparison between RADGEN and DJANGOH}{chapter.5}% 41
+\BOOKMARK [0][]{chapter.6}{6 DJANGOH}{part.3}% 42
+\BOOKMARK [1][-]{section.6.1}{6.1 Features of DJANGOH}{chapter.6}% 43
+\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Subsection Title}{section.6.1}% 44
+\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Subsection Title}{section.6.1}% 45
+\BOOKMARK [1][-]{section.6.2}{6.2 Enhancement of DJANGOH}{chapter.6}% 46
+\BOOKMARK [1][-]{section.6.3}{6.3 TDJANGOH Interface}{chapter.6}% 47
+\BOOKMARK [0][]{chapter.7}{7 Results on Radiative Corrections}{part.3}% 48
+\BOOKMARK [1][-]{section.7.1}{7.1 Inclusive and Semi-Inclusive Radiative Correction factors}{chapter.7}% 49
+\BOOKMARK [2][-]{subsection.7.1.1}{7.1.1 Subsection Title}{section.7.1}% 50
+\BOOKMARK [2][-]{subsection.7.1.2}{7.1.2 Subsection Title}{section.7.1}% 51
+\BOOKMARK [1][-]{section.7.2}{7.2 Comparison between DJANGOH and TERAD}{chapter.7}% 52
+\BOOKMARK [0][]{chapter.8}{8 Integration of DJANGOH in the Monte-Carlo Chain}{part.3}% 53
+\BOOKMARK [1][-]{section.8.1}{8.1 TGEANT}{chapter.8}% 54
+\BOOKMARK [2][-]{subsection.8.1.1}{8.1.1 Subsection Title}{section.8.1}% 55
+\BOOKMARK [2][-]{subsection.8.1.2}{8.1.2 Subsection Title}{section.8.1}% 56
+\BOOKMARK [1][-]{section.8.2}{8.2 DJANGOH as a physics generator for TGEANT}{chapter.8}% 57
+\BOOKMARK [1][-]{section.8.3}{8.3 Results on electroproduction from photon conversion}{chapter.8}% 58
+\BOOKMARK [-1][]{part.4}{The 2016 Multiplicity Analysis}{}% 59
+\BOOKMARK [0][]{chapter.9}{9 Determination of 2016 raw multiplicities}{part.4}% 60
+\BOOKMARK [1][-]{section.9.1}{9.1 Particle Identification with RICH detector}{chapter.9}% 61
+\BOOKMARK [2][-]{subsection.9.1.1}{9.1.1 Subsection Title}{section.9.1}% 62
+\BOOKMARK [2][-]{subsection.9.1.2}{9.1.2 Subsection Title}{section.9.1}% 63
+\BOOKMARK [1][-]{section.9.2}{9.2 Data sets}{chapter.9}% 64
+\BOOKMARK [1][-]{section.9.3}{9.3 Raw Multiplicities}{chapter.9}% 65
+\BOOKMARK [0][]{chapter.10}{10 Correction factors to the multiplicities}{part.4}% 66
+\BOOKMARK [1][-]{section.10.1}{10.1 Acceptance correction}{chapter.10}% 67
+\BOOKMARK [2][-]{subsection.10.1.1}{10.1.1 Subsection Title}{section.10.1}% 68
+\BOOKMARK [2][-]{subsection.10.1.2}{10.1.2 Subsection Title}{section.10.1}% 69
+\BOOKMARK [1][-]{section.10.2}{10.2 Electron contamination}{chapter.10}% 70
+\BOOKMARK [1][-]{section.10.3}{10.3 Contamination of exclusive vector meson}{chapter.10}% 71
+\BOOKMARK [1][-]{section.10.4}{10.4 Inclusive and Semi-Inclusive Radiative Corrections}{chapter.10}% 72
+\BOOKMARK [0][]{chapter.11}{11 Final charged hadrons multiplicities}{part.4}% 73
+\BOOKMARK [1][-]{section.11.1}{11.1 Summary of systematic studies}{chapter.11}% 74
+\BOOKMARK [2][-]{subsection.11.1.1}{11.1.1 Subsection Title}{section.11.1}% 75
+\BOOKMARK [2][-]{subsection.11.1.2}{11.1.2 Subsection Title}{section.11.1}% 76
+\BOOKMARK [1][-]{section.11.2}{11.2 Multiplicities \(h,,K\)}{chapter.11}% 77
+\BOOKMARK [0][]{chapter.12}{12 Determination of quark fragmentation functions}{part.4}% 78
+\BOOKMARK [1][-]{section.12.1}{12.1 Direct extraction of Fragmentation Functions}{chapter.12}% 79
+\BOOKMARK [2][-]{subsection.12.1.1}{12.1.1 Subsection Title}{section.12.1}% 80
+\BOOKMARK [2][-]{subsection.12.1.2}{12.1.2 Subsection Title}{section.12.1}% 81
+\BOOKMARK [1][-]{section.12.2}{12.2 Systematic studies}{chapter.12}% 82
+\BOOKMARK [1][-]{section.12.3}{12.3 COMPASS LO fit}{chapter.12}% 83
+\BOOKMARK [1][-]{section.12.4}{12.4 LO/NLO parametrisations}{chapter.12}% 84
+\BOOKMARK [-1][]{part.5}{Appendix}{}% 85
+\BOOKMARK [0][]{appendix.A}{A Appendix Test}{part.5}% 86
+\BOOKMARK [1][-]{section.A.1}{A.1 Appendix Section Test}{appendix.A}% 87
+\BOOKMARK [1][-]{section.A.2}{A.2 Another Appendix Section Test}{appendix.A}% 88
+\BOOKMARK [0][]{dummy.7}{Bibliography}{part.5}% 89
+\BOOKMARK [0][]{declaration.0}{Declaration}{part.5}% 90
+\BOOKMARK [0][]{colophon.0}{Colophon}{part.5}% 91
