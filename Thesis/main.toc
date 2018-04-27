@@ -24,146 +24,138 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.1}Renormalization in QED}{5}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Subsection Title}{5}{subsection.2.1.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Subsection Title}{5}{subsection.2.1.2}
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.2}QED Radiative Corrections}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {ii}\spacedlowsmallcaps {Experimental Part}}{7}{part.2}
+\contentsline {subsection}{\numberline {2.2.1}Characterization and impact of radiative corrections in analysis}{7}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {The COMPASS experiment}}{9}{chapter.3}
+\contentsline {subsection}{\numberline {2.2.2}About emission of radiative photons}{9}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Beam}{9}{section.3.1}
+\contentsline {part}{\numberline {ii}\spacedlowsmallcaps {Experimental Part}}{11}{part.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Subsection Title}{9}{subsection.3.1.1}
+\contentsline {chapter}{\numberline {3}\spacedlowsmallcaps {The COMPASS experiment}}{13}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Subsection Title}{9}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.1}Beam}{13}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Beam Telescope}{9}{section.3.2}
+\contentsline {subsection}{\numberline {3.1.1}Subsection Title}{13}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Target Region}{9}{section.3.3}
+\contentsline {subsection}{\numberline {3.1.2}Subsection Title}{13}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Spectrometer}{9}{section.3.4}
+\contentsline {section}{\numberline {3.2}Beam Telescope}{13}{section.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Data Acquisition and Online Monitoring}{9}{section.3.5}
+\contentsline {section}{\numberline {3.3}Target Region}{13}{section.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {The COMPASS muon trigger}}{11}{chapter.4}
+\contentsline {section}{\numberline {3.4}Spectrometer}{13}{section.3.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Trigger Principles}{11}{section.4.1}
+\contentsline {section}{\numberline {3.5}Data Acquisition and Online Monitoring}{13}{section.3.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.1}Subsection Title}{11}{subsection.4.1.1}
+\contentsline {chapter}{\numberline {4}\spacedlowsmallcaps {The COMPASS muon trigger}}{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.1.2}Subsection Title}{11}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.1}Trigger Principles}{15}{section.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Hodoscopes and Veto detectors}{11}{section.4.2}
+\contentsline {subsection}{\numberline {4.1.1}Subsection Title}{15}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {iii}\spacedlowsmallcaps {DJANGOH : a Monte-Carlo generator with Radiative Corrections}}{13}{part.3}
+\contentsline {subsection}{\numberline {4.1.2}Subsection Title}{15}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Motivations}}{15}{chapter.5}
+\contentsline {section}{\numberline {4.2}Hodoscopes and Veto detectors}{15}{section.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}RADGEN issues}{15}{section.5.1}
+\contentsline {part}{\numberline {iii}\spacedlowsmallcaps {DJANGOH : a Monte-Carlo generator with Radiative Corrections}}{17}{part.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Subsection Title}{15}{subsection.5.1.1}
+\contentsline {chapter}{\numberline {5}\spacedlowsmallcaps {Motivations}}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Subsection Title}{15}{subsection.5.1.2}
+\contentsline {section}{\numberline {5.1}Radiative Corrections related issues}{19}{section.5.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Comparison between RADGEN and DJANGOH}{15}{section.5.2}
+\contentsline {section}{\numberline {5.2}Comparison between RADGEN and DJANGOH}{21}{section.5.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {DJANGOH}}{17}{chapter.6}
+\contentsline {chapter}{\numberline {6}\spacedlowsmallcaps {DJANGOH}}{25}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Features of DJANGOH}{17}{section.6.1}
+\contentsline {section}{\numberline {6.1}Features of DJANGOH}{25}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.1}Subsection Title}{17}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.1}Presentation of DJANGOH}{25}{subsection.6.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1.2}Subsection Title}{17}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.2}Technical description of DJANGOH}{26}{subsection.6.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Enhancement of DJANGOH}{17}{section.6.2}
+\contentsline {section}{\numberline {6.2}Consistency checks}{26}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}TDJANGOH Interface}{17}{section.6.3}
+\contentsline {section}{\numberline {6.3}Enhancement of DJANGOH}{28}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Results on Radiative Corrections}}{19}{chapter.7}
+\contentsline {section}{\numberline {6.4}TDJANGOH Interface}{29}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Inclusive and Semi-Inclusive Radiative Correction factors}{19}{section.7.1}
+\contentsline {chapter}{\numberline {7}\spacedlowsmallcaps {Results on Radiative Corrections}}{31}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.1}Subsection Title}{19}{subsection.7.1.1}
+\contentsline {section}{\numberline {7.1}Inclusive and Semi-Inclusive Radiative Correction factors}{31}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.2}Subsection Title}{19}{subsection.7.1.2}
+\contentsline {subsection}{\numberline {7.1.1}Semi-Inclusive radiative correction factors : Effect on Multiplicities}{32}{subsection.7.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Comparison between DJANGOH and TERAD}{19}{section.7.2}
+\contentsline {section}{\numberline {7.2}Comparison between DJANGOH and TERAD}{36}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Integration of DJANGOH in the Monte-Carlo Chain}}{21}{chapter.8}
+\contentsline {chapter}{\numberline {8}\spacedlowsmallcaps {Integration of DJANGOH in the Monte-Carlo Chain}}{39}{chapter.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}TGEANT}{21}{section.8.1}
+\contentsline {section}{\numberline {8.1}TGEANT}{39}{section.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Subsection Title}{21}{subsection.8.1.1}
+\contentsline {section}{\numberline {8.2}DJANGOH as a physics generator for TGEANT}{39}{section.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.2}Subsection Title}{21}{subsection.8.1.2}
+\contentsline {section}{\numberline {8.3}Results on electroproduction from photon conversion}{42}{section.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}DJANGOH as a physics generator for TGEANT}{21}{section.8.2}
+\contentsline {part}{\numberline {iv}\spacedlowsmallcaps {The 2016 Multiplicity Analysis}}{43}{part.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Results on electroproduction from photon conversion}{21}{section.8.3}
+\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {Determination of 2016 raw multiplicities}}{45}{chapter.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {iv}\spacedlowsmallcaps {The 2016 Multiplicity Analysis}}{23}{part.4}
+\contentsline {section}{\numberline {9.1}Particle Identification with RICH detector}{45}{section.9.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}\spacedlowsmallcaps {Determination of 2016 raw multiplicities}}{25}{chapter.9}
+\contentsline {subsection}{\numberline {9.1.1}Subsection Title}{45}{subsection.9.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.1}Particle Identification with RICH detector}{25}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.2}Subsection Title}{45}{subsection.9.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1.1}Subsection Title}{25}{subsection.9.1.1}
+\contentsline {section}{\numberline {9.2}Data sets}{45}{section.9.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.1.2}Subsection Title}{25}{subsection.9.1.2}
+\contentsline {section}{\numberline {9.3}Raw Multiplicities}{45}{section.9.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.2}Data sets}{25}{section.9.2}
+\contentsline {chapter}{\numberline {10}\spacedlowsmallcaps {Correction factors to the multiplicities}}{47}{chapter.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.3}Raw Multiplicities}{25}{section.9.3}
+\contentsline {section}{\numberline {10.1}Acceptance correction}{47}{section.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}\spacedlowsmallcaps {Correction factors to the multiplicities}}{27}{chapter.10}
+\contentsline {subsection}{\numberline {10.1.1}Subsection Title}{47}{subsection.10.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.1}Acceptance correction}{27}{section.10.1}
+\contentsline {subsection}{\numberline {10.1.2}Subsection Title}{47}{subsection.10.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1.1}Subsection Title}{27}{subsection.10.1.1}
+\contentsline {section}{\numberline {10.2}Electron contamination}{47}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1.2}Subsection Title}{27}{subsection.10.1.2}
+\contentsline {section}{\numberline {10.3}Contamination of exclusive vector meson}{47}{section.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.2}Electron contamination}{27}{section.10.2}
+\contentsline {section}{\numberline {10.4}Inclusive and Semi-Inclusive Radiative Corrections}{47}{section.10.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.3}Contamination of exclusive vector meson}{27}{section.10.3}
+\contentsline {chapter}{\numberline {11}\spacedlowsmallcaps {Final charged hadrons multiplicities}}{49}{chapter.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.4}Inclusive and Semi-Inclusive Radiative Corrections}{27}{section.10.4}
+\contentsline {section}{\numberline {11.1}Summary of systematic studies}{49}{section.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {11}\spacedlowsmallcaps {Final charged hadrons multiplicities}}{29}{chapter.11}
+\contentsline {subsection}{\numberline {11.1.1}Subsection Title}{49}{subsection.11.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.1}Summary of systematic studies}{29}{section.11.1}
+\contentsline {subsection}{\numberline {11.1.2}Subsection Title}{49}{subsection.11.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1.1}Subsection Title}{29}{subsection.11.1.1}
+\contentsline {section}{\numberline {11.2}Multiplicities ($h^{\pm }$,$\pi ^{\pm }$,$K^{\pm }$)}{49}{section.11.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1.2}Subsection Title}{29}{subsection.11.1.2}
+\contentsline {chapter}{\numberline {12}\spacedlowsmallcaps {Determination of quark fragmentation functions}}{51}{chapter.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.2}Multiplicities ($h^{\pm }$,$\pi ^{\pm }$,$K^{\pm }$)}{29}{section.11.2}
+\contentsline {section}{\numberline {12.1}Direct extraction of Fragmentation Functions}{51}{section.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {12}\spacedlowsmallcaps {Determination of quark fragmentation functions}}{31}{chapter.12}
+\contentsline {subsection}{\numberline {12.1.1}Subsection Title}{51}{subsection.12.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.1}Direct extraction of Fragmentation Functions}{31}{section.12.1}
+\contentsline {subsection}{\numberline {12.1.2}Subsection Title}{51}{subsection.12.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1.1}Subsection Title}{31}{subsection.12.1.1}
+\contentsline {section}{\numberline {12.2}Systematic studies}{51}{section.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1.2}Subsection Title}{31}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.3}COMPASS LO fit}{51}{section.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.2}Systematic studies}{31}{section.12.2}
+\contentsline {section}{\numberline {12.4}LO/NLO parametrisations}{51}{section.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.3}COMPASS LO fit}{31}{section.12.3}
+\contentsline {part}{\numberline {v}\spacedlowsmallcaps {Appendix}}{53}{part.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.4}LO/NLO parametrisations}{31}{section.12.4}
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Appendix Test}}{55}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {v}\spacedlowsmallcaps {Appendix}}{33}{part.5}
+\contentsline {section}{\numberline {A.1}Appendix Section Test}{55}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Appendix Test}}{35}{appendix.A}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Appendix Section Test}{35}{section.A.1}
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Another Appendix Section Test}{36}{section.A.2}
+\contentsline {section}{\numberline {A.2}Another Appendix Section Test}{56}{section.A.2}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{37}{dummy.7}
+\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{57}{dummy.7}

@@ -10,20 +10,169 @@
 
 Content
 
-%------------------------------------------------
-
-\subsection{Subsection Title}
-
-Content
-
-%------------------------------------------------
-
-\subsection{Subsection Title}
-
-Content
-
 %----------------------------------------------------------------------------------------
 
 \section{QED Radiative Corrections}
 
-Content
+Radiative corrections had a key role in the development of QED : they enable one to calculate cross-sections with extremely high precision
+that has until now not been contradicted by experiment.
+When a process like DIS involves charged particles, there is a rearrangement of the electromagnetic current between the initial and final state.
+Incidentally, real photons can be emitted.
+
+If one were to compute the cross section of the process $1+2 \rightarrow 3+4$ with no photon emission (Born level process), one would find a different result
+$\sigma_{0}$ than the measurement $\sigma_{exp}$. To obtain a more accurate result, one has to consider the processes $1+2 \rightarrow 3+4+\gamma_1+\gamma_2+..+\gamma_n$.
+Taking these corrections to Born level process into account, one obtains :
+
+\begin{equation} \label{eq:RC}
+  \sigma_{exp} = (1+\delta_{RC})\sigma_0
+\end{equation}
+
+where $\delta_{RC}$ are the radiative corrections.
+
+
+In this note, I will not discuss the corrections beyond first order. These first order corrections are also known as order $\alpha$
+($o(\alpha)$) corrections. They comprise :
+\begin{itemize}
+\item Leptonic radiation
+\item Hadronic radiation (parton model)
+\item Interference of lepton/hadron radiation (two-photon exchange)
+\item Vacuum polarization
+\item Weak corrections
+\end{itemize}
+
+The goal is to quantify the effect of radiative corrections. The observed cross-section can be expressed as the convolution of the true cross-section times a
+function called the radiator function which takes into account the radiative effects :
+
+\[d\sigma^{obs}(p,q) = \int \frac{d^{3}k}{2k^{0}}R(l,l',k)d\sigma^{true}(p,-q,k)\]
+
+This relation holds also for the structure functions :
+
+\[F_{n}^{obs}(x,Q^{2}) = \int d\tilde{x}d\tilde{Q}^{2}R_{n}(x,Q^{2},\tilde{x},\tilde{Q}^{2})F_{n}^{true}(\tilde{x},\tilde{Q}^{2})\]
+
+The previous formulas are valid for one photon emission but can be extended to include higher-order
+multi-photon emissions.
+As one has access to both observed quantities and radiator function, the determination of the true cross-sections
+or structure functions from measured ones is done by unfolding using an iterative procedure.
+The principal drawbacks of such a method is that the solution is ill-defined : there is no unique solution,
+there are large uncertainties and the process is numerically unstable.
+However, using partial functioning on the radiator function is reducing the instability of the calculation :
+
+\[R(l,l',k) = \frac{I}{k.l}+\frac{F}{k.l'}+\frac{C}{\tilde{Q}^{2}}\]
+
+The partial functioning is splitting the radiator function in three :
+\begin{itemize}
+\item Initial state radiation ($I$ fraction)
+\item Final state radiation ($F$ fraction)
+\item Compton peak ($C$ fraction)
+\end{itemize}
+
+For each of them, an observation can be made. For initial state radiation (ISR), $k.l$ is small for
+$\angle (l_{in},\gamma) \rightarrow 0$, for final state radiation (FSR), $k.l'$ is small for
+$\angle (l_{out},\gamma) \rightarrow 0$ and eventually for Compton peak $Q^{2}$ is small for
+$p_{T}(l_{out}) \simeq p_{T}(\gamma)$.
+
+For ISR and FSR, the photon is emitted within narrow cones with a width of the order of $\sqrt{\frac{m_{t}}{E_{t}}}$.
+If the particle is massless, the radiated photon will be colinear to the lepton (incoming or
+outgoing, whether it is an ISR or a FSR).
+
+Two last notes are to be made :
+\begin{itemize}
+\item As $E^{2}_{\gamma,max} \propto Q^{2}\frac{1-x}{x}$, the largest radiation in energy are at large $Q^{2}$ and
+small $x$. Radiation is suppressed at small $Q^{2}$ and large $x$. There are also large negative
+corrections from uncancelled virtual contributions.
+\item As $\tilde{Q}^{2}_{min} = \frac{x^{2}}{1-x}M^{2}_{N}$, the case where $\tilde{Q}^{2}_{min} \ll Q^{2}$
+is possible.
+\end{itemize}
+
+All the preceding explanations did concern leptonic radiation. One should also adress the question of
+the hadronic corrections (quark line radiation). These corrections are infrared divergent (radiation of soft photons and gluons)
+but they cancel with loops. The emission of the photon/gluon is collinear and gives rise to correction of
+type $\frac{\alpha}{2\pi}log(m_{q}^{2})$. Nevertheless for quarks, the approximation $m_{q} \approx 0$ is
+giving rise to divergent corrections. One way to solve this issue is to factorize and absorb the divergences
+into the PDFs :
+
+\[d\sigma = \sum_{f}d\hat{\sigma}_{f}(1+\delta_{f}(Q^{2},m^{2}_{q}))q_{f}(x) = \sum_{f}d\hat{\sigma}_{f}\hat{q}_{f}(x,Q^{2})\]
+
+\subsection{Characterization and impact of radiative corrections in analysis}
+
+In the following, only DIS/SIDIS is considered.
+
+The description of a radiative event is given by the following : an event is called radiative as soon as it
+contains one real radiated photon which is emitted in the lepton line (Fig. \ref{fig:rad_evt}).
+
+\begin{figure}[htb]
+\centerline{\epsfig{file=gfx/diagram_rad.png,width=7cm}}
+\caption{Typical feynman diagram of a radiative event. One can note that the pair $(Q^2,\nu)$ at the vertex (called hadronic)
+is not the same as the one calculated using the incoming and outgoing lepton (called leptonic). The relation between the two pairs
+is drawn by :
+$\nu_{had} = \nu_{lep} - E_\gamma, Q^2_{had}=Q^2_{lep}+2E_\gamma(\nu_{lep}-\sqrt{\nu_{lep}^2+Q^2_{lep}}cos\theta_\gamma)$}
+\label{fig:rad_evt}
+\end{figure}
+
+
+In the following, we will only consider these corrections (Fig. \ref{fig:rad_dia}) :
+\begin{itemize}
+\item Internal Bremsstrahlung (from both incoming and outgoing leptons) (b,c)
+\item Vertex correction (d)
+\item Vacuum polarization (e)
+\end{itemize}
+
+\begin{figure}[htb]
+\centerline{\epsfig{file=gfx/all_rad_feynm.png,width=12cm}}
+\caption{List of the diagrams used for the calculation of the radiative corrections. From left to right,
+tree level, internal bremsstrahlung (incoming and outgoing leptons), vertex correction and vacuum polarization.}\label{fig:rad_dia}
+\end{figure}
+
+Correction to the quark line are not included in any calculation, as explained in Section \ref{sec:RCF}.
+If we call $\sigma_{Born}$ the cross-section of the tree-level diagram and $\sigma_{Born+o(\alpha)}$ the
+cross-section of tree-level plus the first order correction enumerated above, the definition of the
+radiative corrections factor $\eta$ is :
+
+\begin{equation} \label{eq:RCF_def}
+  \eta(x,y)=\frac{\sigma_{Born}(x,y)}{\sigma_{Born+o(\alpha)}(x,y)}
+\end{equation}
+
+where $x$ is the Bjorken-x aka the fraction of momentum of the incoming proton carried by the struck parton
+and $y$ is the fraction of energy of the incoming lepton transferred by the virtual photon.
+
+Observation : the definition of $\eta$ is not fixed and you can find other definition of it.
+You can especially encounter the following definition :
+
+\begin{equation} \label{eq:RCF_def_inv}
+  \eta(x,y)=\frac{\sigma_{Born+o(\alpha)}(x,y)}{\sigma_{Born}(x,y)}
+\end{equation}
+
+which is the inverse of the one before. \textbf{Be extremely careful of the definition of $\eta$ you are using
+as it can be very deceptive}. In this note, the former definition (\ref{eq:RCF_def}) will be used.
+
+Obviously, the emission of a real photon is modifying the kinematic variables of the event : two events
+will share the same leptonic variables but they will have different hadronic variables. In the case of multiplicities, this discrepancy in the kinematic variables induces that
+some hadrons are falling into the wrong (x,y) bin. Applying the correction factor $\eta$ to the multiplicities
+is indirectly redirecting the hadrons between (x,y) bins.
+
+\subsection{About emission of radiative photons}
+
+There are two priviledged angles for emission of a real photon :
+\begin{itemize}
+\item One in the direction of the incident lepton (s-peak)
+\item One in the direction of the outgoing lepton (p-peak)
+\end{itemize}
+
+\begin{figure}[hbt]
+\parbox{8cm}{
+\includegraphics[width=9cm]{gfx/plan_angle.png}
+\caption{Angles characterizing the emission of a radiative photon : $\theta_\gamma$ is the polar angle and $\Phi_\gamma$.}
+\label{fig:plan}}
+\qquad
+\begin{minipage}{8cm}
+\includegraphics[width=8cm]{gfx/peaks.png}
+\caption{Location of the priviledged angles in the $(Q^2,\nu)$ plane. The phase space is delimited by the elastic scattering
+on top and the boundary values of $cos\theta_\gamma$. The s-peak is located near the boundary $cos\theta_\gamma=1$ which means
+$\theta_\gamma \equiv 0[2\pi]$, thus colinear to the incoming lepton.}
+\label{fig:peaks}
+\end{minipage}
+\end{figure}
+
+In the case of muons, note that the s and p peaks are much less pronounced than for electrons.
+
+These knowledge will later be useful to verify the consistency of DJANGOH results.

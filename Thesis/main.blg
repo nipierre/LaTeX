@@ -41,12 +41,27 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: main-blx.bib
 Database file #2: Bibliography.bib
+Warning--I didn't find a database entry for "DJANGOH"
+Warning--I didn't find a database entry for "LEPTO"
+Warning--I didn't find a database entry for "ARIADNE"
+Warning--I didn't find a database entry for "PYTHIA6"
+Warning--I didn't find a database entry for "JETSET"
+Warning--I didn't find a database entry for "SOPHIA"
+Warning--I didn't find a database entry for "AXO"
+Warning--I didn't find a database entry for "VEGAS"
+Warning--I didn't find a database entry for "BPnote"
+Warning--I didn't find a database entry for "SMC"
+Warning--I didn't find a database entry for "BK"
+Warning--I didn't find a database entry for "R1998"
+Warning--I didn't find a database entry for "HubertF2Rad"
+Warning--I didn't find a database entry for "Mult"
+Warning--I didn't find a database entry for "TERAD"
 Biblatex version: 3.3
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 2 entries,
             6256 wiz_defined-function locations,
-            1207 strings with 9242 characters,
+            1237 strings with 9406 characters,
 and the built_in function-call counts, 6126 in all, are:
 = -- 388
 > -- 156
@@ -85,3 +100,4 @@ warning$ -- 0
 while$ -- 85
 width$ -- 0
 write$ -- 48
+(There were 15 warnings)
