@@ -6,13 +6,121 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Structure of the nucleon}
+\section{Deep Inelastic Scattering}
 
-Content
+The Deep Inelastic Scattering (DIS) process is depicted in Fig.\ref{pic:DIS}. The incoming lepton $l$ exchanges
+a virtual photon $\gamma^*$ with the nucleon $N$. The nucleon absorbs the energy of the virtual photon and fragments
+into a final state X. The scattered lepton is represented by $l'$. This process description is also known as the
+one photon exchange approximation.
+
+% Pic DIS
+
+The kinematics of a DIS event are fixed by the 4-momentum vector of l (\textbf{l} = ($E$,$\vec{l}$)), $l'$ (\textbf{l'} = ($E'$,$\vec{l}'$))
+and N (\textbf{P} = ($M$,$\vec{0}$)). The 4-momentum vector for the virtual photon is calculated as \textbf{q} = \textbf{l} - \textbf{l'} =
+($\nu$ = $E$ - $E'$, $\vec{q}=\vec{l}-\vec{l}'$). One needs only two Lorentz invariant variables to describe
+inclusive DIS. One is the invariant mass of the virtual photon $Q^2$.
+
+\begin{equation}
+  Q^2 = -\textbf{q}^2 \stackrel{lab}{\approx} 4EE'sin^2(\frac{\theta}{2})
+\end{equation}
+
+$Q^2$ defines the scale at which the nucleon structure is probed : the largest $Q^2$ is, the farthest the probing
+of the nucleon is performed.
+
+The other is $x$ and measures the elasticity of the interaction. $x$ is comprised between 0 and 1. If $x=1$ the
+interaction is elastic, if $x<1$ then it is inelastic. This Bjorken\cite{Bjorken} $x$ is defined as the fraction
+of the nucleon 4-momentum \textbf{P} carried by the parton struck by the virtual photon.
+
+\begin{equation}
+  x = \frac{Q^2}{2\textbf{P}\cdot\textbf{q}} \stackrel{lab}{=} \frac{Q^2}{2M\nu}
+\end{equation}
+
+Other Lorentz invariant can be as well (Table\ref{tab:kinvar})
+
+\begin{tabular*}{\textwidth}{r|l}
+  \hline
+  \hline
+  Variable & Description \\
+  \hline
+  \hline
+  $Q^2 = -\textbf{q}^2 \stackrel{lab}{\approx} 4EE'sin^2(\frac{\theta}{2})$ & Interaction scale \\
+  $\nu = \frac{\textbf{P}\cdot\textbf{q}}{M} \stackrel{lab}{=} E - E'$ & Energy transfer from the lepton $l$ to $\gamma^*$ \\
+  $x = \frac{Q^2}{2\textbf{P}\cdot\textbf{q}} \stackrel{lab}{=} \frac{Q^2}{2M\nu}$ & Fraction of the nucleon momentum \textbf{P} carried by the parton struck by $\gamma^*$ \\
+  $\nu = \frac{\textbf{P}\cdot\textbf{q}}{\textbf{P}\cdot\textbf{l}} \stackrel{lab}{=} \frac{\nu}{E}$ & Fraction of the incoming lepton energy transferred to $\gamma^*$ \\
+  $s = (\textbf{P}+\textbf{l})^2 \stackrel{lab}{\approx} M^2 + 2ME$ & Center-of-mass energy squared \\
+  $W^2 = (\textbf{P}+\textbf{q})^2 \stackrel{lab}{=} M^2 + 2M\nu - Q^2)$ & Invariant mass of the hadronic final state \\
+  \hline
+  \hline
+\end{tabular*}
+
+\subsection*{Cross section calculation for the inclusive DIS process}
+
+The deep inelastic cross section, in the one photon exchange approximation, can be written in terms
+of the lepton-photon coupling tensor $L_{\mu\nu}$ and the hadronic coupling tensor $W^{\mu\nu}$.
+
+\begin{equation}
+  \frac{d\sigma}{dE'd\Omega} = \frac{\alpha^2}{2Mq^4}\frac{E'}{E}L_{\mu\nu}W^{\mu\nu}
+\end{equation}
+
+$\alpha$ is the fine structure constant. The leptonic and hadronic tensors are defined by :
+
+\begin{equation}
+  L_{\mu\nu}(l,s;l') = 2{L^{(S)}_{\mu\nu}(l;l')+iL^{(A)}_{\mu\nu}(l,s;l')}
+\end{equation}
+
+where
+
+\begin{equation}
+  L^{(S)}_{\mu\nu} = l_{\mu}'l_{\nu} + l_{\nu}'l_{\mu} - g_{\mu\nu}(\vec{l}'\vec{l}-m^2) \\
+  L^{(A)}_{\mu\nu} = -m\epsilon_{\mu\nu\sigma\rho}s^{\sigma}q^{\rho}
+\end{equation}
+
+and
+
+\begin{equation}
+  W^{\mu\nu}(q;P,s) = W^{\mu\nu\ (S)}(q;P) + iW^{\mu\nu\ (A)}(q;P,S)
+\end{equation}
+
+where
+
+\begin{equation}
+  \frac{1}{2M}W^{\mu\nu\ (S)}(q;P) = W_1(P\cdot q,q^2)(-g^{\mu\nu}-\frac{q^{\mu}q^{\nu}}{q^2})+\frac{W_2(P\cdot q,q^2)}{M^2}(P^{\mu}-\frac{P\cdot q}{q^2}q^{\mu})(P^{\nu}+\frac{P\cdot q}{q^2}q^{\nu})
+\end{equation}
+
+\begin{equation}
+  \frac{1}{2M}W^{\mu\nu\ (A)}(q;P,S) = \epsilon_{\mu\nu\sigma\rho}q^{\sigma}{G_1(P\cdot q,q^2)MS^{\rho}+\frac{G_2(P\cdot q,q^2)}{M}(P\cdot q)S^{\rho}-(S\cdot q)P^{\rho}}
+\end{equation}
+
+The lepton and nucleon polarizations are given respectively by $s$ and $S$. $g_{\mu\nu}$ is the
+Minkowski metric and m is the lepton mass. The functions $W_1(P\cdot q,q^2)$, $W_2(P\cdot q,q^2)$,
+$G_1(P\cdot q,q^2)$ and $G_2(P\cdot q,q^2)$ are the spin averaged and spin dependent structure functions
+parametrizing the internal structure of the nucleon. They can be expressed as dimensionless functions as
+in Eqs.\ref{} to \ref{}.
+
+\begin{equation}
+  MW_1(P\cdot q,Q^2)=F_1(x,Q^2)
+  \nu W_2(P\cdot q,Q^2)=F_2(x,Q^2)
+  \frac{(P\cdot q)^2}{\nu}G_1(P\cdot q,Q^2)=g_1(x,Q^2)
+  \nu(P\cdot q)G_2(P\cdot q,Q^2)=g_2(x,Q^2)
+\end{equation}
+
+Going back to Eq.\ref{} and splitting the symmetric and antisymmetric parts of the tensors :
+
+\begin{equation}
+  \frac{d\sigma}{dE'd\Omega} = \frac{\alpha^2}{2Mq^4}\frac{E'}{E}[L_{\mu\nu\ (S)}W^{\mu\nu\ (S)}-L_{\mu\nu\ (A)}W^{\mu\nu\ (A)}]
+\end{equation}
+
+After summing over all possible spin configurations of the initial and final lepton and nucleon, neglecting
+the leptonic mass, one obtains the unpolarized DIS cross-section (Eq.\ref{}) which measurement gives access
+to the structure functions $F_1$ and $F_2$.
+
+\begin{equation}
+  \frac{d\sigma^{unpolarized}}{dxdQ^2} = \frac{4\pi\alpha}{Q^4}[y^2F_1(x,Q^2)+(\frac{1-y}{x}-\frac{My}{2E})F_2(x,Q^2)]
+\end{equation}
 
 %------------------------------------------------
 
-\subsection{Subsection Title}
+\section{Quark Parton Model}
 
 Content
 
