@@ -122,13 +122,96 @@ to the structure functions $F_1$ and $F_2$.
 
 \section{Quark Parton Model}
 
-Content
+The Quark Parton Model is developed in the infinite momentum frame where the nucleon has a very large momentum
+along a certain direction and is composed by massless point-like particles called partons. In this case, the
+transverse momentum of these partons can be neglected. In DIS, the virtual photon interacts with the parton,
+which carries a fraction $\xi$ of the 4-momentum \textbf{P} of the nucleon and the invariant mass of the initial
+and final states are respectively $(\xi\textbf{P}+\textbf{q})^2$ and 0. This yelds :
 
-%------------------------------------------------
+\begin{equation}
+  (\xi\textbf{P}+\textbf{q})^2 = 0 \Rightarrow 2\xi\textbf{P}\cdot\textbf{q}+\textbf{q}^2 = 0 \Rightarrow \xi = \frac{Q^2}{2\textbf{P}\cdot\textbf{q}}
+\end{equation}
 
-\subsection{Subsection Title}
+which is the exact definition of Bjorken $x$.
 
-Content
+Within this model, since gluons do not carry any electric charge, the DIS interaction can only involve quarks and
+it has to be noted that the surrounding quarks are not affected by the interaction. The hadronic tensor is defined
+by Eq.\ref{}.
+
+\begin{equation}
+  W^{\mu\nu} = \sum\limits_{q,s}e^2_qn_q(x,s;S)\frac{1}{\textbf{P}\cdot\textbf{q}}[2x\textbf{P}^{\mu}\textbf{P}^{\nu}
+  +\textbf{P}^{\nu}\textbf{q}^{\mu}+\textbf{P}^{\mu}\textbf{q}^{\nu}-g^{\mu\nu}\textbf{P}\cdot\textbf{q}]
+\end{equation}
+
+where $n_q(x,s;S)$ is the density of quarks q with charge $e_q$ and spin $s$, the nucleon spin being given by S.
+In this model, the structure functions expressions are :
+
+\begin{equation}
+  F_1(x)=\frac{1}{2}\sum\limits_{q}e^2_qq(x) \\
+  F_2(x)=x\sum\limits_{q}e^2_qq(x)
+\end{equation}
+
+where $q(x)$ are the unpolarized Parton Distribution Functions (PDFs). The sums run over all quark flavors.
+One can draw a trivial relationship between $F_1$ and $F_2$, called the Callan-Gross relation :
+
+\begin{equation}
+  F_1(x)=\frac{1}{2x}F_2(x)
+\end{equation}
+
+As the QPM is considered inside the infinite momentum frame, $Q^2 \rightarrow \infty$ and the $Q^2$ dependence of
+$F_1$ and $F_2$ is thus lost : this sclaing violation is also known as the Bjorken scaling. This observation along
+with the Callan-Gross relation showed that partons are indeed 1/2-spin particles.
+
+Eventually yields the unpolarized DIS cross-section with the QPM :
+
+\begin{equation}
+  \frac{d^2\sigma^{unpolarized}}{dxdy} \stackrel{QPM}{=} \frac{8\pi\alpha^2ME}{Q^2}[\frac{1}{2}y^2+(1-y-\frac{y^2\gamma^2}{4})]x\sum\limits_{q}e^2_qq(x)
+\end{equation}
+
+\subsection*{Scaling violation}
+
+The structure function $F_2$ has been measured by several collaborations covering a wide $x$ - $Q^2$ kinematic range.
+The measured values are plotted as a function of $Q^2$ and in bins of $x$. The Bjorken scaling is only visible in a
+small $x$ region between 0.1 and 0.4. Outside this region the structure function $F_2$ has a logarithmic dependence on
+$Q^2$. At small $x$, $F_2$ increases with $Q^2$ while at large $x$, $F_2$ decreases for large $Q^2$ values. From the scaling
+violation a conclusion was made that there should be a missing piece in the QPM : the gluon contribution. In order to take
+into account this contribution, the QPM was developed within the Quantum ChromoDynamics frame (QCD).
+
+%Pic F2 scaling violation
+
+\subsection*{QCD-improved QPM}
+
+The $Q^2$ dependence observed in previous subsection can be estimated by introducing the quark interaction from QCD.
+Quantum ChromoDynamics is a non-abelian gauge theory based on a symmetry group SU(3) which describes the strong interaction.
+The charge of this theory is called colour and the force carriers are the gluons, which are also coloured particles. The
+internal nucleon dynamic is dominated by the gluon emission and absorption by the 3 valence quarks. The gluons can create
+pairs of quark-antiquark or emit gluons. This creates a cloud of gluons and virtual $q\bar{q}$ pairs known as sea quarks.
+
+The QCD coupling constant $\alpha_s$ depends on the scale of the interaction. At low energies quarks or gluons are always
+forming colorless particles as hadrons : this is the confinement. At high energies quarks or gluons are free particles :
+this is asymptotic freedom.
+
+Depending on the energy regime, a process can be labeled as a hard ($\alpha \sim 0$) or soft process ($\alpha \approx 0$).
+Hard processes can be described within the perturbative QCD (pQCD) framework when soft processes can only be parametrized
+from experimental data. This two regimes differ by the factorisation scale $\Lambda$. As in DIS the scale variable is $Q^2$,
+the DIS cross-section can only be factorized in terms of soft and hard processes at $Q^2>1$GeV$^2$ : the hard process is the
+lepton-quark interaction $\sigma_q$ and the soft process is a non-calculable universal quantity which are the PDFs.
+
+The resolution of the virtual photon probe is proportional to $1/Q^2$ (Fig.\ref{}). At $Q^2 \approx 0$, the virtual photon sees the
+nucleon as a point-like particle. As $Q^2$ increases, the virtual starts to interact with the nucleons constituents. At large $Q^2$
+the virtual photon is able to access the gluons. The first QCD correction to the QPM concerns the gluon emission by the initial and
+the final quark. The splitting functions $P_{ij}(x/\xi)$ are the probability that a quark or gluon of type $j$ and momentum fraction
+$\xi$ is the parent of i with momentum fraction $x$.
+
+% pic res photon
+
+The $Q^2$ dependence is calculated by the Dokshiter-Gribov-Lipatov-Altarelli-Parisi (DGLAP) equations.
+
+\begin{equation}
+  \frac{dq_i(x,Q^2)}{dlnQ^2} = \frac{\alpha_s(Q^2)}{2\pi}\sum\limits_{j}\int_{x}^{1}P_{ij}(x/\xi,\alpha_s(Q^2))q_i(\xi,Q^2)
+\end{equation}
+
+If the PDFs are known at a given scale $Q_0^2$, they can be evolved to any given $Q^2$ using these equations. 
 
 %----------------------------------------------------------------------------------------
 

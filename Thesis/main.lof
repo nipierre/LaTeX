@@ -10,65 +10,65 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Typical feynman diagram of a radiative event. One can note that the pair $(Q^2,\nu )$ at the vertex (called hadronic) is not the same as the one calculated using the incoming and outgoing lepton (called leptonic). The relation between the two pairs is drawn by : $\nu _{had} = \nu _{lep} - E_\gamma , Q^2_{had}=Q^2_{lep}+2E_\gamma (\nu _{lep}-\sqrt {\nu _{lep}^2+Q^2_{lep}}cos\theta _\gamma )$\relax }}{7}{figure.caption.9}
+\contentsline {figure}{\numberline {1}{\ignorespaces Typical feynman diagram of a radiative event. One can note that the pair $(Q^2,\nu )$ at the vertex (called hadronic) is not the same as the one calculated using the incoming and outgoing lepton (called leptonic). The relation between the two pairs is drawn by : $\nu _{had} = \nu _{lep} - E_\gamma , Q^2_{had}=Q^2_{lep}+2E_\gamma (\nu _{lep}-\sqrt {\nu _{lep}^2+Q^2_{lep}}cos\theta _\gamma )$\relax }}{9}{figure.caption.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces List of the diagrams used for the calculation of the radiative corrections. From left to right, tree level, internal bremsstrahlung (incoming and outgoing leptons), vertex correction and vacuum polarization.\relax }}{7}{figure.caption.10}
+\contentsline {figure}{\numberline {2}{\ignorespaces List of the diagrams used for the calculation of the radiative corrections. From left to right, tree level, internal bremsstrahlung (incoming and outgoing leptons), vertex correction and vacuum polarization.\relax }}{9}{figure.caption.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Angles characterizing the emission of a radiative photon : $\theta _\gamma $ is the polar angle and $\Phi _\gamma $.\relax }}{8}{figure.caption.11}
+\contentsline {figure}{\numberline {3}{\ignorespaces Angles characterizing the emission of a radiative photon : $\theta _\gamma $ is the polar angle and $\Phi _\gamma $.\relax }}{10}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4}{\ignorespaces Location of the priviledged angles in the $(Q^2,\nu )$ plane. The phase space is delimited by the elastic scattering on top and the boundary values of $cos\theta _\gamma $. The s-peak is located near the boundary $cos\theta _\gamma =1$ which means $\theta _\gamma \equiv 0[2\pi ]$, thus colinear to the incoming lepton.\relax }}{8}{figure.caption.11}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4}{\ignorespaces Location of the priviledged angles in the $(Q^2,\nu )$ plane. The phase space is delimited by the elastic scattering on top and the boundary values of $cos\theta _\gamma $. The s-peak is located near the boundary $cos\theta _\gamma =1$ which means $\theta _\gamma \equiv 0[2\pi ]$, thus colinear to the incoming lepton.\relax }}{10}{figure.caption.11}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces The distribution of the radiation angles $\theta _{\gamma }$ a), $\phi _{\gamma }$ b) and of the energy c) of the radiated photon for $x=0.1$ and $y=0.8$. The two-dimensional distribution d) shows $\theta _{\gamma }$ vs $\phi _{\gamma }$. In panel c), one can note that the hard photon emissions are sizeable.\relax }}{18}{figure.caption.12}
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6}{\ignorespaces -\relax }}{18}{figure.caption.13}
+\contentsline {figure}{\numberline {5}{\ignorespaces The distribution of the radiation angles $\theta _{\gamma }$ a), $\phi _{\gamma }$ b) and of the energy c) of the radiated photon for $x=0.1$ and $y=0.8$. The two-dimensional distribution d) shows $\theta _{\gamma }$ vs $\phi _{\gamma }$. In panel c), one can note that the hard photon emissions are sizeable.\relax }}{20}{figure.caption.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7}{\ignorespaces -\relax }}{19}{figure.caption.14}
+\contentsline {figure}{\numberline {6}{\ignorespaces -\relax }}{20}{figure.caption.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8}{\ignorespaces Left is the radiative photon energy distribution for $0.8 \leq y \leq 0.9$ and $1 \leq Q^2 \leq 2 (GeV/c)^2$ for DJANGOH, right is the same distribution for RADGEN. DJANGOH is producing overall more soft photons than hard ones, unlike RADGEN. Nevertheless, the plot does not allow to conclude whether DJANGOH is producing less hard photon than RADGEN.\relax }}{19}{figure.caption.15}
+\contentsline {figure}{\numberline {7}{\ignorespaces -\relax }}{21}{figure.caption.14}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {9}{\ignorespaces Comparison of proportion of inelastic event in high energy radiative photon range over total number of DIS event with the same kinematical restrictions as in Fig. \ref {fig:DJRAD}. This comparison allows to conclude that DJANGOH is indeed producing less hard photons than RADGEN with more than a factor 2 between the two generators. Thus, RADGEN is producing much less soft photons than DJANGOH, when referring to Fig. \ref {fig:DJRAD} with this knowledge.\relax }}{20}{figure.caption.16}
+\contentsline {figure}{\numberline {8}{\ignorespaces Left is the radiative photon energy distribution for $0.8 \leq y \leq 0.9$ and $1 \leq Q^2 \leq 2 (GeV/c)^2$ for DJANGOH, right is the same distribution for RADGEN. DJANGOH is producing overall more soft photons than hard ones, unlike RADGEN. Nevertheless, the plot does not allow to conclude whether DJANGOH is producing less hard photon than RADGEN.\relax }}{21}{figure.caption.15}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Comparison of proportion of inelastic event in high energy radiative photon range over total number of DIS event with the same kinematical restrictions as in Fig. \ref {fig:DJRAD}. This comparison allows to conclude that DJANGOH is indeed producing less hard photons than RADGEN with more than a factor 2 between the two generators. Thus, RADGEN is producing much less soft photons than DJANGOH, when referring to Fig. \ref {fig:DJRAD} with this knowledge.\relax }}{22}{figure.caption.16}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {10}{\ignorespaces Energy distribution for, from left to right, radiative photon, outgoing lepton and struck quark. The emission of low energy radiative photon is priviledged by DJANGOH, while the rest of the energy is distributed between the outgoing muon and the struck quark.\relax }}{22}{figure.caption.17}
+\contentsline {figure}{\numberline {10}{\ignorespaces Energy distribution for, from left to right, radiative photon, outgoing lepton and struck quark. The emission of low energy radiative photon is priviledged by DJANGOH, while the rest of the energy is distributed between the outgoing muon and the struck quark.\relax }}{24}{figure.caption.17}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {11}{\ignorespaces $\theta $ angle distribution for the radiative photon (up) and the outgoing muon (down). From left to right the scaling of the x-axis is changed (normal, logarithmic, logarithmic with rebinning). One can see two peaks in the theta distribution of the radiative photon : one around zero (s-peak) and one a little bit further (p-peak). When compared to the $\theta $ distribution of the outgoing muon, especially with the last scaling, one can see that the two peaks match.\relax }}{23}{figure.caption.18}
+\contentsline {figure}{\numberline {11}{\ignorespaces $\theta $ angle distribution for the radiative photon (up) and the outgoing muon (down). From left to right the scaling of the x-axis is changed (normal, logarithmic, logarithmic with rebinning). One can see two peaks in the theta distribution of the radiative photon : one around zero (s-peak) and one a little bit further (p-peak). When compared to the $\theta $ distribution of the outgoing muon, especially with the last scaling, one can see that the two peaks match.\relax }}{25}{figure.caption.18}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {12}{\ignorespaces $Q^2$ correlation plot $Q^2_{had}=f(Q^2_{lep})$. On the left is the plot for the complete range of $Q^2$ given by the kinematic constraints. The scattering around the $Q^2_{had} = Q^2_{lep}$ line is small, indicating that most of the radiative photons are soft. On the right is the same plot but restricted to the $Q^2_{lep}\in [1,2]$ and $Q^2_{had}\in [0,2]$ region. The fact is that for $Q^2_{lep}=1$, $Q^2_{had}$ takes values in above and below $Q^2=1$, as expected\relax }}{23}{figure.caption.19}
+\contentsline {figure}{\numberline {12}{\ignorespaces $Q^2$ correlation plot $Q^2_{had}=f(Q^2_{lep})$. On the left is the plot for the complete range of $Q^2$ given by the kinematic constraints. The scattering around the $Q^2_{had} = Q^2_{lep}$ line is small, indicating that most of the radiative photons are soft. On the right is the same plot but restricted to the $Q^2_{lep}\in [1,2]$ and $Q^2_{had}\in [0,2]$ region. The fact is that for $Q^2_{lep}=1$, $Q^2_{had}$ takes values in above and below $Q^2=1$, as expected\relax }}{25}{figure.caption.19}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {13}{\ignorespaces Cross-section values (in nB) for different bins in a range for the energy of the incoming muon between 140 and 180 GeV for Virtual/Soft cross-section (gray blue), Initial State Radiation cross-section (green), Final State Radiation cross-section (yellow), Compton contribution cross-section (orange) and the total cross-section (red). The cross-section distribution is almost flat, with an overall difference between the first and last bin in energy of 13.9 nB for a mean total cross-section of about 500 nB. Though it represents only a 2 percent change in the cross-section, it has to be taken into account for a proper event generation.\relax }}{24}{figure.caption.20}
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {14}{\ignorespaces $Q^2$ dependence of the quarkonic QED corrections (in percent) to the structure function $F^2_p$ for deep inelastic lepton-proton scattering at $x=0.001$, $x=0.1$ and $x=0.505$.\relax }}{27}{figure.caption.21}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {15}{\ignorespaces $\eta ^{h^{\pm }}(x,y,z)$, positive hadrons in full points, negative in voided points, in bins of $x$, staggered with $y$ and versus $z$. The corrections go from 0\% at low $z$ and low $y$ to 10\% at high $z$ and high $y$\relax }}{30}{figure.caption.22}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {16}{\ignorespaces $\eta ^{h^{\pm }}(x,y,p_T)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $p_T$. The corrections go from -20\% at high $p_T$, high $y$ and high $x$ to +10\% at low $y$, high $x$ and high $p_T$.\relax }}{30}{figure.caption.23}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {17}{\ignorespaces $\eta ^{\pi ^{\pm }}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. Same conclusions as in Fig. \ref {fig:hadz_ratio} can be made.\relax }}{31}{figure.caption.24}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {18}{\ignorespaces $\eta ^{K^{\pm }}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. Same conclusions as in Fig. \ref {fig:hadz_ratio} can be made.\relax }}{31}{figure.caption.25}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {19}{\ignorespaces Ratio of the Born cross-sections calculated with DJANGOH and TERAD, for the same input, as a function of y at different values of x (staggered points at fixed y)\relax }}{32}{figure.caption.26}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {20}{\ignorespaces Comparison of radiative corrections factor $\eta (y)$ for fixed values of x, computed for proton target at 160 GeV and with the input information given above. Green dots mark results of TERAD, blue triangles the results of DJANGOH.\relax }}{32}{figure.caption.27}
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {21}{\ignorespaces Ratio of radiative corrections factors obtained in Fig. \ref {fig:RCy}, $(\eta _T/\eta _D)-1$ as a function of y for fixed values of x\relax }}{33}{figure.caption.28}
+\contentsline {figure}{\numberline {13}{\ignorespaces Cross-section values (in nB) for different bins in a range for the energy of the incoming muon between 140 and 180 GeV for Virtual/Soft cross-section (gray blue), Initial State Radiation cross-section (green), Final State Radiation cross-section (yellow), Compton contribution cross-section (orange) and the total cross-section (red). The cross-section distribution is almost flat, with an overall difference between the first and last bin in energy of 13.9 nB for a mean total cross-section of about 500 nB. Though it represents only a 2 percent change in the cross-section, it has to be taken into account for a proper event generation.\relax }}{26}{figure.caption.20}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {22}{\ignorespaces Sketch showing how event generation is handled in TGEANT. A particle is first chosen in the beamfile, then is sent to the dedicated generator that generates the given process. TGEANT then recovers the list of particles from the generator, creates and propagates them.\relax }}{35}{figure.caption.29}
+\contentsline {figure}{\numberline {14}{\ignorespaces $Q^2$ dependence of the quarkonic QED corrections (in percent) to the structure function $F^2_p$ for deep inelastic lepton-proton scattering at $x=0.001$, $x=0.1$ and $x=0.505$.\relax }}{29}{figure.caption.21}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {23}{\ignorespaces Diagram explaining the philosophy of the external generator implementation, taking the implementation of LEPTO as an example. First and foremost, a specific beamfile is created after the initial one. The external generator will read this pregenerated file to extract infos about the incoming particle. As these informations are at the interaction point, a backward propagation extrapolation in the target material has to be made, inducing some small violations of energy conservation. Then the generator is producing the event and sends the results to TGEANT.\relax }}{36}{figure.caption.30}
+\contentsline {figure}{\numberline {15}{\ignorespaces $\eta ^{h^{\pm }}(x,y,z)$, positive hadrons in full points, negative in voided points, in bins of $x$, staggered with $y$ and versus $z$. The corrections go from 0\% at low $z$ and low $y$ to 10\% at high $z$ and high $y$\relax }}{32}{figure.caption.22}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {24}{\ignorespaces Diagram explaining the philosophy of the internal generator implementation. The beamfile is read by TGEANT and the C++ interface to the generator is recovering the informations of the incoming particle. This interface then runs the generator as a subroutine and sends back the results of the generation to TGEANT, which then creates the outgoing particles accordingly.\relax }}{37}{figure.caption.31}
+\contentsline {figure}{\numberline {16}{\ignorespaces $\eta ^{h^{\pm }}(x,y,p_T)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $p_T$. The corrections go from -20\% at high $p_T$, high $y$ and high $x$ to +10\% at low $y$, high $x$ and high $p_T$.\relax }}{32}{figure.caption.23}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {17}{\ignorespaces $\eta ^{\pi ^{\pm }}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. Same conclusions as in Fig. \ref {fig:hadz_ratio} can be made.\relax }}{33}{figure.caption.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {18}{\ignorespaces $\eta ^{K^{\pm }}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. Same conclusions as in Fig. \ref {fig:hadz_ratio} can be made.\relax }}{33}{figure.caption.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {19}{\ignorespaces Ratio of the Born cross-sections calculated with DJANGOH and TERAD, for the same input, as a function of y at different values of x (staggered points at fixed y)\relax }}{34}{figure.caption.26}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {20}{\ignorespaces Comparison of radiative corrections factor $\eta (y)$ for fixed values of x, computed for proton target at 160 GeV and with the input information given above. Green dots mark results of TERAD, blue triangles the results of DJANGOH.\relax }}{34}{figure.caption.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {21}{\ignorespaces Ratio of radiative corrections factors obtained in Fig. \ref {fig:RCy}, $(\eta _T/\eta _D)-1$ as a function of y for fixed values of x\relax }}{35}{figure.caption.28}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {22}{\ignorespaces Sketch showing how event generation is handled in TGEANT. A particle is first chosen in the beamfile, then is sent to the dedicated generator that generates the given process. TGEANT then recovers the list of particles from the generator, creates and propagates them.\relax }}{37}{figure.caption.29}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {23}{\ignorespaces Diagram explaining the philosophy of the external generator implementation, taking the implementation of LEPTO as an example. First and foremost, a specific beamfile is created after the initial one. The external generator will read this pregenerated file to extract infos about the incoming particle. As these informations are at the interaction point, a backward propagation extrapolation in the target material has to be made, inducing some small violations of energy conservation. Then the generator is producing the event and sends the results to TGEANT.\relax }}{38}{figure.caption.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {24}{\ignorespaces Diagram explaining the philosophy of the internal generator implementation. The beamfile is read by TGEANT and the C++ interface to the generator is recovering the informations of the incoming particle. This interface then runs the generator as a subroutine and sends back the results of the generation to TGEANT, which then creates the outgoing particles accordingly.\relax }}{39}{figure.caption.31}
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
