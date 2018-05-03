@@ -37,7 +37,7 @@ of the nucleon 4-momentum \textbf{P} carried by the parton struck by the virtual
 
 Other Lorentz invariant can be as well (Table\ref{tab:kinvar})
 
-\begin{tabular*}{\textwidth}{r|l}
+\begin{tabularx}{\textwidth}{r|lX}
   \hline
   \hline
   Variable & Description \\
@@ -45,13 +45,13 @@ Other Lorentz invariant can be as well (Table\ref{tab:kinvar})
   \hline
   $Q^2 = -\textbf{q}^2 \stackrel{lab}{\approx} 4EE'sin^2(\frac{\theta}{2})$ & Interaction scale \\
   $\nu = \frac{\textbf{P}\cdot\textbf{q}}{M} \stackrel{lab}{=} E - E'$ & Energy transfer from the lepton $l$ to $\gamma^*$ \\
-  $x = \frac{Q^2}{2\textbf{P}\cdot\textbf{q}} \stackrel{lab}{=} \frac{Q^2}{2M\nu}$ & Fraction of the nucleon momentum \textbf{P} carried by the parton struck by $\gamma^*$ \\
-  $\nu = \frac{\textbf{P}\cdot\textbf{q}}{\textbf{P}\cdot\textbf{l}} \stackrel{lab}{=} \frac{\nu}{E}$ & Fraction of the incoming lepton energy transferred to $\gamma^*$ \\
+  $x = \frac{Q^2}{2\textbf{P}\cdot\textbf{q}} \stackrel{lab}{=} \frac{Q^2}{2M\nu}$ & \vtop{\hbox{\strut Fraction of the nucleon momentum \textbf{P} carried by the}\hbox{\strut parton struck by $\gamma^*$}} \\
+  $\nu = \frac{\textbf{P}\cdot\textbf{q}}{\textbf{P}\cdot\textbf{l}} \stackrel{lab}{=} \frac{\nu}{E}$ & \vtop{\hbox{\strut Fraction of the incoming lepton energy transferred}\hbox{\strut to $\gamma^*$}} \\
   $s = (\textbf{P}+\textbf{l})^2 \stackrel{lab}{\approx} M^2 + 2ME$ & Center-of-mass energy squared \\
   $W^2 = (\textbf{P}+\textbf{q})^2 \stackrel{lab}{=} M^2 + 2M\nu - Q^2)$ & Invariant mass of the hadronic final state \\
   \hline
   \hline
-\end{tabular*}
+\end{tabularx}
 
 \subsection*{Cross section calculation for the inclusive DIS process}
 
@@ -211,16 +211,133 @@ The $Q^2$ dependence is calculated by the Dokshiter-Gribov-Lipatov-Altarelli-Par
   \frac{dq_i(x,Q^2)}{dlnQ^2} = \frac{\alpha_s(Q^2)}{2\pi}\sum\limits_{j}\int_{x}^{1}P_{ij}(x/\xi,\alpha_s(Q^2))q_i(\xi,Q^2)
 \end{equation}
 
-If the PDFs are known at a given scale $Q_0^2$, they can be evolved to any given $Q^2$ using these equations. 
+If the PDFs are known at a given scale $Q_0^2$, they can be evolved to any given $Q^2$ using these equations.
 
 %----------------------------------------------------------------------------------------
 
-\section{Hadronisation}
+\section{Determination of Parton Distribution Functions}
 
-Content
+The PDFs are non-perturbative quantities and thus cannot be devised from a theoretical framework. A global fit to world data is the
+only way to quantify them. This global fit is only possible because PDFs are universal quantities, ie. they are process independent.
+The world data consists of lepton-nucleon DIS, collider experiments ($pp$ or $p\bar{p}$), neutrino scattering, etc. As experiments
+cover different kinematic ranges, this allow one to determine the PDFs in a large ($x$,$Q^2$) space.
+
+For the fit to be performed, a functional form has to be provided at $Q^2_0$. They are usually following the form : $xq_i(x,Q^2_0) = x^{\alpha}(1-x)^{\beta}$
+with following terms refining the fit, reaching a number of free parameters from 10 to 25. The DGLAP equations are then used to evolve
+the PDFs to a given $Q^2$. An example of a fit done by the MMHT group at Next to Leading Order (NLO) for different $Q^2$ values is shown in Fig.\ref{fig:MMHT}.
+
+\begin{figure}[htb!]
+\centerline{\epsfig{file=gfx/MMHT.png,width=14cm}}
+\caption{Unpolarized PDFs at Next to Leading Order (NLO) from MMHT group at $Q^2$ = 10 GeV$^2$ (left) and $Q^2$ = 10$^4$ GeV$^2$ (right) with associated 68\%
+confidence-level uncertainty bands. Figure taken from \cite{MMHT}.}\label{fig:MMHT}
+\end{figure}
+
+%----------------------------------------------------------------------------------------
+
+\section{Semi-Inclusive Deep Inelastic Scattering}
+
+As its name induces, Semi-Inclusive Deep Inelastic Scattering (SIDIS) is the semi-inclusive channel of the overall DIS process. In the
+final state, a hadron and the scattered lepton are detected ($l+N \rightarrow l'+h+X$) and a new invariant variable $z$ is introduced,
+which corresponds to the energy fraction of the virtual photon held by the hadron $h$ (Eq.\ref{}).
+
+\begin{equation}
+  z = \frac{\textbf{P}\cdot\textbf{p}_h}{\textbf{P}\cdot\textbf{q}} \stackrel{lab}{=} \frac{E_h}{\nu}
+\end{equation}
+
+The semi-inclusive cross section reads \cite{}:
+
+\begin{equation}
+  \frac{d\sigma}{dxdydz} \stackrel{QPM}{=} \frac{8\pi\alpha^2ME}{Q^4}[xy^2H_1(x,Q^2,z)+(1-y)H_2(x,Q^2,z)]
+\end{equation}
+
+where $H_1$ and $H_2$ are structure functions related to $F_1$ and $F_2$ \cite{} :
+
+\begin{equation}
+  \sum\limits_{h}\int_{0}^{1} H_i(x,Q^2,z)dz = F_i(x,Q^2), i \in  \llbracket1,2\rrbracket
+\end{equation}
+
+Other variables can be used to describe the hadron in SIDIS (Table.\ref{}).
+
+\begin{tabularx}{\textwidth}{r|lX}
+  \hline
+  \hline
+  Variable & Description \\
+  \hline
+  \hline
+  $\textbf{p}=(E_h,\vec{p}_h)$ & Hadron 4-momentum vector \\
+  $p_{h\|}$ & Component of $\vec{p}_h$ along $\vec{q}$ \\
+  $p_{h\bot}$ & Transverse component of $\vec{p}_h$ with respect to $\vec{q}$ \\
+  $\theta_h$ & Angle between $\vec{q}$ and $\vec{p}_h$ \\
+  $\Phi_h$ & Angle between the scattering plane and the hadron production plane \\
+  $z$ & Energy fraction of the virtual photon transferred to the hadron $h$ \\
+  \hline
+  \hline
+\end{tabularx}
+
+\subsection*{SIDIS in QPM}
+
+The factorization theorem allows to describe the hadron production as two independent processes : the hard process $\sigma_q$
+describing the absorption of the virtual photon $\gamma^*$ by the quark $q$ and the soft process $D_q^h(z)$ ruling the
+fragmentation of the quark $q$ into a hadron $h$.
+
+% pic sidis feynman
+
+The structure functions $H_i(x,Q^2,z)$ contain the information on what happens to the struck quark after the interaction with
+the virtual photon. The fragmentation function (FF) $D_q^h(z,Q^2)$ is defined as the probability for a quark of flavour $q$ to fragment
+into a hadron $h$ with a fraction of energy $z$. The expression of the SIDIS cross section can be expressed at LO in terms of the PDFs and
+the FFs \cite{} :
+
+\begin{equation}
+  \frac{d^3 \sigma^{unpolarized}}{dxdydz} \stackrel{LO}{=} \frac{8\pi\alpha^2ME}{Q^2}[\frac{1}{2}y^2+(1-y-\frac{y^2 \gamma^2}{4})]x\sum\limits_qe^2_qq(x)D_q^h(z)
+\end{equation}
+
+\subsection*{Scaling and $Q^2$ evolution}
+
+A scaling violation is observed for the FFs extracted from $e^+e^-$ annihilation \cite{}. The scaling is present in the $x = 2p_h/\sqrt{s}$
+bin 0.1-0.2. At low x ($x$ < 0.1) the FFs increases with $\sqrt{s}$, while at large $x$, the FFs are shifted towards lower values for large
+$Q^2$.
+
+% pic scaling violation
+
+The evolution of the fragmentation functions is done with the DGLAP equations \cite{} :
+
+\begin{equation}
+  \frac{dD_q^h(z,Q^2)}{dlnQ^2} = \frac{\alpha_s(Q^2)}{2\pi}\sum\limits_j\int_{x}^{1}P_{qj}(z/\xi,\alpha_s(Q^2))D_q^h(\xi,Q^2)\frac{d\xi}{\xi}
+\end{equation}
+
+In Fig.\ref{} is shown the fragmentation of quark and gluons. Four different fragmentation channel can be separated : the fragmentation of a quark
+$q_i$ through its own decay after emmiting a gluon G ($P_{qq}D_{q_i}^h$), through the decay of a gluon G ($P_{Gq}D_{G}^h$), the fragmentation of a
+gluon splitting into a quark-antiquark pair and following hadronization of the quark in hadron ($P_{qG}D_{q_i}^h$) and eventually the gluon
+fragmentation via the three-gluon self-interaction ($P_{GG}D_{G}^h$).
+
+%----------------------------------------------------------------------------------------
+
+\section{Fragmentation Functions}
+
+The FFs describes the hadronization ie. the quark fragmentation into a hadron. The quark fragmentation into a hadron is a soft process and cannot
+be described using pQCD. Different models have been developed to describe how quarks confine together to make a hadron.
+
+\subsection*{Lund String Fragmentation Model}
+
+In the Lund String Model \cite{}, the hadron production is explained by the creation of quark-antiquark pairs $q\bar{q}$. The strong interaction between
+partons is represented by a string. The energy inside the string is linear function of the distance between two stringed partons. At some point the
+energy is large enough to create a new $q\bar{q}$ pair and the string breaks. Each paired remnants have new strings and the process repeats until there
+are only hadrons. The hadronization scheme in the Lund model in the center of mass frame is illustrated in Fig.\ref{}. The virtual photon is absorbed by
+the $u$ quark and in consequence the $u$ quark is ejected from the nucleon. The remaining $u$ quark bounds with the $\bar{d}$ quark to form a $\pi^+$
+with a given $z$ (see Table\ref{}). The remaining system repeats fragmentation process until the energy is smaller than the available energy $\nu$.
+
+\subsection*{Quark Fragmentation Regions}
+
+At this point only the production from struck quarks were considered. Nevertheless, it is also possible that a spectator quark which is not involved in
+the scattering process fragments into hadrons. This phenomenon is happening in two well $p_h$-defined regions : the target fragmentation region where
+the final hadron $h$ has a small momentum in the rest frame of the target and the current fragmentation region where the product $\textbf{P}\cdot\textbf{p}_h$
+grows with $Q^2$. This hadron production can contaminate the hadron production from the actual SIDIS process. To deal with this issue, Berger \cite{} came
+with a criterion based on the rapidity of the final state $\eta$. The sign of $\eta$ is linked to the different regions : if $\eta$ > 0 the hadron moves
+towards the direction of the virtual photon and is a current hadron, else is $\eta$ < 0 the hadron is a target remnant (Fig.\ref{}). As the typical hadronic
+correlation length in rapidity is $\delta \sim 2$, a separation criterion, the Berger criterion, is that $\Delta\eta = \eta_{max}-\eta_{min} \geq 2\delta$
+or in terms of DIS kinematics variables $W \gtrsim 7.4$ GeV. It is important to be able to separate the current and target fragmentation to ensure the quark
+fragmentation into hadrons is independent of the production of the quark.
 
 %----------------------------------------------------------------------------------------
 
 \section{Measurement of Fragmentation Functions}
-
-Content

@@ -1,12 +1,13 @@
 # Fdb version 3
-["pdflatex"] 1525108663 "Chapter01.tex" "Chapter01.pdf" "Chapter01" 1525108663
+["pdflatex"] 1525356024 "Chapter01.tex" "Chapter01.pdf" "Chapter01" 1525356025
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1480098701 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
-  "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1504016032 4129592 c9f466bd91ace4d47b6aacbeda4b0fe4 ""
+  "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
+  "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1522773171 4129591 62470c1c8353cd2d7e921b10c00c338f ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "Chapter01.aux" 1525108594 5447 d921221add1474045834b60007bb6911 ""
-  "Chapter01.tex" 1525108661 3250 5ec37b8461f4cf55696dbad0078d846d ""
+  "Chapter01.aux" 1525355984 6482 57142d5546968236fec4e5762a5d9115 ""
+  "Chapter01.tex" 1525355978 19247 95342b5670923ec1bf809c9b5a7abb7a ""
   (generated)
   "Chapter01.pdf"
   "Chapter01.log"
