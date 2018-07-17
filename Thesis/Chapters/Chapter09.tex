@@ -1,26 +1,284 @@
 % Chapter 9
 
-\chapter{Determination of 2016 raw multiplicities} % Chapter title
+\chapter{Analysis of 2016 raw multiplicities} % Chapter title
 
 \label{ch:raw} % For referencing the chapter elsewhere, use \autoref{ch:name}
+
+The 2006 COMPASS multiplicities results were based on data with a deuteron target ($^6$LiD)
+and the results with these data are not constraining the strange quark fragmentation function.
+With the analysis of new data with pure proton target (LH$_2$), the data obtained will introduce
+a new set of equations linking the multiplicities with the fragmentation functions but still
+invloving the same quark fragmentation functions we are interested in. The fact that the proton
+and deuteron data can be fitted together will add constrains to the fragmentation function extraction.
+In order to perform this king of study, one need a precision of 5 to 7\% on the multiplicities.
+
+The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a proton
+target (LH$_2$). Five weeks of the 2016 data are analyzed.
+
+%----------------------------------------------------------------------------------------
+
+\section{Method of extraction}
+
+The method of extraction of the multiplicities follow several steps. For each selection steps,
+a list of cuts is applied on both geometrical and physical quantities. First the DIS events are selected
+and then the SIDIS events (hadrons) are selected. For the DIS event selection, a study on the target radius
+had to be made in order to determine the optimal value for the target cut. When the event selection is done,
+the hadrons have to be identified between pions, kaons and protons and the identification has to be corrected
+according to the RICH detection efficiency in a process called unfolding. The obtained raw multiplicities are
+then binned and corrected with the detector acceptance. The general event reconstruction codes for COMPASS are
+used. A personal analysis code is developed to study the SIDIS channel and select pion or kaon production events.
+
+In the following, the number of residual events after each cut will be given between parentheses next to each cut.
+When the number is not specified, it can mean that the cut was done in a pre-analysis of that the recovery of the
+number is too complex due to the transversal implementation of the cut in the code (e.g. for the $\nu$ cut).
+
+%------------------------------------------------
+
+\section{DIS event selection}
+
+For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of cuts is applied :
+\begin{enumerate}
+  \item Events with Best Primary Vertex ( events)
+  \item Events with reconstruted scattered muon ( events)
+  \item Events with a well reconstructed beam track (so-called 'BMS cut') ( events)
+  \item Events with energy of beam muon energy in range [140 GeV, 180 GeV] ( events)
+  \item Events with primary interaction in the target material, target radius cut (explained in section ??, events)
+  \item Events with muon beam trajectory crossing entirely the target cell ( events)
+  \item Events with Middle, Ladder, Outer or LAST trigger ( events)
+  \item Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity, events)
+  \item Events with $0.1 < y < 0.9$ ( events)
+  \item Events with $5 < W < 17$ GeV/c$^2$ ( events)
+  \item Events with $0.004 < x < 0.4$ ( events)
+  \item Events abiding $\nu$ cut ( events)
+\end{enumerate}
+
+The cut on th kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
+momentum range of 3 - 40 GeV/c. The criteria is defined by :
+\begin{equation}
+  \nu_{max} = \frac{\sqrt{(p^2_{max}+m^2_h)}}{z_{max}}
+\end{equation}
+\begin{equation}
+  \nu_{min} = \frac{\sqrt{(p^2_{min}+m^2_h)}}{z_{min}}
+\end{equation}
+
+where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 3 GeV/c), $z_{max}$ (resp. $z_{min}$)
+is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the considered hadron.
+
+%------------------------------------------------
+
+\section{Target radius cut evaluation}
+
+TBA
+
+%------------------------------------------------
+
+\section{Hadron selection}
+
+For the hadron selection ($\mu p \rightarrow \mu hX$), the following list of cuts is applied :
+\begin{enumerate}
+  \item Particle is not a scattered muon ( hadrons)
+  \item Z coordinate of the first measured hit < 350 cm ( hadrons)
+  \item Z coordinate of the last measured hit > 350 cm ( hadrons)
+  \item Maximum radiation length cumulated along all the trajectory < 15 radiation lengths ( hadrons)
+  \item $3 < p_h < 40$ GeV/c ( hadrons)
+  \item $0.01 < \theta_{RICH} < 0.12$ (at RICH entrance, hadrons)
+  \item $x^2_{RICH} + y^2_{RICH} > 25$ cm$^2$ ( hadrons)
+  \item $0.2 < z < 0.85$ ( hadrons)
+\end{enumerate}
 
 %----------------------------------------------------------------------------------------
 
 \section{Particle Identification with RICH detector}
 
-Content
+The $\pi$ and $K$ particle identification (PID) is performed by the RICH detector.
 
-%------------------------------------------------
+The method used for the RICH particle identification is described in \ref{}. The idea is the following : when a particle
+is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then
+compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest
+value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second
+highest value of the four compared likelihood values ($\pi$, $K$, $p$ and the background). The electron and muon likelihood
+are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (2 to 40 GeV/c) the RICH detector can
+not be used to efficiently distinguish electrons from $\pi$.
 
-\subsection{Subsection Title}
+All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
 
-Content
+\begin{enumerate}
+  \item Pion selection
+  \begin{itemize}
+    \item $LH(\pi) > 0$
+    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+    in the previous comparison.
+    \item $\frac{LH(\pi)}{LH(2^{nd})}>1.02$
+    \item $\frac{LH(\pi)}{LH(bgd)}>2.02$
+  \end{itemize}
+  \item Kaon selection
+  \begin{itemize}
+    \item $LH(K) > 0$
+    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+    in the previous comparison.
+    \item $\frac{LH(K)}{LH(2^{nd})}>1.08$
+    \item $\frac{LH(K)}{LH(bgd)}>2.08$
+  \end{itemize}
+  \item Proton selection
+  Three cases are considered depending on the momentum $p$ of the particle and are defined but the kaon threshold ($\simeq 8.9$ GeV/c)
+  and proton threshold ($\simeq 17.95$ GeV/c)
+  \begin{enumerate}[(a)]
+    \item Kaon threshold $< p \leq$ proton threshold - 5 GeV/c
+    \item $p >$ proton threshold + 5 GeV/c
+    \begin{itemize}
+      \item $LH(p) > 0$
+      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+      in the previous comparison.
+      \item $\frac{LH(p)}{LH(2^{nd})}>1$
+    \end{itemize}
+    \item Proton threshold - 5 GeV/c $< p <$ proton threshold + 5 GeV/c
+    \begin{itemize}
+      \item Using (a) and (b) simultaneously.
+    \end{itemize}
+  \end{enumerate}
+\end{enumerate}
 
-%------------------------------------------------
+%----------------------------------------------------------------------------------------
 
-\subsection{Subsection Title}
+\section{RICH unfolding based on efficiency matrices}
 
-Content
+The performance of the RICH is not perfect : in terms of efficiency and purity, some particles
+are misidentified.
+
+The unfolding procedure is needed to correct the yield of identified hadrons for RICH detection efficiency.
+In order to perform this correction, the RICH actual performance is evaluated from real data. The result of
+this evaluation is presented through RICH efficiency probabilities matrices, $M_{RICH}$, binned in momentum
+and angle :
+
+\begin{itemize}
+  \item $p$ {3,12,13,15,17,19,22,25,27,30,35,40} GeV/c
+  \item $\theta$ {0.01,0.04,0.12} rad
+\end{itemize}
+
+The 3-by-3 matrices $M_{RICH}$ give a relation between the vector of true hadron $T_h$ and the vector of
+identified hadron $I_h$
+
+\begin{equation}
+\begin{bmatrix}
+I_{\pi} \\
+I_K \\
+I_p
+\end{bmatrix}
+=
+\begin{bmatrix}
+\epsilon(\pi \rightarrow \pi) & \epsilon(K \rightarrow \pi) & \epsilon(p \rightarrow \pi)\\
+\epsilon(\pi \rightarrow K) & \epsilon(K \rightarrow K) & \epsilon(p \rightarrow K) \\
+\epsilon(\pi \rightarrow p) & \epsilon(K \rightarrow p) & \epsilon(p \rightarrow p)
+\end{bmatrix}
+\begin{bmatrix}
+T_{\pi} \\
+T_K \\
+T_p
+\end{bmatrix}
+\end{equation}
+
+The coefficients of the $M_{RICH}$, $\epsilon{t \rightarrow i}$, are the probabilities that a true hadron
+$t$ is identified as a hadron of type $i$. These probabilities have been determined as described in \ref{}.
+
+By performing a matrix inversion, one can obtain the unfolded number of hadrons with the Eq.\ref{} :
+
+\begin{equation}
+  \overrightarrow{T_h} = M^{-1}_{RICH}\overrightarrow{I_h}
+\end{equation}
+
+where $M^{-1}_{RICH}$ coefficients are weights with which each identified hadron is counted as a pion, kaon
+or proton.
+
+\begin{table}
+  \caption{}
+  \label{}
+  %Table of hadron counting
+\end{table}
+
+%----------------------------------------------------------------------------------------
+
+\section{Errors on the RICH unfolding}
+
+The RICH matrices are built using the statistical errors associated to the original probability matrix.
+
+\begin{equation}
+M^{\pm}_{RICH}
+=
+\begin{bmatrix}
+\epsilon(\pi \rightarrow \pi)\pm\sigma_{\epsilon(\pi \rightarrow \pi)} & \epsilon(K \rightarrow \pi)\pm\sigma_{\epsilon(K \rightarrow \pi)} & \epsilon(p \rightarrow \pi)\pm\sigma_{\epsilon(p \rightarrow \pi)}\\
+\epsilon(\pi \rightarrow K)\pm\sigma_{\epsilon(\pi \rightarrow K)} & \epsilon(K \rightarrow K)\pm\sigma_{\epsilon(K \rightarrow K)} & \epsilon(p \rightarrow K)\pm\sigma_{\epsilon(p \rightarrow K)} \\
+\epsilon(\pi \rightarrow p)\pm\sigma_{\epsilon(\pi \rightarrow p)} & \epsilon(K \rightarrow p)\pm\sigma_{\epsilon(K \rightarrow p)} & \epsilon(p \rightarrow p)\pm\sigma_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+As an inversion of the probabilities matrices is done in the analysis, the propagation of errors through the
+inversion operation has to be performed. A calculation of the uncertainties on the probabilities yields \cite{} :
+
+\begin{equation}
+  [\sigma^{-1}_i]^2 = \epsilon^{-1}_{ip}\epsilon^{-1}_{ir}cov(\epsilon_{pq},\epsilon_{rs})\epsilon^{-1}_{qi}\epsilon^{-1}_{si} + [\epsilon^{-1}_{ik}\sigma_k]^2
+\end{equation}
+
+This equation leads to the inverse error matrices with associated statistical errors :
+
+\begin{equation}
+[M^{\pm}_{RICH}]^{-1}
+=
+\begin{bmatrix}
+\epsilon^{-1}(\pi \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow \pi)} & \epsilon^{-1}(K \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(K \rightarrow \pi)} & \epsilon^{-1}(p \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(p \rightarrow \pi)}\\
+\epsilon^{-1}(\pi \rightarrow K)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow K)} & \epsilon^{-1}(K \rightarrow K)\pm\sigma^{-1}_{\epsilon(K \rightarrow K)} & \epsilon^{-1}(p \rightarrow K)\pm\sigma^{-1}_{\epsilon(p \rightarrow K)} \\
+\epsilon^{-1}(\pi \rightarrow p)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow p)} & \epsilon^{-1}(K \rightarrow p)\pm\sigma^{-1}_{\epsilon(K \rightarrow p)} & \epsilon^{-1}(p \rightarrow p)\pm\sigma^{-1}_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+
+\section{Kinematic binning}
+
+The raw multiplicities are evaluated in bins of the Bjorken variable $x$, the muon energy fraction carried
+by the virtual photon $y$ and the virtual photon energy fraction carried by final state hadron $z$. They
+are calculated with the following formula :
+
+\begin{equation}
+  \frac{dM^h(x,y,z)}{dz}=\frac{1}{N^{DIS}_{Events}(x,y)}\frac{dN^{DIS}_{h}(x,y,z)}{dz}
+\end{equation}
+
+where $N^{DIS}_{Events}$ is the number of DIS events and $N^{DIS}_{h}$ is the number of
+hadrons after RICH unfolding. As in practise, the multiplicities are measured in bins of
+x (9 bins), y (6 bins) and z (12 bins), the calculated multiplicities can be expressed as :
+
+\begin{equation}
+  M^h_{raw}(x,y,z) = \frac{N^{DIS}_{h}(x,y,z)/\delta z}{N^{DIS}_{Events}}
+\end{equation}
+
+where $\delta z$ is the width of the z bin. For the multiplicities extraction, the binning in
+$x$, $y$ and $z$ is the following :
+
+\begin{itemize}
+  \item $x$ {0.004,0.01,0.02,0.03,0.04,0.06,0.1,0.14,0.18,0.4}
+  \item $y$ {0.1,0.15,0.2,0.3,0.5,0.7,0.9}
+  \item $z$ {0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.85}
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+
+\section{Detector acceptance}
+
+The COMPASS detector does not cover the full phase-space then the measured multiplicities have
+to be corrected for the finite detector acceptance of the order of 70\%. The correction is
+done using a Monte-Carlo dataset containing about 400 million events generated in the kinematic
+region $Q^2 > 0.8$ (GeV/c)$^2$, x $\in$ [10$^{-4}$], y $\in$ [0.05,0.95]. It is determined as the ratio
+of reconstructed multiplicities $M^h_r$ over the generated multiplicities $M^h_g$ and is binned in $x$, $y$
+and $z$ :
+
+\begin{equation}
+  A^h(x,y,z) = \frac{M^h_r(x,y,z)}{M^h_g(x,y,z)}=\frac{N^h_r(x,y,z)/N^{DIS}_r(x,y,z)}{N^h_g(x,y,z)/N^{DIS}_g(x,y,z)}
+\end{equation}
+
+The correction is then applied to the raw multiplcities :
+
+\begin{equation}
+  M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}
+\end{equation}
 
 %----------------------------------------------------------------------------------------
 

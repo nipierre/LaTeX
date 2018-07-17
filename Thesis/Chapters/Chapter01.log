@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.3)  3 MAY 2018 16:00
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.29)  16 JUL 2018 14:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -13748,7 +13748,7 @@ Missing character: There is no s in font nullfont!
  
 Here is how much of TeX's memory you used:
  23 strings out of 492995
- 299 string characters out of 6132705
+ 299 string characters out of 6132704
  71074 words of memory out of 5000000
  3673 multiletter control sequences out of 15000+600000
  3948 words of font info for 15 fonts, out of 8000000 for 9000
