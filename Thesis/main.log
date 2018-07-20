@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.29)  16 JUL 2018 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2018.4.3)  20 JUL 2018 11:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1915,7 +1915,14 @@ Package biblatex Info: ... file 'german.lbx' found.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/lbx/german.lbx
 File: german.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )) (./main.aux (./FrontBackMatter/Titlepage.aux) (./FrontBackMatter/Titleback.aux) (./FrontBackMatter/Dedication.aux) (./FrontBackMatter/Abstract.aux) (./FrontBackMatter/Publications.aux) (./FrontBackMatter/Acknowledgments.aux)
-(./FrontBackMatter/Contents.aux) (./Chapters/Chapter01.aux) (./Chapters/Chapter02.aux) (./Chapters/Chapter03.aux) (./Chapters/Chapter04.aux) (./Chapters/Chapter05.aux) (./Chapters/Chapter06.aux) (./Chapters/Chapter07.aux) (./Chapters/Chapter08.aux) (./Chapters/Chapter09.aux) (./Chapters/Chapter10.aux) (./Chapters/Chapter11.aux) (./Chapters/Chapter12.aux) (./Chapters/Chapter0A.aux) (./FrontBackMatter/Bibliography.aux) (./FrontBackMatter/Declaration.aux) (./FrontBackMatter/Colophon.aux))
+(./FrontBackMatter/Contents.aux) (./Chapters/Chapter01.aux) (./Chapters/Chapter02.aux) (./Chapters/Chapter03.aux) (./Chapters/Chapter04.aux) (./Chapters/Chapter05.aux) (./Chapters/Chapter06.aux) (./Chapters/Chapter07.aux) (./Chapters/Chapter08.aux) (./Chapters/Chapter09.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+) (./Chapters/Chapter10.aux) (./Chapters/Chapter11.aux) (./Chapters/Chapter12.aux) (./Chapters/Chapter0A.aux) (./FrontBackMatter/Bibliography.aux) (./FrontBackMatter/Declaration.aux) (./FrontBackMatter/Colophon.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -2250,7 +2257,7 @@ Overfull \hbox (1.29276pt too wide) in paragraph at lines 208--209
 []\T1/pplj/m/n/10.95 The $\U/zeur/m/n/10.95 Q[]$ \T1/pplj/m/n/10.95 de-pen-dence is cal-cu-lated by the Dokshiter-Gribov-Lipatov-Altarelli-Parisi (DGLAP)
  []
 
-<gfx/MMHT.png, id=685, 1109.14375pt x 544.0325pt>
+<gfx/MMHT.png, id=699, 1109.14375pt x 544.0325pt>
 File: gfx/MMHT.png Graphic file (type png)
  <use gfx/MMHT.png>
 Package pdftex.def Info: gfx/MMHT.png used on input line 230.
@@ -2294,12 +2301,12 @@ Overfull \hbox (16.7565pt too wide) in paragraph at lines 3--3
 []\chapterNumber 2 
  []
 
-[11] <gfx/diagram_rad.png, id=729, 3069.4675pt x 2834.59pt>
+[11] <gfx/diagram_rad.png, id=743, 3069.4675pt x 2834.59pt>
 File: gfx/diagram_rad.png Graphic file (type png)
  <use gfx/diagram_rad.png>
 Package pdftex.def Info: gfx/diagram_rad.png used on input line 104.
 (pdftex.def)             Requested size: 199.16928pt x 183.9088pt.
- <gfx/all_rad_feynm.png, id=731, 970.62625pt x 307.1475pt>
+ <gfx/all_rad_feynm.png, id=745, 970.62625pt x 307.1475pt>
 File: gfx/all_rad_feynm.png Graphic file (type png)
  <use gfx/all_rad_feynm.png>
 Package pdftex.def Info: gfx/all_rad_feynm.png used on input line 121.
@@ -2308,7 +2315,7 @@ Package pdftex.def Info: gfx/all_rad_feynm.png used on input line 121.
 
 LaTeX Warning: Reference `sec:RCF' on page 12 undefined on input line 126.
 
-[12] [13 <./gfx/diagram_rad.png> <./gfx/all_rad_feynm.png>] <gfx/plan_angle.png, id=746, 426.59375pt x 226.8475pt>
+[12] [13 <./gfx/diagram_rad.png> <./gfx/all_rad_feynm.png>] <gfx/plan_angle.png, id=760, 426.59375pt x 226.8475pt>
 File: gfx/plan_angle.png Graphic file (type png)
  <use gfx/plan_angle.png>
 Package pdftex.def Info: gfx/plan_angle.png used on input line 165.
@@ -2318,7 +2325,7 @@ Overfull \hbox (28.45276pt too wide) in paragraph at lines 165--165
 [][] 
  []
 
-<gfx/peaks.png, id=747, 394.47375pt x 274.02374pt>
+<gfx/peaks.png, id=761, 394.47375pt x 274.02374pt>
 File: gfx/peaks.png Graphic file (type png)
  <use gfx/peaks.png>
 Package pdftex.def Info: gfx/peaks.png used on input line 168.
@@ -2380,17 +2387,17 @@ Overfull \hbox (16.7565pt too wide) in paragraph at lines 3--3
 []\chapterNumber 5 
  []
 
-<gfx/radgen.png, id=789, 626.34pt x 553.06625pt>
+<gfx/radgen.png, id=803, 626.34pt x 553.06625pt>
 File: gfx/radgen.png Graphic file (type png)
  <use gfx/radgen.png>
 Package pdftex.def Info: gfx/radgen.png used on input line 51.
 (pdftex.def)             Requested size: 341.43306pt x 301.4953pt.
- <gfx/elprod.png, id=791, 677.53125pt x 487.8225pt>
+ <gfx/elprod.png, id=805, 677.53125pt x 487.8225pt>
 File: gfx/elprod.png Graphic file (type png)
  <use gfx/elprod.png>
 Package pdftex.def Info: gfx/elprod.png used on input line 63.
 (pdftex.def)             Requested size: 341.43306pt x 245.83853pt.
- <gfx/ph_pl.png, id=793, 868.24374pt x 601.24625pt>
+ <gfx/ph_pl.png, id=807, 868.24374pt x 601.24625pt>
 File: gfx/ph_pl.png Graphic file (type png)
  <use gfx/ph_pl.png>
 Package pdftex.def Info: gfx/ph_pl.png used on input line 71.
@@ -2399,12 +2406,12 @@ Package pdftex.def Info: gfx/ph_pl.png used on input line 71.
 
 
 
-] [24 <./gfx/radgen.png> <./gfx/elprod.png>] <gfx/DJRAD.png, id=809, 767.86874pt x 295.1025pt>
+] [24 <./gfx/radgen.png> <./gfx/elprod.png>] <gfx/DJRAD.png, id=823, 767.86874pt x 295.1025pt>
 File: gfx/DJRAD.png Graphic file (type png)
  <use gfx/DJRAD.png>
 Package pdftex.def Info: gfx/DJRAD.png used on input line 87.
 (pdftex.def)             Requested size: 341.43306pt x 131.21887pt.
- <gfx/tabDJRAD.png, id=811, 741.77126pt x 335.2525pt>
+ <gfx/tabDJRAD.png, id=825, 741.77126pt x 335.2525pt>
 File: gfx/tabDJRAD.png Graphic file (type png)
  <use gfx/tabDJRAD.png>
 Package pdftex.def Info: gfx/tabDJRAD.png used on input line 99.
@@ -2453,22 +2460,22 @@ LaTeX Warning: Citation 'VEGAS' on page 27 undefined on input line 40.
 
 
 
-] <gfx/Edist.png, id=834, 755.82375pt x 371.3875pt>
+] <gfx/Edist.png, id=848, 755.82375pt x 371.3875pt>
 File: gfx/Edist.png Graphic file (type png)
  <use gfx/Edist.png>
 Package pdftex.def Info: gfx/Edist.png used on input line 67.
 (pdftex.def)             Requested size: 483.69684pt x 237.67584pt.
- [28 <./gfx/Edist.png>] <gfx/anglesp.png, id=843, 768.8725pt x 375.4025pt>
+ [28 <./gfx/Edist.png>] <gfx/anglesp.png, id=857, 768.8725pt x 375.4025pt>
 File: gfx/anglesp.png Graphic file (type png)
  <use gfx/anglesp.png>
 Package pdftex.def Info: gfx/anglesp.png used on input line 102.
 (pdftex.def)             Requested size: 455.24408pt x 222.27603pt.
- <gfx/Q2_corr.png, id=844, 777.90625pt x 280.04625pt>
+ <gfx/Q2_corr.png, id=858, 777.90625pt x 280.04625pt>
 File: gfx/Q2_corr.png Graphic file (type png)
  <use gfx/Q2_corr.png>
 Package pdftex.def Info: gfx/Q2_corr.png used on input line 111.
 (pdftex.def)             Requested size: 455.24408pt x 163.89261pt.
- [29 <./gfx/anglesp.png> <./gfx/Q2_corr.png>] <gfx/gridxs.png, id=851, 753.81625pt x 470.75874pt>
+ [29 <./gfx/anglesp.png> <./gfx/Q2_corr.png>] <gfx/gridxs.png, id=865, 753.81625pt x 470.75874pt>
 File: gfx/gridxs.png Graphic file (type png)
  <use gfx/gridxs.png>
 Package pdftex.def Info: gfx/gridxs.png used on input line 133.
@@ -2508,7 +2515,7 @@ Overfull \hbox (28.04413pt too wide) in paragraph at lines 29--34
 \T1/pplj/m/n/10.95 the parametriza-tion, thus they are al-ready taken into ac-count in the parametrization[[]]. 
  []
 
-<gfx/quarkline.png, id=868, 927.465pt x 590.205pt>
+<gfx/quarkline.png, id=883, 927.465pt x 590.205pt>
 File: gfx/quarkline.png Graphic file (type png)
  <use gfx/quarkline.png>
 Package pdftex.def Info: gfx/quarkline.png used on input line 36.
@@ -2517,22 +2524,22 @@ Package pdftex.def Info: gfx/quarkline.png used on input line 36.
 
 LaTeX Warning: Citation 'Mult' on page 35 undefined on input line 57.
 
-[35] <gfx/hadron_ratio.pdf, id=885, 569.12625pt x 280.04625pt>
+[35] <gfx/hadron_ratio.pdf, id=899, 569.12625pt x 280.04625pt>
 File: gfx/hadron_ratio.pdf Graphic file (type pdf)
  <use gfx/hadron_ratio.pdf>
 Package pdftex.def Info: gfx/hadron_ratio.pdf used on input line 80.
 (pdftex.def)             Requested size: 512.1496pt x 252.035pt.
- <gfx/hadron_pt_ratio.pdf, id=886, 569.12625pt x 280.04625pt>
+ <gfx/hadron_pt_ratio.pdf, id=900, 569.12625pt x 280.04625pt>
 File: gfx/hadron_pt_ratio.pdf Graphic file (type pdf)
  <use gfx/hadron_pt_ratio.pdf>
 Package pdftex.def Info: gfx/hadron_pt_ratio.pdf used on input line 86.
 (pdftex.def)             Requested size: 512.1496pt x 252.035pt.
- [36 <./gfx/hadron_ratio.pdf, page is rotated 90 degrees> <./gfx/hadron_pt_ratio.pdf, page is rotated 90 degrees>] <gfx/pion_ratio.pdf, id=977, 569.12625pt x 280.04625pt>
+ [36 <./gfx/hadron_ratio.pdf, page is rotated 90 degrees> <./gfx/hadron_pt_ratio.pdf, page is rotated 90 degrees>] <gfx/pion_ratio.pdf, id=991, 569.12625pt x 280.04625pt>
 File: gfx/pion_ratio.pdf Graphic file (type pdf)
  <use gfx/pion_ratio.pdf>
 Package pdftex.def Info: gfx/pion_ratio.pdf used on input line 94.
 (pdftex.def)             Requested size: 512.1496pt x 252.035pt.
- <gfx/kaon_ratio.pdf, id=980, 569.12625pt x 280.04625pt>
+ <gfx/kaon_ratio.pdf, id=994, 569.12625pt x 280.04625pt>
 File: gfx/kaon_ratio.pdf Graphic file (type pdf)
  <use gfx/kaon_ratio.pdf>
 Package pdftex.def Info: gfx/kaon_ratio.pdf used on input line 100.
@@ -2541,17 +2548,17 @@ Package pdftex.def Info: gfx/kaon_ratio.pdf used on input line 100.
 
 LaTeX Warning: Citation 'TERAD' on page 37 undefined on input line 109.
 
-[37 <./gfx/pion_ratio.pdf, page is rotated 90 degrees> <./gfx/kaon_ratio.pdf, page is rotated 90 degrees>] <gfx/BRy.pdf, id=1075, 569.12625pt x 280.04625pt>
+[37 <./gfx/pion_ratio.pdf, page is rotated 90 degrees> <./gfx/kaon_ratio.pdf, page is rotated 90 degrees>] <gfx/BRy.pdf, id=1090, 569.12625pt x 280.04625pt>
 File: gfx/BRy.pdf Graphic file (type pdf)
  <use gfx/BRy.pdf>
 Package pdftex.def Info: gfx/BRy.pdf used on input line 124.
 (pdftex.def)             Requested size: 341.43306pt x 168.01193pt.
- <gfx/RCy.pdf, id=1078, 569.12625pt x 280.04625pt>
+ <gfx/RCy.pdf, id=1093, 569.12625pt x 280.04625pt>
 File: gfx/RCy.pdf Graphic file (type pdf)
  <use gfx/RCy.pdf>
 Package pdftex.def Info: gfx/RCy.pdf used on input line 135.
 (pdftex.def)             Requested size: 341.43306pt x 168.01193pt.
- <gfx/ERy_scat.pdf, id=1079, 569.12625pt x 280.04625pt>
+ <gfx/ERy_scat.pdf, id=1094, 569.12625pt x 280.04625pt>
 File: gfx/ERy_scat.pdf Graphic file (type pdf)
  <use gfx/ERy_scat.pdf>
 Package pdftex.def Info: gfx/ERy_scat.pdf used on input line 141.
@@ -2571,17 +2578,17 @@ Overfull \hbox (16.7565pt too wide) in paragraph at lines 3--3
 []\chapterNumber 8 
  []
 
-<gfx/evtgenTG.png, id=1196, 761.84625pt x 445.665pt>
+<gfx/evtgenTG.png, id=1210, 761.84625pt x 445.665pt>
 File: gfx/evtgenTG.png Graphic file (type png)
  <use gfx/evtgenTG.png>
 Package pdftex.def Info: gfx/evtgenTG.png used on input line 32.
 (pdftex.def)             Requested size: 312.9803pt x 183.08424pt.
- [41 <./gfx/evtgenTG.png>] <gfx/leptoex.png, id=1203, 768.8725pt x 416.55624pt>
+ [41 <./gfx/evtgenTG.png>] <gfx/leptoex.png, id=1217, 768.8725pt x 416.55624pt>
 File: gfx/leptoex.png Graphic file (type png)
  <use gfx/leptoex.png>
 Package pdftex.def Info: gfx/leptoex.png used on input line 58.
 (pdftex.def)             Requested size: 341.43306pt x 184.98239pt.
- [42 <./gfx/leptoex.png>] <gfx/pythiaex.png, id=1210, 745.78625pt x 455.7025pt>
+ [42 <./gfx/leptoex.png>] <gfx/pythiaex.png, id=1224, 745.78625pt x 455.7025pt>
 File: gfx/pythiaex.png Graphic file (type png)
  <use gfx/pythiaex.png>
 Package pdftex.def Info: gfx/pythiaex.png used on input line 85.
@@ -2607,10 +2614,15 @@ Overfull \hbox (16.7565pt too wide) in paragraph at lines 3--3
 
 
 
-] [48] [49] [50]) [51]
+] [48] [49] [50] [51] [52] [53]
+Overfull \hbox (0.22803pt too wide) in paragraph at lines 417--421
+\T1/pplj/m/n/10.95 the cor-re-spond-ing RICH prob-a-bil-ity ma-tri-ces and fi-nal mul-ti-plic-i-ties are ex-tracted ($\U/zeur/m/n/10.95 M[]$
+ []
+
+[54]) [55]
 \openout2 = `Chapters/Chapter10.aux'.
 
- (./Chapters/Chapter10.tex [52
+ (./Chapters/Chapter10.tex [56
 
 
 
@@ -2622,10 +2634,10 @@ Overfull \hbox (55.28876pt too wide) in paragraph at lines 3--3
 []\chapterNumber 10 
  []
 
-) [53]
+) [57]
 \openout2 = `Chapters/Chapter11.aux'.
 
- (./Chapters/Chapter11.tex [54
+ (./Chapters/Chapter11.tex [58
 
 
 
@@ -2689,10 +2701,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 27.
 
-) [55]
+) [59]
 \openout2 = `Chapters/Chapter12.aux'.
 
- (./Chapters/Chapter12.tex [56
+ (./Chapters/Chapter12.tex [60
 
 
 
@@ -2704,14 +2716,14 @@ Overfull \hbox (55.28876pt too wide) in paragraph at lines 3--3
 []\chapterNumber 12 
  []
 
-) [57] [58
+) [61] [62
 
 
 
-] [59
+] [63
 
 
-] [60]
+] [64]
 \openout2 = `Chapters/Chapter0A.aux'.
 
  (./Chapters/Chapter0A.tex
@@ -2731,7 +2743,7 @@ Overfull \hbox (6.23224pt too wide) in paragraph at lines 14--14
 \T1/pplj/m/it/9 dummy 
  []
 
-[61
+[65
 
 
 
@@ -2740,35 +2752,35 @@ File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.50006pt on input line 41.
-) [62]
+) [66]
 \openout2 = `FrontBackMatter/Bibliography.aux'.
 
- (./FrontBackMatter/Bibliography.tex) [63
+ (./FrontBackMatter/Bibliography.tex) [67
 
 
 
 
 
 
-] [64
+] [68
 
 
 
 ]
 \openout2 = `FrontBackMatter/Declaration.aux'.
 
- (./FrontBackMatter/Declaration.tex) [65
+ (./FrontBackMatter/Declaration.tex) [69
 
 
 
-] [66
+] [70
 
 
 
 ]
 \openout2 = `FrontBackMatter/Colophon.aux'.
 
- (./FrontBackMatter/Colophon.tex) [67
+ (./FrontBackMatter/Colophon.tex) [71
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
@@ -2777,10 +2789,13 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 05B5BD014406A2F05628E3AF76C85A99;6962.
+(rerunfilecheck)             Checksum: 6387740792A2D234C194CA4F733BE95E;7137.
 
 
 LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
 
 
 Package biblatex Warning: Please (re)run BibTeX on the file(s):
@@ -2792,19 +2807,19 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43446 strings out of 492995
- 823250 string characters out of 6132704
- 1357376 words of memory out of 5000000
- 45719 multiletter control sequences out of 15000+600000
+ 43477 strings out of 492995
+ 823617 string characters out of 6132705
+ 1357724 words of memory out of 5000000
+ 45725 multiletter control sequences out of 15000+600000
  114774 words of font info for 206 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 68i,23n,90p,10448b,3499s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 68i,23n,96p,10448b,3499s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/euex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eufm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eufm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eurm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eurm7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/euler/eusm10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fpl
 /fplbj8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/stmaryrd/stmary10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on main.pdf (85 pages, 2220708 bytes).
+Output written on main.pdf (89 pages, 2237462 bytes).
 PDF statistics:
- 1504 PDF objects out of 1728 (max. 8388607)
- 1185 compressed objects within 12 object streams
- 299 named destinations out of 1000 (max. 500000)
- 32122 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 1563 PDF objects out of 1728 (max. 8388607)
+ 1239 compressed objects within 13 object streams
+ 324 named destinations out of 1000 (max. 500000)
+ 32138 words of extra memory for PDF output out of 35830 (max. 10000000)
 
