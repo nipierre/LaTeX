@@ -176,4 +176,4 @@
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{67}{dummy.7}
+\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{67}{table.caption.36}
