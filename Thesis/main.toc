@@ -120,56 +120,60 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {9.9}Detector acceptance}{51}{section.9.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.10}Data sets}{51}{section.9.10}
+\contentsline {section}{\numberline {9.10}Diffractive vector meson correction}{52}{section.9.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.11}Raw Multiplicities}{51}{section.9.11}
+\contentsline {section}{\numberline {9.11}Error associated to RICH unfolding}{54}{section.9.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {10}\spacedlowsmallcaps {Correction factors to the multiplicities}}{53}{chapter.10}
+\contentsline {section}{\numberline {9.12}Data sets}{55}{section.9.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.1}Acceptance correction}{53}{section.10.1}
+\contentsline {section}{\numberline {9.13}Raw Multiplicities}{55}{section.9.13}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1.1}Subsection Title}{53}{subsection.10.1.1}
+\contentsline {chapter}{\numberline {10}\spacedlowsmallcaps {Correction factors to the multiplicities}}{57}{chapter.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {10.1.2}Subsection Title}{53}{subsection.10.1.2}
+\contentsline {section}{\numberline {10.1}Acceptance correction}{57}{section.10.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.2}Electron contamination}{53}{section.10.2}
+\contentsline {subsection}{\numberline {10.1.1}Subsection Title}{57}{subsection.10.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.3}Contamination of exclusive vector meson}{53}{section.10.3}
+\contentsline {subsection}{\numberline {10.1.2}Subsection Title}{57}{subsection.10.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {10.4}Inclusive and Semi-Inclusive Radiative Corrections}{53}{section.10.4}
+\contentsline {section}{\numberline {10.2}Electron contamination}{57}{section.10.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {11}\spacedlowsmallcaps {Final charged hadrons multiplicities}}{55}{chapter.11}
+\contentsline {section}{\numberline {10.3}Contamination of exclusive vector meson}{57}{section.10.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.1}Summary of systematic studies}{55}{section.11.1}
+\contentsline {section}{\numberline {10.4}Inclusive and Semi-Inclusive Radiative Corrections}{57}{section.10.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1.1}Subsection Title}{55}{subsection.11.1.1}
+\contentsline {chapter}{\numberline {11}\spacedlowsmallcaps {Final charged hadrons multiplicities}}{59}{chapter.11}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {11.1.2}Subsection Title}{55}{subsection.11.1.2}
+\contentsline {section}{\numberline {11.1}Summary of systematic studies}{59}{section.11.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {11.2}Multiplicities ($h^{\pm }$,$\pi ^{\pm }$,$K^{\pm }$)}{55}{section.11.2}
+\contentsline {subsection}{\numberline {11.1.1}Subsection Title}{59}{subsection.11.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {12}\spacedlowsmallcaps {Determination of quark fragmentation functions}}{57}{chapter.12}
+\contentsline {subsection}{\numberline {11.1.2}Subsection Title}{59}{subsection.11.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.1}Direct extraction of Fragmentation Functions}{57}{section.12.1}
+\contentsline {section}{\numberline {11.2}Multiplicities ($h^{\pm }$,$\pi ^{\pm }$,$K^{\pm }$)}{59}{section.11.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1.1}Subsection Title}{57}{subsection.12.1.1}
+\contentsline {chapter}{\numberline {12}\spacedlowsmallcaps {Determination of quark fragmentation functions}}{61}{chapter.12}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {12.1.2}Subsection Title}{57}{subsection.12.1.2}
+\contentsline {section}{\numberline {12.1}Direct extraction of Fragmentation Functions}{61}{section.12.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.2}Systematic studies}{57}{section.12.2}
+\contentsline {subsection}{\numberline {12.1.1}Subsection Title}{61}{subsection.12.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.3}COMPASS LO fit}{57}{section.12.3}
+\contentsline {subsection}{\numberline {12.1.2}Subsection Title}{61}{subsection.12.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {12.4}LO/NLO parametrisations}{57}{section.12.4}
+\contentsline {section}{\numberline {12.2}Systematic studies}{61}{section.12.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {part}{\numberline {v}\spacedlowsmallcaps {Appendix}}{59}{part.5}
+\contentsline {section}{\numberline {12.3}COMPASS LO fit}{61}{section.12.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Appendix Test}}{61}{appendix.A}
+\contentsline {section}{\numberline {12.4}LO/NLO parametrisations}{61}{section.12.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Appendix Section Test}{61}{section.A.1}
+\contentsline {part}{\numberline {v}\spacedlowsmallcaps {Appendix}}{63}{part.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Another Appendix Section Test}{61}{section.A.2}
+\contentsline {chapter}{\numberline {A}\spacedlowsmallcaps {Appendix Test}}{65}{appendix.A}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Appendix Section Test}{65}{section.A.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Another Appendix Section Test}{65}{section.A.2}
 \defcounter {refsection}{0}\relax 
 \vspace {\beforebibskip }
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{63}{dummy.7}
+\contentsline {chapter}{\spacedlowsmallcaps {Bibliography}}{67}{dummy.7}
