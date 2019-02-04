@@ -701,6 +701,8 @@ INPUT ./gfx/peaks.png
 OUTPUT Chapters/Chapter03.aux
 INPUT Chapters/Chapter03.tex
 INPUT Chapters/Chapter03.tex
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf
+INPUT /usr/local/texlive/2017/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 OUTPUT Chapters/Chapter04.aux
 INPUT Chapters/Chapter04.tex
 INPUT Chapters/Chapter04.tex
