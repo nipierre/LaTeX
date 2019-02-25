@@ -309,14 +309,14 @@ The goal of the selection is a clean pion and kaon sample. Due to the larger amo
 identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one
 another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts
 are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis.
-The likelihood cuts are listed in Table 1. Also less stricter likelihood cuts are used, which are listed in Table 2. Similar cuts were used in the analysis of the hadron
+The likelihood cuts are listed in Table \ref{LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{LHlessstrict}. Similar cuts were used in the analysis of the hadron
 multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination.
 The RICH particle identification efficiency is studied in the momentum range of 10 GeV/c $ \leq p \leq $ 50 GeV/c. In this range, pions and kaons are emitting Cherenkov
 light, while up to $\sim$ 17 GeV protons are still below the threshold of
 
-% \begin{equation}
-%   p_{thr,i} = m_i \dot \frac{1}{ \sqrt{n^{2}-1} }
-% \end{equation}
+\begin{equation}
+  p_{thr,i} = \frac{m_i}{ \sqrt{n^{2}-1} }
+\end{equation}
 
 where n is the refractive index. This is shown in Figure 5 where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. As the momentum range
 is restricted to momenta larger than 10 GeV/c, no electron rejection can be performed. In this momentum range the Cherenkov angle for pions and electrons are too close
@@ -340,7 +340,7 @@ binning is used, since only a weak dependence is observed. The binning is given 
 \end{itemize}
 
 For each bin, the elements of the efficiency matrix $M_R$ are determined separately for positive and negative particles. The elements of this matrix contain the probability
-for a particle i to be identified as a particle of type j, for example a pion that is correctly identified as pion or wrongly as a kaon. The full matrix is given by:
+for a particle t to be identified as a particle of type i, for example a pion that is correctly identified as pion or wrongly as a kaon. The full matrix is given by:
 
 \begin{equation}
   M_R
@@ -380,6 +380,41 @@ fitted function for each of the groups is given by
 
 where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background events. Here, the same width, $\sigma_1$ and $\sigma_2$, of the two Gaussian distributions
 was used for all five spectra.
+
+\begin{table}[h]
+  \caption{\label{LHcut} Likelihood cuts for pion, kaon and protons}
+  \centering
+  \begin{tabular}{lcccc}
+    \hline
+     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
+    \hline
+    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
+    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
+    LH(\textit{i})/LH($\pi$) & --- & > 1.08 & > 1.0 & > 1.0 \\
+    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
+    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
+    LH(\textit{i})/LH(bg) & > 1.0 & > 1.24 & --- & > 1.0 \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[]
+  \caption{\label{LHlessstrict} Less strict likelihood cuts for pion, kaon and protons}
+  \centering
+  \begin{tabular}{lcccc}
+    \hline
+     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
+    \hline
+    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
+    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
+    LH(\textit{i})/LH($\pi$) & --- & > 1.0 & > 1.0 & > 1.0 \\
+    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
+    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
+    LH(\textit{i})/LH(bg) & > 1.0 & > 1.07 & --- & > 1.0 \\
+    \hline
+  \end{tabular}
+\end{table}
+
 Also the ratio $\delta$ of the amount of events in both Gaussian distributions is the same. The shape of the background is the same for all spectra except the one where the pion
 is identified as a proton. In this case, a possible background contribution due to decays from $\Lambda$ baryons decaying in a pion and an proton can be enriched. This results in
  a slightly different background shape. The integral of the background remains a independent parameter in all five cases. In order to ensure that the sum of all efficiencies
