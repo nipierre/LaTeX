@@ -5,6 +5,7 @@
 \usepackage{amsmath}  % improve math presentation
 \usepackage{authblk}  % for authors
 \usepackage{graphicx} % takes care of graphic including machinery
+\usepackage{enumerate}
 \usepackage{color}
 \usepackage[margin=1in,letterpaper]{geometry} % decreases margins
 \usepackage{cite} % takes care of citations
@@ -32,7 +33,7 @@
 
 \begin{document}
 
-\title{\textbf{Charged kaon multiplicities from muon deep inelastic scattering on lH$_2$ (2016 COMPASS data)}}
+\title{\textbf{Charged kaon multiplicities from muon deep inelastic scattering on lH$_2$ \\ (2016 COMPASS data)}}
 \author[1,2]{\textbf{N. Pierre}}
 \affil[1]{\textit{CEA IRFU/SPhN Saclay, 91191 Gif-sur-Yvette, France}}
 \affil[2]{\textit{Universit\"at Mainz, Institut f\"ur Kernphysik, 55099 Mainz, Germany}}
@@ -40,8 +41,8 @@
 
 \begin{abstract}
   We present an analysis of multiplicities of charged hadrons from 2016 data on pure proton lH$_2$ target.
-  The data cover the following kinematic range : $Q^2$ > 1 (GeV/c)$^2$, 0.1 < $y$ < 0.7, 0.004 < $x$ < 0.4,
-  0.2 < $z$ < 0.85.
+  The data cover the following kinematic range : $Q^2 >$ 1 (GeV/c)$^2$, 0.1 $< y <$ 0.7, 0.004 $< x <$ 0.4,
+  0.2 $< z <$ 0.85.
 \end{abstract}
 
 \newpage
@@ -61,9 +62,427 @@ The PHAST version used for this analysis is X.XXX.
 
 \subsection{Event and hadron selection}
 
+\textbf{DIS Selection}
+\begin{enumerate}
+	\item Event with a best primary vertex (PHAST routine PaEvent::iBestPrimaryVertex())
+	\item Event with reconstructed scattered muon (PHAST routine PaVertex::iMuPrim())
+	\item BMS cut for a well reconstructed beam track (using PaTrack::NHitsFoundInDetect("BM")>3)
+	\item Energy of beam muon in range [140 GeV, 180 GeV]
+	\item Z coordinate of event vertex ($z_{vtx}$) within the target region $\in$ [-325 cm, -71 cm]
+	\item Primary interaction in the target material (PHAST routine PaAlgo:InTarget() for both data and MC (Section.\ref{}) target positions
+				to have a complete overlap of coverage)
+	\item $\chi^2$ cut for a well reconstructed beam track ($\chi^2$/ndf $<$ 10)
+	\item Beam track crossing the entire target (PHAST routine PaAlgo:CrossCells())
+	\item $\chi^2$ cut for a well reconstructed scattered muon track ($\chi^2$/ndf $<$ 10)
+	\item Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$)
+	\item Middle Trigger or Ladder Trigger or Outer Trigger or LAS trigger
+	\item $Q^2$ > 1 (GeV/c)$^2$
+	\item 0.1 $< y <$ 0.7
+	\item 5 $< W <$ 17
+	\item 0.004 $< x <$ 0.4
+	\item $\nu$ cut
+\end{enumerate}
 
-\section{Conclusions}
-Here you briefly summarize your findings.
+The cut on th kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
+momentum range of 3 - 40 GeV/c. The criteria is defined by :
+
+\begin{equation}
+  \nu_{max} = \frac{\sqrt{(p^2_{max}+m^2_h)}}{z_{max}}
+\end{equation}
+\begin{equation}
+  \nu_{min} = \frac{\sqrt{(p^2_{min}+m^2_h)}}{z_{min}}
+\end{equation}
+
+where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 3 GeV/c), $z_{max}$ (resp. $z_{min}$)
+is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the considered hadron.
+With this cut we recover several $z$ bins that had been rejected in previous analyses because of high LEPTO contributions.
+
+\textbf{Hadron Selection}
+\begin{enumerate}
+	\item Particle is not the scattered muon
+	\item $\chi^2$ cut for a well reconstructed hadron track ($\chi^2$/ndf $<$ 10)
+	\item Maximum radiation length cumulated along all the trajectory less than 15 radiation lengths
+	\item Z coordinate of the first measured hit $<$ 350 cm ($Z_{SM1}$)
+	\item Z coordinate of the last measured hit $>$ 350 cm ($Z_{SM1}$)
+	\item 12 $< p_h <$ 40
+	\item 0.01 $< \theta_{RICH} <$ 0.12
+	\item $x^2_{RICH}+y^2_{RICH}>25$ cm$^2$
+	\item 0.2 $< z <$ 0.85
+\end{enumerate}
+
+The statistics of the final data sample (5 periods) include 6.3M reconstructed DIS events and 1.9M charged hadrons.
+For reference this is half the statistic of 2006.
+
+\subsection{Radiative corrections}
+
+The experimental multiplicities are affected by QED radiative effects, which introduces a systematic bias of the measured kinematics with respect to the true kinematics. The most important contributions at first order are the initial and final state radiation of a real photon by the incoming or outgoing lepton. The correction factor used to take into account these phenomena is the radiative correction factor defined as :
+
+\begin{equation}
+	\eta(x,y,z) = \frac{d^2 M_{1\gamma}/dxdydz}{d^2 M_{measured}/dxdydz}
+\end{equation}
+
+where $M_{1\gamma}$ denotes multiplicities obtained using the cross section in the one photon exchange approximation and $M_{measured}$ denotes multiplicities obtained using the measured cross section which includes radiative effects. The bias on the $\mu$ kinematics upon real photon emission affects in turn the reconstruction of the hadron energy fraction $z$. This effect is now taken into account thanks to DJANGOH. In this analysis, the multiplicities are directly corrected. Fig.\ref{} shows the effect of the correction.
+
+\subsection{Particle Identification with RICH detector}
+
+The $\pi$ and $K$ particle identification (PID) is performed by the RICH detector.
+
+The method used for the RICH particle identification is described in \ref{}. The idea is the following : when a particle
+is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then
+compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest
+value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second
+highest value of the four compared likelihood values ($\pi$, $K$, $p$ and the background). The electron and muon likelihood
+are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (2 to 40 GeV/c) the RICH detector can
+not be used to efficiently distinguish electrons from $\pi$.
+
+All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
+
+\begin{enumerate}
+  \item Pion selection
+  \begin{itemize}
+    \item $LH(\pi) > 0$
+    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+    in the previous comparison.
+    \item $\frac{LH(\pi)}{LH(2^{nd})}>1.02$
+    \item $\frac{LH(\pi)}{LH(bgd)}>2.02$
+  \end{itemize}
+  \item Kaon selection
+  \begin{itemize}
+    \item $LH(K) > 0$
+    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+    in the previous comparison.
+    \item $\frac{LH(K)}{LH(2^{nd})}>1.08$
+    \item $\frac{LH(K)}{LH(bgd)}>2.08$
+  \end{itemize}
+  \item Proton selection
+  Three cases are considered depending on the momentum $p$ of the particle and are defined but the kaon threshold ($\simeq 8.9$ GeV/c)
+  and proton threshold ($\simeq 17.95$ GeV/c)
+  \begin{enumerate}[(a)]
+    \item Kaon threshold $< p \leq$ proton threshold - 5 GeV/c
+    \item $p >$ proton threshold + 5 GeV/c
+    \begin{itemize}
+      \item $LH(p) > 0$
+      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
+      in the previous comparison.
+      \item $\frac{LH(p)}{LH(2^{nd})}>1$
+    \end{itemize}
+    \item Proton threshold - 5 GeV/c $< p <$ proton threshold + 5 GeV/c
+    \begin{itemize}
+      \item Using (a) and (b) simultaneously.
+    \end{itemize}
+  \end{enumerate}
+\end{enumerate}
+
+\subsection{RICH unfolding based on efficiency matrices}
+
+The performance of the RICH is not perfect : in terms of efficiency and purity, some particles
+are misidentified.
+
+The unfolding procedure is needed to correct the yield of identified hadrons for RICH detection efficiency.
+In order to perform this correction, the RICH actual performance is evaluated from real data. The result of
+this evaluation is presented through RICH efficiency probabilities matrices, $M_{RICH}$, binned in momentum
+and angle :
+
+\begin{itemize}
+  \item $p$ {3,12,13,15,17,19,22,25,27,30,35,40} GeV/c
+  \item $\theta$ {0.01,0.04,0.12} rad
+\end{itemize}
+
+The 3-by-3 matrices $M_{RICH}$ give a relation between the vector of true hadron $T_h$ and the vector of
+identified hadron $I_h$
+
+\begin{equation}
+\begin{bmatrix}
+I_{\pi} \\
+I_K \\
+I_p
+\end{bmatrix}
+=
+\begin{bmatrix}
+\epsilon(\pi \rightarrow \pi) & \epsilon(K \rightarrow \pi) & \epsilon(p \rightarrow \pi)\\
+\epsilon(\pi \rightarrow K) & \epsilon(K \rightarrow K) & \epsilon(p \rightarrow K) \\
+\epsilon(\pi \rightarrow p) & \epsilon(K \rightarrow p) & \epsilon(p \rightarrow p)
+\end{bmatrix}
+\begin{bmatrix}
+T_{\pi} \\
+T_K \\
+T_p
+\end{bmatrix}
+\end{equation}
+
+The coefficients of the $M_{RICH}$, $\epsilon{t \rightarrow i}$, are the probabilities that a true hadron
+$t$ is identified as a hadron of type $i$. These probabilities have been determined as described in \ref{}.
+
+By performing a matrix inversion, one can obtain the unfolded number of hadrons with the Eq.\ref{} :
+
+\begin{equation}
+  \overrightarrow{T_h} = M^{-1}_{RICH}\overrightarrow{I_h}
+\end{equation}
+
+where $M^{-1}_{RICH}$ coefficients are weights with which each identified hadron is counted as a pion, kaon
+or proton.
+
+\begin{table}[]
+  \caption{\label{HadNum} Number of identified pions, kaons, and protons for the 5 periods before and after unfolding.}
+  \centering
+  \begin{tabular}{lcccccc}
+    \hline
+     & $\pi^+$ & $\pi^-$ & $K^+$ & $K^-$ & $p$ & $\bar{p}$ \\
+    \hline
+    Identified &  &  &  &  &  & \\
+    Unfolded &  &  &  &  &  & \\
+    \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Kinematic binning}
+
+The raw multiplicities are evaluated in bins of the Bjorken variable $x$, the muon energy fraction carried
+by the virtual photon $y$ and the virtual photon energy fraction carried by final state hadron $z$. They
+are calculated with the following formula :
+
+\begin{equation}
+  \frac{dM^h(x,y,z)}{dz}=\frac{1}{N^{DIS}_{Events}(x,y)}\frac{dN^{DIS}_{h}(x,y,z)}{dz}
+\end{equation}
+
+where $N^{DIS}_{Events}$ is the number of DIS events and $N^{DIS}_{h}$ is the number of
+hadrons after RICH unfolding. As in practise, the multiplicities are measured in bins of
+x (9 bins), y (5 bins) and z (12 bins), the calculated multiplicities can be expressed as :
+
+\begin{equation}
+  M^h_{raw}(x,y,z) = \frac{N^{DIS}_{h}(x,y,z)/\Delta z}{N^{DIS}_{Events}}
+\end{equation}
+
+where $\Delta z$ is the width of the z bin. For the multiplicities extraction, the binning in
+$x$, $y$ and $z$ is the following :
+
+\begin{itemize}
+  \item $x$ \{0.004,0.01,0.02,0.03,0.04,0.06,0.1,0.14,0.18,0.4\}
+  \item $y$ \{0.1,0.15,0.2,0.3,0.5,0.7\}
+  \item $z$ \{0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.85\}
+\end{itemize}
+
+\section{Corrections to raw multiplicities}
+
+\subsection{Detector acceptance correction}
+
+The COMPASS detector does not cover the full phase-space then the measured multiplicities have
+to be corrected for the finite detector acceptance of the order of 70\%. The correction is
+done using a Monte-Carlo dataset containing about 400 million events generated in the kinematic
+region $Q^2 > 0.8$ (GeV/c)$^2$, $x$ $\in$ [10$^{-4}$], $y$ $\in$ [0.05,0.95].
+
+The events are created with DJANGOH generator with parametrization of the parton distribution functions
+(MSTW08). In addition, the use of JETSET inside DJANGOH allows the hadronization of quarks q to final-state
+hadrons h according to the Lund model. The COMPASS high $p_T$ tuning was used, resulting in a good description
+of real data as shown for DIS and hadrons in Fig.\ref{}.
+
+The same DIS event and unidentified hadron selection that are used on real data (except the BMS cut) are applied
+to the MC data sample for reconstructed MC events and particles.
+
+The data are processed through a GEANT4 model of the spectrometer, TGEANT, and events are reconstructed with the
+same CORAL version as for the real data.
+
+The acceptance involves both reconstructed and generated particles. In both cases, the particle ID is taken from
+the MC truth. The following selection is made on the generated events and particles :
+
+\begin{enumerate}
+  \item Energy of the beam muon in range [140,180] GeV
+	\item Z coordinate of event vertex ($z_{vtx}$) within the target region $\in$ [-325 cm, -71 cm]
+	\item Primary interaction in the target material (PHAST routine PaAlgo:InTarget() for both data and MC (Section.\ref{}) target positions
+				to have a complete overlap of coverage)
+	\item Beam track crossing the entire target (PHAST routine PaAlgo:CrossCells())
+  \item $Q^2>1$ (GeV/c)$^2$
+  \item $0.1 < y < 0.9$
+	\item $5 < W < 17$ GeV/c$^2$
+  \item $0.004 < x < 0.4$
+  \item $\nu$ range used in data
+  \item $0.2 < z < 0.85$
+\end{enumerate}
+
+In the following, $r$ and $g$ refers to 'reconstructed' and 'generated' quantities.
+
+The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r$ over the generated multiplicities $M^h_g$
+and is binned in $x$, $y$ and $z$ :
+
+\begin{equation}
+  A^h(x,y,z) = \frac{M^h_r(x,y,z)}{M^h_g(x,y,z)}=\frac{N^h_r(x,y,z)/N^{DIS}_r(x,y,z)}{N^h_g(x,y,z)/N^{DIS}_g(x,y,z)}
+\end{equation}
+
+where $x_g$, $y_g$ and $z_g$ are the generated kinematic values and $x_r$, $y_r$ and $z_r$ are the reconstructed kinematic
+values. Used in this fashion, the kinematic bin smearing due to reconstruction limitations is accounted for. A more rigorous
+bin smearing correction would involve an unfolding procedure but is not done in this analysis.
+
+For this method, the error estimation is difficult to rigorously calculate as the numbers of evaluated hadrons and DIS events,
+in both the reconstructed and generated case, are not independent. An estimation is made by considering that the hadrons numbers
+and DIS events are independent of each other.
+
+Due to the $z$ kinematic bin migration effects, there exist particles in $N_r$ which are independent from $N_g$. Decomposing $N_r$
+into two independent samples namely $N_{r^0}$ which are contained in $N_g$ and $N_{r'}$ which are not, the final acceptance error yields :
+
+\begin{equation}
+  \begin{split}
+    E^2_{acc} = \left (\frac{G_D}{R_D+R'_{D}}\right )^2\left [\frac{(R_h+A)(G_h-R_h+1)}{(G_h+2)^2(G_D+3)}+\frac{R'_{h}}{G^2_h}+\frac{R'^2_h}{G^3_h}\right ] \\
+                + \left (\frac{G_D}{R_D+R'_{D}}\right )^4\left (\frac{R_h+R'_h}{G_h}\right )^2\left [\frac{(R_D+1)(G_D-R_D+1)}{(G_D+2)^2(G_D+3)}+\frac{R'_D}{G^2_D}+\frac{R'^2_D}{G^3_D}\right ]
+  \end{split}
+\end{equation}
+
+where $G_h$ (resp. $G_D$) are the generated hadrons (resp. DIS events) in a given $x$, $y$, $z$ bin, $R_h$ (resp. $R_D$) the reconstructed
+hadrons (resp. DIS events) and $R'_h$ (resp. $R'_D$) all other particles (resp. events) that are reconstructed as hadrons (resp. DIS events)
+in a given $x$, $y$, $z$ bin.
+
+The correction is then applied to the raw multiplcities :
+
+\begin{equation}
+  M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}
+\end{equation}
+
+\subsection{Diffractive vector meson correction}
+
+It is usually assumed that hadrons produced in SIDIS originate from lepton-parton scattering. Nevertheless the scattering of a lepton
+off a nucleon can also result in the diffractive production of vector mesons. These particles decay into lighter mesons that cannot be
+distinguished from the one resulting from the hadronization of a quark originating from the target nucleon. This implies that fragmentation
+functions extracted from multiplicities contaminated with diffractive vector mesons would violate universality, as they would be process
+dependent. However, this is a complex theoretical discussion so the multiplicities both with and without subtracting the diffractive vector
+meson contribution are calculated as well as the separate correction factors for DIS events and hadrons.
+
+For kaons, the dominant vector meson contribution comes from the diffractive production of $\rho^0$ and $\Phi$ :
+\begin{equation}
+    \gamma * p \rightarrow \rho^0 p \rightarrow p\pi^+\pi^-
+    \gamma * p \rightarrow \Phi p \rightarrow pK^+K^-
+\end{equation}
+
+This process is mainly exclusive but in 20\% of cases a diffractive dissociation of the target nucleon occurs. Other channels (excited $\rho$, $\omega$, etc.)
+are expected to contribute much less and are not taken into account. As pions and kaons stemming from diffractive
+vector meson decay cannot be separated from the one resulting from SIDIS, the evaluation of their contribution to the multiplicities is based on a
+Monte Carlo study. Three Monte Carlo samples are produced based on different generators (SIDIS using DJANGOH, diffractive $\Phi$ using HEPGEN++) and
+the same event reconstruction chain. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the
+proton are simulated. The $\rho^0$ sample includes nuclear effects (coherent production and nuclear absorption).
+
+The fraction of pions (resp. kaons) resulting from a diffractive $rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as :
+
+\begin{equation}
+  \begin{split}
+    f^{\pi}_{\rho^0}(x,y,z) = \frac{N^{\pi}_{HEPGEN++}(x,y,z)}{N^{\pi}_{DJANGOH}(x,y,z)+N^{\pi}_{HEPGEN++}(x,y,z)} \\
+    f^K_{\Phi}(x,y,z) = \frac{N^K_{HEPGEN++}(x,y,z)}{N^K_{DJANGOH}(x,y,z)+N^K_{HEPGEN++}(x,y,z)}
+  \end{split}
+\end{equation}
+
+where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJANGOH}$ are the number of kaons reconstructed from the HEPGEN++ and DJANGOH MC samples normalized by the corresponding
+MC luminosity ($L_{MC}$). The luminosity depends on the event weighting and the process cross-section $\sigma_{int}$ (DIS for DJANGOH event and diffractive
+vector meson production for HEPGEN++ events). The final weighted number of kaons is summarized in Table \ref{}.
+
+\begin{equation}
+  \sum_{events} w_i = L_{MC} \cdot \sigma{int}
+\end{equation}
+
+\begin{table}
+  \caption{}
+  \label{}
+
+\end{table}
+
+The diffractive vector meson events can also lead to a contamination in DIS events. Here, the two channels studied are diffractive $\rho^0$ and $\Phi$
+with the fraction of the contamination expressed in Eqs. \ref{}. Contrary to previous Eq. \ref{}, the denominator only includes the DIS events from the
+DJANGOH generator because the cross-section used to generate the DJANGOH sample takes into account the diffractive contribution.
+
+\begin{equation}
+  \begin{split}
+    f^{\rho^0}_{DIS}(x,y,z) = \frac{N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)} \\
+    f^{\Phi}_{DIS}(x,y,z) = \frac{N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}
+  \end{split}
+\end{equation}
+
+The total contribution from the diffractive vector-meson contribution ($f^{VM}_{DIS}$) to the DIS sample is the sum of the $f^{\rho^0}_{DIS}$ and $f^{\Phi}_{DIS}$.
+The final correction reads as follows :
+
+\begin{equation}
+  \begin{split}
+  B^h(x,y,z) = \frac{ \frac{N^{\pi}(x,y,z)}{N^h(x,y,z)}\left (1-f^{\pi}_{\rho^0}(x,y,z)\right )
+                   + \frac{N^K(x,y,z)}{N^h(x,y,z)}\left (1-f^{K}_{\Phi}(x,y,z)\right ) + \frac{N^p(x,y,z)}{N^h(x,y,z)} }{1-f^{VM}_{DIS}(x,y,z)} \\
+  B^{\pi}(x,y,z) = \frac{1-f^{\pi}_{\rho^0}(x,y,z)}{1-f^{VM}_{DIS}(x,y,z)} \\
+  B^K(x,y,z) = \frac{1-f^{K}_{\Phi}(x,y,z)}{1-f^{VM}_{DIS}(x,y,z)}
+  \end{split}
+\end{equation}
+
+\section{Systematic Errors}
+
+\section{Errors associated to the RICH unfolding}
+
+The RICH matrices are built using the statistical errors associated to the original probability matrix.
+
+\begin{equation}
+M^{\pm}_{RICH}
+=
+\begin{bmatrix}
+\epsilon(\pi \rightarrow \pi)\pm\sigma_{\epsilon(\pi \rightarrow \pi)} & \epsilon(K \rightarrow \pi)\pm\sigma_{\epsilon(K \rightarrow \pi)} & \epsilon(p \rightarrow \pi)\pm\sigma_{\epsilon(p \rightarrow \pi)}\\
+\epsilon(\pi \rightarrow K)\pm\sigma_{\epsilon(\pi \rightarrow K)} & \epsilon(K \rightarrow K)\pm\sigma_{\epsilon(K \rightarrow K)} & \epsilon(p \rightarrow K)\pm\sigma_{\epsilon(p \rightarrow K)} \\
+\epsilon(\pi \rightarrow p)\pm\sigma_{\epsilon(\pi \rightarrow p)} & \epsilon(K \rightarrow p)\pm\sigma_{\epsilon(K \rightarrow p)} & \epsilon(p \rightarrow p)\pm\sigma_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+As an inversion of the probabilities matrices is done in the analysis, the propagation of errors through the
+inversion operation has to be performed. A calculation of the uncertainties on the probabilities yields \cite{} :
+
+\begin{equation}
+  [\sigma^{-1}_i]^2 = \epsilon^{-1}_{ip}\epsilon^{-1}_{ir}cov(\epsilon_{pq},\epsilon_{rs})\epsilon^{-1}_{qi}\epsilon^{-1}_{si} + [\epsilon^{-1}_{ik}\sigma_k]^2
+\end{equation}
+
+This equation leads to the inverse error matrices with associated statistical errors :
+
+\begin{equation}
+[M^{\pm}_{RICH}]^{-1}
+=
+\begin{bmatrix}
+\epsilon^{-1}(\pi \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow \pi)} & \epsilon^{-1}(K \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(K \rightarrow \pi)} & \epsilon^{-1}(p \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(p \rightarrow \pi)}\\
+\epsilon^{-1}(\pi \rightarrow K)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow K)} & \epsilon^{-1}(K \rightarrow K)\pm\sigma^{-1}_{\epsilon(K \rightarrow K)} & \epsilon^{-1}(p \rightarrow K)\pm\sigma^{-1}_{\epsilon(p \rightarrow K)} \\
+\epsilon^{-1}(\pi \rightarrow p)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow p)} & \epsilon^{-1}(K \rightarrow p)\pm\sigma^{-1}_{\epsilon(K \rightarrow p)} & \epsilon^{-1}(p \rightarrow p)\pm\sigma^{-1}_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+\section{Errors associated to acceptance (z-vertex dependance)}
+
+\section{Stability over time}
+
+\section{Error associated to the diffractive vector meson correction}
+
+In HEPGEN, the cross section for exclusive vector meson production is normalized to the GPD model of Goloskokov and Kroll. The theoretical uncertainty on the predicted cross section close to COMPASS kinematics is around 30\% \cite{}. Propagating this uncertainty leads to a maximum relative uncertainty under 6\% as shown in Fig.\ref{}.
+
+The method for the correction of nuclear effects maily changes the shape of the $p_T^2$ distribution with respect to the diffractive vector meson production on a free nucleon. It assumes that the $p_T^2$-integrated nuclear cross section per nucleon for exclusive events is the same as the $p_T^2$-integrated nuclear cross section for a free nucleon. According to A. Sandacz \cite{}, the systematic uncertainty due to this assumption is a few percent.
+
+\section{Results}
+
+For the final multiplicities, it yields :
+
+\begin{equation}
+	M_{Final}(x,y,z) = \frac{M_{raw}(x,y,z)}{A(x,y,z)}B(x,y,z)
+\end{equation}
+
+\subsection{3-dimensional binning in x, y and z}
+
+The final multiplicities with all corrections are shown in a multidimensional binning in $x$, $y$ and $z$ (9 columns, 5 rows and 12 points) in Fig.\ref{} (release material). Bins with acceptance < 30\% and those whose <y> is less than 6\% of the binwidth to the bin edge with poor statistics ($\sigma$ > 0.02) have been excluded and are not shown. The latter exclusion is applied to remove bins that lie on the edge of the kinematic acceptance region. The band shown at the bottom of each plot correspond to the systematic error. An alternative presentation is given in Figs. \ref{} and \ref{} (release material) in which the results for the $z$ and $y$ dependence of the charged hadrons multiplicities are presented in the 8 bins of $x$. The statistical uncertainties are shown, however they are mostly smaller than the size of the points.
+
+\section{Sum and ratio of charged hadrons multiplicities $M^{h^+}$ and $M^{h^-}$}
+
+
+\appendix
+
+\section{Crosscheck}
+
+\subsection{Data}
+
+A crosscheck of the DIS selection, hadrons selection, RICH PID, unfolding and binning as well as the final multiplicities for pions, kaons and protons in bins of $x$, $y$ and $z$ over the full 5 weeks of data was done between Marcin and Nicolas. While for the cut flow, the agreement was perfect, the discrepancy on the final multiplicities is shown in a pull in Fig.\ref{}. In the figure, each entry is given by :
+
+\begin{equation}
+	pull_i = \frac{M_i^{Nicolas}-M_i^{Marcin}}{\sigma_i^{Nicolas}}
+\end{equation}
+
+with $i$ being a given ($x$,$y$,$z$,$charge$) bin.
+
+\subsection{MC}
+
+A crosscheck between Marcin and Nicolas was performed over 100M MC events. The final acceptance in bins of $x$, $y$ and $z$ was found in perfect agreement.
+
+\section{Error propagation}
 
 %++++++++++++++++++++++++++++++++++++++++
 % References section will be created automatically
