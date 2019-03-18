@@ -4,9 +4,9 @@
 
 \label{ch:raw} % For referencing the chapter elsewhere, use \autoref{ch:name}
 
-The 2006 COMPASS multiplicities results were based on data with a deuteron target ($^6$LiD)
-and the results with these data are not constraining the strange quark fragmentation function.
-With the analysis of new data with pure proton target (LH$_2$), the data obtained will introduce
+The 2006 SIDIS COMPASS hadron multiplicities results, based on data taken with an isoscalar target ($^6$LiD),
+do not constrain fermly the strange quark fragmentation function.
+With the analysis of new data taken on pure proton target (LH$_2$), the results will provide
 a new set of equations linking the multiplicities with the fragmentation functions but still
 involving the same quark fragmentation functions we are interested in. The fact that the proton
 and deuteron data can be fitted together will add constrains to the fragmentation function extraction.
@@ -24,13 +24,16 @@ a list of cuts is applied on both geometrical and physical quantities. First the
 and then the SIDIS events (hadrons) are selected. For the DIS event selection, a study on the target radius
 had to be made in order to determine the optimal value for the target cut. When the event selection is done,
 the hadrons have to be identified between pions, kaons and protons and the identification has to be corrected
-according to the RICH detection efficiency in a process called unfolding. The obtained raw multiplicities are
+according to the RICH detection efficiency and purity in a process called unfolding. The obtained raw multiplicities are
 then binned and corrected with the detector acceptance. The general event reconstruction codes for COMPASS are
 used. A personal analysis code is developed to study the SIDIS channel and select pion or kaon production events.
 
 In the following, the number of residual events after each cut will be given between parentheses next to each cut.
-When the number is not specified, it can mean that the cut was done in a pre-analysis of that the recovery of the
+When the number is not specified, it can mean that the cut was done in a pre-analysis or that the recovery of the
 number is too complex due to the transversal implementation of the cut in the code (e.g. for the $\nu$ cut).
+
+The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a pure proton target (lH$_2$).
+Five periods of the 2016 data are analyzed : P07, P08, P09, P10 and P11.
 
 %------------------------------------------------
 
@@ -38,22 +41,25 @@ number is too complex due to the transversal implementation of the cut in the co
 
 For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of cuts is applied :
 \begin{enumerate}
-  \item Events with Best Primary Vertex ( events)
-  \item Events with reconstruted scattered muon ( events)
-  \item Events with a well reconstructed beam track (so-called 'BMS cut') ( events)
-  \item Events with energy of beam muon energy in range [140 GeV, 180 GeV] ( events)
-  \item Events with primary interaction in the target material, target radius cut (explained in section ??, events)
-  \item Events with muon beam trajectory crossing entirely the target cell ( events)
-  \item Events with Middle, Ladder, Outer or LAST trigger ( events)
-  \item Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity, events)
-  \item Events with $0.1 < y < 0.9$ ( events)
-  \item Events with $5 < W < 17$ GeV/c$^2$ ( events)
-  \item Events with $0.004 < x < 0.4$ ( events)
-  \item Events abiding $\nu$ cut ( events)
+  \item Events with Best Primary Vertex (53.8 M events, 100\%)
+  \item Events with reconstruted scattered muon (53.8 M events, 100\%)
+  \item Events with primary interaction in the target material, target radius cut (explained in Section \ref{}, 22.7 M events, 42.1\%)
+  \item Events with energy of beam muon energy in range [140 GeV, 180 GeV] (22.7 M events, 42.1\%)
+  \item Events with a well reconstructed beam track (so-called 'BMS cut') (20.8 M events, 38.6\%)
+  \item Events with $\chi^2$/ndf $<$ 10 for a well reconstructed beam track (20.8 M events, 38.6\%)
+  \item Events with muon beam trajectory crossing entirely the target cell (20.0 M events, 37.2\%)
+  \item Events with $\chi^2$/ndf $<$ 10 for a well reconstructed scattered muon track (20.0 M events, 37.2\%)
+  \item Events with Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$) (19.9 M events, 37.1\%)
+  \item Events with Middle, Ladder, Outer or LAST trigger (19.9 M events, 37.1\%)
+  \item Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity, 13.9 M events, 25.8\%)
+  \item Events with $0.1 < y < 0.9$ (6.3 M events, 11.7\%)
+  \item Events with $5 < W < 17$ GeV/c$^2$ (6.3 M events, 11.6\%)
+  \item Events with $0.004 < x < 0.4$ (6.3 M events, 11.6\%)
+  \item Events with $\nu$ cut
 \end{enumerate}
 
-The cut on th kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
-momentum range of 3 - 40 GeV/c. The criteria is defined by :
+The cut on the kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
+momentum range of 12 - 40 GeV/c. The criteria is defined by :
 \begin{equation}
   \nu_{max} = \frac{\sqrt{(p^2_{max}+m^2_h)}}{z_{max}}
 \end{equation}
@@ -61,12 +67,12 @@ momentum range of 3 - 40 GeV/c. The criteria is defined by :
   \nu_{min} = \frac{\sqrt{(p^2_{min}+m^2_h)}}{z_{min}}
 \end{equation}
 
-where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 3 GeV/c), $z_{max}$ (resp. $z_{min}$)
+where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 12 GeV/c), $z_{max}$ (resp. $z_{min}$)
 is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the considered hadron.
 
 %------------------------------------------------
 
-\section{Target radius cut evaluation}
+\section{Target cut evaluation}
 
 TBA
 
@@ -76,14 +82,15 @@ TBA
 
 For the hadron selection ($\mu p \rightarrow \mu hX$), the following list of cuts is applied :
 \begin{enumerate}
-  \item Particle is not a scattered muon ( hadrons)
-  \item Z coordinate of the first measured hit < 350 cm ( hadrons)
-  \item Z coordinate of the last measured hit > 350 cm ( hadrons)
-  \item Maximum radiation length cumulated along all the trajectory < 15 radiation lengths ( hadrons)
-  \item $3 < p_h < 40$ GeV/c ( hadrons)
-  \item $0.01 < \theta_{RICH} < 0.12$ (at RICH entrance, hadrons)
-  \item $x^2_{RICH} + y^2_{RICH} > 25$ cm$^2$ ( hadrons)
-  \item $0.2 < z < 0.85$ ( hadrons)
+  \item Particle is not a scattered muon (15.2 M hadrons, 100\%)
+  \item Maximum radiation length cumulated along all the trajectory < 15 radiation lengths (14.9 M hadrons, 98.3\%)
+  \item $\chi^2$/ndf $<$ 10 for the hadron track (14.6 M hadrons, 96.1\%)
+  \item Z coordinate of the first measured hit < 350 cm (14.6 M hadrons, 95.9\%)
+  \item Z coordinate of the last measured hit > 350 cm (14.6 M hadrons, 93.6\%)
+  \item $0.01 < \theta_{RICH} < 0.12$ (at RICH entrance, 9.5 M hadrons, 62.3\%)
+  \item $x^2_{RICH} + y^2_{RICH} > 25$ cm$^2$ (rejection of RICH pipe) (9.3 M hadrons, 61.5\%)
+  \item $12 < p_h < 40$ GeV/c (2.5 M hadrons, 16.5\%)
+  \item $0.2 < z < 0.85$ (1.9 M hadrons, 13.1\%)
 \end{enumerate}
 
 %----------------------------------------------------------------------------------------
