@@ -4,6 +4,7 @@
 \usepackage{tabularx} % extra features for tabular environment
 \usepackage{amsmath}  % improve math presentation
 \usepackage{authblk}  % for authors
+\renewcommand\Authands{\space}
 \usepackage{graphicx} % takes care of graphic including machinery
 \usepackage{enumerate}
 \usepackage{rotating}
@@ -37,12 +38,22 @@
 
 \title{\textbf{Charged hadron multiplicities from muon deep inelastic scattering on lH$_2$ \\ (2016 COMPASS data)}}
 \author[1,2]{\textbf{N. Pierre}}
-\affil[1]{\textit{CEA IRFU/SPhN Saclay, 91191 Gif-sur-Yvette, France}}
-\affil[2]{\textit{Universit\"at Mainz, Institut f\"ur Kernphysik, 55099 Mainz, Germany}}
+\author[3]{\textbf{M. Stolarski}}
+\author[4]{\textbf{A. Moretti}}
+\author[4]{\textbf{J. Matousek}}
+\author[1]{\textbf{Y. Bedfer}}
+\author[2]{\textbf{E. Kabu{\ss}}}
+\author[1]{\textbf{F. Kunne}}
+\author[ ]{\textbf{on behalf of the SIDIS group}}
+\affil[1]{\textit{CEA IRFU/DPhN Saclay}}
+\affil[2]{\textit{Universit\"at Mainz, Institut f\"ur Kernphysik}}
+\affil[3]{\textit{LIP, Lisbon}}
+\affil[4]{\textit{INFN University of Trieste}}
+
 \maketitle
 
 \begin{abstract}
-  We present an analysis of multiplicities of charged hadrons from 2016 data on pure proton lH$_2$ target.
+  We present an analysis of multiplicities of charged hadrons from 2016 data on pure proton lH$_2$ target, aiming at a release for kaons only.
   The data cover the following kinematic range : $Q^2 >$ 1 (GeV/c)$^2$, 0.1 $< y <$ 0.7, 0.004 $< x <$ 0.4,
   0.2 $< z <$ 0.85.
 \end{abstract}
@@ -51,16 +62,15 @@
 
 \section{Introduction} \label{Intro}
 
-In this note, we present the analysis of charged hadron multiplicities from data taken in 2016 on a pure proton lH$_2$ target.
-The present release is prepared in view of the XXVII International Workshop on Deep-Inelastic Scattering and Related Subject
-conference in April 2019.
+In this note, we present the analysis of charged hadron multiplicities from data taken in 2016 on a pure proton lH$_2$ target, aiming at a release for kaons only.
+The present release is prepared in view of the XXVII International Workshop on Deep-Inelastic Scattering and Related Subject conference in April 2019.
 
-The new features of the present analysis, as compared to the 2006 analysis, are :
+The new features of the present analysis, as compared to the 2006 analysis\cite{COMPASS2006P,COMPASS2006K}, are :
 \begin{itemize}
-	\item Data were taken on a pure proton target, compared to a deuteron target in 2016.
+	\item Data were taken on a pure proton target, compared to an isoscalar target in 2016.
 	\item New Monte-Carlo simulation TGEANT.
-	\item New event generator DJANGOH in the Monte-Carlo simulation to take into the radiative events.
-	\item New radiative corrections in bins of ($x$,$y$,$z$) obtained with DJANGOH.
+	\item DJANGOH as Monte-Carlo event generator, taking into account radiative events at the level of event simulation\cite{DJANGOH_NOTE}.
+	\item Radiative corrections as a function of z, in addition to (x,y), obtained with DJANGOH.
 \end{itemize}
 
 \section{Analysis of raw multiplicities} \label{Raw}
@@ -79,7 +89,7 @@ The PHAST version used for this analysis is 8.001.
 \begin{enumerate}
 	\item Event with a best primary vertex (PHAST routine PaEvent::iBestPrimaryVertex())
 	\item Event with reconstructed scattered muon (PHAST routine PaVertex::iMuPrim())
-	\item BMS cut for a well reconstructed beam track (using PaTrack::NHitsFoundInDetect("BM")>3)
+	\item BMS cut for a well reconstructed beam track (using PaTrack::NHitsFoundInDetect("BM")$>$3)
 	\item Energy of beam muon in range [140 GeV, 180 GeV]
 	\item Z coordinate of event vertex ($z_{vtx}$) within the target region $\in$ [-325 cm, -71 cm]
 	\item Primary interaction in the target material (PHAST routine PaAlgo:InTarget() for both data and MC (Section \ref{Raw}) target positions
@@ -96,19 +106,19 @@ The PHAST version used for this analysis is 8.001.
 	\item $\nu$ cut
 \end{enumerate}
 
-The cut on th kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
-momentum range of 12 - 40 GeV/c. The criteria is defined by :
+The cut on the kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
+momentum range of 12 - 40 GeV/c. The criterion is defined by :
 
 \begin{equation}
-  \nu_{max} = \frac{\sqrt{(p^2_{max}+m^2_h)}}{z_{max}}
+  \nu_{max} = \frac{\sqrt{(p^2_{h,max}+m^2_h)}}{z_{max}}
 \end{equation}
 \begin{equation}
-  \nu_{min} = \frac{\sqrt{(p^2_{min}+m^2_h)}}{z_{min}}
+  \nu_{min} = \frac{\sqrt{(p^2_{h,min}+m^2_h)}}{z_{min}}
 \end{equation}
 
-where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 12 GeV/c), $z_{max}$ (resp. $z_{min}$)
+where $p_{h,max}$ (resp. $p_{h,min}$) is the hadron momentum limit of 40 GeV/c (resp. 12 GeV/c), $z_{max}$ (resp. $z_{min}$)
 is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the considered hadron.
-With this cut we recover several $z$ bins that had been rejected in previous analyses because of high LEPTO contributions.
+This cut eliminates region of the ($x$,$\nu$,$z$,$p_{h}$) phase space where acceptance is zero. And consequently ($x$,$y$,$z$) acceptance correction is entirely from the LEPTO model. We thus get rid of model dependence.
 
 \hfill
 \newline
@@ -153,14 +163,14 @@ For reference this is half the statistic of 2006.
 
 \subsection{Particle Identification with RICH detector}
 
-The $\pi$ and $K$ particle identification (PID) is performed by the RICH detector.
+The $\pi$, $K$ and $p$ particle identification (PID) is performed by the RICH detector.
 
-The method used for the RICH particle identification is described in \ref{}. The idea is the following : when a particle
+The method used for the RICH particle identification is described in this note\cite{RICH_NOTE}. The idea is the following : when a particle
 is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then
 compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest
 value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second
 highest value of the four compared likelihood values ($\pi$, $K$, $p$ and the background). The electron and muon likelihood
-are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (2 to 40 GeV/c) the RICH detector can
+are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (12 to 40 GeV/c) the RICH detector can
 not be used to efficiently distinguish electrons from $\pi$.
 
 All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
@@ -169,32 +179,42 @@ All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
   \item Pion selection
   \begin{itemize}
     \item $LH(\pi) > 0$
-    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
-    in the previous comparison.
+    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bgd)$.
     \item $\frac{LH(\pi)}{LH(2^{nd})}>1.02$
     \item $\frac{LH(\pi)}{LH(bgd)}>2.02$
   \end{itemize}
   \item Kaon selection
   \begin{itemize}
     \item $LH(K) > 0$
-    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
-    in the previous comparison.
+    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bgd)$.
     \item $\frac{LH(K)}{LH(2^{nd})}>1.08$
     \item $\frac{LH(K)}{LH(bgd)}>2.08$
   \end{itemize}
   \item Proton selection
-  Three cases are considered depending on the momentum $p$ of the particle and are defined but the kaon threshold ($\simeq 8.9$ GeV/c)
+  Three cases are considered depending on the momentum $p_{h}$ of the particle and are defined but the kaon threshold ($\simeq 8.9$ GeV/c)
   and proton threshold ($\simeq 17.95$ GeV/c)
   \begin{enumerate}[(a)]
-    \item Kaon threshold $< p \leq$ proton threshold - 5 GeV/c
-    \item $p >$ proton threshold + 5 GeV/c
+    \item Kaon threshold $< p_{h} \leq$ proton threshold - 5 GeV/c
+	  \begin{center}
+		  \begin{tabular}{c|c}
+		    \hline
+		     $p$ & $\bar{p}$ \\
+		    \hline
+				\multicolumn{2}{c}{Not to be a $\pi$ or $K$} \\
+		    $\frac{LH(\pi)}{LH(bg)} < 2.2$ & $\frac{LH(\pi)}{LH(bg)} < 2.1$ \\
+		    $\frac{LH(K)}{LH(bg)} < 2.2$ & $\frac{LH(K)}{LH(bg)} < 2.1$ \\
+		    \hline
+				\multicolumn{2}{c}{or all $LH$ = 0} \\
+				\hline
+		  \end{tabular}
+		\end{center}
+    \item $p_{h} >$ proton threshold + 5 GeV/c
     \begin{itemize}
       \item $LH(p) > 0$
-      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bgd)$. In case $LH(e) > 1.8LH(\pi)$, one must consider the electron hypothesis
-      in the previous comparison.
+      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bgd)$.
       \item $\frac{LH(p)}{LH(2^{nd})}>1$
     \end{itemize}
-    \item Proton threshold - 5 GeV/c $< p <$ proton threshold + 5 GeV/c
+    \item Proton threshold - 5 GeV/c $< p_{h} <$ proton threshold + 5 GeV/c
     \begin{itemize}
       \item Using (a) and (b) simultaneously.
     \end{itemize}
@@ -203,17 +223,17 @@ All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
 
 \subsection{RICH unfolding based on efficiency matrices}
 
-The performance of the RICH is not perfect : in terms of efficiency and purity, some particles
-are misidentified.
+The performance of the RICH is not perfect : neither in terms of efficiency nor in terms
+of purity.
 
-The unfolding procedure is needed to correct the yield of identified hadrons for RICH detection efficiency.
+The unfolding procedure is needed to correct the yield of identified hadrons for this imperfection.
 In order to perform this correction, the RICH actual performance is evaluated from real data. The result of
-this evaluation is presented through RICH efficiency probabilities matrices, $M_{RICH}$, binned in momentum
+this evaluation is presented through RICH performance matrices, $M_{RICH}$, binned in momentum
 and angle :
 
 \begin{itemize}
-  \item $p$ {3,12,13,15,17,19,22,25,27,30,35,40} GeV/c
-  \item $\theta$ {0.01,0.04,0.12} rad
+  \item $p_h$ \{3,12,13,15,17,19,22,25,27,30,35,40\} GeV/c
+  \item $\theta$ \{0.01,0.04,0.12\} rad
 \end{itemize}
 
 The 3-by-3 matrices $M_{RICH}$ give a relation between the vector of true hadron $T_h$ and the vector of
@@ -238,19 +258,17 @@ T_p
 \end{bmatrix}
 \end{equation}
 
-The coefficients of the $M_{RICH}$, $\epsilon{t \rightarrow i}$, are the probabilities that a true hadron
+The coefficients of the $M_{RICH}$, $\epsilon(t \rightarrow i)$, are the probabilities that a true hadron
 $t$ is identified as a hadron of type $i$. These probabilities have been determined as described in \ref{}.
 
-By performing a matrix inversion, one can obtain the unfolded number of hadrons with the Eq.\ref{} :
+The true hadrons have obtained by inverting the performance matrices (Eq.\ref{richmat}) :
 
 \begin{equation}
   \overrightarrow{T_h} = M^{-1}_{RICH}\overrightarrow{I_h}
+	\label{richmat}
 \end{equation}
 
-where $M^{-1}_{RICH}$ coefficients are weights with which each identified hadron is counted as a pion, kaon
-or proton.
-
-\begin{table}[]
+\begin{table}[!h]
   \caption{\label{HadNum} Number of identified pions, kaons, and protons for the 5 periods before and after unfolding.}
   \centering
   \begin{tabular}{lcccccc}
@@ -271,6 +289,24 @@ As the target in 2016 is long and not straight ('banana shaped'), with a shape n
 	\includegraphics[scale=0.4]{./gfx/Target.png}
 	\caption{Left is a ($y$,$z$) view of the real data (blue) and the Monte-Carlo target (red), $z$ being the direction of propagation of the beam. The actual cut used in the analysis corresponds to the intersection of both real data target (red) and Monte-Carlo target (blue) volumes. Right is a sketch showing approximately how much we lose by doing such cut. \textbf{NOT FOR RELEASE}}
 	\label{Target}
+\end{figure}
+
+\subsection{Downstream target vertex distribution}
+
+We discovered when looking at vertex distribution for hadrons and comparing data with Monte-Carlo that there was a deficit of vertices in the downstream part of the target (between -100 and -70 cm, Fig.\ref{VertexDrop}). We saw this phenomenon both in data and Monte-Carlo however it was more stressed in data than in Monte-Carlo. After investigation, we discovered that, both in data and Monte-Carlo, there were a high number of hadrons that have their track not attached to the best primary vertex in a 2 mm-radius circle around the best primary vertex (Fig.\ref{CircleHadron}). This circle was only visible in the downstream part of the target while in the upstream part it is non-existant.
+
+\begin{figure}[!h]
+	\includegraphics[scale=0.45]{./gfx/CircleHadron.png}
+	\caption{Both plots are representing the relative distance to the best primary vertex of the extrapolated position of the unattached hadrons to the vertex position. Left the plot is done in the downstream part of the target, right in the upstream part. The left plot shows an important amount of particles in a 2 mm-radius circle around the vertex while the right plot does not. \textbf{NOT FOR RELEASE}}
+	\label{VertexDrop}
+\end{figure}
+
+This issue probably needs a thorough investigation of how the reconstruction is done in this case. As time was in short supply, we decided to go with a rescue procedure to reattach these hadrons to the best primary vertex. All the hadrons in a circle of radius 2 mm around the best primary vertex are considered as if they were attached to it (considering they have a track ID and a momentum associated). With this procedure we were able to cover for the loss of hadron in the last part of the target (Fig.\ref{VertexDrop}).
+
+\begin{figure}[!h]
+	\includegraphics[scale=0.45]{./gfx/VertexDrop.png}
+	\caption{One expects the vertex distribution for hadrons to increase with $z_{vtx}$ due to the apparatus acceptance. However in the left plot there is a drop both in data and Monte-Carlo of the number of vertices. In the right plot, after the rescue procedure, the drop has disappeared. The rescue procedure also reconciles data and Monte-Carlo. \textbf{NOT FOR RELEASE}}
+	\label{VertexDrop}
 \end{figure}
 
 \subsection{Kinematic binning}
@@ -533,7 +569,7 @@ This equation leads to the inverse error matrices with associated statistical er
 
 \subsection{Errors associated to acceptance (z-vertex dependence)}
 
-The correction of extracted multiplicities for limited geometric acceptance of the apparatus and the detector resolution is estimated using a Monte-Carlo simulation as described in Section \ref{Corr}. This correction should be independant of the model used in the MC simulation. For this reason, the acceptance estimation has been evaluated using different MC samples, obtainined by changing the quark fragmentation parameters from JETSET and by using different parton distribution functions in LEPTO. This exercise has been performed in a previous release \cite{} and a conservative systematic error of $\sim$ 5\% was derived.
+The correction of extracted multiplicities for limited geometric acceptance of the apparatus and the detector resolution is estimated using a Monte-Carlo simulation as described in Section \ref{Cor}. This correction should be independant of the model used in the MC simulation. For this reason, the acceptance estimation has been evaluated using different MC samples, obtainined by changing the quark fragmentation parameters from JETSET and by using different parton distribution functions in LEPTO. This exercise has been performed in a previous release \cite{Release2015} and a conservative systematic error of $\sim$ 5\% was derived.
 Another error concerns the z-vertex dependence : the target can be separated into 4 different parts and the sum of multiplicities extracted from each part is then compared. From this comparison, a conservative systematic error of $\sim$ 5\% was derived.
 These values are taken provisionally for the estimation shown in Section \ref{Res}.
 
@@ -547,8 +583,8 @@ The data samples used in the analysis were recorded with two different beam char
 
 \subsection{Error associated to the diffractive vector meson correction}
 
-In HEPGEN, the cross section for exclusive vector meson production is normalized to the GPD model of Goloskokov and Kroll. The theoretical uncertainty on the predicted cross section close to COMPASS kinematics is around 30\% \cite{}. Propagating this uncertainty leads to a maximum relative uncertainty under 6\%.
-The method for the correction of nuclear effects maily changes the shape of the $p_T^2$ distribution with respect to the diffractive vector meson production on a free nucleon. It assumes that the $p_T^2$-integrated nuclear cross-section per nucleon for exclusive events is the same as the $p_T^2$-integrated nuclear cross section for a free nucleon. According to A. Sandacz \cite{}, the systematic uncertainty due to this assumption is a few percent.
+In HEPGEN, the cross section for exclusive vector meson production is normalized to the GPD model of Goloskokov and Kroll. The theoretical uncertainty on the predicted cross section close to COMPASS kinematics is around 30\% \cite{Goloskokov}. Propagating this uncertainty leads to a maximum relative uncertainty under 6\%.
+The method for the correction of nuclear effects maily changes the shape of the $p_T^2$ distribution with respect to the diffractive vector meson production on a free nucleon. It assumes that the $p_T^2$-integrated nuclear cross-section per nucleon for exclusive events is the same as the $p_T^2$-integrated nuclear cross section for a free nucleon. According to A. Sandacz \cite{Hepgen}, the systematic uncertainty due to this assumption is a few percent.
 
 \section{Results} \label{Res}
 
@@ -754,9 +790,26 @@ Finally for the multiplicity, including the diffractive $\Phi$ and $\rho^0$ corr
 
 \begin{thebibliography}{99}
 
-% \bibitem{melissinos}
-% A.~C. Melissinos and J. Napolitano, \textit{Experiments in Modern Physics},
-% (Academic Press, New York, 2003).
+\bibitem{COMPASS2006P}
+C. Adolph et al., \textit{Multiplicities of charged pions and unidentified charged hadrons from deep-inelastic scattering of muons off an isoscalar target}, PLB 763 (2017) 001.
+
+\bibitem{COMPASS2006K}
+C. Adolph et al., \textit{Multiplicities of charged kaons from deep-inelastic muon scattering off an isoscalar target}, PLB 763 (2017) 133.
+
+\bibitem{DJANGOH_NOTE}
+N. Pierre, \textit{DJANGOH : a Monte-Carlo Generator with Radiative Corrections}, COMPASS Note 2018-3.
+
+\bibitem{RICH_NOTE}
+M. Wilfert and J. Giarra, \textit{RICH performance in 2011/12}, COMPASS Note 2017-6.
+
+\bibitem{Release2015}
+Y. Bedfer, N. du Fresne, D. Hahne, N. Pierre, E. Seder, M. Stolarski, V. Andrieux, L. Capozza, Q. Curiel, F. Thibaud, E. Kabu{\ss}, F. Kunne, N. Makke, C. Marchand, F. Sozzi, \textit{Charged kaon multiplicities from muon deep inelastic scattering on $^6$LiD (2006 COMPASS data)}, COMPASS Release Note May 2015.
+
+\bibitem{Goloskokov}
+S. V. Goloskokov and P. Kroll, \textit{The role of the quark and gluon GPDs in hard vector-meson electroproduction}, arXiv:0708.3569 [hep-ph].
+
+\bibitem{Hepgen}
+A. Sandacz and P. Sznajder, \textit{HEPGEN - generator for hard exclusive leptoproduction}, arXiv:1207.0333 [hep-ph].
 
 \end{thebibliography}
 
