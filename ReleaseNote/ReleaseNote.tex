@@ -13,6 +13,7 @@
 \usepackage[margin=1in,letterpaper]{geometry} % decreases margins
 \usepackage{cite} % takes care of citations
 \usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{mathrsfs}
 \hypersetup{
 	colorlinks=true,       % false: boxed links; true: colored links
 	linkcolor=blue,        % color of internal links
@@ -99,7 +100,7 @@ The PHAST version used for this analysis is 8.001.
 	\item $\chi^2$ cut for a well reconstructed scattered muon track ($\chi^2$/ndf $<$ 10)
 	\item Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$)
 	\item Middle Trigger or Ladder Trigger or Outer Trigger or LAS trigger
-	\item $Q^2$ > 1 (GeV/c)$^2$
+	\item $Q^2$ $>$ 1 (GeV/c)$^2$
 	\item 0.1 $< y <$ 0.7
 	\item 5 $< W <$ 17
 	\item 0.004 $< x <$ 0.4
@@ -165,7 +166,7 @@ For reference this is half the statistic of 2006.
 
 The $\pi$, $K$ and $p$ particle identification (PID) is performed by the RICH detector.
 
-The method used for the RICH particle identification is described in this note\cite{RICH_NOTE}. The idea is the following : when a particle
+The method used for the RICH particle identification is described in ref\cite{RICH_NOTE}. The idea is the following : when a particle
 is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then
 compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest
 value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second
@@ -179,16 +180,16 @@ All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
   \item Pion selection
   \begin{itemize}
     \item $LH(\pi) > 0$
-    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bgd)$.
+    \item $LH(\pi) > LH(K)$, $LH(p)$ and $LH(bg)$.
     \item $\frac{LH(\pi)}{LH(2^{nd})}>1.02$
-    \item $\frac{LH(\pi)}{LH(bgd)}>2.02$
+    \item $\frac{LH(\pi)}{LH(bg)}>2.02$
   \end{itemize}
   \item Kaon selection
   \begin{itemize}
     \item $LH(K) > 0$
-    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bgd)$.
+    \item $LH(K) > LH(\pi)$, $LH(p)$ and $LH(bg)$.
     \item $\frac{LH(K)}{LH(2^{nd})}>1.08$
-    \item $\frac{LH(K)}{LH(bgd)}>2.08$
+    \item $\frac{LH(K)}{LH(bg)}>2.08$
   \end{itemize}
   \item Proton selection
   Three cases are considered depending on the momentum $p_{h}$ of the particle and are defined but the kaon threshold ($\simeq 8.9$ GeV/c)
@@ -211,7 +212,7 @@ All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
     \item $p_{h} >$ proton threshold + 5 GeV/c
     \begin{itemize}
       \item $LH(p) > 0$
-      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bgd)$.
+      \item $LH(p) > LH(\pi)$, $LH(K)$ and $LH(bg)$.
       \item $\frac{LH(p)}{LH(2^{nd})}>1$
     \end{itemize}
     \item Proton threshold - 5 GeV/c $< p_{h} <$ proton threshold + 5 GeV/c
@@ -232,7 +233,7 @@ this evaluation is presented through RICH performance matrices, $M_{RICH}$, binn
 and angle :
 
 \begin{itemize}
-  \item $p_h$ \{3,12,13,15,17,19,22,25,27,30,35,40\} GeV/c
+  \item $p_h$ \{12,13,15,17,19,22,25,27,30,35,40\} GeV/c
   \item $\theta$ \{0.01,0.04,0.12\} rad
 \end{itemize}
 
@@ -259,7 +260,7 @@ T_p
 \end{equation}
 
 The coefficients of the $M_{RICH}$, $\epsilon(t \rightarrow i)$, are the probabilities that a true hadron
-$t$ is identified as a hadron of type $i$. These probabilities have been determined as described in \ref{}.
+$t$ is identified as a hadron of type $i$. These probabilities have been determined as described in ref\cite{RICH_NOTE}.
 
 The true hadrons have obtained by inverting the performance matrices (Eq.\ref{richmat}) :
 
@@ -439,7 +440,7 @@ Monte Carlo study. Three Monte Carlo samples are produced based on different gen
 the same event reconstruction chain. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the
 proton are simulated. The $\rho^0$ sample includes nuclear effects (coherent production and nuclear absorption).
 
-The fraction of pions (resp. kaons) resulting from a diffractive $rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as :
+The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as :
 
 \begin{equation}
   \begin{split}
@@ -536,36 +537,64 @@ where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in t
 
 \subsection{Errors associated to the RICH unfolding}
 
-The RICH matrices are built using the statistical errors associated to the original probability matrix.
+The first stage of pion identification is based on the likelihood ratios : $LH(\pi)/LH(2^{nd})$ and $LH(\pi)/LH(bg)$. These cuts are optimized to minimize the
+pions misidentified as kaons. The systematic error associated to the selection of these cuts is performed varying the cuts around optimized values. Two sets of
+cuts \textit{loose} and \textit{severe} were used (see Table \ref{loose.severe})
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ccccccc}
+		\hline
+		 & \multicolumn{3}{c}{Loose} & \multicolumn{3}{c}{Severe} \\
+		\hline
+		 & $\pi$ & $K$ & $p(\bar{p})$ & $\pi$ & $K$ & $p(\bar{p})$ \\
+		\hline
+		$\frac{LH(\pi)}{LH(2^{nd})}$ & $> 1.00$ & $-$ & $-$ & $>1.06$ & $-$ & $-$ \\
+		$\frac{LH(\pi)}{LH(bg)}$ & $> 2.00$ & $-$ & $<2.3$ $(2.2)$ & $>2.04$ & $-$ & $<2.0$ $(1.9)$ \\
+		$\frac{LH(K)}{LH(2^{nd})}$ & $-$ & $>1.06$ & $-$ & $>-$ & $>1.10$ & $-$ \\
+		$\frac{LH(K)}{LH(bg)}$ & $-$ & $>2.00$ & $<3.0$ $(2.9)$ & $-$ & $>2.16$ & $<2.7$ $(2.6)$ \\
+		$\frac{LH(p)}{LH(2^{nd})}$ & $-$ & $>0.98$ & $-$ & $>-$ & $>1.06$ & $-$ \\
+		\hline
+	\end{tabular}
+  \caption{Set of loose and severe cuts to evaluate the RICH systematic errors.}
+  \label{loose.severe}
+\end{table}
+
+To evaluate the systematic error associated to the selection of the particle likelihood cuts, the particle identification is performed using the \textit{loose}
+and \textit{severe} sets of likelihood cuts and the corresponding RICH probability matrices and final multiplicities are extracted ($M^{h^{\pm},loose}_{raw}$
+and $M^{h^{\pm},severe}_{raw}$ respectively). The largest difference between $M^{h^{\pm},loose}_{raw}$ and $M^{h^{\pm},severe}_{raw}$ with the nominal
+multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error :
 
 \begin{equation}
-M^{\pm}_{RICH}
-=
-\begin{bmatrix}
-\epsilon(\pi \rightarrow \pi)\pm\sigma_{\epsilon(\pi \rightarrow \pi)} & \epsilon(K \rightarrow \pi)\pm\sigma_{\epsilon(K \rightarrow \pi)} & \epsilon(p \rightarrow \pi)\pm\sigma_{\epsilon(p \rightarrow \pi)}\\
-\epsilon(\pi \rightarrow K)\pm\sigma_{\epsilon(\pi \rightarrow K)} & \epsilon(K \rightarrow K)\pm\sigma_{\epsilon(K \rightarrow K)} & \epsilon(p \rightarrow K)\pm\sigma_{\epsilon(p \rightarrow K)} \\
-\epsilon(\pi \rightarrow p)\pm\sigma_{\epsilon(\pi \rightarrow p)} & \epsilon(K \rightarrow p)\pm\sigma_{\epsilon(K \rightarrow p)} & \epsilon(p \rightarrow p)\pm\sigma_{\epsilon(p \rightarrow p)}
-\end{bmatrix}
+  \sigma^{RICH_{LH}}_{sys} = MAX(|M^{h^{\pm},loose}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},severe}_{raw}-M^{h^{\pm}}_{raw}|)
 \end{equation}
 
-As an inversion of the probabilities matrices is done in the analysis, the propagation of errors through the
-inversion operation has to be performed. A calculation of the uncertainties on the probabilities yields \cite{} :
+The difference between the altered RICH probability matrices and the optimal one are plotted in Fig.\ref{}. For pions and protons, the largest differences
+($<$5\%) are observed in the high momentum $p_h$ region. For kaons the difference reaches 4\% at low $p_h$ ; small differences ($<$1\%) are observed at the
+highest $p_h$ value.
+
+A second source of systematic error is that associated with the calculation of the RICH probability matrices. This is estimated by generating two sets of altered
+RICH probability matrices. As represented in Eq.\ref{StatMat} the matrices are constructe using the statistical error associated to the original probability matrix elements.
 
 \begin{equation}
-  [\sigma^{-1}_i]^2 = \epsilon^{-1}_{ip}\epsilon^{-1}_{ir}cov(\epsilon_{pq},\epsilon_{rs})\epsilon^{-1}_{qi}\epsilon^{-1}_{si} + [\epsilon^{-1}_{ik}\sigma_k]^2
+  M^{\pm}_{RICH}
+  =
+  \begin{bmatrix}
+  P(\pi \rightarrow \pi)\pm\sigma_{P(\pi \rightarrow \pi)} & P(K \rightarrow \pi)\mp\sigma_{P(K \rightarrow \pi)} & P(p \rightarrow \pi)\mp\sigma_{P(p \rightarrow \pi)}\\
+  P(\pi \rightarrow K)\mp\sigma_{P(\pi \rightarrow K)} & P(K \rightarrow K)\pm\sigma_{P(K \rightarrow K)} & P(p \rightarrow K)\mp\sigma_{P(p \rightarrow K)} \\
+  P(\pi \rightarrow p)\mp\sigma_{P(\pi \rightarrow p)} & P(K \rightarrow p)\mp\sigma_{P(K \rightarrow p)} & P(p \rightarrow p)\pm\sigma_{P(p \rightarrow p)}
+  \end{bmatrix}
+	\label{StatMat}
 \end{equation}
 
-This equation leads to the inverse error matrices with associated statistical errors :
+The raw multiplicities $M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ are then recalculated using the altered probability matrices. The largest difference between
+$M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is taken as the sytematic error :
 
 \begin{equation}
-[M^{\pm}_{RICH}]^{-1}
-=
-\begin{bmatrix}
-\epsilon^{-1}(\pi \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow \pi)} & \epsilon^{-1}(K \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(K \rightarrow \pi)} & \epsilon^{-1}(p \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(p \rightarrow \pi)}\\
-\epsilon^{-1}(\pi \rightarrow K)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow K)} & \epsilon^{-1}(K \rightarrow K)\pm\sigma^{-1}_{\epsilon(K \rightarrow K)} & \epsilon^{-1}(p \rightarrow K)\pm\sigma^{-1}_{\epsilon(p \rightarrow K)} \\
-\epsilon^{-1}(\pi \rightarrow p)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow p)} & \epsilon^{-1}(K \rightarrow p)\pm\sigma^{-1}_{\epsilon(K \rightarrow p)} & \epsilon^{-1}(p \rightarrow p)\pm\sigma^{-1}_{\epsilon(p \rightarrow p)}
-\end{bmatrix}
+  \sigma^{RICH_{stat}}_{sys} = MAX(|M^{h^{\pm},+}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},-}_{raw}-M^{h^{\pm}}_{raw}|)
 \end{equation}
+
+The final systematic uncertainty associated to the particle identification and unfolding correction ($\sigma^{RICH}_{sys}$) is the largest value of $\sigma^{RICH_{stat}}_{sys}$ and $\sigma^{RICH_{LH}}_{sys}$. The error goes from $<$ 0.2\% at low $y$ for all $x$ and $z$ bins to $\sim$ 20\% for high $y$ and high $z$, where multiplicities are low.
 
 \subsection{Errors associated to acceptance (z-vertex dependence)}
 
@@ -623,9 +652,17 @@ The actual results are presented in Figs. \ref{Ks} and \ref{Kr}. The data are in
 \section{Release Material} \label{RM}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.4]{./gfx/xQ2.png}
+	\centering
+	\includegraphics[scale=0.34]{./gfx/xQ2.png}
 	\caption{}
 	\label{xQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.34]{./gfx/RICH.png}
+	\caption{}
+	\label{RICH}
 \end{figure}
 
 \begin{sidewaysfigure}[p]
@@ -693,14 +730,16 @@ The actual results are presented in Figs. \ref{Ks} and \ref{Kr}. The data are in
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/Ks.png}
-	\caption{}
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Ks.png}
+	\caption{$\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
 	\label{Ks}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/Kr.png}
-	\caption{}
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Kr.png}
+	\caption{$\mathscr{M}^{K^+}/\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to O.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
 	\label{Kr}
 \end{figure}
 
@@ -788,6 +827,8 @@ Finally for the multiplicity, including the diffractive $\Phi$ and $\rho^0$ corr
 % Note: with this approach it is YOUR responsibility to put them in order
 % of appearance.
 
+\newpage
+
 \begin{thebibliography}{99}
 
 \bibitem{COMPASS2006P}
@@ -810,6 +851,9 @@ S. V. Goloskokov and P. Kroll, \textit{The role of the quark and gluon GPDs in h
 
 \bibitem{Hepgen}
 A. Sandacz and P. Sznajder, \textit{HEPGEN - generator for hard exclusive leptoproduction}, arXiv:1207.0333 [hep-ph].
+
+\bibitem{HERMES}
+A. Airapetian et al., \textit{Multiplicities of charged pions and kaons from semi-inclusive deep-inelastic scattering by the proton and the deuteron}, Phys.Rev. D87 (2013) 074029.
 
 \end{thebibliography}
 
