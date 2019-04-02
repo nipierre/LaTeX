@@ -78,6 +78,7 @@ The new features of the present analysis, as compared to the 2006 analysis\cite{
 
 The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a pure proton target (lH$_2$).
 Five periods of the 2016 data are analyzed : P07 (slot 2), P08 (slot 2), P09 (slot 2), P10 (slot 2) and P11 (slot 2).
+The whole sample has been pre-filtered into so-called μDSTs asking for at least one primary vertex with well measured beam momentum, for at least one outgoing μ with the same charge of the incoming one and for $Q^2$ $>$ 0.8 (GeV/c)$^2$. The sample with two outgoing μ was also included for a different analysis\cite{JanPt}.
 
 The PHAST version used for this analysis is 8.001.
 
@@ -137,10 +138,8 @@ This cut eliminates region of the ($x$,$\nu$,$z$,$p_{h}$) phase space where acce
 	\item 0.2 $< z <$ 0.85
 \end{enumerate}
 
-The statistics of the final data sample (5 periods) include 6.3M reconstructed DIS events and 2.0M charged hadrons.
+The statistics of the final data sample (5 periods) include 8.3M reconstructed DIS events and 2.6M charged hadrons.
 For reference this is half the statistic of 2006.
-
-\newpage
 
 \hspace*{0mm}\vfill
 \begin{figure}[!h]
@@ -203,7 +202,7 @@ All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
 		    \hline
 				\multicolumn{2}{c}{Not to be a $\pi$ or $K$} \\
 		    $\frac{LH(\pi)}{LH(bg)} < 2.2$ & $\frac{LH(\pi)}{LH(bg)} < 2.1$ \\
-		    $\frac{LH(K)}{LH(bg)} < 2.2$ & $\frac{LH(K)}{LH(bg)} < 2.1$ \\
+		    $\frac{LH(K)}{LH(bg)} < 2.9$ & $\frac{LH(K)}{LH(bg)} < 2.8$ \\
 		    \hline
 				\multicolumn{2}{c}{or all $LH$ = 0} \\
 				\hline
@@ -276,8 +275,8 @@ The true hadrons have obtained by inverting the performance matrices (Eq.\ref{ri
     \hline
      & $\pi^+$ & $\pi^-$ & $K^+$ & $K^-$ & $p$ & $\bar{p}$ \\
     \hline
-    Identified & 717950 & 593926 & 190381 & 114686 & 98712 & 46088 \\
-    Unfolded & 734644 & 612846 & 191951 & 112616 & 93622.2 & 39671.4 \\
+    Identified & 953970 & 789480 & 253045 & 153440 & 131066 & 60705 \\
+    Unfolded & 976213 & 814685 & 255132 & 150775 & 124221 & 52014 \\
     \hline
   \end{tabular}
 \end{table}
@@ -288,7 +287,7 @@ As the target in 2016 is long and not straight ('banana shaped'), with a shape n
 
 \begin{figure}[!h]
 	\includegraphics[scale=0.4]{./gfx/Target.png}
-	\caption{Left is a ($y$,$z$) view of the real data (blue) and the Monte-Carlo target (red), $z$ being the direction of propagation of the beam. The actual cut used in the analysis corresponds to the intersection of both real data target (red) and Monte-Carlo target (blue) volumes. Right is a sketch showing approximately how much we lose by doing such cut. \textbf{NOT FOR RELEASE}}
+	\caption{Left is a ($y$,$z$) view of the real data (blue) and the Monte-Carlo target (red), $z$ being the direction of propagation of the beam. The actual cut used in the analysis corresponds to the intersection of both real data target (red) and Monte-Carlo target (blue) volumes. Right is a sketch showing approximately how much we lose by doing such cut.}
 	\label{Target}
 \end{figure}
 
@@ -298,15 +297,15 @@ We discovered when looking at vertex distribution for hadrons and comparing data
 
 \begin{figure}[!h]
 	\includegraphics[scale=0.45]{./gfx/CircleHadron.png}
-	\caption{Both plots are representing the relative distance to the best primary vertex of the extrapolated position of the unattached hadrons to the vertex position. Left the plot is done in the downstream part of the target, right in the upstream part. The left plot shows an important amount of particles in a 2 mm-radius circle around the vertex while the right plot does not. \textbf{NOT FOR RELEASE}}
-	\label{VertexDrop}
+	\caption{Both plots are representing the relative distance to the best primary vertex of the extrapolated position of the unattached hadrons to the vertex position. Left the plot is done in the downstream part of the target, right in the upstream part. The left plot shows an important amount of particles in a 2 mm-radius circle around the vertex while the right plot does not.}
+	\label{CircleHadron}
 \end{figure}
 
 This issue probably needs a thorough investigation of how the reconstruction is done in this case. As time was in short supply, we decided to go with a rescue procedure to reattach these hadrons to the best primary vertex. All the hadrons in a circle of radius 2 mm around the best primary vertex are considered as if they were attached to it (considering they have a track ID and a momentum associated). With this procedure we were able to cover for the loss of hadron in the last part of the target (Fig.\ref{VertexDrop}).
 
 \begin{figure}[!h]
 	\includegraphics[scale=0.45]{./gfx/VertexDrop.png}
-	\caption{One expects the vertex distribution for hadrons to increase with $z_{vtx}$ due to the apparatus acceptance. However in the left plot there is a drop both in data and Monte-Carlo of the number of vertices. In the right plot, after the rescue procedure, the drop has disappeared. The rescue procedure also reconciles data and Monte-Carlo. \textbf{NOT FOR RELEASE}}
+	\caption{One expects the vertex distribution for hadrons to increase with $z_{vtx}$ due to the apparatus acceptance. However in the left plot there is a drop both in data and Monte-Carlo of the number of vertices. In the right plot, after the rescue procedure, the drop has disappeared. The rescue procedure also reconciles data and Monte-Carlo.}
 	\label{VertexDrop}
 \end{figure}
 
@@ -366,7 +365,7 @@ the MC truth. The following selection is made on the generated events and partic
 				to have a complete overlap of coverage)
 	\item Beam track crossing the entire target (PHAST routine PaAlgo:CrossCells())
   \item $Q^2>1$ (GeV/c)$^2$
-  \item $0.1 < y < 0.9$
+  \item $0.1 < y < 0.7$
 	\item $5 < W < 17$ GeV/c$^2$
   \item $0.004 < x < 0.4$
   \item $\nu$ range used in data
@@ -389,6 +388,18 @@ values.
 	\includegraphics[scale=0.5]{./gfx/AccH.png}
 	\caption{Charged hadron acceptance in $x$, $y$ and $z$ bins. The red markers correspond to positive hadrons, blue markers to negative hadrons, circles markers correspond to hadrons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{AccH}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[p]
+	\includegraphics[scale=0.5]{./gfx/AccPi.png}
+	\caption{Charged pion acceptance in $x$, $y$ and $z$ bins. The red markers correspond to positive hadrons, blue markers to negative hadrons, circles markers correspond to pions obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
+	\label{AccPi}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[p]
+	\includegraphics[scale=0.5]{./gfx/AccK.png}
+	\caption{Charged kaon acceptance in $x$, $y$ and $z$ bins. The red markers correspond to positive hadrons, blue markers to negative hadrons, circles markers correspond to kaons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
+	\label{AccK}
 \end{sidewaysfigure}
 
 Used in this fashion, the kinematic bin smearing due to reconstruction limitations is accounted for. A more rigorous
@@ -451,7 +462,7 @@ The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp.
 
 where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJANGOH}$ are the number of kaons reconstructed from the HEPGEN++ and DJANGOH MC samples normalized by the corresponding
 MC luminosity ($L_{MC}$). The luminosity depends on the event weighting and the process cross-section $\sigma_{int}$ (DIS for DJANGOH event and diffractive
-vector meson production for HEPGEN++ events). The final weighted number of kaons is summarized in Table \ref{DVM}.
+vector meson production for HEPGEN++ events). The final weighted number of DIS events and hadrons is summarized in Table \ref{DVM}.
 
 \begin{equation}
   \sum_{events} w_i = L_{MC} \cdot \sigma{int}
@@ -553,7 +564,6 @@ cuts \textit{loose} and \textit{severe} were used (see Table \ref{loose.severe})
 		$\frac{LH(\pi)}{LH(bg)}$ & $> 2.00$ & $-$ & $<2.3$ $(2.2)$ & $>2.04$ & $-$ & $<2.0$ $(1.9)$ \\
 		$\frac{LH(K)}{LH(2^{nd})}$ & $-$ & $>1.06$ & $-$ & $>-$ & $>1.10$ & $-$ \\
 		$\frac{LH(K)}{LH(bg)}$ & $-$ & $>2.00$ & $<3.0$ $(2.9)$ & $-$ & $>2.16$ & $<2.7$ $(2.6)$ \\
-		$\frac{LH(p)}{LH(2^{nd})}$ & $-$ & $>0.98$ & $-$ & $>-$ & $>1.06$ & $-$ \\
 		\hline
 	\end{tabular}
   \caption{Set of loose and severe cuts to evaluate the RICH systematic errors.}
@@ -569,12 +579,26 @@ multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error
   \sigma^{RICH_{LH}}_{sys} = MAX(|M^{h^{\pm},loose}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},severe}_{raw}-M^{h^{\pm}}_{raw}|)
 \end{equation}
 
-The difference between the altered RICH probability matrices and the optimal one are plotted in Fig.\ref{}. For pions and protons, the largest differences
+The difference between the altered RICH probability matrices and the optimal one are plotted in Figs.\ref{Sysplus} and \ref{Sysminus}. For pions and protons, the largest differences
 ($<$5\%) are observed in the high momentum $p_h$ region. For kaons the difference reaches 4\% at low $p_h$ ; small differences ($<$1\%) are observed at the
 highest $p_h$ value.
 
 A second source of systematic error is that associated with the calculation of the RICH probability matrices. This is estimated by generating two sets of altered
 RICH probability matrices. As represented in Eq.\ref{StatMat} the matrices are constructe using the statistical error associated to the original probability matrix elements.
+
+\begin{figure}[!p]
+	\centering
+	\includegraphics[scale=0.1]{./gfx/SysPlus.png}
+	\caption{Difference between the identification and misidentification probabilities of loose and severe cuts with the optimal cuts for positive hadrons.}
+	\label{Sysplus}
+\end{figure}
+
+\begin{figure}[!p]
+	\centering
+	\includegraphics[scale=0.1]{./gfx/SysMinus.png}
+	\caption{Difference between the identification and misidentification probabilities of loose and severe cuts with the optimal cuts for negative hadrons.}
+	\label{Sysminus}
+\end{figure}
 
 \begin{equation}
   M^{\pm}_{RICH}
@@ -595,6 +619,8 @@ $M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is take
 \end{equation}
 
 The final systematic uncertainty associated to the particle identification and unfolding correction ($\sigma^{RICH}_{sys}$) is the largest value of $\sigma^{RICH_{stat}}_{sys}$ and $\sigma^{RICH_{LH}}_{sys}$. The error goes from $<$ 0.2\% at low $y$ for all $x$ and $z$ bins to $\sim$ 20\% for high $y$ and high $z$, where multiplicities are low.
+
+
 
 \subsection{Errors associated to acceptance (z-vertex dependence)}
 
@@ -625,18 +651,48 @@ For the final multiplicities, it yields :
 
 \subsection{3-dimensional binning in x, y and z}
 
-The final multiplicities with all corrections are shown in a multidimensional binning in $x$, $y$ and $z$ (9 columns, 5 rows and 12 points) in Figs. \ref{hp} and \ref{hm} (release material). Bins with acceptance $<$ 30\% and those whose $<y>$ is less than 6\% of the binwidth to the bin edge with poor statistics ($\sigma$ $>$ 0.02) have been excluded and are not shown. The latter exclusion is applied to remove bins that lie on the edge of the kinematic acceptance region. The band shown at the bottom of each plot correspond to the systematic error. The statistical uncertainties are shown, however they are mostly smaller than the size of the points.
+The final multiplicities with all corrections are shown in a multidimensional binning in $x$, $y$ and $z$ (9 columns, 5 rows and 12 points) in Figs. \ref{hp}, \ref{hm}, \ref{Pip}, \ref{Pim}, \ref{pp}, \ref{pm}, \ref{Kp} and \ref{Km}. Bins with acceptance $<$ 30\% and those whose $<y>$ is less than 6\% of the binwidth to the bin edge with poor statistics ($\sigma$ $>$ 0.02) have been excluded and are not shown. The latter exclusion is applied to remove bins that lie on the edge of the kinematic acceptance region. The band shown at the bottom of each plot correspond to the systematic error. The statistical uncertainties are shown, however they are mostly smaller than the size of the points.
 
-\begin{sidewaysfigure}[!]
+\begin{sidewaysfigure}[!p]
+	\centering
 	\includegraphics[scale=0.5]{./gfx/hp.png}
 	\caption{Final positive hadron multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
 	\label{hp}
 \end{sidewaysfigure}
 
-\begin{sidewaysfigure}[!]
+\begin{sidewaysfigure}[!p]
+	\centering
 	\includegraphics[scale=0.5]{./gfx/hm.png}
 	\caption{Final negative hadron multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
 	\label{hm}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/Pip.png}
+	\caption{Final positive pion multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{Pip}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/Pim.png}
+	\caption{Final positive pion multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{Pim}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/pp.png}
+	\caption{Final positive proton multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{pp}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/pm.png}
+	\caption{Final positive proton multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{pm}
 \end{sidewaysfigure}
 
 \newpage
@@ -648,7 +704,7 @@ One of the main goal of the multiplicity analysis is the extraction of kaon stra
 The actual results are presented in Figs. \ref{hs} to \ref{Kr}. The data are integrated over $z$ (0.2 to 0.85) and averaged over $y$ (0.1 to 0.7). Only the 8 $x$ bins that have a sufficient $z$ coverage subsist.
 All the sum and ratio are compared with their isoscalar counterpart from our publication of charged hadrons, pions and kaons on isoscalar target and also with HERMES results obtained on proton and deuteron.
 
-All the 2016 results for the sum seem to suffer from a drop a high $x$, particularly visible on hadrons and pions. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables like $\theta_h$. In 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the forementionned issue.
+All the 2016 results for the sum seem to suffer from a drop a high $x$, particularly visible on hadrons and pions. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables like $\theta_h$. In 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the aforementionned issue.
 
 The hadron sum for proton target should lie at the same level than our isoscalar results. The discrepancy in amplitude can be explained by the fact that our radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that we should move up all the points by $\sim$6\%, which reconcile proton and isoscalar results within error bars. The same reasoning can be made for the pion sum.
 
@@ -656,87 +712,37 @@ The kaon sum for proton target should be slightly ($\sim$5-10\%) above our isosc
 
 The hadron and pion ratio on proton target should lie above our isoscalar results, the reason being the different quark mixture in the two targets (more $u$ in proton target thus higher $\pi+$/$\pi-$ ratio in proton than in isoscalar). The difference is expected to be $\sim$10-20\%. For the very same reason, the kaon ratio on proton target is expected to be bigger than our isoscalar result by $\sim$10\%.
 
-As the kaon results are the less affected by the high $x$ drop and also is the most interesting for the community, we ask only the release of kaon related results. The hadron and pion results are too much sensitive due to this high $x$ problem, thus we do not want to ask a release for them yet.
+As the kaon results are the less affected by the high $x$ drop and also are the most interesting for the community, we ask only the release of kaon related results. The hadron and pion results are too much sensitive at the moment due to this high $x$ problem, thus we do not want to ask a release for them yet.
 
 \newpage
-
-\section{Release Material} \label{RM}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.34]{./gfx/xQ2.png}
-	\caption{}
-	\label{xQ2}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[scale=0.34]{./gfx/RICH.png}
-	\caption{}
-	\label{RICH}
-\end{figure}
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/AccPi.png}
-	\caption{}
-	\label{AccPi}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/AccK.png}
-	\caption{}
-	\label{AccK}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/Pip.png}
-	\caption{}
-	\label{Pip}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/Pim.png}
-	\caption{}
-	\label{Pim}
-\end{sidewaysfigure}
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/Kp.png}
-	\caption{}
-	\label{Kp}
-\end{sidewaysfigure}
-
-\newpage
-
-\begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/Km.png}
-	\caption{}
-	\label{Km}
-\end{sidewaysfigure}
-
-\newpage
-
-\begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/hs.png}
-	\caption{}
+	\includegraphics[scale=0.55]{./gfx/hs.png}
+	\caption{$\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85). All systematic errors are shown point to point as a band.}
 	\label{hs}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/hr.png}
-	\caption{}
+	\centering
+	\includegraphics[scale=0.55]{./gfx/hr.png}
+	\caption{$\mathscr{M}^{h^+}/\mathscr{M}^{h^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85). All systematic errors are shown point to point as a band.}
 	\label{hr}
 \end{figure}
 
+\newpage
+
 \begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/Pis.png}
-	\caption{}
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Pis.png}
+	\caption{$\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors are shown point to point as a band.}
 	\label{Pis}
 \end{figure}
 
 \begin{figure}[H]
-	\includegraphics[scale=0.38]{./gfx/Pir.png}
-	\caption{}
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Pir.png}
+	\caption{$\mathscr{M}^{\pi^+}/\mathscr{M}^{\pi^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors are shown point to point as a band.}
 	\label{Pir}
 \end{figure}
 
@@ -750,7 +756,69 @@ As the kaon results are the less affected by the high $x$ drop and also is the m
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.55]{./gfx/Kr.png}
-	\caption{$\mathscr{M}^{K^+}/\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to O.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
+	\caption{$\mathscr{M}^{K^+}/\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
+	\label{Kr}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Ps.png}
+	\caption{$\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ versus $x$ for \textit{COMPASS} data (proton in blue  closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85). All systematic errors are shown point to point as a band.}
+	\label{Ps}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Pr.png}
+	\caption{$\mathscr{M}^{p}/\mathscr{M}^{\bar{p}}$ versus $x$ for \textit{COMPASS} data (proton in blue closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85). All systematic errors are shown point to point as a band.}
+	\label{Pr}
+\end{figure}
+
+\newpage
+
+\section{Release Material} \label{RM}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.32]{./gfx/xQ2.png}
+	\caption{Scatter-plot showing the $x$-$Q^2$ correlation of all DIS events selected for the current analysis for period between P07 and P11.}
+	\label{xQ2}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.32]{./gfx/RICH.png}
+	\caption{Scatter-plot showing the $p_h$-$\theta_c$ of hadrons in the RICH. There is a clear separation between $\pi$, $K$ and $p$ between 12 and 40 GeV/c.}
+	\label{RICH}
+\end{figure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/Kp.png}
+	\caption{Final positive kaon multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{Kp}
+\end{sidewaysfigure}
+
+\begin{sidewaysfigure}[!p]
+	\centering
+	\includegraphics[scale=0.5]{./gfx/Km.png}
+	\caption{Final negative kaon multiplicities as a function of $z$ in bins of $x$ and staggered vertically with $y$. Radiative correction, diffractive vector meson correction and acceptance correction have been applied. All systematic errors are shown in band for the bin 0.3 $< y <$ 0.5.}
+	\label{Km}
+\end{sidewaysfigure}
+
+\newpage
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Ks.png}
+	\caption{$\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
+	\label{Ks}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.55]{./gfx/Kr.png}
+	\caption{$\mathscr{M}^{K^+}/\mathscr{M}^{K^-}$ versus $x$ for \textit{COMPASS} data (proton in blue and isoscalar in red, closed points) averaged over $y$ (0.1 to 0.7) and integrated over $z$ (0.2 to 0.85) and \textit{HERMES} data \cite{HERMES} (proton in blue and deuteron in red, open points) averaged over $y$ (0.1 to 0.85) and integrated over $z$ (0.2 to 0.8). All systematic errors, including the asymmetric systematic errors for radiative correction for \textit{COMPASS} isoscalar kaons (100\% error, determined by removing the hadronic radiative corrections), are shown point to point as a band.}
 	\label{Kr}
 \end{figure}
 
@@ -760,17 +828,20 @@ As the kaon results are the less affected by the high $x$ drop and also is the m
 
 \subsection{Data}
 
-A crosscheck of the DIS selection, hadrons selection, RICH PID, unfolding and binning as well as the final multiplicities for pions, kaons and protons in bins of $x$, $y$ and $z$ over the full 5 weeks of data was done between Marcin and Nicolas. While for the cut flow, the agreement was perfect, the discrepancy on the final multiplicities is shown in a pull in Fig.\ref{}. In the figure, each entry is given by :
+A crosscheck of the DIS selection, hadrons selection, RICH PID, unfolding and binning as well as the final multiplicities for pions, kaons and protons in bins of $x$, $y$ and $z$ over the full 5 weeks of data was done between Marcin and Nicolas. The crosscheck is yet to be finished but the agreement is found to the hadron after unfolding for the data.
+% While for the cut flow, the agreement was perfect, the discrepancy on the final multiplicities is shown in a pull in Fig.\ref{}.
+% In the figure, each entry is given by :
 
-\begin{equation}
-	pull_i = \frac{M_i^{Nicolas}-M_i^{Marcin}}{\sigma_i^{Nicolas}}
-\end{equation}
+% \begin{equation}
+% 	pull_i = \frac{M_i^{Nicolas}-M_i^{Marcin}}{\sigma_i^{Nicolas}}
+% \end{equation}
 
-with $i$ being a given ($x$,$y$,$z$,$charge$) bin.
+% with $i$ being a given ($x$,$y$,$z$,$charge$) bin.
 
 \subsection{MC}
 
-A crosscheck between Marcin and Nicolas was performed over 100M MC events. The final acceptance in bins of $x$, $y$ and $z$ was found in perfect agreement.
+A crosscheck between Marcin and Nicolas was performed. The crosscheck is yet to be finished but the agreement is found to the hadron after unfolding for the MC sample considered.
+% The final acceptance in bins of $x$, $y$ and $z$ was found in perfect agreement.
 
 \section{Error propagation} \label{Eprop}
 
@@ -841,6 +912,9 @@ Finally for the multiplicity, including the diffractive $\Phi$ and $\rho^0$ corr
 \newpage
 
 \begin{thebibliography}{99}
+
+\bibitem{JanPt}
+F. Bradamante, A. Bressan, A. Kerbizi, J. Matousek, A. Moretti, A. Martin and A. Ivanov, \textit{Release note on PhT-dependent charged hadron multiplicities from 2016 data}, COMPASS Release Note April 2019.
 
 \bibitem{COMPASS2006P}
 C. Adolph et al., \textit{Multiplicities of charged pions and unidentified charged hadrons from deep-inelastic scattering of muons off an isoscalar target}, PLB 763 (2017) 001.
