@@ -1,12 +1,48 @@
-% Chapter X
+% Chapter 11
 
-\chapter{Determination of quark fragmentation functions} % Chapter title
+\chapter{Final charged hadrons multiplicities} % Chapter title
 
-\label{ch:FF} % For referencing the chapter elsewhere, use \autoref{ch:name}
+\label{ch:mult} % For referencing the chapter elsewhere, use \autoref{ch:name}
 
 %----------------------------------------------------------------------------------------
 
-\section{Direct extraction of Fragmentation Functions}
+
+\section{Errors on the RICH unfolding}
+
+The RICH matrices are built using the statistical errors associated to the original probability matrix.
+
+\begin{equation}
+M^{\pm}_{RICH}
+=
+\begin{bmatrix}
+\epsilon(\pi \rightarrow \pi)\pm\sigma_{\epsilon(\pi \rightarrow \pi)} & \epsilon(K \rightarrow \pi)\pm\sigma_{\epsilon(K \rightarrow \pi)} & \epsilon(p \rightarrow \pi)\pm\sigma_{\epsilon(p \rightarrow \pi)}\\
+\epsilon(\pi \rightarrow K)\pm\sigma_{\epsilon(\pi \rightarrow K)} & \epsilon(K \rightarrow K)\pm\sigma_{\epsilon(K \rightarrow K)} & \epsilon(p \rightarrow K)\pm\sigma_{\epsilon(p \rightarrow K)} \\
+\epsilon(\pi \rightarrow p)\pm\sigma_{\epsilon(\pi \rightarrow p)} & \epsilon(K \rightarrow p)\pm\sigma_{\epsilon(K \rightarrow p)} & \epsilon(p \rightarrow p)\pm\sigma_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+As an inversion of the probabilities matrices is done in the analysis, the propagation of errors through the
+inversion operation has to be performed. A calculation of the uncertainties on the probabilities yields \cite{} :
+
+\begin{equation}
+  [\sigma^{-1}_i]^2 = \epsilon^{-1}_{ip}\epsilon^{-1}_{ir}cov(\epsilon_{pq},\epsilon_{rs})\epsilon^{-1}_{qi}\epsilon^{-1}_{si} + [\epsilon^{-1}_{ik}\sigma_k]^2
+\end{equation}
+
+This equation leads to the inverse error matrices with associated statistical errors :
+
+\begin{equation}
+[M^{\pm}_{RICH}]^{-1}
+=
+\begin{bmatrix}
+\epsilon^{-1}(\pi \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow \pi)} & \epsilon^{-1}(K \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(K \rightarrow \pi)} & \epsilon^{-1}(p \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(p \rightarrow \pi)}\\
+\epsilon^{-1}(\pi \rightarrow K)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow K)} & \epsilon^{-1}(K \rightarrow K)\pm\sigma^{-1}_{\epsilon(K \rightarrow K)} & \epsilon^{-1}(p \rightarrow K)\pm\sigma^{-1}_{\epsilon(p \rightarrow K)} \\
+\epsilon^{-1}(\pi \rightarrow p)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow p)} & \epsilon^{-1}(K \rightarrow p)\pm\sigma^{-1}_{\epsilon(K \rightarrow p)} & \epsilon^{-1}(p \rightarrow p)\pm\sigma^{-1}_{\epsilon(p \rightarrow p)}
+\end{bmatrix}
+\end{equation}
+
+%----------------------------------------------------------------------------------------
+
+\section{Summary of systematic studies}
 
 Content
 
@@ -24,18 +60,6 @@ Content
 
 %----------------------------------------------------------------------------------------
 
-\section{Systematic studies}
-
-Content
-
-%----------------------------------------------------------------------------------------
-
-\section{COMPASS LO fit}
-
-Content
-
-%----------------------------------------------------------------------------------------
-
-\section{LO/NLO parametrisations}
+\section{Multiplicities ($h^{\pm}$,$\pi^{\pm}$,$K^{\pm}$)}
 
 Content

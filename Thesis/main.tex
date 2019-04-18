@@ -72,7 +72,7 @@
 
 \cleardoublepage\include{FrontBackMatter/Abstract} % Abstract page
 
-\cleardoublepage\include{FrontBackMatter/Publications} % Publications from the thesis page
+% \cleardoublepage\include{FrontBackMatter/Publications} % Publications from the thesis page
 
 \cleardoublepage\include{FrontBackMatter/Acknowledgments} % Acknowledgements page
 
@@ -91,10 +91,16 @@
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
 
-\ctparttext{This chapter describes the underlying theory of the physics processes investigated in this thesis.
-First, the inclusive deep inelastic scattering process is introduced and the experimental results are interpreted
-within the quark-parton model. The scattering process is extended towards semi-inclusive deep inelastic scattering,
-where hadronisation processes come into play. The hadronisation process is described by fragmentation functions.}
+\pagestyle{plain}
+
+\addcontentsline{toc}{chapter}{Introduction} % Uncomment if you would like the acronyms to appear in the table of contents
+\pdfbookmark[1]{Introduction}{introduction} % Bookmark name visible in a PDF viewer
+
+\markboth{\spacedlowsmallcaps{Introduction}}{\spacedlowsmallcaps{Introduction}}
+
+\include{Chapters/Chapter00} % Introduction
+
+\pagestyle{scrheadings}
 
 \part{Theoretical part}
 
@@ -105,38 +111,33 @@ where hadronisation processes come into play. The hadronisation process is descr
 
 %------------------------------------------------
 
-\ctparttext{This chapter will} % Text on the Part 2 page describing the content in Part 2
-
 \part{Experimental Part} % Second part of the thesis
 
 \include{Chapters/Chapter03} % The COMPASS experiment
-\include{Chapters/Chapter04} % The COMPASS muon trigger
+\include{Chapters/Chapter04} % The COMPASS RICH
+\include{Chapters/Chapter05} % RICH PID
 
 \cleardoublepage % Empty page before the start of the next part
 
 %------------------------------------------------
-
-\ctparttext{This chapter will} % Text on the Part 2 page describing the content in Part 2
 
 \part{DJANGOH : a Monte-Carlo generator with Radiative Corrections} % Second part of the thesis
 
-\include{Chapters/Chapter05} % Motivations, RADGEN issues
-\include{Chapters/Chapter06} % DJANGOH
-\include{Chapters/Chapter07} % Results on Radiative Corrections
-\include{Chapters/Chapter08} % Integration of DJANGOH in the Monte-Carlo Chain
+\include{Chapters/Chapter06} % Motivations, RADGEN issues
+\include{Chapters/Chapter07} % DJANGOH
+\include{Chapters/Chapter08} % Results on Radiative Corrections
+\include{Chapters/Chapter09} % Integration of DJANGOH in the Monte-Carlo Chain
 
 \cleardoublepage % Empty page before the start of the next part
 
 %------------------------------------------------
 
-\ctparttext{This chapter will} % Text on the Part 2 page describing the content in Part 2
-
 \part{The 2016 Multiplicity Analysis} % Second part of the thesis
 
-\include{Chapters/Chapter09} % Determination of 2016 raw multiplicities
-\include{Chapters/Chapter10} % Correction factors to the multiplicities
-\include{Chapters/Chapter11} % Final charged hadrons multiplicities
-\include{Chapters/Chapter12} % Determination of quark fragmentation functions
+\include{Chapters/Chapter10} % Determination of 2016 raw multiplicities
+\include{Chapters/Chapter11} % Correction factors to the multiplicities
+\include{Chapters/Chapter12} % Final charged hadrons multiplicities
+\include{Chapters/Chapter13} % Determination of quark fragmentation functions
 
 \cleardoublepage % Empty page before the start of the next part
 
@@ -157,9 +158,9 @@ where hadronisation processes come into play. The hadronisation process is descr
 
 \cleardoublepage\include{FrontBackMatter/Bibliography} % Bibliography
 
-\cleardoublepage\include{FrontBackMatter/Declaration} % Declaration
+% \cleardoublepage\include{FrontBackMatter/Declaration} % Declaration
 
-\cleardoublepage\include{FrontBackMatter/Colophon} % Colophon
+% \cleardoublepage\include{FrontBackMatter/Colophon} % Colophon
 
 %----------------------------------------------------------------------------------------
 

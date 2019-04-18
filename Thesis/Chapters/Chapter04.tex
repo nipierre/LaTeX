@@ -1,45 +1,42 @@
 % Chapter 4
 
-\chapter{RICH Detector, Performance Study and Particle Identification}
-\label{ch:trig} % For referencing the chapter elsewhere, use \autoref{ch:name}
+\chapter{RICH Detector}
+\label{ch:RICH} % For referencing the chapter elsewhere, use \autoref{ch:name}
 
 %----------------------------------------------------------------------------------------
 
 The particle identification is an important step in the hadron multiplicities extraction.
-In the COMPASS spectrometer, it is performed by a large Ring Imaging Cherenkov detector (RICH)
-capable of separating pions, kaons and protons in a wide momentum range ( $\sim$2 GeV/c to $\sim$60 GeV/c)
-and a angular overture of 0.01-0.4 radians.
+In the COMPASS spectrometer, it is performed by a large Ring Imaging Cherenkov detector (RICH) capable of separating pions, kaons and protons in a wide momentum range ( $\sim$2 GeV/c to $\sim$60 GeV/c) and an angular overture of 0.01-0.4 radians.
 
-In this chapter the RICH detection principle is presented as well as the description of its main components :
-the gas and mirror system, the photon detectors, the readout electronics and the data reconstruction.
+In this chapter the RICH detection principle is presented as well as the description of its main components : the gas and mirror system, the photon detectors, the readout electronics and the data reconstruction.
 
 \section{Cherenkov effect}
 
-When a charged particle is moving through a transparent medium with a speed $v$ greater than the speed of light
-($v_{light} = c/n$, $n$ being the medium refractive index), a radiation known as \textit{Cherenkov radiation} is
-produced by the medium.
+When a charged particle is moving through a transparent medium with a speed $v$ greater than the speed of light ($v_{light} = c/n$, $n$ being the medium refractive index), a radiation known as \textit{Cherenkov radiation} is produced by the medium.
 
-The Cherenkov radiation produced by a particle with a mass $M_h$ and momentum $p_h$ is emitted only at a particular
-angle $\theta_C$ with respect to the particle track.
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/CherenkovGeom.png}
+	\caption{Cherenkov radiation geometry.}
+	\label{pic:CherenkovGeom}
+\end{figure}
 
-The coherence btween waves (emitted between A and B) is achieved when the particle traverses $\bar{AB}$ at the same time
-as the radiation travels from A to C. The opening angle $\theta_C$ is defined geometrically in Eq.\ref{} with $\beta$ being
-the particle velocity.
+The Cherenkov radiation produced by a particle with a mass $M_h$ and momentum $p_h$ is emitted only at a particular angle $\Theta_C$ with respect to the particle track (Fig. \ref{pic:CherenkovGeom}).
+
+The coherence between waves (emitted between A and B) is achieved when the particle traverses $\overline{AB}$ at the same time as the radiation travels from A to C. The opening angle $\Theta_C$ is defined geometrically in Eq. \ref{eq:thetaC} with $\beta$ being the particle velocity.
 
 \begin{equation}
   cos\theta_C = \frac{c/n \Delta t}{\beta c \Delta t} = \frac{1}{n\beta}
+  \label{eq:thetaC}
 \end{equation}
 
 Some limit cases can be devised :
 \begin{enumerate}
   \item Threshold limit : if $\beta \leq 1/n$ no Cherenkov radiation will be emitted.
-  \item Maximum emission angle : $cos \theta_C = \frac{1}{n}$ is reached for ultra-relativistic particles ($\beta = 1$).
+  \item Maximum emission angle : $cos \Theta_C = \frac{1}{n}$ is reached for ultra-relativistic particles ($\beta = 1$).
 \end{enumerate}
 
-In order to perform a particle identification with a RICH detector, two variables are needed : $\theta_C$ and $p_h$. $\theta_C$ is
-measured when the photons emitted by the particle is detected. Different techniques can be used to recollect and transport the produced
-photons where light detectors are placed. The resulting image in the detector plane is a ring with radius propotional to $\theta_C$.
-$p_h$ is measured independently by the spectrometer. The particle identification is done by a mass assignment given by :
+In order to perform a particle identification with a RICH detector, two variables are needed : $\Theta_C$ and $p_h$. $\Theta_C$ is measured when the photons emitted by the particle is detected. Different techniques can be used to recollect and transport the produced photons where light detectors are placed. The resulting image in the detector plane is a ring with radius propotional to $\Theta_C$. $p_h$ is measured independently by the spectrometer. The particle identification is done by a mass assignment given by :
 
 \begin{equation}
   M_h = p_h \sqrt{n^2 cos^2 \theta_C -1}
@@ -49,395 +46,113 @@ $p_h$ is measured independently by the spectrometer. The particle identification
 
 \section{The COMPASS RICH detector}
 
-The COMPASS RICH detector is designed to distinguish between pions, kaons and protons at high-intensities. The momentum range covers the
-pion Cherenkov threshold ($\sim$2.67 GeV/c) to $\sim$ 60 GeV/c.
+The COMPASS RICH detector is designed to distinguish between pions, kaons and protons at high-intensities. The momentum range covers the pion Cherenkov threshold ($\sim$2.67 GeV/c) to $\sim$ 60 GeV/c.
 
-The RICH is a large size detector ($\sim$ 3 x 5 x 6 m$^3$) filled with a gaseous radiator. Two spherical mirror systems reflect the photons
-into an array of photon detectors (multiwire proportional chambers and multianode photomultipliers tubes), sensitive to a large wavelength
-range, from visible to far UV, placed outside the spectrometer acceptance, one above and one below the beam line. The whole structure of the
-detector vessel is built mainly in thin aluminium in order to minimize the material budget.
+The RICH is a large size detector ($\sim$ 3 x 5 x 6 m$^3$) filled with a gaseous radiator. Two spherical mirror systems reflect the photons into an array of photon detectors (multiwire proportional chambers and multianode photomultipliers tubes), sensitive to a large wavelength range, from visible to far UV, placed outside the spectrometer acceptance, one above and one below the beam line. The whole structure of the detector vessel is built mainly in thin aluminium in order to minimize the material budget.
 
-\subsection*{Gas System}
+\subsection{Gas System}
 
-One of the principal elements of a RICH detector is the radiator. At COMPASS it is a gas, C$_4$F$_10$. It has a refractive index of n $\approx$
-1.0015 and a low chromaticity$^(explain in footnote)$ (d$n$/dE $\sim$ 5.10$^{-5}$ eV$^{-1}$). These characteristics allow the particle identification
-(PID) to be performed in the aforementioned wide momentum range.
+One of the principal elements of a RICH detector is the radiator. At COMPASS it is a gas, C$_4$F$_10$. It has a refractive index of n $\approx$ 1.0015 and a low chromaticity$^(explain in footnote)$ (d$n$/dE $\sim$ 5.10$^{-5}$ eV$^{-1}$). These characteristics allow the particle identification (PID) to be performed in the aforementioned wide momentum range.
 
-The propagation of the Cherenkov photons in the vessel can be affected by the presence of water vapor and oxygen (high UV light absorption cross section).
-In order to remove these impurities, the gas is constantly circulating and filtered at a constant pressure (1 mbar higher than the atmospheric pressure)
-in a dedicated gas system\cite{}. The overpressure of the vessel is needed to prevent the air contamination and to avoid mechanical stress to the detector,
-given its large size. Other circulation system (known as \textit{fast circulation} system) allows a reshuffling of the gas inside the vessel, to avoid
-stratification that may cause a gradient in the value of the reffractive index from top to bottom.
+The propagation of the Cherenkov photons in the vessel can be affected by the presence of water vapor and oxygen (high UV light absorption cross section). In order to remove these impurities, the gas is constantly circulating and filtered at a constant pressure (1 mbar higher than the atmospheric pressure) in a dedicated gas system\cite{}. The overpressure of the vessel is needed to prevent the air contamination and to avoid mechanical stress to the detector, given its large size. Other circulation system (known as \textit{fast circulation} system) allows a reshuffling of the gas inside the vessel, to avoid stratification that may cause a gradient in the value of the reffractive index from top to bottom.
 
 In order to absorb the photon emitted by the muon beam, a 10 cm diameter pipe filled with helium is positioned inside the vessel on the beam path.
 
-\subsection*{Mirror System}
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.4]{./gfx/RICHview.png}
+	\caption{(a) Artistic view of the COMPASS RICH detector. (b) Basic functioning of the RICH detector. (c) Photon detector disposition (not to scale).}
+	\label{pic:RICHview}
+\end{figure}
 
-The RICH optical system covers an area of $\sim$ 21 m$^2$ and consists of two spherical surfaces, each one containing 58 spherical mirrors of different
-shapes (34 hexagons and 24 pentagons). The mirror pattern is shown in Fig.\ref{}. All the mirrors have a reflectance above 80\% in the UV region.
+\subsection{Mirror System}
 
-The mirror system has a radius of curvature of 6.6 m. The photon image is focused outside the spectrometer acceptance where the photon detectors are located.
-As the radius of the curvature is not the same for each mirror ($R$ = 6600 $\pm$ 1\% mm), the reflected image may be slightly blurred. This effect is more
-pronounced for particles at large angles : this aberration contributes to the dispersion of the photon angle with respect to the angle of emission, which affects
-the detection resolution.
+The RICH optical system covers an area of $\sim$ 21 m$^2$ and consists of two spherical surfaces, each one containing 58 spherical mirrors of different shapes (34 hexagons and 24 pentagons). The mirror pattern is shown in Fig. \ref{pic:RICHview}. All the mirrors have a reflectance above 80\% in the UV region.
 
-\subsection*{Photon Detectors}
+The mirror system has a radius of curvature of 6.6 m. The photon image is focused outside the spectrometer acceptance where the photon detectors are located. As the radius of the curvature is not the same for each mirror ($R$ = 6600 $\pm$ 1\% mm), the reflected image may be slightly blurred. This effect is more pronounced for particles at large angles : this aberration contributes to the dispersion of the photon angle with respect to the angle of emission, which affects the detection resolution.
 
-The photon detector array consists of two symmetric parts with respect to the beam line, each one is composed by 8 modules. The modules in the external regions
-are MultiWire Proportional Chambers (MWPC) equipped with solid state CsI photocathodes\cite{}. The central area is composed by MultiAnode Photomultiplier Tubes
-(MAPMT)\cite{} coupled to individual telescopes of fused silica lenses. The use of two different detector types employing different different photon converters
-results in the detection of photons in two wavelength regions : < 200 nm for MWPCs and $\sim$ 200 - 650 nm for MAPMT. The low momentum particles are mainly detected
-by the outer part (MWPC) while the high momentum ones are detected by the central part (MAPMT).
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.4]{./gfx/RICHmirrors.png}
+	\caption{COMPASS RICH detector optical system.}
+	\label{pic:RICHmirrors}
+\end{figure}
 
-The spherical mirrors will focalize all the photons emitted parallel in the same point. A fortiori the image reflection in the photon detectors will be a ring.
-An example of a RICH event is shown in Fig.\ref{}.
+\subsection{Photon Detectors}
 
-\subsection*{Readout Electronics}
+The photon detector array consists of two symmetric parts with respect to the beam line, each one is composed by 8 modules. The modules in the external regions are MultiWire Proportional Chambers (MWPC) equipped with solid state CsI photocathodes\cite{}. The central area is composed by MultiAnode Photomultiplier Tubes (MAPMT)\cite{} coupled to individual telescopes of fused silica lenses. The use of two different detector types employing different different photon converters results in the detection of photons in two wavelength regions : < 200 nm for MWPCs and $\sim$ 200 - 650 nm for MAPMT. The low momentum particles are mainly detected by the outer part (MWPC) while the high momentum ones are detected by the central part (MAPMT).
 
-The readout electronics for the central part (MAPMT) consists of three elements : a chip card MAD4, a bus board (Roof) and a DREISAM card. The MAD chip amplifies
-and discrimates the signal. The latter is then tansported to the chip card DREISAM which functions as a time to digital converter. The signal acquired in a window
-of 100 ns centered on the time of the trigger is transformed into a temporal information with respect to the absolute time of the experiment with a resolution better
-than 130 ps. The Roof board acts as a two way bridge to carry the informations from MAD to DREISAM and to deliver to MAD informations about the thresholds. The readout
-system is free from cable connections to minimize the electrical noise.
+The spherical mirrors will focalize all the photons emitted parallel in the same point. A fortiori the image reflection in the photon detectors will be a ring. An example of a RICH event is shown in Fig. \ref{pic:RICHEvent}.
 
-From the peripheral area, where events occur at a lower rate with a lower background level, the electronic of the readout system is based on a APV25 chip (128-channel
-preamplifier /shaper ASIC with analogue pipeline)\cite{}. The chip has an integration time of the signal < 400 ns.
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/RICHEvent.png}
+	\caption{An event from the online event display of COMPASS RICHONE; the squares represent the hits with signal amplitudes larger than a threshold, individually set for each channel. Figure taken from \cite{NIM}}
+	\label{pic:RICHEvent}
+\end{figure}
 
-The large number of RICH channels (82944) corresponds to $\sim$ 40\% of the total number of COMPASS electronic channels. To reduce the data flow, empty channels are
-suppressed at thre front end stage and only the amplitude signals above threshold are read out in local FIFO arrays. Data are then transmitted via optical fibers
-to the general acquisition system at a rate of 40 MB/s.
+\subsection{Readout Electronics}
 
-\subsection*{RICH Event Reconstruction}
+The readout electronics for the central part (MAPMT) consists of three elements : a chip card MAD4, a bus board (Roof) and a DREISAM card. The MAD chip amplifies and discrimates the signal. The latter is then tansported to the chip card DREISAM which functions as a time to digital converter. The signal acquired in a window of 100 ns centered on the time of the trigger is transformed into a temporal information with respect to the absolute time of the experiment with a resolution better than 130 ps. The Roof board acts as a two way bridge to carry the informations from MAD to DREISAM and to deliver to MAD informations about the thresholds. The readout system is free from cable connections to minimize the electrical noise.
 
-RICHONE is a package contained in CORAL software. It is in charge of RICH event reconstruction viz. reconstructs the physical variables from the RICH active pads for each
-events. The reconstruction is divided in several parts, the first being decoding the data and clustering. Then the reconstruction of the Cherenkov angle for each individual
-photon is done. It is possible to perform the ring reconstruction which is used for studies on the apparatus. The particle identification (PID) is based on a maximum
-likelihood calculation. The PID will be explained more thouroughly afterwards.
+From the peripheral area, where events occur at a lower rate with a lower background level, the electronic of the readout system is based on a APV25 chip (128-channel preamplifier /shaper ASIC with analogue pipeline)\cite{}. The chip has an integration time of the signal < 400 ns.
+
+The large number of RICH channels (82944) corresponds to $\sim$ 40\% of the total number of COMPASS electronic channels. To reduce the data flow, empty channels are suppressed at thre front end stage and only the amplitude signals above threshold are read out in local FIFO arrays. Data are then transmitted via optical fibers to the general acquisition system at a rate of 40 MB/s.
+
+\subsection{RICH Event Reconstruction}
+
+RICHONE is a package contained in CORAL software. It is in charge of RICH event reconstruction viz. reconstructs the physical variables from the RICH active pads for each events. The reconstruction is divided in several parts, the first being decoding the data and clustering. Then the reconstruction of the Cherenkov angle for each individual photon is done. It is possible to perform the ring reconstruction which is used for studies on the apparatus. The particle identification (PID) is based on a maximum likelihood calculation. The PID will be explained more thouroughly afterwards.
 
 \subsubsection*{Decoding and clustering}
 
-There are two different types of photon detectors and they have different decoding systems and clustering algorithms. For the MWPCs the analog signal comes from channels
-having signal (with a three-time sampling of the signal)\cite{}. Since more than one channel fires, a clustering is done. When the pads with the highest pulse height is
-found, all the adjacent pads with a smaller signal are included in the cluster\cite{}. The mean position of each active pad is evaluated in the cluster, weighting the
-signal with their maximum pulse height, to determine the center of gravity of the cluster. For the MAPMT signal, decoding is enough to read the time information comming
-from the PMT that was hit. The probability of having correlated hits in adjacent area being negligible, the MAPMT does not need clustering\cite{}.
+There are two different types of photon detectors and they have different decoding systems and clustering algorithms. For the MWPCs the analog signal comes from channels having signal (with a three-time sampling of the signal)\cite{}. Since more than one channel fires, a clustering is done. When the pads with the highest pulse height is found, all the adjacent pads with a smaller signal are included in the cluster\cite{}. The mean position of each active pad is evaluated in the cluster, weighting the signal with their maximum pulse height, to determine the center of gravity of the cluster. For the MAPMT signal, decoding is enough to read the time information comming from the PMT that was hit. The probability of having correlated hits in adjacent area being negligible, the MAPMT does not need clustering\cite{}.
 
-The cluster or hit position is used to determine the trajectory of the photon. In addition, the time information coming from the MAPMT is used to reject out-of-time
-photons while the amplitude information from the MWPC serves to reduce the background both from out-of-time photons and from electronic noise.\cite{}
+The cluster or hit position is used to determine the trajectory of the photon. In addition, the time information coming from the MAPMT is used to reject out-of-time photons while the amplitude information from the MWPC serves to reduce the background both from out-of-time photons and from electronic noise.\cite{}
 
 \subsubsection*{Cherenkov angle and ring reconstruction}
 
-The trajectory of each Cherenkov photon is calculated with respect to the plane containing the particle track and its virtual reflection in the mirror in order to
-reconstruct $\theta_C$\cite{}. All the photons emitted by the particles are expected to have the same angle $\theta_C$ and to be uniformly distributed in $\phi$.
-The photons emitted by other particles or from background have on the contrary a flat $\theta_C$ distribution. The emitted photon with the same ($\theta_C$,$\phi$)
-pair are reflected on the same point at the focal surface (neglecting any spherical aberration), resulting in a ring image of the photon detector. Since the emission
-point of the photon along the particle trajectory is not known, the middle point between the detector and the mirror is taken. A good determination of the track trajectory
-parameters and the momentum of the particle are mandatory in order to extract $\theta_C$ with good precision.
+The trajectory of each Cherenkov photon is calculated with respect to the plane containing the particle track and its virtual reflection in the mirror in order to reconstruct $\Theta_C$\cite{}. All the photons emitted by the particles are expected to have the same angle $\Theta_C$ and to be uniformly distributed in $\phi$. The photons emitted by other particles or from background have on the contrary a flat $\Theta_C$ distribution. The emitted photon with the same ($\Theta_C$,$\phi$) pair are reflected on the same point at the focal surface (neglecting any spherical aberration), resulting in a ring image of the photon detector. Since the emission point of the photon along the particle trajectory is not known, the middle point between the detector and the mirror is taken. A good determination of the track trajectory parameters and the momentum of the particle are mandatory in order to extract $\Theta_C$ with good precision.
 
-To characterize the RICH, determining its angular resolution for instance, the ring reconstruction of the emitted photons is needed. The ring reconstruction is based on the
-search of a peak in the $\theta_C$ distribution. Small intervals of $\pm$3$\sigma$ ($\sigma$ being the single photon resolution : $\sigma_{MAPMT}$ = 2.0 mrad and
-$\sigma_{MWPC}$ = 2.5 mrad) on an overall range of 0 to 70 mrad is considered. The interval with the maximum number of entries defines the ring. This procedure associates
-a ring to each track and in order to reject tracks with only background photons a minimal amount of 4 photons per ring is required\cite{}. The resolution of the
-Cherenkov angle measurement provided by each single photon as a function of the particle momentum is illustrated in Fig.\ref{}. In the high momentum region where
-the Cherenkov angle saturates the resulting resolution is $\sim$ 1.2 mrad.
+To characterize the RICH, determining its angular resolution for instance, the ring reconstruction of the emitted photons is needed. The ring reconstruction is based on the search of a peak in the $\Theta_C$ distribution. Small intervals of $\pm$3$\sigma$ ($\sigma$ being the single photon resolution : $\sigma_{MAPMT}$ = 2.0 mrad and $\sigma_{MWPC}$ = 2.5 mrad) on an overall range of 0 to 70 mrad is considered. The interval with the maximum number of entries defines the ring. This procedure associates a ring to each track and in order to reject tracks with only background photons a minimal amount of 4 photons per ring is required\cite{}. The resolution of the Cherenkov angle measurement provided by each single photon as a function of the particle momentum is illustrated in Fig. \ref{pic:RICHRez}. In the high momentum region where the Cherenkov angle saturates the resulting resolution is $\sim$ 1.2 mrad.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/RICHRez.png}
+	\caption{Resolution of the Cherenkov angle for the reconstructed ring images, provided by each single photon, versus the particle momentum for a sample of identified pions. Figure taken from \cite{NIM}}
+	\label{pic:RICHRez}
+\end{figure}
 
 \subsubsection*{Mass separation}
 
-For the physical analysis of RICH events, the PHAST software is used. Tha available informations at PHAST is summarized in Tab.\ref{}.
+For the physical analysis of RICH events, the PHAST software is used. Tha available informations at PHAST is summarized in Tab. \ref{tab:RICHInfos}.
 
-The measured values of $\theta_C$ as a function of $p_h$ for the RICH detector are shown in Fig.\ref{}. In the low momentum region, the RICH detector is only
-sensitive to electrons, muons and pions. The bands corresponding to kaons and protons start to be visible respectively at $p_h \approx$ 9.45 GeV/c and $p_h
-\approx$ 17.95 GeV/c. For high momentum values viz. above 40 GeV/c, a saturation of the Cherenkov angle is observed, principally for pions and kaons.
+The measured values of $\theta_C$ as a function of $p_h$ for the RICH detector are shown in Fig. \ref{pic:RICH}. In the low momentum region, the RICH detector is only sensitive to electrons, muons and pions. The bands corresponding to kaons and protons start to be visible respectively at $p_h \approx$ 9.45 GeV/c and $p_h \approx$ 17.95 GeV/c. For high momentum values viz. above 40 GeV/c, a saturation of the Cherenkov angle is observed, principally for pions and kaons.
 
-% TAB
-
-The final particle identification is performed using likelihood methods and is decribded in the following parts.
-
-%------------------------------------------------
-
-\section{RICH Performance Study and Particle Identification}
-
-The goal of the present thesis being the extraction of identified hadrons, the RICH detector allows us to obtain the identity information from the hadron.
-As the detector efficiency is not perfect, the misidentification probabilty is not zero ; one thus needs to determine the identification performance of the
-RICH detector.
-The RICH performance study relies on measuring the identification and misidentification probabilities for pions, kaons and protons. From samples of pure pions,
-kaons and protons the RICH detector response is measured : the hadrons are identified using RICH informations and the identification and misidentification
-probabilities are calculated in the hadron ($p_h$,$\theta_h$) phase space for pions, kaons and protons. The method used for identification is likelihood estimation
-for different hypotheses. At first order, the mass assignment corresponds to the highest likelihood but further requirements can be added to improve the result.
-The results obtained for the RICH performance are given in section \ref{}.
-
-\subsection*{Determination of RICH Detector Performance}
-
-The identification and misidentification efficiencies are given by the ration of the number of particles respectively correctly and wrongly identified out of pure
-samples of known hadrons over the total number of hadrons composing the samples :
-
-\begin{equation}
-    P(t \rightarrow i) = \frac{N(t \rightarrow i)}{N(t)}
-\end{equation}
-
-$P(t \rightarrow i)$ is the probability that a hadron t is identified as a hadron i, $N(t \rightarrow i)$ is the number of hadrons t identified as i and $N(t)$ is the
-total number of hadron t of the pure sample. The identification ($P(t \rightarrow t)$) and misidentification ($P(t \rightarrow i)$) efficiencies are properties of the RICH and can
-be displayed in an efficiency matrix with the identification efficiencies are on the diagonal and the misidentification ones are off-diagonal.
-
-\begin{equation}
-  M_R
-  =
-  \begin{bmatrix}
-  \epsilon(\pi \rightarrow \pi) & \epsilon(K \rightarrow \pi) & \epsilon(p \rightarrow \pi)\\
-  \epsilon(\pi \rightarrow K) & \epsilon(K \rightarrow K) & \epsilon(p \rightarrow K) \\
-  \epsilon(\pi \rightarrow p) & \epsilon(K \rightarrow p) & \epsilon(p \rightarrow p)
-  \end{bmatrix}
-\end{equation}
-
-To obtain this matrix, three pure hadron samples are needed.
-
-\subsection*{Selection of $\Phi$, $K^0$ and $\Lambda$}
-
-The RICH performance analysis is based on the study of the pion, kaon and proton samples coming from inclusive $\Phi$, $K^0$ and $\Lambda$.
-
-In previous analysis on the RICH particle identification efficiency, exclusive $\Phi$ mesons were used. These are $\Phi$ meson produced in an exclusive reaction.
-Therefore, only three particles are detected in the spectrometer. These are the scattered muon and the two kaons from the decay of the $\Phi$ meson. Such events do not
-represent typical events at COMPASS from deep inelastic scattering where also more than three particles are detected. Therefore, so called inclusive $\Phi$ mesons are
-used for the analysis. These are $\Phi$ mesons produced in deep inelastic scattering. Such events contain not only the scattered muon and the decay kaons from the $\Phi$
-meson but might also contain additional particles.
-At high z, problems were found in the separation between kaons and pions using likelihood values\cite{}. This problem is not correctly taken into account using $K^0$ mesons.
-Therefore, a first test on using $\rho^0$ mesons instead is performed in order to determine the correct values for the identification and misidentification probabilities
-in this kinematic region.
-
-For the determination of the RICH efficiency, it is necessary to have a source of events where the true kind of the particle passing the RICH is known. That kind of events
-is obtained using two body particle decays, namely the decay of a $K^0$ into two pions ($K^0 \rightarrow \pi^+\pi^-$), the $\Phi$ decay into two kaons ($\Phi \rightarrow K^+K^-$),
-the $\Lambda$ decay into a pion and a proton ($\Lambda \rightarrow p\pi^-$). In order to select such events with such decays, deep inelastic scattering events with a scattered muon
-are selected. The typical cuts are thus applied to the data:
-\begin{itemize}
-  \item Exclude bad spills
-  \item Select best primary vertex with incoming and scattered muon
-  \item Check if primary vertex is inside one of the target cells
-  \item Extrapolated track of the incoming muon should cross all target cells
-  \item $0.1 \le y \le 0.9$
-\end{itemize}
-
-Different selection criteria have to be used for $K^0$, $\Lambda$ and $\Phi$ decays. In the case of $K^0$ mesons and $\Lambda$ baryons, the particles decay by the weak
-force. Therefore, the decay length is long enough to produce a secondary vertex, which can be separated from the primary one. The $\Phi$ mesons decays by the strong force.
-This results in a very short decay length and it is not possible to separate the secondary vertex from the primary one.
-
-\subsubsection{$K^0$ and $\Lambda$ selection}
-
-For $K^0$ mesons the decay into $\pi^+$ and $\pi^-$ with a branching ration of (69.20 $\pm$ 0.05)\% \cite{} and in the case of $\Lambda$ and $\bar{\Lambda}$ baryons the
-decay into a proton and a pion with a branching ratio of (63.9 $\pm$ 0.5)\% \cite{} is used. In both decays the reconstruction of the secondary vertex is possible.
-The following cuts are applied to select these decays:
-
-\begin{itemize}
-  \item Selection of good secondary vertices
-  \begin{itemize}
-    \item Loop over all vertices
-    \item Vertex is not primary one
-    \item Exactly two opposite charged outgoing particles
-    \item The tracks should not be connected to any other primary vertex
-    \item Primary and secondary vertex separated by more than 2$\sigma$
-  \end{itemize}
-  \item Select good hadron tracks
-  \begin{itemize}
-    \item Both particles should not have crossed more than 10 radiation length
-    \item Last measured position ($Z_{last}$) behind SM1
-    \item Transverse momentum with respect to the mother particle larger than 23 MeV to suppress electrons
-    \item Check that the decaying particle is connected to the primary vertex ($\theta \le 0.01$)
-  \end{itemize}
-  \item Additional cuts
-  \begin{itemize}
-    \item $p_h \geq 1 GeV/c$
-    \item Mass difference smaller than 150 MeV/c$^2$ between the $K^0$/$\Lambda$ mass and the invariant mass of the two decay hadrons assuming the correct masses
-  \end{itemize}
-\end{itemize}
-
-The same cuts except for the mass cuts are used for $K^0$ and $\Lambda$ candidates. For the selected candidates, the RICH likelihoods of the two decay particles are stored for
-further analysis. During the first selection step, good secondary vertices are selected with only two outgoing tracks. In order to ensure that the two tracks belong
-to this secondary vertex, the vertex is skipped if a track is assumed to originate from a primary vertex. In addition, the primary and secondary vertex should be
-separated from one another. Therefore, the distance between both should be larger than two times the reconstruction accuracy.
-During the second selection step, good hadron tracks are selected. In order to suppress tracks from muons, tracks which have passed a large amount of material are
-rejected. In addition, only tracks with a measured momentum are selected. This is ensured by a last measured position behind the first spectrometer magnet. In addition,
-it is ensured that the $K^0$ meson and $\Lambda$ baryon is produced in the primary vertex by comparing the angle $\theta$ between their momentum vector and the vector
-connecting the primary and secondary vertex. Tracks from electrons are suppressed by removing particles with low transverse momenta with respect to the mother particle.
-This is shown in Figure 1. Here, the transverse momentum of a particle is shown as a function of the ratio of the longitudinal momentum ratio of two particles:
-
-\begin{equation}
-  \alpha = \frac{p_{L,1}-p_{L,2}}{p_{L,1}+p_{L,2}}
-\end{equation}
-
-The three visible arcs are produced by the decay of the $K^0$ mesons and the $\Lambda$ baryons. The decay of $K^0$ mesons in two particles with the same mass results in the symmetric
-arc, whereas the decay of $\Lambda$ baryons into two particles with different masses result in the two smaller arcs on the left and right side. The band at the bottom is
-produced by electrons from pair production. These are removed by the cut on the transverse momentum. This is also shown in Figure 2 for the transverse momentum of the
-particles from decays of $K^0$ meson or $\Lambda$ baryon candidates.
-
-During the third selection step, events, which will not be used in the later analysis, are removed. Therefore, a minimal momentum of the particle is required and only a
-mass range of 150 MeV/c2 around the $K^0$ or $\Lambda$ mass is selected. The effect of the cuts on the invariant mass of the $K^0$ and $\Lambda$ candidates is shown in Figure 3 in the range
-of their mass. The strongest reduction is achieved by requiring the production of the $K^0$ meson or $\Lambda$ baryons at the primary vertex.
-In addition, also the effect of the Likelihood cuts for the particle identification, which are applied later one, is shown.
-
-\subsubsection{$\Phi selection$}
-
-The $\Phi$ meson decay length is too short to separate the primary and decay vertex. Therefore, all outgoing particles from a primary vertex are taken into account for the search
-of possible $\Phi$ mesons. The branching ratio of the decay into two kaons is (48.9 $\pm$ 0.5\%) \cite{}.
-
-\begin{itemize}
-  \item Selection of possible good events with $\Phi$ mesons
-  \begin{itemize}
-    \item At least 3 outgoing particles including scattered muon
-    \item Loop over all outgoing particles
-    \item Oppositely charged pairs of hadrons (none is a muon)
-  \end{itemize}
-  \item Select good hadron tracks
-  \begin{itemize}
-    \item Last measured position ($Z_{last}$) behind SM1
-    \item Transverse momentum with respect to the mother particle larger than 23 MeV to suppress electrons
-  \end{itemize}
-  \item Additional cuts
-  \begin{itemize}
-    \item 9 GeV/c $\leq p_h \leq$ 55 GeV/c
-    \item Mass difference smaller than 120 MeV/c$^2$ between the $\Phi$ mass and the invariant mass of the two decay hadrons assuming the kaon masse.
-  \end{itemize}
-\end{itemize}
-
-The selection steps are similar the selection of the $K^0$/$\Lambda$ candidates. In the first step, primary vertices with oppositely charged hadron pairs are selected. During the
-second selection step, only particles with a measured momentum are kept and possible electrons are removed by removing particles with a too low transverse momentum.
-During the third step additional cuts are applied to remove events, which will not be used in the later analysis. The effect of the various cuts is shown in Figure 4.
-The selection of $\Phi$ meson candidates results in a large combinatorial background. During the selection the largest suppression is achieved by the removal of electrons.
-By also applying the Likelihood cuts to identify the kaons a large suppression can be achieved.
-
-\subsection{RICH Particle Identification}
-
-The goal of the selection is a clean pion and kaon sample. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The
-identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one
-another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts
-are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis.
-The likelihood cuts are listed in Table \ref{LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{LHlessstrict}. Similar cuts were used in the analysis of the hadron
-multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination.
-The RICH particle identification efficiency is studied in the momentum range of 10 GeV/c $ \leq p \leq $ 50 GeV/c. In this range, pions and kaons are emitting Cherenkov
-light, while up to $\sim$ 17 GeV protons are still below the threshold of
-
-\begin{equation}
-  p_{thr,i} = \frac{m_i}{ \sqrt{n^{2}-1} }
-\end{equation}
-
-where n is the refractive index. This is shown in Figure 5 where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. As the momentum range
-is restricted to momenta larger than 10 GeV/c, no electron rejection can be performed. In this momentum range the Cherenkov angle for pions and electrons are too close
-to one another. Muons can also be not rejected using likelihood cuts as the Cherenkov angle for muon and pion is too close to one another. But they are identified using
-cuts on the radiation length passed by a particle. The identification of pions, kaons and protons above the momentum threshold is done by comparing the likelihood values
-with one another. The likelihood cuts for protons require its likelihood to be the largest one. These cuts are also given in Table 1. Below the momentum threshold, protons
-do not emit Cherenkov light. Therefore, the likelihood values are used to test whether the detected light is consistent with random noise in the detector (background).
-In order to avoid possible problems due to the uncertainty on the reconstructed momentum or the uncertainty of the refractive index of the RICH gas, a region of $\pm$5 GeV/c
-around the proton threshold is used, where both hypothesis are applied for proton identification.
-
-\subsection{Method}
-
-The particle identification efficiency of the RICH is studied as a function of the hadron phase space, which is given by the hadron momentum and the polar angle at the
-entrance of the RICH. This was already studied before, for example in References [6] and [7]. The binning used for this study is similar to a previous analysis described
-in Reference [1]. A fine binning is used for the momentum dependence since the Cherenkov effect depends on this variable. For the dependence on the polar angle, a coarse
-binning is used, since only a weak dependence is observed. The binning is given by:
-
-\begin{itemize}
-  \item Momentum $p_h$ (GeV/c) : ()
-  \item Angle $\theta_h$ (rad) : ()
-\end{itemize}
-
-For each bin, the elements of the efficiency matrix $M_R$ are determined separately for positive and negative particles. The elements of this matrix contain the probability
-for a particle t to be identified as a particle of type i, for example a pion that is correctly identified as pion or wrongly as a kaon. The full matrix is given by:
-
-\begin{equation}
-  M_R
-  =
-  \begin{bmatrix}
-  \epsilon(\pi \rightarrow \pi) & \epsilon(K \rightarrow \pi) & \epsilon(p \rightarrow \pi)\\
-  \epsilon(\pi \rightarrow K) & \epsilon(K \rightarrow K) & \epsilon(p \rightarrow K) \\
-  \epsilon(\pi \rightarrow p) & \epsilon(K \rightarrow p) & \epsilon(p \rightarrow p)
-  \end{bmatrix}
-\end{equation}
-
-The different elements are determined by $\varepsilon(t \rightarrow i)$ = $N(t \rightarrow i)/N(t)$ where $N(t)$ is the total number of particles $t$ and $N(t \rightarrow i)$ is the number of particles $t$, which are
-identified as particle $i$. These numbers are evaluated using samples, where the particle type is known, as in the case of the selected decays.
-In the case of positive pions, the events from the $K^0$ sample are used where the negative hadron is identified as a pion using the likelihood cuts shown in Table 1.
- Therefore, the second particle has to be a pion too, if the decaying particle was a $K^0$. Using the RICH, the particle type is determined for the second particle, which
- results in the number $N(\pi^+ \rightarrow i)$. An equivalent procedure is used for positive kaons and protons using the $\Phi$ and $\Lambda$ samples.
-In order to obtain these numbers for the negative particles, the same samples are used but this time performing the identification of the positive particle in the first
-place. The numbers $N(t \rightarrow i)$ are extracted using a fit, which is described here for the $K^0$ sample, where the negative pion is already identified. The events are put into
-five different groups, depending on the particle type determined by the RICH :
-
-\begin{itemize}
-  \item All events (RICH not used for second particle)
-  \item Events where $\pi^+$ is identified as $\pi^+$
-  \item Events where $\pi^+$ is identified as $K^+$
-  \item Events where $\pi^+$ is identified as $p$
-  \item Events where $\pi^+$ is not identified
-\end{itemize}
-
-For each of these groups, the invariant $K^0$ mass spectra are shown in Figure 6, for example, and the number of events in the peak and the background are determined by a
-simultaneous fit of all five spectra. These spectra are described using two Gaussian distributions with the same mean for the signal, fSig, and a polynomial to describe
-the background, fBG. Their expressions are given in Table 3. The two Gaussian distributions account for the different resolutions of the two spectrometer stages. The
-fitted function for each of the groups is given by
-
-\begin{equation}
-  f(x) = N_{sig} \dot f_{sig} + N_{bgd} \dot f_{bgd}
-\end{equation}
-
-where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background events. Here, the same width, $\sigma_1$ and $\sigma_2$, of the two Gaussian distributions
-was used for all five spectra.
-
-\begin{table}[h]
-  \caption{\label{LHcut} Likelihood cuts for pion, kaon and protons}
+\begin{table}[!h]
+  \caption{RICH informations available in PHAST.}
+  \label{tab:RICHInfos}
   \centering
-  \begin{tabular}{lcccc}
+  \begin{tabular}{|c|}
     \hline
-     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
-    \hline
-    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
-    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
-    LH(\textit{i})/LH($\pi$) & --- & > 1.08 & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
-    LH(\textit{i})/LH(bg) & > 1.0 & > 1.24 & --- & > 1.0 \\
+    $\pi$, $K$, $p$, $e$, $\mu$ and background likelihood \\
+    (LH($\pi$), LH($K$), LH($p$), LH($e$), LH($\mu$) and LH($bg$)) \\
+    $\pi$, $K$, $p$, $e$, $\mu$ and background likelihood derived\\
+    Maximum likelihood angle \\
+    $\Theta_{Cj}$, reconstructed ring angle \\
+    $N$, number of photons used in $\Theta_C$ reconstruction \\
+    $\Theta_{C}$, fitted ring angle \\
+    Ring, $\pi$, $K$, $p$, $e$ and $\mu$ $\chi^2$ \\
+    Mean ring time for photon in the PMT part \\
+    Number of photons per ring in the PMT part \\
     \hline
   \end{tabular}
 \end{table}
 
-\begin{table}[]
-  \caption{\label{LHlessstrict} Less strict likelihood cuts for pion, kaon and protons}
+The final particle identification is performed using likelihood methods and is described in the following chapter.
+
+\begin{figure}[!h]
   \centering
-  \begin{tabular}{lcccc}
-    \hline
-     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
-    \hline
-    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
-    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
-    LH(\textit{i})/LH($\pi$) & --- & > 1.0 & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
-    LH(\textit{i})/LH(bg) & > 1.0 & > 1.07 & --- & > 1.0 \\
-    \hline
-  \end{tabular}
-\end{table}
-
-Also the ratio $\delta$ of the amount of events in both Gaussian distributions is the same. The shape of the background is the same for all spectra except the one where the pion
-is identified as a proton. In this case, a possible background contribution due to decays from $\Lambda$ baryons decaying in a pion and an proton can be enriched. This results in
- a slightly different background shape. The integral of the background remains a independent parameter in all five cases. In order to ensure that the sum of all efficiencies
- ($\varepsilon(\pi^+ \rightarrow \pi^+)  + \varepsilon(\pi^+ \rightarrow K^+ ) + \varepsilon(\pi^+ \rightarrow p ) + \varepsilon(\pi^+ \rightarrow noID)$) is 100\%, an additional constraint is introduced to the fit.
-
-\begin{equation}
-  N^{all}(K^0) = N^{\pi}(K^0) + N^{K}(K^0) + N^{p}(K^0) + N^{noID}(K^0)
-\end{equation}
-
-where $N_i(K^0)$ (i = $\pi$, $K$, $p$, $noID$) is the number of $K^0$ obtained from the histogram where the pion is identified as $i$. This results in 16 free parameters of the fit.
-The same method is used in the case of kaons and protons. The main difference between those fits and the one for the $K^0$ sample is the description of the signal and
-the background. The functions describing both are also given in Table 3. Again the parameters describing the shape are the same in all five spectra and the fit parameters
- describing the integrals of the functions are used as free parameters, except for the parameter of the mass spectrum including all events. This results in 15 free
- parameters for the fit of the $\Phi$ sample and in 15 free parameters for the fit of the $\Lambda$ sample. Examples of the fits performed for the $\Phi$ and $\Lambda$ samples are shown in Figures
- 7 and 8. The fits show the results for one momentum bin (25 GeV/c2 $< p <$ 27 GeV/c2) and angular bin (0.01 $< \theta <$ 0.04), which was also shown for the $K^0$ sample.
-
-\subsection{Calculation of the efficiencies and uncertainties}
-
-The elements of the efficiency matrix $M_R$ are determined from fitted numbers of signal events,
-
-\begin{equation}
-  \epsilon(t\rightarrow i) = \frac{N(t\rightarrow i)}{N(t)}
-\end{equation}
-
-Here, $N(t)$ is given by the sum of all $N(t \rightarrow i)$. As the nominator and denominator are correlated, the uncertainty can be determined via error propagation taking into
-account the covariance matrix of the fit,
+	\includegraphics[scale=0.5]{./gfx/RICH.png}
+	\caption{Measured Cherenkov angle $\Theta_C$ as a function of $p_h$. $\pi$ threshold $\approx$ 2.67 GeV/c, $K$ threshold $\approx$ 9.45 GeV/c and $p$ threshold $\approx$ 17.95 GeV/c.}
+	\label{pic:RICH}
+\end{figure}

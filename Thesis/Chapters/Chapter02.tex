@@ -6,22 +6,63 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Renormalization in QED}
+\section{Divergences, regularization and renormalization in QED}
 
-Content
+When calculating loop Feynman diagrams in QED at some point the integrals will diverge. To cure these divergences we have to go through the process of renormalization. Renormalization is a tricky procedure as on the one hand this is a formal manipulation, embedded inside the quantum field theory formalism, which allows us to calculate finite, testable expectation values and scattering amplitudes. On the other hand however we do not know how physics decribes high energy processes : there may be high energy vitual particles contributing to the loop diagrams and they would definitely impact the divergence of the integral. Thus we could say that renormalization is a procedure allowing to calculate the effect of the low-energy physics with a fine sensitivity independently to what happens at high energies.
+
+To describe the renormalization process, consider the electron self-energy. Defining the full electron propagator $G_F(p)$ by including order-by-order in the perturbation theory the corrections to the Feynman-Green function :
+
+\begin{equation}
+    \begin{split}
+      G_F(p) =
+      \feynmandiagram [layered layout, horizontal=d to b] {
+  b -- [anti fermion] d, };
+  +
+  \feynmandiagram [layered layout, horizontal=a to b]{
+  a -- [anti fermion] b
+  -- [anti fermion] c
+  -- [anti fermion] d,
+  b -- [photon, half left, looseness=1.5] c,};
+  +
+  \mathscr{O}(e^4_0) \\
+      = \frac{i}{\slashed{p}-m_0+i\epsilon} + G^{(1)}_F(p) + \mathscr{O}(e^4_0)
+    \end{split}
+\end{equation}
+
+Where $e_0$ and $m_0$ are the \textit{bare} charge and mass parameters and $G^{(1)}_F(p)$ is a divergent term. The renormalization procedure then follows three steps :
+
+\begin{enumerate}
+  \item \textbf{Regularization} : set a new \textit{finite} integral $G^{(1)}_F(p,\Lambda)$ with a dependence with the \textit{cut-off scale} $\Lambda$ yielding :
+  \begin{equation}
+    G^{(1)}_F(p,\Lambda) \xrightarrow{\Lambda\rightarrow\infty} G^{(1)}_F(p)
+  \end{equation}
+  This integral has a divergent and a finite parts :
+  \begin{equation}
+    G^{(1)}_F(p,\Lambda) = I_{div}(p,\Lambda) + I_{fin}(p,\Lambda)
+  \end{equation}
+  The finite part $I_{fin}(p,\Lambda)$ leads to physically measurable effects and are the \textit{radiative corrections}.
+
+  \item \textbf{Renormalization} : if the theory is \textit{renormalizable} the divergent part can be combined with the tree-level propagator :
+  \begin{equation}
+    \begin{split}
+    G^{(1)}_F(p,\Lambda) = \frac{i}{\slashed{p}-m_0+i\epsilon} + I_{div}(p,\Lambda) + I_{fin}(p,\Lambda) + \mathscr{O}(e^4_0) \\
+    = \frac{iZ_2(\Lambda)}{\slashed{p}-m(\Lambda)+i\epsilon} + I_{fin}(p,\Lambda) + \mathscr{O}(e^4_0)
+    \end{split}
+  \end{equation}
+  Thanks to the \textit{wavefunction renormalization} $Z_2(\Lambda)$ and a renormalized mass parameter $m(\Lambda)$, the divergent terms can be integrated into the tree-level propagator.
+
+  \item \textbf{Removing $\Lambda$-dependence} : By taking $\Lambda\rightarrow\infty$, the bare parameters $e_0$ and $m_0$ become singular allowing the physical $e$ and $m$ to be finite. The perturbation expansion is thus a series in $e$ and not in $e_0$.
+\end{enumerate}
+
+Though this procedure seems to be at first glance a wizardry trick, it is well-based and defined and give constitant and definite physical results whatever regularization you choose. By definition, a theory is said to be \textit{renormalizable} if all divergences can be removed by renormalization of a finite number of coupling in the Lagrangian.
 
 %----------------------------------------------------------------------------------------
 
 \section{QED Radiative Corrections}
 
-Radiative corrections had a key role in the development of QED : they enable one to calculate cross-sections with extremely high precision
-that has until now not been contradicted by experiment.
-When a process like DIS involves charged particles, there is a rearrangement of the electromagnetic current between the initial and final state.
-Incidentally, real photons can be emitted.
+Radiative corrections had a key role in the development of QED : they enable one to calculate cross-sections with extremely high precision that has until now not been contradicted by experiment. When a process like DIS involves charged particles, there is a rearrangement of the electromagnetic current between the initial and final state. Incidentally, real photons can be emitted.
 
-If one were to compute the cross section of the process $1+2 \rightarrow 3+4$ with no photon emission (Born level process), one would find a different result
-$\sigma_{0}$ than the measurement $\sigma_{exp}$. To obtain a more accurate result, one has to consider the processes $1+2 \rightarrow 3+4+\gamma_1+\gamma_2+..+\gamma_n$.
-Taking these corrections to Born level process into account, one obtains :
+If one were to compute the cross section of the process $1+2 \rightarrow 3+4$ with no photon emission (Born level process), one would find a different result $\sigma_{0}$ than the measurement $\sigma_{exp}$. To obtain a more accurate result, one has to consider the processes $1+2 \rightarrow 3+4+\gamma_1+\gamma_2+..+\gamma_n$. Taking these corrections to Born level process into account, one obtains :
 
 \begin{equation} \label{eq:RC}
   \sigma_{exp} = (1+\delta_{RC})\sigma_0
@@ -40,8 +81,7 @@ In this note, I will not discuss the corrections beyond first order. These first
 \item Weak corrections
 \end{itemize}
 
-The goal is to quantify the effect of radiative corrections. The observed cross-section can be expressed as the convolution of the true cross-section times a
-function called the radiator function which takes into account the radiative effects :
+The goal is to quantify the effect of radiative corrections. The observed cross-section can be expressed as the convolution of the true cross-section times a function called the radiator function which takes into account the radiative effects :
 
 \[d\sigma^{obs}(p,q) = \int \frac{d^{3}k}{2k^{0}}R(l,l',k)d\sigma^{true}(p,-q,k)\]
 
@@ -49,13 +89,7 @@ This relation holds also for the structure functions :
 
 \[F_{n}^{obs}(x,Q^{2}) = \int d\tilde{x}d\tilde{Q}^{2}R_{n}(x,Q^{2},\tilde{x},\tilde{Q}^{2})F_{n}^{true}(\tilde{x},\tilde{Q}^{2})\]
 
-The previous formulas are valid for one photon emission but can be extended to include higher-order
-multi-photon emissions.
-As one has access to both observed quantities and radiator function, the determination of the true cross-sections
-or structure functions from measured ones is done by unfolding using an iterative procedure.
-The principal drawbacks of such a method is that the solution is ill-defined : there is no unique solution,
-there are large uncertainties and the process is numerically unstable.
-However, using partial functioning on the radiator function is reducing the instability of the calculation :
+The previous formulas are valid for one photon emission but can be extended to include higher-order multi-photon emissions. As one has access to both observed quantities and radiator function, the determination of the true cross-sections or structure functions from measured ones is done by unfolding using an iterative procedure. The principal drawbacks of such a method is that the solution is ill-defined : there is no unique solution, there are large uncertainties and the process is numerically unstable. However, using partial functioning on the radiator function is reducing the instability of the calculation :
 
 \[R(l,l',k) = \frac{I}{k.l}+\frac{F}{k.l'}+\frac{C}{\tilde{Q}^{2}}\]
 
@@ -71,25 +105,15 @@ $\angle (l_{in},\gamma) \rightarrow 0$, for final state radiation (FSR), $k.l'$ 
 $\angle (l_{out},\gamma) \rightarrow 0$ and eventually for Compton peak $Q^{2}$ is small for
 $p_{T}(l_{out}) \simeq p_{T}(\gamma)$.
 
-For ISR and FSR, the photon is emitted within narrow cones with a width of the order of $\sqrt{\frac{m_{t}}{E_{t}}}$.
-If the particle is massless, the radiated photon will be colinear to the lepton (incoming or
-outgoing, whether it is an ISR or a FSR).
+For ISR and FSR, the photon is emitted within narrow cones with a width of the order of $\sqrt{\frac{m_{t}}{E_{t}}}$. If the particle is massless, the radiated photon will be colinear to the lepton (incoming or outgoing, whether it is an ISR or a FSR).
 
 Two last notes are to be made :
 \begin{itemize}
-\item As $E^{2}_{\gamma,max} \propto Q^{2}\frac{1-x}{x}$, the largest radiation in energy are at large $Q^{2}$ and
-small $x$. Radiation is suppressed at small $Q^{2}$ and large $x$. There are also large negative
-corrections from uncancelled virtual contributions.
-\item As $\tilde{Q}^{2}_{min} = \frac{x^{2}}{1-x}M^{2}_{N}$, the case where $\tilde{Q}^{2}_{min} \ll Q^{2}$
-is possible.
+\item As $E^{2}_{\gamma,max} \propto Q^{2}\frac{1-x}{x}$, the largest radiation in energy are at large $Q^{2}$ and small $x$. Radiation is suppressed at small $Q^{2}$ and large $x$. There are also large negative corrections from uncancelled virtual contributions.
+\item As $\tilde{Q}^{2}_{min} = \frac{x^{2}}{1-x}M^{2}_{N}$, the case where $\tilde{Q}^{2}_{min} \ll Q^{2}$ is possible.
 \end{itemize}
 
-All the preceding explanations did concern leptonic radiation. One should also adress the question of
-the hadronic corrections (quark line radiation). These corrections are infrared divergent (radiation of soft photons and gluons)
-but they cancel with loops. The emission of the photon/gluon is collinear and gives rise to correction of
-type $\frac{\alpha}{2\pi}log(m_{q}^{2})$. Nevertheless for quarks, the approximation $m_{q} \approx 0$ is
-giving rise to divergent corrections. One way to solve this issue is to factorize and absorb the divergences
-into the PDFs :
+All the preceding explanations did concern leptonic radiation. One should also adress the question of the hadronic corrections (quark line radiation). These corrections are infrared divergent (radiation of soft photons and gluons) but they cancel with loops. The emission of the photon/gluon is collinear and gives rise to correction of type $\frac{\alpha}{2\pi}log(m_{q}^{2})$. Nevertheless for quarks, the approximation $m_{q} \approx 0$ is giving rise to divergent corrections. One way to solve this issue is to factorize and absorb the divergences into the PDFs :
 
 \[d\sigma = \sum_{f}d\hat{\sigma}_{f}(1+\delta_{f}(Q^{2},m^{2}_{q}))q_{f}(x) = \sum_{f}d\hat{\sigma}_{f}\hat{q}_{f}(x,Q^{2})\]
 
@@ -97,15 +121,35 @@ into the PDFs :
 
 In the following, only DIS/SIDIS is considered.
 
-The description of a radiative event is given by the following : an event is called radiative as soon as it
-contains one real radiated photon which is emitted in the lepton line (Fig. \ref{fig:rad_evt}).
+The description of a radiative event is given by the following : an event is called radiative as soon as it contains one real radiated photon which is emitted in the lepton line (Fig. \ref{fig:rad_evt}).
 
 \begin{figure}[htb]
-\centerline{\epsfig{file=gfx/diagram_rad.png,width=7cm}}
-\caption{Typical feynman diagram of a radiative event. One can note that the pair $(Q^2,\nu)$ at the vertex (called hadronic)
-is not the same as the one calculated using the incoming and outgoing lepton (called leptonic). The relation between the two pairs
-is drawn by :
-$\nu_{had} = \nu_{lep} - E_\gamma, Q^2_{had}=Q^2_{lep}+2E_\gamma(\nu_{lep}-\sqrt{\nu_{lep}^2+Q^2_{lep}}cos\theta_\gamma)$}
+\centering
+\begin{tikzpicture} \begin{feynman}
+\vertex (i1) {\(l\)};
+\vertex[right=1cm of i1] (i3);
+\vertex[above right=1cm of i3] (i4) {\(\gamma\)};
+\vertex[right=1cm of i3] (a);
+\vertex[above right=2cm of a] (i2) {\(l'\)};
+\vertex[blob,below=2cm of a] (b) {};
+\vertex[below left=2cm of b] (f12) {\(N\)};
+\vertex[below=0.1cm of f12] (f13);
+\vertex[above=0.1cm of f12] (f11);
+\vertex[right=2cm of b] (f22);
+\vertex[below=0.3cm of f22] (f23);
+\vertex[above=0.3cm of f22] (f21);
+
+\diagram* { (i1) -- [fermion] (i3) -- [fermion] (a) -- [fermion] (i2),
+(i3) -- [photon] (i4),
+(a) -- [photon, edge label=\(\gamma^*\)] (b) [blob],
+(f12) -- [double distance=7pt] (b) [blob] -- [plain] (f22),
+(f12) -- [fermion] (b) [blob],
+(b) [blob] -- [plain] (f21),
+(b) [blob] -- [plain] (f23),
+};
+\draw [decoration={brace}, decorate] (f21.north east) -- (f23.south east) node [pos=0.5, right] {\(X\)};
+\end{feynman} \end{tikzpicture}
+\caption{Typical feynman diagram of a radiative event. One can note that the pair $(Q^2,\nu)$ at the vertex (called hadronic) is not the same as the one calculated using the incoming and outgoing lepton (called leptonic). The relation between the two pairs is drawn by : $\nu_{had} = \nu_{lep} - E_\gamma, Q^2_{had}=Q^2_{lep}+2E_\gamma(\nu_{lep} \sqrt{\nu_{lep}^2+Q^2_{lep}}cos\theta_\gamma)$}
 \label{fig:rad_evt}
 \end{figure}
 
@@ -119,36 +163,16 @@ In the following, we will only consider these corrections (Fig. \ref{fig:rad_dia
 
 \begin{figure}[htb]
 \centerline{\epsfig{file=gfx/all_rad_feynm.png,width=12cm}}
-\caption{List of the diagrams used for the calculation of the radiative corrections. From left to right,
-tree level, internal bremsstrahlung (incoming and outgoing leptons), vertex correction and vacuum polarization.}\label{fig:rad_dia}
+\caption{List of the diagrams used for the calculation of the radiative corrections. From left to right, tree level, internal bremsstrahlung (incoming and outgoing leptons), vertex correction and vacuum polarization.}\label{fig:rad_dia}
 \end{figure}
 
-Correction to the quark line are not included in any calculation, as explained in Section \ref{sec:RCF}.
-If we call $\sigma_{Born}$ the cross-section of the tree-level diagram and $\sigma_{Born+o(\alpha)}$ the
-cross-section of tree-level plus the first order correction enumerated above, the definition of the
-radiative corrections factor $\eta$ is :
+Correction to the quark line are not included in any calculation, as explained in Section \ref{sec:RCF}. If we call $\sigma_{Born}$ the cross-section of the tree-level diagram and $\sigma_{Born+o(\alpha)}$ the cross-section of tree-level plus the first order correction enumerated above, the definition of the radiative corrections factor $\eta$ is :
 
 \begin{equation} \label{eq:RCF_def}
   \eta(x,y)=\frac{\sigma_{Born}(x,y)}{\sigma_{Born+o(\alpha)}(x,y)}
 \end{equation}
 
-where $x$ is the Bjorken-x aka the fraction of momentum of the incoming proton carried by the struck parton
-and $y$ is the fraction of energy of the incoming lepton transferred by the virtual photon.
-
-Observation : the definition of $\eta$ is not fixed and you can find other definition of it.
-You can especially encounter the following definition :
-
-\begin{equation} \label{eq:RCF_def_inv}
-  \eta(x,y)=\frac{\sigma_{Born+o(\alpha)}(x,y)}{\sigma_{Born}(x,y)}
-\end{equation}
-
-which is the inverse of the one before. \textbf{Be extremely careful of the definition of $\eta$ you are using
-as it can be very deceptive}. In this note, the former definition (\ref{eq:RCF_def}) will be used.
-
-Obviously, the emission of a real photon is modifying the kinematic variables of the event : two events
-will share the same leptonic variables but they will have different hadronic variables. In the case of multiplicities, this discrepancy in the kinematic variables induces that
-some hadrons are falling into the wrong (x,y) bin. Applying the correction factor $\eta$ to the multiplicities
-is indirectly redirecting the hadrons between (x,y) bins.
+Obviously, the emission of a real photon is modifying the kinematic variables of the event : two events will share the same leptonic variables but they will have different hadronic variables. In the case of multiplicities, this discrepancy in the kinematic variables induces that some hadrons are falling into the wrong (x,y) bin. Applying the correction factor $\eta$ to the multiplicities is indirectly redirecting the hadrons between (x,y) bins.
 
 \subsection{About emission of radiative photons}
 

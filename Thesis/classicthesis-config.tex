@@ -35,7 +35,7 @@
 \PassOptionsToPackage{eulerchapternumbers,listings,drafting, pdfspacing, subfig,beramono,eulermath,parts}{classicthesis}
 % Available options: drafting parts nochapters linedheaders eulerchapternumbers beramono eulermath pdfspacing minionprospacing tocaligned dottedtoc manychapters listings floatperchapter subfig
 
-\newcommand{\myTitle}{Multiplicities of hadrons in Deep-Inelastic Scattering of muons on nucleons at COMPASS\xspace}
+\newcommand{\myTitle}{Multiplicities of hadrons in Deep-Inelastic Scattering \newline of muons on nucleons at COMPASS\xspace}
 \newcommand{\mySubtitle}{\xspace}
 \newcommand{\myDegree}{Doctor\xspace}
 \newcommand{\myName}{Nicolas Pierre\xspace}
@@ -94,7 +94,7 @@ natbib=true % natbib compatibility mode (\citep and \citet still work)
 
  %------------------------------------------------
 
-\PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
+% \PassOptionsToPackage{fleqn}{amsmath} % Math environments and more by the AMS
  \usepackage{amsmath}
 
  %------------------------------------------------
@@ -247,6 +247,12 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \usepackage{stmaryrd}
 \usepackage{amssymb}
 \usepackage{enumerate}
+\usepackage{pifont}
+\usepackage{tikz-feynman}
+\usepackage{mathrsfs}
+\usepackage{subfig}
+\usepackage{feynmp-auto}
+\usepackage{slashed}
 
 %----------------------------------------------------------------------------------------
 %	CHANGING TEXT AREA

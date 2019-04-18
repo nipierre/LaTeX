@@ -382,7 +382,7 @@ where $x_g$, $y_g$ and $z_g$ are the generated kinematic values and $x_r$, $y_r$
 values.
 
 \begin{sidewaysfigure}[!]
-	\includegraphics[scale=0.5]{./gfx/AccH.png}
+	\includegraphics[scale=0.6]{./gfx/AccH.png}
 	\caption{Charged hadron acceptance in $x$, $y$ and $z$ bins. The red markers correspond to positive hadrons, blue markers to negative hadrons, circles markers correspond to hadrons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{AccH}
 \end{sidewaysfigure}
@@ -540,6 +540,12 @@ where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in t
 \end{sidewaysfigure}
 
 \newpage
+
+\subsection{Electron contamination}
+
+The pion (and thus hadron) sample is contaminated by electrons and positrons. With the DJANGOH event generator, we are able to describe almost correctly the electron production from radiative photons : in Fig.\ref{electroprod} one can see that the discrepancy of electroproduction along $\Phi$ in the hadron production plane differ by 10\% at low $\Phi$.
+
+Both in data and Monte-Carlo the pions and electrons are not separated. In doing so, the correction for electron contamination is performed by the acceptance, assuming that we describe properly the electron production in the data. In a discussion afterwards on the multiplicity sum of pions and hadrons, it seems that we are correcting only partially for this contamination.
 
 \section{Systematic Errors} \label{Sys}
 
