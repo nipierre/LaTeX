@@ -30,23 +30,34 @@ Five periods of the 2016 data are analyzed : P07, P08, P09, P10 and P11.
 \section{DIS event selection}
 
 For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of cuts is applied :
-\begin{enumerate}
-  \item Events with Best Primary Vertex (53.8 M events, 100\%)
-  \item Events with reconstruted scattered muon (53.8 M events, 100\%)
-  \item Events with primary interaction in the target material, target radius cut (explained in Section \ref{}, 22.7 M events, 42.1\%)
-  \item Events with energy of beam muon energy in range [140 GeV, 180 GeV] (22.7 M events, 42.1\%)
-  \item Events with a well reconstructed beam track (so-called 'BMS cut') (20.8 M events, 38.6\%)
-  \item Events with $\chi^2$/ndf $<$ 10 for a well reconstructed beam track (20.8 M events, 38.6\%)
-  \item Events with muon beam trajectory crossing entirely the target cell (20.0 M events, 37.2\%)
-  \item Events with $\chi^2$/ndf $<$ 10 for a well reconstructed scattered muon track (20.0 M events, 37.2\%)
-  \item Events with Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$) (19.9 M events, 37.1\%)
-  \item Events with Middle, Ladder, Outer or LAST trigger (19.9 M events, 37.1\%)
-  \item Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity, 13.9 M events, 25.8\%)
-  \item Events with $0.1 < y < 0.9$ (6.3 M events, 11.7\%)
-  \item Events with $5 < W < 17$ GeV/c$^2$ (6.3 M events, 11.6\%)
-  \item Events with $0.004 < x < 0.4$ (6.3 M events, 11.6\%)
-  \item Events with $\nu$ cut
-\end{enumerate}
+
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{lcc}
+    \hline
+    \hline
+     Cut & \# of events after cut & Absolute \% of events after cut  \\
+    \hline
+    \hline
+    Events with Best Primary Vertex & 53.8 M & 100\% \\
+    Events with reconstruted scattered muon & 53.8 M & 100\% \\
+    Events with primary interaction in the target material, target radius cut (explained in Section \ref{}) & 22.7 M & 42.1\% \\
+    Events with energy of beam muon energy in range [140 GeV, 180 GeV] & 22.7 M & 42.1\% \\
+    Events with a well reconstructed beam track (so-called 'BMS cut') & 20.8 M & 38.6\% \\
+    Events with $\chi^2$/ndf $<$ 10 for a well reconstructed beam track & 20.8 M & 38.6\% \\
+    Events with muon beam trajectory crossing entirely the target cell & 20.0 M & 37.2\% \\
+    Events with $\chi^2$/ndf $<$ 10 for a well reconstructed scattered muon track & 20.0 M & 37.2\% \\
+    Events with Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$) & 19.9 M & 37.1\% \\
+    Events with Middle, Ladder, Outer or LAST trigger & 19.9 M & 37.1\% \\
+    Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity) & 13.9 M & 25.8\% \\
+    Events with $0.1 < y < 0.7$ & 6.3 M & 11.7\% \\
+    Events with $5 < W < 17$ GeV/$c^2$ & 6.3 M & 11.6\% \\
+    Events with $0.004 < x < 0.4$ & 6.3 M & 11.6\% \\
+    Events with $\nu$ cut & - & - \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
 The cut on the kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
 momentum range of 12 - 40 GeV/c. The criteria is defined by :
@@ -67,7 +78,7 @@ is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the con
 The target in 2016 is long and not straight ('banana shaped', Fig. \ref{}), with a shape not easily reproducible in Monte-Carlo. The Monte-Carlo target is only a cylinder that was tilted by an angle extracted from the real data target. This angle correspond to the angle between the upstream and downstream ends of the target. Of course due to its 'banana shape' in reality, the description of the target in Monte-Carlo is not reaching 100\% fidelity. After the radial cut on the real data target (1.9 cm radius and $y$ = 1.2 cm), the residual volume, which is the volume of the real data target remaining after intersection with the Monte-Carlo target, is of n\% (Fig. \ref{pic:Target}). This then brings a systematic error on the multiplicities that I wanted to avoid. To this end, I devised three different solutions :
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.4]{./gfx/Target.png}
+	\includegraphics[scale=0.4]{./gfx/Targetcut.png}
 	\caption{Left is a ($y$,$z$) view of the real data (blue) and the Monte-Carlo target (red), $z$ being the direction of propagation of the beam. The actual cut used in the analysis corresponds to the intersection of both real data target (red) and Monte-Carlo target (blue) volumes. Right is a sketch showing approximately how much we lose by doing such cut.}
 	\label{pic:Target}
 \end{figure}
