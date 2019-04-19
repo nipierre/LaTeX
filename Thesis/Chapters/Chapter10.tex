@@ -117,17 +117,27 @@ This issue probably needs a thorough investigation of how the reconstruction is 
 \section{Hadron selection}
 
 For the hadron selection ($\mu p \rightarrow \mu hX$), the following list of cuts is applied :
-\begin{enumerate}
-  \item Particle is not a scattered muon (15.2 M hadrons, 100\%)
-  \item Maximum radiation length cumulated along all the trajectory < 15 radiation lengths (14.9 M hadrons, 98.3\%)
-  \item $\chi^2$/ndf $<$ 10 for the hadron track (14.6 M hadrons, 96.1\%)
-  \item Z coordinate of the first measured hit < 350 cm (14.6 M hadrons, 95.9\%)
-  \item Z coordinate of the last measured hit > 350 cm (14.6 M hadrons, 93.6\%)
-  \item $0.01 < \theta_{RICH} < 0.12$ (at RICH entrance, 9.5 M hadrons, 62.3\%)
-  \item $x^2_{RICH} + y^2_{RICH} > 25$ cm$^2$ (rejection of RICH pipe) (9.3 M hadrons, 61.5\%)
-  \item $12 < p_h < 40$ GeV/c (2.5 M hadrons, 16.5\%)
-  \item $0.2 < z < 0.85$ (1.9 M hadrons, 13.1\%)
-\end{enumerate}
+\begin{table}[!h]
+  \centering
+  \begin{tabular}{p{10cm} p{2cm} p{2cm}}
+    \hline
+    \hline
+     Cut & \# of events after cut & Absolute \% of events after cut  \\
+    \hline
+    \hline
+    Particle is not a scattered muon & 15.2 M & 100\% \\
+    Maximum radiation length cumulated along all the trajectory < 15 radiation lengths & 14.9 M & 98.3\% \\
+    $\chi^2$/ndf $<$ 10 for the hadron track & 14.6 M & 96.1\% \\
+    Z coordinate of the first measured hit < 350 cm & 14.6 M & 95.9\% \\
+    Z coordinate of the last measured hit > 350 cm & 14.6 M & 93.6\% \\
+    $0.01 < \theta_{RICH} < 0.12$ (at RICH entrance) & 9.5 M & 62.3\% \\
+    $x^2_{RICH} + y^2_{RICH} > 25$ cm$^2$ (rejection of RICH pipe) & 9.3 M & 61.5\% \\
+    $12 < p_h < 40$ GeV/$c$ & 2.5 M & 16.5\% \\
+    $0.2 < z < 0.85$ & 1.9 M & 13.1\% \\
+    \hline
+    \hline
+  \end{tabular}
+\end{table}
 
 %----------------------------------------------------------------------------------------
 
