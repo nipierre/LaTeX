@@ -8,7 +8,7 @@ The 2006 SIDIS COMPASS hadron multiplicities results, based on data taken with a
 With the analysis of new data taken on pure proton target (lH$_2$), the results will provide a new set of equations linking the multiplicities with the fragmentation functions but still involving the same quark fragmentation functions we are interested in. The fact that the proton and deuteron data can be fitted together will add constrains to the fragmentation function extraction.
 In order to perform this kind of study, one need a precision of 5 to 7\% on the multiplicities.
 
-The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a proton target (lH$_2$). Five weeks of the 2016 data are analyzed (dubbed P07, P08, P09, P10 and P11).
+The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a proton target (lH$_2$). Five weeks of the 2016 data are analyzed (named P07, P08, P09, P10 and P11).
 
 %----------------------------------------------------------------------------------------
 
@@ -16,20 +16,19 @@ The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon 
 
 The method of extraction of the multiplicities follow several steps. For each selection steps,
 a list of cuts is applied on both geometrical and physical quantities. First the DIS events are selected
-and then the SIDIS events (hadrons) are selected. For the DIS event selection, a study on the target radius
-had to be made in order to determine the optimal value for the target cut. When the event selection is done, the hadrons have to be identified between pions, kaons and protons and the identification has to be corrected according to the RICH detection efficiency and purity in a process called unfolding. The obtained raw multiplicities are then binned and corrected with the detector acceptance. The general event reconstruction codes for COMPASS are used. A personal analysis code is developed to study the SIDIS channel and select pion or kaon production events.
+and then the SIDIS events (hadrons) are selected. For the DIS event selection, a study on the target radius had to be made in order to determine the optimal value for the target cut. When the event selection is done, the hadrons have to be identified between pions, kaons and protons and the identification has to be corrected according to the RICH detection efficiency and purity in a process called unfolding. The obtained raw multiplicities are then binned. The general event reconstruction codes for COMPASS are used. A personal analysis code is developed to study the SIDIS channel and select pion, kaon or kaons production events.
 
-In the following, the number of residual events after each cut will be given between parentheses next to each cut.
-When the number is not specified, it can mean that the cut was done in a pre-analysis or that the recovery of the number is too complex due to the transversal implementation of the cut in the code (e.g. for the $\nu$ cut).
+In the following, the effect of the cuts for both DIS events and hadrons selection is summarized in a table, showing the number of DIS events and hadrons and the absolute percentage of the sample remaining. When the numbers are not specified, that the recovery of the number is too complex due to the transversal implementation of the cut in the code (e.g. for the $\nu$ cut).
 
-The analysis is performed on COMPASS data recorded in 2016 using a 160 GeV muon beam incident on a pure proton target (lH$_2$).
-Five periods of the 2016 data are analyzed : P07, P08, P09, P10 and P11.
+In a pre-analysis, the whole sample has been pre-filtered into so-called $\mu$DSTs asking for at least one primary vertex (PV) with well measured beam momentum, for at least one outgoing $\mu$ with the same charge of the incoming one and for $Q^2$ $>$ 0.8 (GeV/$c$)$^2$. Another pre-analysis selects also the Best Primary Vertices and whether there is a reconstructed scattered muon. It explains why in the cut flow for the selection of DIS events, there is no effect for these two cuts.
 
 %------------------------------------------------
 
 \section{DIS event selection}
 
 For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of cuts is applied :
+
+\newpage
 
 \begin{table}[!h]
   \centering
@@ -49,7 +48,7 @@ For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of c
     Events with $\chi^2$/ndf $<$ 10 for a well reconstructed scattered muon track & 20.0 M & 37.2\% \\
     Events with Z coordinate of the first measured hit of scattered muon $<$ 350 cm ($Z_{SM1}$) & 19.9 M & 37.1\% \\
     Events with Middle, Ladder, Outer or LAST trigger & 19.9 M & 37.1\% \\
-    Events with $Q^2>1$ (GeV/c)$^2$ (DIS validity) & 13.9 M & 25.8\% \\
+    Events with $Q^2>1$ (GeV/$c$)$^2$ & 13.9 M & 25.8\% \\
     Events with $0.1 < y < 0.7$ & 6.3 M & 11.7\% \\
     Events with $5 < W < 17$ GeV/$c^2$ & 6.3 M & 11.6\% \\
     Events with $0.004 < x < 0.4$ & 6.3 M & 11.6\% \\
@@ -58,6 +57,12 @@ For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of c
     \hline
   \end{tabular}
 \end{table}
+
+The cut $Q^2>1$ (GeV/$c$)$^2$ is to be in the deep inelastic scattering regime. The lower limit $W > 5$ GeV/$c^2$ is to avoid the region of target fragmentation and the upper limit $W < 17$ GeV/$c^2$ to avoid low statistic region. Concerning the $y$ cut, the lower limit $y > 0.1$ removes events with bad reconstruction of scattered muon (momentum resolution deterioration at low angle) and the misidentification of halo muons as scattered muons. The upper limit $y < 0.7$ eliminates events where large radiative corrections are applied (corrections greater than 20\%).
+
+Concerning the triggers, four triggers are used in this analysis : the middle trigger (MT), the ladder trigger (LT), the outer trigger (OT) and the las trigger (LAST). They are all inclusive triggers, ie. only a scattered $\mu$ is required to fire the triggers. The region covered by triggers as a function of $x$ and $Q^2$ is shown in Figs. \ref{pic:triggerx} and \ref{pic:triggerQ2}. The middle trigger covers the low $Q^2$ region, the ladder trigger covers the middle $Q^2$ region while the outer and las cover the high $Q^2$ region. For $x$, the outer covers the low and high $x$, while middle and ladder cover the middle $x$ region and the las the high $x$ region.
+
+In 2016, central slab of the outer trigger were cured from their inefficiency from P08 onward. Thus it was decided to keep them cut out for P07 by geometrical cut and incorporate them for P08 and following periods. The events in P07 where the scattered $\mu$ track goes through the inefficient slabs are rejected.
 
 The cut on the kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
 momentum range of 12 - 40 GeV/c. The criteria is defined by :
@@ -75,7 +80,7 @@ is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the con
 
 \section{Target cut evaluation}
 
-The target in 2016 is long and not straight ('banana shaped', Fig. \ref{}), with a shape not easily reproducible in Monte-Carlo. The Monte-Carlo target is only a cylinder that was tilted by an angle extracted from the real data target. This angle correspond to the angle between the upstream and downstream ends of the target. Of course due to its 'banana shape' in reality, the description of the target in Monte-Carlo is not reaching 100\% fidelity. After the radial cut on the real data target (1.9 cm radius and $y$ = 1.2 cm), the residual volume, which is the volume of the real data target remaining after intersection with the Monte-Carlo target, is of n\% (Fig. \ref{pic:Target}). This then brings a systematic error on the multiplicities that I wanted to avoid. To this end, I devised three different solutions :
+The target in 2016 is long and not straight ('banana shaped', Fig. \ref{pic:Target}), with a shape not easily reproducible in Monte-Carlo. The Monte-Carlo target is only a cylinder that was tilted by an angle extracted from the real data target. This angle correspond to the angle between the upstream and downstream ends of the target. Of course due to its 'banana shape' in reality, the description of the target in Monte-Carlo is not reaching 100\% fidelity. After the radial cut on the real data target (1.9 cm radius and $y$ = 1.2 cm), the residual volume, which is the volume of the real data target remaining after intersection with the Monte-Carlo target, is of n\% (Fig. \ref{pic:Target}). This then brings a systematic error on the multiplicities that I wanted to avoid. To this end, I devised three different solutions :
 
 \begin{figure}[!h]
 	\includegraphics[scale=0.4]{./gfx/Targetcut.png}
@@ -90,7 +95,7 @@ The target in 2016 is long and not straight ('banana shaped', Fig. \ref{}), with
 \end{enumerate}
 
 The last solution was evacuated due to time constraints allowed by the analysis and my thesis, however I think this is the solution we should choose in the future to maximise the efficiency of the analysis from a statistic point of view.
-The first two solutions were in competition and had the same spirit : cut more in the data target to avoid any systematic bias between real data target and Monte-Carlo target. I chose the second one, a simultaneous cut on both target, as it was the one that was discarding less target volume, thus maximising statistics. In Fig. \ref{} you can see the volume that survive such cut.
+The first two solutions were in competition and had the same spirit : cut more in the data target to avoid any systematic bias between real data target and Monte-Carlo target. I chose the second one, a simultaneous cut on both target, as it was the one that was discarding less target volume, thus maximising statistics. In Fig. \ref{pic:Target} you can see the volume that survive such cut.
 
 %------------------------------------------------
 
@@ -104,13 +109,15 @@ We discovered when looking at vertex distribution for hadrons and comparing data
 	\label{CircleHadron}
 \end{figure}
 
-This issue probably needs a thorough investigation of how the reconstruction is done in this case. As time was in short supply, we decided to go with a rescue procedure to reattach these hadrons to the best primary vertex. All the hadrons in a circle of radius 2 mm around the best primary vertex are considered as if they were attached to it (considering they have a track ID and a momentum associated). With this procedure we were able to cover for the loss of hadron in the last part of the target (Fig. \ref{VertexDrop}). One can fear that with such procedure I attach back some hadrons that should not be attached. Here I bring two answers : a part of these 'bad' hadrons are hadrons reconstructed without associated momentum and are thus non-eligible to this rescue procedure. Another part are hadrons that will then be cut out by hadron cut, especially by the RICH entrance angle cut. A last part of these 'bad' hadrons will effectively be part of the hadron sample but I consider the 'bad' hadron fraction to be negligible compared to the 'good' hadrons fraction, thus no systematic is applied concerning this rescue procedure. Again, this method is only temporary and this problem should be investigated more thoroughly in the future as it seems it is a long term problem within COMPASS reconstruction procedure.
+This issue probably needs a thorough investigation of how the reconstruction is done in this case. As time was in short supply, we decided to go with a rescue procedure to reattach these hadrons to the best primary vertex. All the hadrons in a circle of radius 2 mm around the best primary vertex are considered as if they were attached to it (considering they have a track ID and a momentum associated). With this procedure we were able to cover for the loss of hadron in the last part of the target (Fig. \ref{VertexDrop}).
 
 \begin{figure}[!h]
 	\includegraphics[scale=0.45]{./gfx/VertexDrop.png}
 	\caption{One expects the vertex distribution for hadrons to increase with $z_{vtx}$ due to the apparatus acceptance. However in the left plot there is a drop both in data and Monte-Carlo of the number of vertices. In the right plot, after the rescue procedure, the drop has disappeared. The rescue procedure also reconciles data and Monte-Carlo.}
 	\label{VertexDrop}
 \end{figure}
+
+One can fear that with such procedure I attach back some hadrons that should not be attached. Here I bring two answers : a part of these 'bad' hadrons are hadrons reconstructed without associated momentum and are thus non-eligible to this rescue procedure. Another part are hadrons that will then be cut out by hadron cut, especially by the RICH entrance angle cut. A last part of these 'bad' hadrons will effectively be part of the hadron sample but I consider the 'bad' hadron fraction to be negligible compared to the 'good' hadrons fraction, thus no systematic is applied concerning this rescue procedure. Again, this method is only temporary and this problem should be investigated more thoroughly in the future as it seems it is a long term problem within COMPASS reconstruction procedure.
 
 %------------------------------------------------
 
@@ -145,16 +152,9 @@ For the hadron selection ($\mu p \rightarrow \mu hX$), the following list of cut
 
 The $\pi$ and $K$ particle identification (PID) is performed by the RICH detector.
 
-The method used for the RICH particle identification is described in \ref{}. The idea is the following : when a particle
-is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then
-compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest
-value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second
-highest value of the four compared likelihood values ($\pi$, $K$, $p$ and the background). The electron and muon likelihood
-are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (12 to 40 GeV/c) the RICH detector can
-not be used to efficiently distinguish electrons from $\pi$.
+The method used for the RICH particle identification is described in \ref{}. The idea is the following : when a particle is detected, six likelihood functions are calculated ($\pi$, $K$, $p$, $e$, $\mu$ and the background) and are then compared to make the particle identification. The evaluation is done separately for pions, kaons and protons. The largest value corresponds to the maximal probability. The method is improved by looking further to $LH(2^{nd})$ which is the second highest value of the four compared likelihood values ($\pi$, $K$, $p$ and the background). The electron and muon likelihood are not considered in the assignment of $LH(2^{nd})$ as in the chosen momentum range (12 to 40 GeV/c) the RICH detector can not be used to efficiently distinguish electrons from $\pi$.
 
 All $\pi$, $K$ and $p$ probabilities are needed for the unfolding.
-
 
 \begin{enumerate}
   \item Pion selection
@@ -268,9 +268,7 @@ The true hadrons have obtained by inverting the performance matrices (Eq. \ref{r
 
 \section{Kinematic binning}
 
-The raw multiplicities are evaluated in bins of the Bjorken variable $x$, the muon energy fraction carried
-by the virtual photon $y$ and the virtual photon energy fraction carried by final state hadron $z$. They
-are calculated with the following formula :
+The raw multiplicities are evaluated in bins of the Bjorken variable $x$, the muon energy fraction carried by the virtual photon $y$ and the virtual photon energy fraction carried by final state hadron $z$. They are calculated with the following formula :
 
 \begin{equation}
   \frac{dM^h(x,y,z)}{dz}=\frac{1}{N^{DIS}_{Events}(x,y)}\frac{dN^{DIS}_{h}(x,y,z)}{dz}
@@ -288,70 +286,103 @@ where $\delta z$ is the width of the z bin. For the multiplicities extraction, t
 $x$, $y$ and $z$ is the following :
 
 \begin{itemize}
-  \item $x$ {0.004,0.01,0.02,0.03,0.04,0.06,0.1,0.14,0.18,0.4}
-  \item $y$ {0.1,0.15,0.2,0.3,0.5,0.7}
-  \item $z$ {0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.85}
+  \item $x$ \{0.004,0.01,0.02,0.03,0.04,0.06,0.1,0.14,0.18,0.4\}
+  \item $y$ \{0.1,0.15,0.2,0.3,0.5,0.7\}
+  \item $z$ \{0.2,0.25,0.3,0.35,0.4,0.45,0.5,0.55,0.6,0.65,0.7,0.75,0.85\}
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
 
-\section{Error associated to RICH unfolding}
+\section{Statistical error propagation}
 
-The first stage of pion identification is based on the likelihood ratios : $LH(\pi)/LH(2^{nd})$ and $LH(\pi)/LH(bgd)$. These cuts are optimized to minimize the
-pions misidentified as kaons. The systematic error associated to the selection of these cuts is performed varying the cuts around optimized values. Two sets of
-cuts \textit{loose} and \textit{severe} were used.
-
-\begin{table}
-  \caption{}
-  \label{}
-
-\end{table}
-
-To evaluate the systematic error associated to the selection of the particle likelihood cuts, the particle identification is performed using the \textit{loose}
-and \textit{severe} sets of likelihood cuts and the corresponding RICH probability matrices and final multiplicities are extracted ($M^{h^{\pm},loose}_{raw}$
-and $M^{h^{\pm},severe}_{raw}$ respectively). The largest difference between $M^{h^{\pm},loose}_{raw}$ and $M^{h^{\pm},severe}_{raw}$ with the nominal
-multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error :
+This section explicitly describes the statistical error propagation used in the multiplicity calculation. Looping through DIS events, the squared error is :
 
 \begin{equation}
-  \sigma^{RICH_LH}_{sys} = MAX(|M^{h^{\pm},loose}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},severe}_{raw}-M^{h^{\pm}}_{raw}|)
+		E^2_{DIS} = 1
 \end{equation}
 
-The difference between the altered RICH probability matrices and the optimal one are plotted in Fig. \ref{}. For pions and protons, the largest differences
-(<5\%) are observed in the high momentum $p_h$ region. For kaons the difference reaches 4\% at low $p_h$ ; small differences (<1\%) are observed at the
-highest $p_h$ value.
-
-A second source of systematic error is that associated with the calculation of the RICH probability matrices. This is estimated by generating two sets of altered
-RICH probability matrices. As represented in Eq. \ref{} the matrices are constructe using the statistical error associated to the original probability matrix elements.
+Looping through unidentified hadrons, the squared error is :
 
 \begin{equation}
-  M^{\pm}_{RICH}
-  =
-  \begin{bmatrix}
-  P(\pi \rightarrow \pi)\pm\sigma_{P(\pi \rightarrow \pi)} & P(K \rightarrow \pi)\mp\sigma_{P(K \rightarrow \pi)} & P(p \rightarrow \pi)\mp\sigma_{P(p \rightarrow \pi)}\\
-  P(\pi \rightarrow K)\mp\sigma_{P(\pi \rightarrow K)} & P(K \rightarrow K)\pm\sigma_{P(K \rightarrow K)} & P(p \rightarrow K)\mp\sigma_{P(p \rightarrow K)} \\
-  P(\pi \rightarrow p)\mp\sigma_{P(\pi \rightarrow p)} & P(K \rightarrow p)\mp\sigma_{P(K \rightarrow p)} & P(p \rightarrow p)\pm\sigma_{P(p \rightarrow p)}
-  \end{bmatrix}
+		E^2_{Had} = 1
 \end{equation}
 
-The raw multiplicities $M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ are then recalculated using the altered probability matrices. The largest difference between
-$M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is taken as the sytematic error :
+For identified hadrons, the squared error includes the RICH statistical error :
 
 \begin{equation}
-  \sigma^{RICH_stat}_{sys} = MAX(|M^{h^{\pm},+}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},-}_{raw}-M^{h^{\pm}}_{raw}|)
+		E^2_{Had} = E^2_{RICH}
 \end{equation}
 
-The final systematic uncertainty associated to the particle identification and unfolding correction ($\sigma^{RICH}_{sys}$) is the largest value of $\sigma^{RICH_stat}_{sys}$
- and $\sigma^{RICH_LH}_{sys}$. The relative error $\sigma^{RICH}_{sys}$ is shown in Fig. \ref{}.
- + discuss results.
+where
 
-%----------------------------------------------------------------------------------------
+\begin{equation}
+		E^2_{RICH}[0<h<3] = cov(M^{-1}_{hr},M^{-1}_{hr})+(M^{-1}_{hr})^2
+\end{equation}
 
-\section{Data sets}
+with $M_{hr}$ the element of the RICH unfolding matrix for hadron $h$ from RICH identified hadron $r$ and
 
-Content
+\begin{equation}
+		cov(M^{-1}_{hr},M^{-1}_{hr}) = \sum_{0<i,j,k,l<3} M^{-1}_{hi}M^{-1}_{jr}M^{-1}_{hk}M^{-1}_{lr}cov(M_{ij},M_{kl})
+\end{equation}
 
-%----------------------------------------------------------------------------------------
+For the raw multiplicities the error takes into account the correlation between hadrons and DIS events :
 
-\section{Raw Multiplicities}
+\begin{equation}
+		E^2_{raw} = \Bigg[\frac{E^2_{Had}}{N^2_{DIS}} - \bigg( \frac{N^2_{Had}}{N^2_{DIS}} \bigg)^2 E^2_{DIS} \Bigg]/z^2_{width}
+\end{equation}
 
-Content
+\section{Results for raw multiplicities ($h^{\pm}$, $\pi^{\pm}$, $K^{\pm}$ and $p/\bar{p}$)}
+
+The raw multiplicity results shown in this section are without any correction except the RICH unfolding correction for identified hadrons. The unidentified hadron, the pion, the kaon and the proton multiplicities are displayed as a function of $z$ in bins of $x$ and staggered vertically with $y$ in Figs. \ref{pic:rawhp} to \ref{pic:rawpm}. The charged hadrons multiplicities strongly depends on $z$ as expected with a small dependence with $x$ also.
+
+The $h^+$/$h^-$, $\pi^+$/$\pi^-$ and $p/\bar{p}$ raw multiplicities are very similar but with a small asymmetry at high $x$, explained by the fact that in high $x$, the valence region, the $u$ quark is dominant. For kaons, $M_{raw}^{K^+} > M_{raw}^{K^-}$ as $K^-$ ($\bar{u}s$) can only be produced by sea quarks.
+
+In total each charged hadron multiplicities are accounting for more than 300 data points.
+
+\begin{figure}[!h]
+	\includegraphics[scale=0.85]{./gfx/rawhp.pdf}
+	\caption{Unidentified positive hadron raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+	\label{pic:rawhp}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawhm.pdf}
+  \caption{Unidentified negative hadron raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawhm}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawpip.pdf}
+  \caption{Positive pion raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawpip}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawpim.pdf}
+  \caption{Negative pion raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawpim}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawkp.pdf}
+  \caption{Positive kaon raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawkp}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawkm.pdf}
+  \caption{Negative kaon raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawkm}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawpp.pdf}
+  \caption{Proton raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawpp}
+\end{figure}
+
+\begin{figure}[!h]
+  \includegraphics[scale=0.85]{./gfx/rawpm.pdf}
+  \caption{Antiproton raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \label{pic:rawpm}
+\end{figure}
