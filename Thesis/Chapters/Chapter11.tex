@@ -38,13 +38,13 @@ The acceptance involves both reconstructed and generated particles. In both case
 The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variable $z$ and $p_h$ are shown in Figs. \ref{pic:MCDISkin} and \ref{pic:MCSIDISkin} for real (red) and reconstructed MC data (blue). The ratio between real and reconstructed MC data is plotted in each bottom panel. A relative good agreement is reach, except in the high $x$ and high $Q^2$ regions. Though there is a discrepancy this should not be too much of a problem as in the multiplicities, the inclusive acceptance is cancelling by and large.
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.5]{./gfx/DIS_kin.png}
+	\includegraphics[scale=0.45]{./gfx/DIS_kin.png}
 	\caption{Kinematical variables for DIS events ($Q^2$, $y$ and $x$) for Data (red) and Monte-Carlo (blue), as well as the ratio Data/Monte-Carlo.}
 	\label{pic:MCDISkin}
 \end{figure}
 
 \begin{figure}[!h]
-	\includegraphics[scale=0.5]{./gfx/SIDIS_kin.png}
+	\includegraphics[scale=0.45]{./gfx/SIDIS_kin.png}
 	\caption{Kinematical variables for charged hadrons ($z$ and $p_h$) for Data (red) and Monte-Carlo (blue), as well as the ratio Data/Monte-Carlo.}
 	\label{pic:MCSIDISkin}
 \end{figure}
@@ -208,16 +208,20 @@ The experimental multiplicities are affected by QED radiative effects, which int
 	\eta(x,y,z) = \frac{d^2 M_{1\gamma}/dxdydz}{d^2 M_{measured}/dxdydz}
 \end{equation}
 
-where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in the one photon exchange approximation and $M_{measured}$ denotes multiplicities obtained using the measured cross-section which includes radiative effects. The bias on the $\mu$ kinematics upon real photon emission affects in turn the reconstruction of the hadron energy fraction $z$. This effect is now taken into account thanks to DJANGOH. In this analysis, the multiplicities are directly corrected. Fig.\ref{RadCor} shows the effect of the correction.
-
-\begin{sidewaysfigure}[!]
-	\includegraphics[scale=0.5]{./gfx/RadCor.png}
-	\caption{Radiative correction factor $\eta^{h}$ for hadrons versus $z$ in bins of $x$ and staggered vertically with $y$. The full markers correspond to positive hadrons and open markers for negative hadrons.}
-	\label{RadCor}
-\end{sidewaysfigure}
-
-\newpage
+where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in the one photon exchange approximation and $M_{measured}$ denotes multiplicities obtained using the measured cross-section which includes radiative effects. The bias on the $\mu$ kinematics upon real photon emission affects in turn the reconstruction of the hadron energy fraction $z$. This effect is now taken into account thanks to DJANGOH. In this analysis, the multiplicities are directly corrected. Fig.\ref{fig:hadz_ratio} in Chapter \ref{ch:RC}, Section \ref{sec:RCFMult} shows the effect of the correction.
 
 \section{Electron contamination}
 
 The pion (and thus hadron) sample is contaminated by electrons and positrons. With the DJANGOH event generator, we are able to describe almost correctly the electron production from radiative photons : in Fig.\ref{electroprod} one can see that the discrepancy of electroproduction along $\Phi$ in the hadron production plane differ by 10\% at low $\Phi$. Given the overall small size of the correction it is reasonable to use the MC sample at momenta where the electron identification cannot be provided by the RICH detector. The fraction of electrons in the hadron and pion samples obtained in the range 12 $< p_h <$ 40 GeV in the MC sample is shown in Figs. \ref{pic:ehad} and \ref{pic:epi}. This contamination goes from 8\% at low $z$ to 1\% at high $z$. The correction is taken into account in the acceptance correction, taking in the electrons in the reconstructed sample (as in data) and not in the generated one. In a discussion afterwards on the multiplicity sum of pions and hadrons, it might be that we are correcting only partially for this contamination.
+
+\begin{figure}[!]
+	% \includegraphics[scale=0.5]{./gfx/RadCor.png}
+	\caption{Electron corrections (TBD)}
+	\label{pic:ehad}
+\end{figure}
+
+\begin{figure}[!]
+	% \includegraphics[scale=0.5]{./gfx/RadCor.png}
+	\caption{Electron corrections (TBD)}
+	\label{pic:epi}
+\end{figure}

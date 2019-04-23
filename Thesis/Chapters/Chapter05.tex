@@ -91,7 +91,8 @@ During the second selection step, good hadron tracks are selected. In order to s
 
 \begin{figure}[!h]
   \centering
-	% \includegraphics[scale=0.3]{./gfx/Target.png}
+	\subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.42]{./gfx/ArmenterosK0L.pdf}}
+  \subfloat[Inclusive $\Phi$]{\includegraphics[scale=0.42]{./gfx/ArmenterosPhi.pdf}}
 	\caption{Armenteros plot showing the effect of the cut on the transverse momemtum illustrated by the red line.}
 	\label{pic:Armenteros}
 \end{figure}
@@ -101,7 +102,7 @@ The three visible arcs are produced by the decay of the $K^0$ mesons and the $\L
 During the third selection step, events, which will not be used in the later analysis, are removed. Therefore, a minimal momentum of the particle is required and only a mass range of 150 MeV/c2 around the $K^0$ or $\Lambda$ mass is selected. The effect of the cuts on the invariant mass of the $K^0$ and $\Lambda$ candidates is shown in Figure 3 in the range of their mass. The strongest reduction is achieved by requiring the production of the $K^0$ meson or $\Lambda$ baryons at the primary vertex.
 In addition, also the effect of the Likelihood cuts for the particle identification, which are applied later one, is shown.
 
-\subsection{$\Phi selection$}
+\subsection{$\Phi$ selection}
 
 The $\Phi$ meson decay length is too short to separate the primary and decay vertex. Therefore, all outgoing particles from a primary vertex are taken into account for the search of possible $\Phi$ mesons. The branching ratio of the decay into two kaons is (48.9 $\pm$ 0.5\%) \cite{}.
 
@@ -128,7 +129,7 @@ The selection steps are similar the selection of the $K^0$/$\Lambda$ candidates.
 
 \section{RICH Particle Identification}
 
-The goal of the selection is a clean pion and kaon sample. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis. The likelihood cuts are listed in Table \ref{LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{LHlessstrict}. Similar cuts were used in the analysis of the hadron multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination. The RICH particle identification efficiency is studied in the momentum range of 10 GeV/c $ \leq p \leq $ 50 GeV/c. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ 17 GeV protons are still below the threshold of
+The goal of the selection is a clean pion and kaon sample. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis. The likelihood cuts are listed in Table. \ref{tab:LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{tab:LHlessstrict}. Similar cuts were used in the analysis of the hadron multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination. The RICH particle identification efficiency is studied in the momentum range of 10 GeV/c $ \leq p \leq $ 50 GeV/c. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ 17 GeV protons are still below the threshold of
 
 \begin{equation}
   p_{thr,i} = \frac{m_i}{ \sqrt{n^{2}-1} }
@@ -278,10 +279,10 @@ Here, $N(t)$ is given by the sum of all $N(t \rightarrow i)$. As the nominator a
 
 where $u_j$ are the diagonal elements of the covariance matrix, $u(i,j)$ are the off diagonal elements and $\epsilon$ is one of the elements of the efficiency matrix. The summations are done over all possible particle types viz. pion, kaon, proton and non identified.
 
-\section{Results}
+\section{Results} \label{sec:Results}
 
 The results for the RICH particle identification efficiency are shown in Figs. \ref{pic:Effpip} to \ref{pic:Effpb} for the various particle types and charges for the stricter likelihood cuts. In each figure, the momentum dependence for the different angular bins is shown. The efficiencies are weakly dependent on the angle while it is more strongly correlated with the momentum, especially in the region near the threshold.
-The RICH performs a correct identification of pions in more than 95\% of the cases for momenta below 30 GeV/$c^2$ and the probability for a misidentification of a pion as a kaon is below $\sim$ 1\%. For kaons, near the threshold, a strong momentum dependence of the efficiencies is observed. At higher momenta the correct identification is given in $\sim$ 95\% of the cases. For protons, the momentum dependence around threshold level is even stronger. Below the threshold, protons are identified correctly in 50\% of the cases. Above the threshold numbers rise to $\sim$ 95\%. When using less strict likelihood cuts, the results are similar (Figs. \ref{pic:Lesspi+} to \ref{pic:Lesspb}). The correct identification of pions below 30 GeV/$c^2$ is done in 95\% of the cases. Due to less strict likelihood cuts the misidentification of pions as kaons is a bit larger but still below 3\% for momenta higher than 30 GeV/$c^2$. For a larger momenta a larger fraction of pions is identified as kaons, which got no identification for stricter cuts. For kaons and protons the results are similar : the probability of correct identification for kaons is a bit smaller but still above 95\%.
+The RICH performs a correct identification of pions in more than 95\% of the cases for momenta below 30 GeV/$c^2$ and the probability for a misidentification of a pion as a kaon is below $\sim$ 1\%. For kaons, near the threshold, a strong momentum dependence of the efficiencies is observed. At higher momenta the correct identification is given in $\sim$ 95\% of the cases. For protons, the momentum dependence around threshold level is even stronger. Below the threshold, protons are identified correctly in 50\% of the cases. Above the threshold numbers rise to $\sim$ 95\%. When using less strict likelihood cuts, the results are similar (Figs. \ref{pic:Lesspip} to \ref{pic:Lesspb}). The correct identification of pions below 30 GeV/$c^2$ is done in 95\% of the cases. Due to less strict likelihood cuts the misidentification of pions as kaons is a bit larger but still below 3\% for momenta higher than 30 GeV/$c^2$. For a larger momenta a larger fraction of pions is identified as kaons, which got no identification for stricter cuts. For kaons and protons the results are similar : the probability of correct identification for kaons is a bit smaller but still above 95\%.
 
 \begin{figure}[!p]
   \centering

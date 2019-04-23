@@ -60,9 +60,15 @@ For the DIS event selection ($\mu p \rightarrow \mu X$), the following list of c
 
 The cut $Q^2>1$ (GeV/$c$)$^2$ is to be in the deep inelastic scattering regime. The lower limit $W > 5$ GeV/$c^2$ is to avoid the region of target fragmentation and the upper limit $W < 17$ GeV/$c^2$ to avoid low statistic region. Concerning the $y$ cut, the lower limit $y > 0.1$ removes events with bad reconstruction of scattered muon (momentum resolution deterioration at low angle) and the misidentification of halo muons as scattered muons. The upper limit $y < 0.7$ eliminates events where large radiative corrections are applied (corrections greater than 20\%).
 
-Concerning the triggers, four triggers are used in this analysis : the middle trigger (MT), the ladder trigger (LT), the outer trigger (OT) and the las trigger (LAST). They are all inclusive triggers, ie. only a scattered $\mu$ is required to fire the triggers. The region covered by triggers as a function of $x$ and $Q^2$ is shown in Figs. \ref{pic:triggerx} and \ref{pic:triggerQ2}. The middle trigger covers the low $Q^2$ region, the ladder trigger covers the middle $Q^2$ region while the outer and las cover the high $Q^2$ region. For $x$, the outer covers the low and high $x$, while middle and ladder cover the middle $x$ region and the las the high $x$ region.
+Concerning the triggers, four triggers are used in this analysis : the middle trigger (MT), the ladder trigger (LT), the outer trigger (OT) and the las trigger (LAST). They are all inclusive triggers, ie. only a scattered $\mu$ is required to fire the triggers. The region covered by triggers as a function of $x$ and $Q^2$ is shown in Fig. \ref{pic:triggerxQ2}. The middle trigger covers the low $Q^2$ region, the ladder trigger covers the middle $Q^2$ region while the outer and las cover the high $Q^2$ region. For $x$, the outer covers the low and high $x$, while middle and ladder cover the middle $x$ region and the las the high $x$ region.
 
 In 2016, central slab of the outer trigger were cured from their inefficiency from P08 onward. Thus it was decided to keep them cut out for P07 by geometrical cut and incorporate them for P08 and following periods. The events in P07 where the scattered $\mu$ track goes through the inefficient slabs are rejected.
+
+\begin{figure}[!h]
+	% \includegraphics[scale=0.4]{./gfx/Targetcut.png}
+	\caption{Event distribution for the middle, ladder, outer and las triggers as a function of $Q^2$ (a) and $x$ (b).}
+	\label{pic:triggerxQ2}
+\end{figure}
 
 The cut on the kinematic variable $\nu$ was implemented to reject events that contain hadrons outside of the measured
 momentum range of 12 - 40 GeV/c. The criteria is defined by :
@@ -75,6 +81,24 @@ momentum range of 12 - 40 GeV/c. The criteria is defined by :
 
 where $p_{max}$ (resp. $p_{min}$) is the hadron momentum limit of 40 GeV/c (resp. 12 GeV/c), $z_{max}$ (resp. $z_{min}$)
 is the upper (resp. lower) value of the $z$-bin and $m_h$ is the mass of the considered hadron.
+
+\begin{figure}[!h]
+	% \includegraphics[scale=0.4]{./gfx/Targetcut.png}
+	\caption{Event distribution for the middle, ladder, outer and las triggers as a function of $Q^2$ (a) and $x$ (b).}
+	\label{pic:triggerxQ2}
+\end{figure}
+
+The $Q^2$, $x$ and $y$ distributions are illustrated in Fig. \ref{pic:DISdist} for the DIS sample after event selections. The $Q^2$-$x$ correlation is also shown as well as the $x$-$y$ one. It can be noted that most of the statistics is located in the low $Q^2$-$x$ and low $x$-$y$ values and $Q^2$ values reach up to 90 (GeV/$c$)$^2$.
+
+\begin{figure}[!h]
+  \subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.27]{./gfx/Q2DIS.png}}
+  \subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.27]{./gfx/xDIS.png}}
+  \subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.27]{./gfx/yDIS.png}} \\
+  \subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.27]{./gfx/xQ2.png}}
+  \subfloat[$K^0$ and $\Lambda$]{\includegraphics[scale=0.23]{./gfx/xy.png}}
+	\caption{On the top panels, $Q^2$, $x$ and $y$ distributions. On the bottom, $Q^2$-$x$ and $x$-$y$ correlations. All distributions are for the final DIS sample.}
+	\label{pic:DISdist}
+\end{figure}
 
 %------------------------------------------------
 
@@ -347,42 +371,42 @@ In total each charged hadron multiplicities are accounting for more than 300 dat
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawhm.pdf}
-  \caption{Unidentified negative hadron raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for unidentified negative hadrons.}
   \label{pic:rawhm}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawpip.pdf}
-  \caption{Positive pion raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for positive pions.}
   \label{pic:rawpip}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawpim.pdf}
-  \caption{Negative pion raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for negative pions.}
   \label{pic:rawpim}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawkp.pdf}
-  \caption{Positive kaon raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for positive kaons.}
   \label{pic:rawkp}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawkm.pdf}
-  \caption{Negative kaon raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for negative pions.}
   \label{pic:rawkm}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawpp.pdf}
-  \caption{Proton raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for protons.}
   \label{pic:rawpp}
 \end{figure}
 
 \begin{figure}[!h]
   \includegraphics[scale=0.85]{./gfx/rawpm.pdf}
-  \caption{Antiproton raw multiplicities as a function of $z$ in bins of $x$ and scattered vertically with $y$. Statistical error is shown but is small in most of the bins.}
+  \caption{Same as before but for antiprotons.}
   \label{pic:rawpm}
 \end{figure}
