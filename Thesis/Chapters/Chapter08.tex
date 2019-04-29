@@ -43,22 +43,29 @@ The kinematic range for the presented results is $x \in [0.004,0.9]$ and $y \in 
 Overall, the corrections on the considered kinematic space are within 10\% except for high $y$ corrections
 that go up to 40\%.
 
-\subsection{Semi-Inclusive radiative correction factors : Effect on Multiplicities}\label{sec:RCFMult}
+\subsection{Radiative correction factors : Effect on Multiplicities}\label{sec:RCFMult}
 
-The calculation of the semi-inclusive radiative correction factors can be done by computing
+The calculation of the radiative correction factors to the multiplcities can be done by computing
 $M^{h^{\pm}}_{Born}$, multiplicities obtained without radiative corrections, and $M^{h^{\pm}}_{Born+o(\alpha)}$,
-multiplicities obtained with radiative corrections. A correct way to obtain these factors is the following :
+multiplicities obtained with radiative corrections. The factors can be defined as :
 
-\[\eta^{h^{\pm}}(x,y,z)=\frac{M^{h^{\pm}}_{Born}(x,y,z)}{M^{h^{\pm}}_{Born+o(\alpha)}(x,y,z)}\]
+\begin{equation}
+  \begin{split}
+    \eta^{h^{\pm}}(x,y,z)=\frac{M^{h^{\pm}}_{Born}(x,y,z)}{M^{h^{\pm}}_{Born+o(\alpha)}(x,y,z)} \\
+     = \frac{N^{h^{\pm}}_{Born}(x,y,z)/N^{DIS}_{Born}(x,y)}{N^{h^{\pm}}_{Born+o(\alpha)}(x,y,z)/N^{DIS}_{Born+o(\alpha)}(x,y)}
+  \end{split}
+\end{equation}
 
-In the following plots, the cuts from the SIDIS analysis for the selection of DIS events and
-hadrons are used. For more information, please refer to the multiplicities papers\cite{Mult}. I will explicitate
-the kinematical cuts that are used :
+where $N^h$ is the number of hadrons and $N^{DIS}$ the number of DIS events.
+
+
+In the following plot, the cuts from the SIDIS analysis for the selection of DIS events and
+hadrons are used (see Chapter. \ref{ch:raw} for further details). The kinematical cuts that are used are explicitated in the following :
 
 \begin{itemize}
 \item $0.004 \leq x_{Bj} \leq 0.4, x_{Bj} \in \{.004,.01,.02,.03,.04,.06,.1,.14,.18,.4\}$
 \item $0.1 \leq y \leq 0.7, y \in \{.1,.15,.2,.3,.5,.\}$
-\item $3 \leq p_h \leq 40$ GeV
+\item $12 \leq p_h \leq 40$ GeV
 \end{itemize}
 
 Fig. \ref{fig:hadz_ratio} exhibits the semi-inclusive radiative correction factor $\eta^{h^{\pm}}(x,y,z)$. This factor goes from 0\% correction
@@ -67,72 +74,36 @@ $z$ in a non-radiative event, consider the same event but with the radiation of 
 in reality less energy available from the virtual photon, thus having $z_{had} \leq z_{lep}$, leading to less events in the high $z$ region for the multiplicities
 obtained with radiative corrections).
 
-Another view on the semi-inclusive correction is given by Fig. \ref{fig:hadpt_ratio}, where the $z$ binning is replaced with a
-$p_T$ ($\eta^{h^{\pm}}(x,y,p_T)$). The factor goes from -20\% correction at high $p_T$, high $y$ and high $x$
-to +10\% correction at low $y$, high $x$ and high $p_T$.
-
-When looking at $\eta^{\pi^{\pm}}(x,y,z)$ and $\eta^{K^{\pm}}(x,y,z)$, the corrections are very similar to $\eta^{h^{\pm}}(x,y,z)$.
-
 \begin{figure}[!htb]
 \centerline{\epsfig{file=gfx/hadron_ratio.pdf,width=18cm}}
 \caption{$\eta^{h^{\pm}}(x,y,z)$, positive hadrons in full points, negative in voided points, in bins of $x$, staggered with $y$ and versus $z$.
 The corrections go from 0\% at low $z$ and low $y$ to 10\% at high $z$ and high $y$}\label{fig:hadz_ratio}
 \end{figure}
 
-\begin{figure}[!htb]
-\centerline{\epsfig{file=gfx/hadron_pt_ratio.pdf,width=18cm}}
-\caption{$\eta^{h^{\pm}}(x,y,p_T)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $p_T$.
-The corrections go from -20\% at high $p_T$, high $y$ and high $x$ to +10\% at low $y$, high $x$ and high $p_T$.}\label{fig:hadpt_ratio}
-\end{figure}
-
-\begin{figure}[!htb]
-\centerline{\epsfig{file=gfx/pion_ratio.pdf,width=18cm}}
-\caption{$\eta^{\pi^{\pm}}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$.
-Same conclusions as in Fig. \ref{fig:hadz_ratio} can be made.}\label{fig:piz_ratio}
-\end{figure}
-
-\begin{figure}[!htb]
-\centerline{\epsfig{file=gfx/kaon_ratio.pdf,width=18cm}}
-\caption{$\eta^{K^{\pm}}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$.
-Same conclusions as in Fig. \ref{fig:hadz_ratio} can be made.}\label{fig:kz_ratio}
-\end{figure}
-
 %----------------------------------------------------------------------------------------
 
 \section{Comparison between DJANGOH and TERAD}
 
-In the next figures, DJANGOH results are compared with TERAD\cite{TERAD}. The two programs are using the same set of
-$F^{p}_{2}$ and $R$. This are the only inputs (apart from the process input ie. $\mu p$ scattering
-at 160 GeV muon energy) that need to be identical so that the comparison is relevant.
-One thing to be noted is that TERAD is using more complete sets of correction. They should have
-an impact on the cross-section of TERAD, but are negligible.
+In the next figures, DJANGOH results are compared with TERAD\cite{TERAD}. The two programs are using the same set of $F^{p}_{2}$ and $R$. This are the only inputs (apart from the process input ie. $\mu p$ scattering at 160 GeV muon energy) that need to be identical so that the comparison is relevant. One thing to be noted is that TERAD is using more complete sets of correction. They should have an impact on the cross-section of TERAD, but are negligible.
 
-The first check for consistency is to compare the $\sigma_{Born}$ of both programs.
-Using the same input information on $F^{p}_{2}(x,Q2)$ and $R(x, Q^2)$ does not guarantee that $\sigma_{Born}$
-for both program, called $\sigma^{D}_{Born}$ and $\sigma^{T}_{Born}$, is the same : the reason is that for example
-in TERAD, $\sigma^{T}_{Born}$ is computed without constants like $\pi$, $M_{proton}$, $\alpha$, etc. and
-its functional form is unknown, unlike in DJANGOH. This means that the ratio $r=\frac{\sigma^{D}_{Born}}{\sigma^{T}_{Born}}$
-may differ from 1 but must be constant as a function of $x$ and $y$. Fig. \ref{fig:BRy} shows that this
-is the case.
+The first check for consistency is to compare the $\sigma_{Born}$ of both programs. Using the same input information on $F^{p}_{2}(x,Q2)$ and $R(x, Q^2)$ does not guarantee that $\sigma_{Born}$ for both program, called $\sigma^{D}_{Born}$ and $\sigma^{T}_{Born}$, is the same : the reason is that for example in TERAD, $\sigma^{T}_{Born}$ is computed without constants like $\pi$, $M_{proton}$, $\alpha$, etc. and its functional form is unknown, unlike in DJANGOH. This means that the ratio $r=\frac{\sigma^{D}_{Born}}{\sigma^{T}_{Born}}$ may differ from 1 but must be constant as a function of $x$ and $y$. Fig. \ref{fig:BRy} shows that this is the case.
 
 \begin{figure}[htb]
 \centerline{\epsfig{file=gfx/BRy.pdf,width=14cm}}
-\caption{Ratio of the Born cross-sections calculated with DJANGOH and TERAD, for the same input, as a function of y
-at different values of x (staggered points at fixed y)}\label{fig:BRy}
+\caption{Ratio of the Born cross-sections calculated with DJANGOH and TERAD, for the same input, as a function of $y$
+at different values of $x$ (staggered points at fixed $y$)}\label{fig:BRy}
 \end{figure}
 
-The radiative correction factors $\eta(x,y)$ for DJANGOH and TERAD are compared in Fig. \ref{fig:RCy}. The absolute
-difference is then plotted in Fig. \ref{fig:ERy}, showing that the two programs differ at most 3\% in the region
-of lowest x and highest y.
+The radiative correction factors $\eta(x,y)$ for DJANGOH and TERAD are compared in Fig. \ref{fig:RCy}. The absolute difference is then plotted in Fig. \ref{fig:ERy}, showing that the two programs differ at most 3\% in the region of lowest $x$ and highest $y$.
 
 
 \begin{figure}[htb]
 \centerline{\epsfig{file=gfx/RCy.pdf,width=14cm}}
-\caption{Comparison of radiative corrections factor $\eta(y)$ for fixed values of x, computed for proton target at 160 GeV
+\caption{Comparison of radiative corrections factor $\eta(y)$ for fixed values of $x$, computed for proton target at 160 GeV
 and with the input information given above. Green dots mark results of TERAD, blue triangles the results of DJANGOH.}\label{fig:RCy}
 \end{figure}
 
 \begin{figure}[htb]
 \centerline{\epsfig{file=gfx/ERy_scat.pdf,width=14cm}}
-\caption{Ratio of radiative corrections factors obtained in Fig. \ref{fig:RCy}, $(\eta_T/\eta_D)-1$ as a function of y for fixed values of x}\label{fig:ERy}
+\caption{Ratio of radiative corrections factors obtained in Fig. \ref{fig:RCy}, $(\eta_T/\eta_D)-1$ as a function of $y$ for fixed values of $x$}\label{fig:ERy}
 \end{figure}

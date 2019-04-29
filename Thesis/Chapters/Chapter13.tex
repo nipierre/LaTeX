@@ -1,12 +1,12 @@
 % Chapter X
 
-\chapter{Determination of quark fragmentation functions} % Chapter title
+\chapter{Determination of quark fragmentation functions into kaons} % Chapter title
 
 \label{ch:FF} % For referencing the chapter elsewhere, use \autoref{ch:name}
 
 %----------------------------------------------------------------------------------------
 
-\section{Direct extraction of Fragmentation Functions}
+\section{Direct extraction of quark fragmentation functions into kaons}
 
 \subsection{Three fragmentation functions case}
 
@@ -177,6 +177,75 @@ is feasable.
 
 %----------------------------------------------------------------------------------------
 
-\section{COMPASS LO fit}
+\section{Extraction of quark fragmentation functions into kaons from a LO QCD fit of kaon multiplicities}
 
-Content
+The extraction of FFs from the measured $K^{\pm}$ multiplicities is performed in a LO pQCD fashion according to Eq. \ref{eq:MultpQCD} :
+
+\begin{equation}
+  \frac{dM^h(x,Q^2,z)}{dz} = \frac{d^3\sigma^h(x,Q^2,z)/dxdQ^2dz}{d^3\sigma^{DIS}(x,Q^2,z)/dxdQ^2} = \frac{\sum_q e^2_q(x,Q^2)D^h_q(z,Q^2)}{\sum_q e^2_qq(x,Q^2)}
+\end{equation}
+
+with $q(x,Q^2)$ are the quark PDFs for the flavour $q$. Using a standard $\chi^2$ minimization over the data points :
+
+\begin{equation} \label{eq:MultpQCD}
+  \chi^2 = \sum_j \frac{\left[T_j\left(x_j,Q^2_j,z_j\right) - M_j\left(x_j,Q^2_j,z_j\right)\right]^2}{\sigma^2_j}
+\end{equation}
+
+where $M_j$ are the measured multiplicities and $\sigma^2_j$ are the quadratic sum of the statistical and systematic errors. $T_j$ are the multiplicities evaluated for a set of parameters for a given parametrisation. Due to the large $Q^2$ span covered by the data, it is mandatory to properly take into account the $Q^2$ dependence of FFs and PDFs. Thus the $T_j$ are evaluated at $Q^2_0$ = 1 (GeV/$c$)$^2$ and evolved to tehir actual $Q^2_j$ using a DGLAP $Q^2$ evolution code provided by M. Hirai and S. Kumano \cite{}.
+
+For the combined analysis of $K^+$ and $K^-$ multiplicities, isospin and charge symmetry are imposed. This yields to four independent FFs :
+
+\begin{center}
+  \begin{tabular}{ l }
+    $\D{K}{fav}=\D{K^{\pm}}{fav}=\D{K^+}{u}=\D{K^-}{\ubar}$ \\
+    $\D{K}{s}=\D{K^{\pm}}{s}=\D{K^+}{\sbar}=\D{K^-}{s}$ \\
+    $\D{K}{unf}=\D{K^{\pm}}{unf}=\D{K^+}{\ubar}=\D{K^-}{u}=\D{K^+}{s}=\D{K^-}{\sbar}=\D{K^{\pm}}{d}=\D{K^{\pm}}{\dbar}$ \\
+    $\D{K}{glu}=\D{K^{\pm}}{glu}$ \\
+  \end{tabular}
+\end{center}
+
+For the current analysis, the following parametrization is used :
+
+\begin{equation}
+  \begin{split}
+    zD_i(z,Q^2_0) = \frac{N_i z^{\alpha_i} (1-z)^{\beta_i} (1+\gamma_i(1-z)^{\delta_i})}{\int_{0.2}^{0.85} z'^{\alpha_i} (1-z')^{\beta_i} (1+\gamma_i(1-z')^{\delta_i} dz'},\,i=\{fav\} \\
+    zD_i(z,Q^2_0) = \frac{N_i z^{\alpha_i} (1-z)^{\beta_i}}{\int_{0.2}^{0.85} z'^{\alpha_i} (1-z')^{\beta_i} dz'},\,i=\{s,unf,g\}
+  \end{split}
+\end{equation}
+
+The PDFs set from MSTW08 in LO \cite{}, provided by the LHAPDF data group \cite{} was chosen. The fits of the data for $K^+$ and $K^-$ are shown in Figs. \ref{pic:MFitKp} and \ref{pic:MFitKm}.
+
+To determine the uncertainties of the extracted FFs, the replica method \cite{} is used. A number of resamples of the original multiplicity dataset is constructed. A reample is constructed by adding noise randomly generated from a zero-centered gaussian with a width of the data point's error to each data point of the oiginal dataset. Then, for each resample the FFs are extracted using the same fit procedure than for the real dataset. The error is then determined as the mean value with RMS of the extracted FFs from the resamples. For the current analysis, 100 replicas are used. Error bands for statistical and systematic errors are calculated. As it is assumed that the systematic errors are correlated, each resample's systematic error is weighted by the same randomly determined value. For both statistical and systematic error bands, the statistical errors are used for the calculation of the $\chi^2$.
+
+The final parameters of the fit are displayed in Table. \ref{tab:Fitparam}. The $\chi^2$ per degrees of freedom for the results is of 3.4. In Fig. \ref{pic:FFFit}, the four FFs are shown. The values obtained are significantly higher for $\D{K}{fav}$ and $\D{K}{unf}$ compared to DSEHS results.
+
+\begin{table}[!h]
+  \begin{center}
+    \begin{tabular}{ | c | c c c c c | }
+      \hline
+      \hline
+       & N & $\alpha$ & $\beta$ & $\gamma$ & $\delta$ \\
+      \hline
+      \hline
+      $\D{K}{fav}$ &  &  &  &  &  \\
+      $\D{K}{s}$ &  &  &  &  &  \\
+      $\D{K}{unf}$ &  &  &  &  &  \\
+      $\D{K}{glu}$ &  &  &  &  &  \\
+      \hline
+      \hline
+    \end{tabular}
+  \end{center}
+  \caption{Fit parameters for $Q^2_0$ = 1 (GeV/$c$)$^2$. The associated $\chi^2$ is of 3.4.}
+  \label{tab:Fitparam}
+\end{table}
+
+
+\begin{figure}[!h]
+  \centering
+	\subfloat[$zD^{K}_{fav}$]{\includegraphics[scale=0.4]{./gfx/dfav.pdf}}
+  \subfloat[$zD^{K}_{unf}$]{\includegraphics[scale=0.4]{./gfx/dunf.pdf}} \\
+  \subfloat[$zD^{K}_{s}$]{\includegraphics[scale=0.4]{./gfx/dstr.pdf}}
+  \subfloat[$zD^{K}_{g}$]{\includegraphics[scale=0.4]{./gfx/dglu.pdf}}
+	\caption{The favoured (top left), unfavoured (top right), strange (bottom left) and gluon (bottom right) quark FFs $zD(z)$ into kaons from the COMPASS LO fit. The fit is done based on the statistical error only.}
+	\label{pic:FFFit}
+\end{figure}

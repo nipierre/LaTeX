@@ -51,13 +51,41 @@ The various systematic studies that were performed are summarized hereafter.
 
 \subsection{Error associated to the stability of data over time}
 
-The data samples used in the analysis were recorded over a period of 5 weeks. As a quality check, the sum and ratio of multiplicities in the different weeks were compared to the sum and ratio of multiplicities over the overall 5 weeks of data and the multiplicities averaged over y were compared period by period. The compatibility between weeks was found to be below the 1\% level within statistical fluctuations. Consequently, no systematic error will be assigned for the data compatibility.
+The data samples used in the analysis were recorded over a period of 5 weeks. As a quality check, the raw charged hadron multiplicities from period P07 and from the average over flux of all periods were compared. The results were found to be be compatible within statistical fluctuations for all unidentified hadrons, pions, kaons and protons (Figs. \ref{pic:hMultTime} to \ref{pic:pMultTime}). Consequently, no systematic error will be assigned for the data compatibility.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.85]{./gfx/SysTimeMult.png}
+	\caption{Ratio of P07 raw multiplicities over the raw multiplicities of all periods averaged over flux versus $z$. The red markers are for positive hadrons and the blue markers for negative hadrons. Each column corresponds to a given $x$ bin and each row to a given $y$ bin.}
+	\label{pic:hMultTime}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+	% \includegraphics[scale=0.85]{./gfx/SysTimeMultpi.png}
+	\caption{Same as Fig. \ref{pic:hMultTime} but for pion multiplicities.}
+	\label{pic:piMultTime}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+	% \includegraphics[scale=0.85]{./gfx/SysTimeMultk.png}
+	\caption{Same as Fig. \ref{pic:hMultTime} but for kaon multiplicities.}
+	\label{pic:kMultTime}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+	% \includegraphics[scale=0.85]{./gfx/SysTimeMultp.png}
+	\caption{Same as Fig. \ref{pic:hMultTime} but for proton multiplicities.}
+	\label{pic:pMultTime}
+\end{figure}
 
 %------------------------------------------------
 
 \subsection{Error associated to the stability of data over beam charge}
 
-The data samples used in the analysis were recorded with two different beam charge. As a quality check, the multiplicities averaged over y were compared for both beam charge. The compatibility between the two beam charge was found to be below the 1\% level within statistical fluctuations. Consequently, no systematic error will be assigned for the beam charge change.
+The data samples used in the analysis were recorded with two different beam charge. Using the same method than in the previous subsection, a comparison was made and the results were compatible within statistical fluctuations. Consequently, no systematic error will be assigned for the beam charge change.
 
 %------------------------------------------------
 
@@ -71,7 +99,15 @@ To determine the acceptance dependence with the physical model chosen, different
 
 The value of $\sigma^{A^h}_{syst}$ was found to be of $\sim$ 5\%.
 
-Another error concerns the z-vertex dependence : the target can be separated into 4 different parts and the sum of multiplicities extracted from each part is then compared (Fig. \ref{pic:Zvertexsum} and \ref{pic:Zvertexratio}). From this comparison, a conservative systematic error of $\sim$ 5\% was derived.
+Another error concerns the z-vertex dependence : the target can be separated into 4 different parts and the sum of multiplicities extracted from each part is then compared (Fig. \ref{pic:Zvertexsum}). From this comparison, a conservative systematic error of $\sim$ 5\% was derived.
+
+\begin{figure}[!h]
+  \centering
+	\subfloat[]{\includegraphics[scale=0.4]{./gfx/SumVertex.png}}
+  \subfloat[]{\includegraphics[scale=0.4]{./gfx/RatioVertex.png}}
+	\caption{Comparison of the multiplicity sum (a) and ratio (b) for different }
+	\label{pic:Zvertexsum}
+\end{figure}
 
 In the end, a total systematic uncertainty of $\sim$ 10\% is put on the acceptance.
 
