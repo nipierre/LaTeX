@@ -6,7 +6,7 @@
 
 %----------------------------------------------------------------------------------------
 
-This chapter is divided in two parts : one is focused on the discussion on the systematic errors, the other presents the final multiplicities of unidentified charged hadrons, charged pions, charged kaons and proton/antiproton extracted from SIDIS of 160 GeV muons off a pure proton target ($lH_2$). These results are obtained from the raw multiplicities of Chapter. \ref{ch:raw} and the correction factors of Chapter. \ref{ch:CF}.
+This chapter is divided in two parts : one is focused on the discussion on the systematic uncertainties, the other presents the final multiplicities of unidentified charged hadrons, charged pions, charged kaons and protons/antiprotons extracted from SIDIS of 160 GeV muons off a pure proton target ($lH_2$). These results are obtained from the raw multiplicities of Chapter. \ref{ch:raw} and the correction factors of Chapter. \ref{ch:CF}.
 
 \section{Errors on the RICH unfolding}
 
@@ -49,7 +49,7 @@ The various systematic studies that were performed are summarized hereafter.
 
 %------------------------------------------------
 
-\subsection{Error associated to the stability of data over time}
+\subsection{Systematic uncertainty associated to the stability of data over time}
 
 The data samples used in the analysis were recorded over a period of 5 weeks. As a quality check, the raw charged hadron multiplicities from period P07 and from the average over flux of all periods were compared. The results were found to be be compatible within statistical fluctuations for all unidentified hadrons, pions, kaons and protons (Figs. \ref{pic:hMultTime} to \ref{pic:pMultTime}). Consequently, no systematic error will be assigned for the data compatibility.
 
@@ -83,15 +83,15 @@ The data samples used in the analysis were recorded over a period of 5 weeks. As
 
 %------------------------------------------------
 
-\subsection{Error associated to the stability of data over beam charge}
+\subsection{Systematic uncertainty associated to the stability of data over beam charge}
 
-The data samples used in the analysis were recorded with two different beam charge. Using the same method than in the previous subsection, a comparison was made and the results were compatible within statistical fluctuations. Consequently, no systematic error will be assigned for the beam charge change.
+The data samples used in the analysis were recorded with two different beam charges. Using the same method than in the previous subsection, a comparison was made for both beam charges and the results were compatible within statistical fluctuations. Consequently, no systematic error will be assigned for the beam charge change.
 
 %------------------------------------------------
 
-\subsection{Error associated to Monte Carlo sample : DJANGOH dependence}
+\subsection{Systematic uncertainty associated to Monte Carlo sample : DJANGOH dependence}
 
-To determine the acceptance dependence with the physical model chosen, different PDF sets were used to generate different MC samples. Moreover different JETSET parameters were also used \cite{}. For each sample the acceptance is calculated and the hadron multiplicities are the corrected with each acceptance. The systematic uncertainty on the acceptance, considering two acceptances $A^h$ and $A'^h$, is estimed in each kinematic bin ($x$,$y$,$z$) :
+To determine the acceptance dependence with the physical model chosen, different PDF sets were used to generate different MC samples. Moreover different JETSET parameters were also used \cite{PDFsys}. For each sample the acceptance is calculated and the hadron multiplicities are corrected with each acceptance. The systematic uncertainty on the acceptance, considering two acceptances $A^h$ and $A'^h$, is estimed in each kinematic bin ($x$,$y$,$z$) :
 
 \begin{equation}
   \sigma^{A^h}_{syst} \leq \frac{\frac{A'^h}{A^h}-1}{2}M^h_{corr_acc}
@@ -103,8 +103,8 @@ Another error concerns the z-vertex dependence : the target can be separated int
 
 \begin{figure}[!h]
   \centering
-	\subfloat[]{\includegraphics[scale=0.4]{./gfx/SumVertex.png}}
-  \subfloat[]{\includegraphics[scale=0.4]{./gfx/RatioVertex.png}}
+	\subfloat[]{\includegraphics[scale=0.5]{./gfx/SumVertex.png}} \\
+  \subfloat[]{\includegraphics[scale=0.5]{./gfx/RatioVertex.png}}
 	\caption{Comparison of the multiplicity sum (a) and ratio (b) for different }
 	\label{pic:Zvertexsum}
 \end{figure}
@@ -113,22 +113,22 @@ In the end, a total systematic uncertainty of $\sim$ 10\% is put on the acceptan
 
 %------------------------------------------------
 
-\subsection{Error associated to the diffractive vector meson correction}
+\subsection{Systematic uncertainty associated to the diffractive vector meson correction}
 
-In HEPGEN, the cross section for exclusive vector meson production is normalized to the GPD model of Goloskokov and Kroll. The theoretical uncertainty on the predicted cross section close to COMPASS kinematics is around 30\% \cite{Goloskokov}. Propagating this uncertainty leads to a maximum relative uncertainty under 6\%.
-The method for the correction of nuclear effects maily changes the shape of the $p_T^2$ distribution with respect to the diffractive vector meson production on a free nucleon. It assumes that the $p_T^2$-integrated nuclear cross-section per nucleon for exclusive events is the same as the $p_T^2$-integrated nuclear cross section for a free nucleon. According to A. Sandacz \cite{Hepgen}, the systematic uncertainty due to this assumption is a few percent.
+In HEPGEN, the cross section for exclusive vector meson production is normalized to the GPD model of Goloskokov and Kroll. The theoretical uncertainty on the predicted cross section close to COMPASS kinematics is around 30\% \cite{Goloskokov}. Propagating this uncertainty leads to a maximum relative uncertainty below 6\%.
+The method for the correction of nuclear effects maily changes the shape of the $p_T^2$ distribution with respect to the diffractive vector meson production on a free nucleon. It assumes that the $p_T^2$-integrated nuclear cross-section per nucleon for exclusive events is the same as the $p_T^2$-integrated nuclear cross section for a free nucleon. According to A. Sandacz \cite{Hepgen}, the systematic uncertainty due to this assumption is of a few percent.
 
 %----------------------------------------------------------------------------------------
 
-\section{Charged hadrons multiplicities ($h^{\pm}$,$\pi^{\pm}$,$K^{\pm}$,$p/\bar{p}$)}
+\section{Charged hadron multiplicities ($h^{\pm}$,$\pi^{\pm}$,$K^{\pm}$,$p/\bar{p}$)}
 
-The multiplicities presented in the following sections are with all the correction presented before viz. :
+The multiplicities presented in the following sections include all corrections presented before viz. :
 
 \begin{equation}
   	M^h_{Final}(x,y,z) = M^h_{raw}(x,y,z)\frac{\eta^h(x,y,z)}{A^h(x,y,z)}B^h(x,y,z)
 \end{equation}
 
-The $x$,$y$ and $z$ binning is given in Table. \ref{tab:binning}. $A^h$ corresponds to the acceptance correction (Section. \ref{sec:Acc}), $\eta^h$ to the radiative correction factor (Section. \ref{sec:rcf}) and $B^h$ to the diffractive vector meson correction factor (Section. \ref{sec:DVMf}). The statistical error propagation is performed assuming that all corrections are independent :
+The $x$,$y$ and $z$ binning is given in Table. \ref{tab:kinbinning}. $A^h$ corresponds to the acceptance correction (Section. \ref{sec:Acc}), $\eta^h$ to the radiative correction factor (Section. \ref{sec:rcf}) and $B^h$ to the diffractive vector meson correction factor (Section. \ref{sec:DVMf}). The statistical error propagation is performed assuming that all corrections are independent :
 
 \begin{equation}
 \begin{split}
@@ -137,11 +137,11 @@ The $x$,$y$ and $z$ binning is given in Table. \ref{tab:binning}. $A^h$ correspo
 \end{split}
 \end{equation}
 
-The corresponding systematic error from the different sources are added quadratically. The largest contribution in most bins comes from the systematic uncertainty on the acceptance.
+The corresponding systematic uncertainties from the different sources are added quadratically. The largest contribution in most bins comes from the systematic uncertainty on the acceptance.
 
 \subsection{Unidentified charged hadron multiplicities}
 
-The unidentified charged hadron multiplicities $M^{h^{\pm}}$ are shown in Fig. \ref{pic:mhp} and \ref{pic:mhm} in function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. The $Q^2$ values are in the range 1 to 30 (GeV/$c$)$^2$. $M^{h^+}$ and $M^{h^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
+The unidentified charged hadron multiplicities $M^{h^{\pm}}$ are shown in Fig. \ref{pic:mhp} and \ref{pic:mhm} as a function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. The $Q^2$ values are in the range 1 to 30 (GeV/$c$)$^2$. $M^{h^+}$ and $M^{h^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range). They are very similar but not shown for the other $y$ bins.
 
 \begin{figure}[!h]
   \centering
@@ -162,7 +162,7 @@ When removing the $y$ staggering on the previous results, one can see that all d
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/hnoystag.pdf}
-	\caption{Unidentified positive hadron multiplicities (with all corrections) as a function of $z$ in bins of $x$. The vertical staggering with $y$ has been suppressed showing that different $y$ bins overlap.}
+	\caption{Unidentified positive hadron multiplicities (with all corrections) as a function of $z$ in bins of $x$. The vertical staggering with $y$ has been suppressed showing that the different $y$ bins do overlap.}
 	\label{pic:mhnoy}
 \end{figure}
 
@@ -177,19 +177,19 @@ When removing the $y$ staggering on the previous results, one can see that all d
 
 \subsection{Charged pion multiplicities}
 
-The charged pion multiplicities $M^{\pi^{\pm}}$ are shown in Fig. \ref{pic:mpip} and \ref{pic:mpim} in function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{\pi^+}$ and $M^{\pi^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
+The charged pion multiplicities $M^{\pi^{\pm}}$ are shown in Fig. \ref{pic:mpip} and \ref{pic:mpim} as a  function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{\pi^+}$ and $M^{\pi^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/pip.pdf}
-	\caption{Positive pion multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Positive pion multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mpip}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/pim.pdf}
-	\caption{Negative pion multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Negative pion multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mpim}
 \end{figure}
 
@@ -206,23 +206,23 @@ The y-averaged multiplicities are displayed as a function of $z$ and in bins of 
 
 \subsection{Charged kaon multiplicities}
 
-The charged kaon multiplicities $M^{K^{\pm}}$ are shown in Fig. \ref{pic:mpip} and \ref{pic:mpim} in function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{K^+}$ and $M^{K^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
+The charged kaon multiplicities $M^{K^{\pm}}$ are shown in Fig. \ref{pic:mpip} and \ref{pic:mpim} as a function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{K^+}$ and $M^{K^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/Kp.pdf}
-	\caption{Positive kaon multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Positive kaon multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mkp}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/Km.pdf}
-	\caption{Negative kaon multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Negative kaon multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mkm}
 \end{figure}
 
-The y-averaged multiplicities are displayed as a function of $z$ and in bins of $x$. With Fig. \ref{pic:mkyavg} an asymmetry between $K^+$ and $K^-$ is observed, increasing with $x$. Having more $K^+$ than $K^-$ is due to the fact there is a dominant $u$ quark distribution in the target.
+The y-averaged multiplicities are displayed as a function of $z$ and in bins of $x$. With Fig. \ref{pic:mkyavg} an asymmetry between $K^+$ and $K^-$ is observed, increasing with $x$. Having more $K^+$ than $K^-$ is due to the fact there is a dominant $u$ quark distribution in the target. In addition, producing $K^-$ requires sea quarks only.
 
 \begin{figure}[!h]
   \centering
@@ -235,23 +235,23 @@ The y-averaged multiplicities are displayed as a function of $z$ and in bins of 
 
 \subsection{Proton/Antiproton multiplicities}
 
-The proton/antiproton multiplicities $M^{p/\bar{p}}$ are shown in Fig. \ref{pic:mpp} and \ref{pic:mpm} in function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{K^+}$ and $M^{K^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
+The proton/antiproton multiplicities $M^{p/\bar{p}}$ are shown in Fig. \ref{pic:mpp} and \ref{pic:mpm} as a function of $z$, in bins of $x$ and staggered vertically with $y$. A strong $z$ dependence is observed for all ($x$,$y$) bins as well as a small dependence with $x$. $M^{K^+}$ and $M^{K^-}$ have 300 data points each. The statistical uncertainties are too small to be visible in almost all kinematic bins. The bands at the bottom of each $x$ bin panel are the systematic errors for the bin 0.3$< y <$0.5 (bin that covers the largest $z$ range).
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/pp.pdf}
-	\caption{Proton multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Proton multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mpp}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.85]{./gfx/pm.pdf}
-	\caption{Antiproton multiplicities (with all corrections) as a function of $z$ in bins of $x$ staggered vertically with $y$.}
+	\caption{Antiproton multiplicities (with all corrections) as a function of $z$ in bins of $x$, staggered vertically with $y$.}
 	\label{pic:mpm}
 \end{figure}
 
-The y-averaged multiplicities are displayed as a function of $z$ and in bins of $x$. With Fig. \ref{pic:mpyavg} an asymmetry between $K^+$ and $K^-$ is observed, increasing with $x$. Having more $K^+$ than $K^-$ is due to the fact there is a dominant $u$ quark distribution in the target.
+The y-averaged multiplicities are displayed as a function of $z$ and in bins of $x$. With Fig. \ref{pic:mpyavg} an asymmetry between $p$ and $\bar{p}$ is observed, increasing with $x$. Having more protons than antiproton is due to the fact there is a dominant $u$ quark distribution in the target. In addition, producing antiprotons requires sea quarks only.
 
 \begin{figure}[!h]
   \centering
@@ -264,7 +264,7 @@ The y-averaged multiplicities are displayed as a function of $z$ and in bins of 
 
 \section{Ratio of charged hadron multiplicities}
 
-From the $y$-averaged multiplicities, we can still integrate on $z$ to get rid of the $z$ dependence and be able to compare our results with other experiment and also have a scent of the physic underlying. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following :
+From the $y$-averaged multiplicities, we can still integrate on $z$ to get rid of the $z$ dependence and be able to compare our results with other experiment and also have a scent of the underlying physics. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following :
 
 \begin{equation}
   \frac{\mathscr{M}^{h^+}}{\mathscr{M}^{h^-}} = \frac{\int_{0.2}^{0.85} \langle M^{h^+} \rangle_y dz}{\int_{0.2}^{0.85} \langle M^{h^-} \rangle_y dz}
@@ -277,11 +277,11 @@ Only the 8 $x$ bins that have a sufficient $z$ coverage subsist.
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/hr.png}
-	\caption{Ratio of $\frac{\mathscr{M}^{h^+}}{\mathscr{M}^{h^-}}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points).}
+	\caption{Ratio of $\frac{\mathscr{M}^{h^+}}{\mathscr{M}^{h^-}}$ for a proton target (blue closed points) and an isoscalar target (orange closed points) (COMPASS data)}
 	\label{pic:hratio}
 \end{figure}
 
-The hadron ratio on proton target should lie above COMPASS results on isoscalar target, the reason being the different quark mixture in the two targets (more $u$ in proton target thus higher $h+$/$h-$ ratio in proton than in isoscalar). The difference is expected to be $\sim$10-20\%.
+The ratio of unidentified charged hadron multiplicity for a proton target should lie above COMPASS results on isoscalar target, the reason being the different quark mixture in the two targets (more $u$ in proton target thus higher $h+$/$h-$ ratio in proton than in isoscalar target). The difference is expected to be $\sim$10-20\%, as obtained here.
 
 \newpage
 
@@ -290,22 +290,22 @@ The hadron ratio on proton target should lie above COMPASS results on isoscalar 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/pir.png}
-	\caption{Ratio of $\frac{\mathscr{M}^{\pi^+}}{\mathscr{M}^{\pi^-}}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points) and for HERMES on proton target (violet open points) and deuteron target (green open points).}
+	\caption{Ratio of $\frac{\mathscr{M}^{\pi^+}}{\mathscr{M}^{\pi^-}}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
 	\label{pic:piratio}
 \end{figure}
 
-For the very same reason as for hadron, the pion ratio on proton target is expected to be bigger than COMPASS results on isoscalar target by $\sim$10-20\%.
+For the very same reason as for hadrons, the ratio of charged pions multiplicity for a proton target is expected to be larger than COMPASS results for an isoscalar target by $\sim$10-20\%, as observed here.
 
 \subsection{Ratio of charged kaon multiplicities}
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/Kr.png}
-	\caption{Ratio of $\frac{\mathscr{M}^{K^+}}{\mathscr{M}^{K^-}}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points) and for HERMES on proton target (violet open points) and deuteron target (green open points).}
+	\caption{Ratio of $\frac{\mathscr{M}^{K^+}}{\mathscr{M}^{K^-}}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
 	\label{pic:kratio}
 \end{figure}
 
-For the very same reason as for hadron and pion, the kaon ratio on proton target is expected to be bigger than COMPASS results on isoscalar target by $\sim$10\%.
+For the very same reason as for hadrons and pions, the ratio of charged kaon multiplicity on proton target is expected to be larger than COMPASS results for isoscalar target by $\sim$10\%, as observed here.
 
 \newpage
 
@@ -314,52 +314,70 @@ For the very same reason as for hadron and pion, the kaon ratio on proton target
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/pr.png}
-	\caption{Ratio of $\frac{\mathscr{M}^{p}}{\mathscr{M}^{\overline{p}}}$ for COMPASS on proton target (blue closed points).}
+	\caption{Ratio of $\frac{\mathscr{M}^{p}}{\mathscr{M}^{\overline{p}}}$ from COMPASS for a proton target (blue closed points).}
 	\label{pic:pratio}
 \end{figure}
 
 \section{Sum of charged hadron multiplicities}
 
-One other interesting quantity to look at is the sum of charged hadron multiplicities as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
-
-All the 2016 results for the sum seem to suffer from a drop a high $x$, particularly visible on hadrons and pions. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables like $\theta_h$. In the 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in the 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the aforementionned issue.
+An other interesting quantity to look at is the sum of charged hadron multiplicities (e.g. \mathscr{M}^{h^+}+\mathscr{M}^{h^-}) as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
 
 \subsection{Sum of unidentified charged hadron multiplicities}
+
+By integrating over $z$ the charged hadron multiplicities averaged over $y$, one can obtain multiplicities that are only depending on one parameter, $x$. In order to get rid of of the charge dependence of the charged hadron multiplicities, the charged hadron multiplicity sum is studied. In Fig. \ref{pic:hsum}, the $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points).
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/hs.png}
-	\caption{Sum of $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points).}
+	\caption{Sum of $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points).}
 	\label{pic:hsum}
 \end{figure}
 
-The hadron sum for proton target should lie at the same level than COMPASS results on isoscalar target. The discrepancy in amplitude can be explained by the fact that the radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that all the points should be moved up by $\sim$6\%, which reconciles proton and isoscalar results within error bars, at least for low $x$. At high $x$ for the results on proton target, the problem comes likely from a bad description of semi-inclusive variable in the Monte-Carlo.
+The sum of charged hadron multiplicity $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The discrepancy in amplitude can be explained by the fact that the radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that all the points should be moved up by $\sim$6\%, which reconciles proton and isoscalar results within error bars, at least for low $x$. At high $x$ for the results on proton target, the problem comes likely from a bad description of semi-inclusive variable in the Monte-Carlo.
 
 \newpage
 
 \subsection{Sum of charged pion multiplicities}
 
+In Fig. \ref{pic:pisum}, the $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as :
+
+\begin{equation}
+  \mathsrc{M^{\pi^+}}+\mathsrc{M^{\pi^-}} = \mathsrc{D}^{\pi}_{fav} + \mathsrc{D}^{\pi}_{unf} - \frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S} \left( \mathsrc{D}^{\pi}_{fav} - \mathsrc{D}^{\pi}_{unf}\right)
+\end{equation}
+
+where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathsrc{D}^K(Q^2) = \int D^K(z,Q^2) dz $. As $\frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S}$ is small and the $Q^2$ dependence of $\mathsrc{D}^{\pi}_{fav} + \mathsrc{D}^{\pi}_{unf}$ is weak, the pion multiplicity sum is expected to be almost flat. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values, though we also expect the pion multiplicity sum for a proton target to be also flat, from LO extrapolation.
+
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.5]{./gfx/pis.png}
-  \caption{Sum of $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points) and for HERMES on proton target (violet open points) and deuteron target (green open points).}
+  \caption{Sum of $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
   \label{pic:pisum}
 \end{figure}
 
-The pion sum for proton target should lie at the same level than COMPASS results on isoscalar target. The same reasoning can be done as in the hadron case, which reconcile at low $x$ at least the COMPASS results on proton target and on isoscalar target.
+The sum of charged pion multiplicity $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The same reasoning concerning the radiative corrections can be done as in the hadron case, which reconciles at low $x$ at least the COMPASS results for a proton target and for an isoscalar target. The discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. Though this discrepancy cannot be explained by the mean $Q^2$ of multiplicity sets (of $\sim$ 3-5\% for COMPASS data and $\sim$ 1.5\% for HERMES) as there is no $Q^2$ evolution of the multiplicity sum, we observed a $W$ dependence of the multiplicity sum. The multiplicity sum is indeed increasing with $W$ and this might explain at least partly the observed discrepancy.
 
 \subsection{Sum of charged kaon multiplicities}
+
+In Fig. \ref{pic:ksum}, the $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged kaon multiplicities integrated over $z$ can be expressed at LO pQCD as :
+
+\begin{equation}
+  \mathsrc{M^{K^+}}+\mathsrc{M^{K^-}} = \frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S}
+\end{equation}
+
+where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathsrc{D}^K(Q^2) = \int D^K(z,Q^2) dz $. Some assumptions can then be made for high or low $x$ values in order to directly access quantities like $\mathsrc{D}^K_U$ or $S\mathsrc{D}^K_S$. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values.
 
 \begin{figure}[!h]
   \centering
   \includegraphics[scale=0.5]{./gfx/Ks.png}
-  \caption{Sum of $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ for COMPASS on proton target (blue closed points) and isoscalar target (orange closed points) and for HERMES on proton target (violet open points) and deuteron target (green open points).}
+  \caption{Sum of $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
   \label{pic:ksum}
 \end{figure}
 
-The kaon sum for proton target should be slightly ($\sim$5-10\%) above COMPASS results on isoscalar target. For the isoscalar results for kaons, contrary to hadrons and pions, an additional $5\%$ was added to the published results to take into account the bad knowledge of the radiative correction at the time. The discrepancy with HERMES results, already seen in the isoscalar case, remains.
+The sum of charged kaon multiplicity $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ for a proton target should be slightly ($\sim$5-10\%) above COMPASS results on isoscalar target. For the isoscalar results for kaons, contrary to hadrons and pions, an additive correction of $5\%$ was applied to the published results to take into account radiative correction as estimated at the time. The discrepancy with HERMES results, already seen in the isoscalar case, remains. As for the pions, the discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. They lie well below the COMPASS points and exhibit a different $x$ behaviour. Towards low $x$, COMPASS data show a flat behaviour, unlike the rise that is suggested by the HERMES data.
 
 \subsection{Sum of proton/antiproton multiplicities}
+
+In Fig. \ref{pic:psum}, the $\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points).
 
 \begin{figure}[!h]
   \centering
@@ -369,3 +387,5 @@ The kaon sum for proton target should be slightly ($\sim$5-10\%) above COMPASS r
 \end{figure}
 
 \section{Summary}
+
+All the results for a proton target for the sum seem to suffer from a drop at high $x$, particularly visible on hadrons and pions. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables like $\theta_h$. In the 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in the 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the aforementionned issue.
