@@ -8,44 +8,87 @@
 
 This chapter is divided in two parts : one is focused on the discussion on the systematic uncertainties, the other presents the final multiplicities of unidentified charged hadrons, charged pions, charged kaons and protons/antiprotons extracted from SIDIS of 160 GeV muons off a pure proton target ($lH_2$). These results are obtained from the raw multiplicities of Chapter. \ref{ch:raw} and the correction factors of Chapter. \ref{ch:CF}.
 
-\section{Errors on the RICH unfolding}
-
-The RICH matrices are built using the statistical errors associated to the original probability matrix.
-
-\begin{equation}
-M^{\pm}_{RICH}
-=
-\begin{bmatrix}
-\epsilon(\pi \rightarrow \pi)\pm\sigma_{\epsilon(\pi \rightarrow \pi)} & \epsilon(K \rightarrow \pi)\pm\sigma_{\epsilon(K \rightarrow \pi)} & \epsilon(p \rightarrow \pi)\pm\sigma_{\epsilon(p \rightarrow \pi)}\\
-\epsilon(\pi \rightarrow K)\pm\sigma_{\epsilon(\pi \rightarrow K)} & \epsilon(K \rightarrow K)\pm\sigma_{\epsilon(K \rightarrow K)} & \epsilon(p \rightarrow K)\pm\sigma_{\epsilon(p \rightarrow K)} \\
-\epsilon(\pi \rightarrow p)\pm\sigma_{\epsilon(\pi \rightarrow p)} & \epsilon(K \rightarrow p)\pm\sigma_{\epsilon(K \rightarrow p)} & \epsilon(p \rightarrow p)\pm\sigma_{\epsilon(p \rightarrow p)}
-\end{bmatrix}
-\end{equation}
-
-As an inversion of the probabilities matrices is done in the analysis, the propagation of errors through the
-inversion operation has to be performed. A calculation of the uncertainties on the probabilities yields \cite{} :
-
-\begin{equation}
-  [\sigma^{-1}_i]^2 = \epsilon^{-1}_{ip}\epsilon^{-1}_{ir}cov(\epsilon_{pq},\epsilon_{rs})\epsilon^{-1}_{qi}\epsilon^{-1}_{si} + [\epsilon^{-1}_{ik}\sigma_k]^2
-\end{equation}
-
-This equation leads to the inverse error matrices with associated statistical errors :
-
-\begin{equation}
-[M^{\pm}_{RICH}]^{-1}
-=
-\begin{bmatrix}
-\epsilon^{-1}(\pi \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow \pi)} & \epsilon^{-1}(K \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(K \rightarrow \pi)} & \epsilon^{-1}(p \rightarrow \pi)\pm\sigma^{-1}_{\epsilon(p \rightarrow \pi)}\\
-\epsilon^{-1}(\pi \rightarrow K)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow K)} & \epsilon^{-1}(K \rightarrow K)\pm\sigma^{-1}_{\epsilon(K \rightarrow K)} & \epsilon^{-1}(p \rightarrow K)\pm\sigma^{-1}_{\epsilon(p \rightarrow K)} \\
-\epsilon^{-1}(\pi \rightarrow p)\pm\sigma^{-1}_{\epsilon(\pi \rightarrow p)} & \epsilon^{-1}(K \rightarrow p)\pm\sigma^{-1}_{\epsilon(K \rightarrow p)} & \epsilon^{-1}(p \rightarrow p)\pm\sigma^{-1}_{\epsilon(p \rightarrow p)}
-\end{bmatrix}
-\end{equation}
-
 %----------------------------------------------------------------------------------------
 
 \section{Summary of systematic studies}
 
 The various systematic studies that were performed are summarized hereafter.
+
+%----------------------------------------------------------------------------------------
+
+\subsection{Systematic uncertainty associated to the RICH unfolding}
+
+The first stage of pion identification is based on the likelihood ratios : $LH(\pi)/LH(2^{nd})$ and $LH(\pi)/LH(bg)$. These cuts are optimized to minimize the
+pions misidentified as kaons. The systematic error associated to the selection of these cuts is performed varying the cuts around optimized values. Two sets of
+cuts \textit{loose} and \textit{severe} were used (see Table \ref{tab:loose.severe})
+
+\begin{table}[!h]
+	\centering
+	\begin{tabular}{ccccccc}
+		\hline
+		 & \multicolumn{3}{c}{Loose} & \multicolumn{3}{c}{Severe} \\
+		\hline
+		 & $\pi$ & $K$ & $p(\bar{p})$ & $\pi$ & $K$ & $p(\bar{p})$ \\
+		\hline
+		$\frac{LH(\pi)}{LH(2^{nd})}$ & $> 1.00$ & $-$ & $-$ & $>1.06$ & $-$ & $-$ \\
+		$\frac{LH(\pi)}{LH(bg)}$ & $> 2.00$ & $-$ & $<2.3$ $(2.2)$ & $>2.04$ & $-$ & $<2.0$ $(1.9)$ \\
+		$\frac{LH(K)}{LH(2^{nd})}$ & $-$ & $>1.06$ & $-$ & $>-$ & $>1.10$ & $-$ \\
+		$\frac{LH(K)}{LH(bg)}$ & $-$ & $>2.00$ & $<3.0$ $(2.9)$ & $-$ & $>2.16$ & $<2.7$ $(2.6)$ \\
+		\hline
+	\end{tabular}
+  \caption{Set of loose and severe cuts to evaluate the RICH systematic errors.}
+  \label{tab:loose.severe}
+\end{table}
+
+To evaluate the systematic error associated to the selection of the particle likelihood cuts, the particle identification is performed using the \textit{loose}
+and \textit{severe} sets of likelihood cuts and the corresponding RICH probability matrices and final multiplicities are extracted ($M^{h^{\pm},loose}_{raw}$
+and $M^{h^{\pm},severe}_{raw}$ respectively). The largest difference between $M^{h^{\pm},loose}_{raw}$ and $M^{h^{\pm},severe}_{raw}$ with the nominal
+multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error :
+
+\begin{equation}
+  \sigma^{RICH_{LH}}_{sys} = MAX(|M^{h^{\pm},loose}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},severe}_{raw}-M^{h^{\pm}}_{raw}|)
+\end{equation}
+
+The difference between the altered RICH probability matrices and the optimal one are plotted in Figs.\ref{pic:Sysplus} and \ref{pic:Sysminus}. For pions and protons, the largest differences
+($<$5\%) are observed in the high momentum $p_h$ region. For kaons the difference reaches 4\% at low $p_h$ ; small differences ($<$1\%) are observed at the
+highest $p_h$ value.
+
+A second source of systematic error is that associated with the calculation of the RICH probability matrices. This is estimated by generating two sets of altered
+RICH probability matrices. As represented in Eq.\ref{eq:StatMat} the matrices are constructe using the statistical error associated to the original probability matrix elements.
+
+\begin{figure}[!p]
+	\centering
+	\includegraphics[scale=0.1]{./gfx/SysPlus.png}
+	\caption{Difference between the identification and misidentification probabilities of loose and severe cuts with the optimal cuts for positive hadrons.}
+	\label{pic:Sysplus}
+\end{figure}
+
+\begin{figure}[!p]
+	\centering
+	\includegraphics[scale=0.1]{./gfx/SysMinus.png}
+	\caption{Difference between the identification and misidentification probabilities of loose and severe cuts with the optimal cuts for negative hadrons.}
+	\label{pic:Sysminus}
+\end{figure}
+
+\begin{equation}
+  M^{\pm}_{RICH}
+  =
+  \begin{bmatrix}
+  P(\pi \rightarrow \pi)\pm\sigma_{P(\pi \rightarrow \pi)} & P(K \rightarrow \pi)\mp\sigma_{P(K \rightarrow \pi)} & P(p \rightarrow \pi)\mp\sigma_{P(p \rightarrow \pi)}\\
+  P(\pi \rightarrow K)\mp\sigma_{P(\pi \rightarrow K)} & P(K \rightarrow K)\pm\sigma_{P(K \rightarrow K)} & P(p \rightarrow K)\mp\sigma_{P(p \rightarrow K)} \\
+  P(\pi \rightarrow p)\mp\sigma_{P(\pi \rightarrow p)} & P(K \rightarrow p)\mp\sigma_{P(K \rightarrow p)} & P(p \rightarrow p)\pm\sigma_{P(p \rightarrow p)}
+  \end{bmatrix}
+	\label{eq:StatMat}
+\end{equation}
+
+The raw multiplicities $M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ are then recalculated using the altered probability matrices. The largest difference between
+$M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is taken as the sytematic error :
+
+\begin{equation}
+  \sigma^{RICH_{stat}}_{sys} = MAX(|M^{h^{\pm},+}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},-}_{raw}-M^{h^{\pm}}_{raw}|)
+\end{equation}
+
+The final systematic uncertainty associated to the particle identification and unfolding correction ($\sigma^{RICH}_{sys}$) is the largest value of $\sigma^{RICH_{stat}}_{sys}$ and $\sigma^{RICH_{LH}}_{sys}$. The error goes from $<$ 0.2\% at low $y$ for all $x$ and $z$ bins to $\sim$ 20\% for high $y$ and high $z$, where multiplicities are low.
 
 %------------------------------------------------
 
@@ -53,33 +96,33 @@ The various systematic studies that were performed are summarized hereafter.
 
 The data samples used in the analysis were recorded over a period of 5 weeks. As a quality check, the raw charged hadron multiplicities from period P07 and from the average over flux of all periods were compared. The results were found to be be compatible within statistical fluctuations for all unidentified hadrons, pions, kaons and protons (Figs. \ref{pic:hMultTime} to \ref{pic:pMultTime}). Consequently, no systematic error will be assigned for the data compatibility.
 
-\begin{figure}[!h]
+\begin{sidewaysfigure}[p]
   \centering
-	\includegraphics[scale=0.85]{./gfx/SysTimeMult.png}
+	\includegraphics[scale=0.7]{./gfx/SysTimeMult.png}
 	\caption{Ratio of P07 raw multiplicities over the raw multiplicities of all periods averaged over flux versus $z$. The red markers are for positive hadrons and the blue markers for negative hadrons. Each column corresponds to a given $x$ bin and each row to a given $y$ bin.}
 	\label{pic:hMultTime}
-\end{figure}
+\end{sidewaysfigure}
 
-\begin{figure}[!h]
+\begin{sidewaysfigure}[p]
   \centering
 	% \includegraphics[scale=0.85]{./gfx/SysTimeMultpi.png}
 	\caption{Same as Fig. \ref{pic:hMultTime} but for pion multiplicities.}
 	\label{pic:piMultTime}
-\end{figure}
+\end{sidewaysfigure}
 
-\begin{figure}[!h]
+\begin{sidewaysfigure}[p]
   \centering
 	% \includegraphics[scale=0.85]{./gfx/SysTimeMultk.png}
 	\caption{Same as Fig. \ref{pic:hMultTime} but for kaon multiplicities.}
 	\label{pic:kMultTime}
-\end{figure}
+\end{sidewaysfigure}
 
-\begin{figure}[!h]
+\begin{sidewaysfigure}[p]
   \centering
 	% \includegraphics[scale=0.85]{./gfx/SysTimeMultp.png}
 	\caption{Same as Fig. \ref{pic:hMultTime} but for proton multiplicities.}
 	\label{pic:pMultTime}
-\end{figure}
+\end{sidewaysfigure}
 
 %------------------------------------------------
 
@@ -161,7 +204,7 @@ When removing the $y$ staggering on the previous results, one can see that all d
 
 \begin{figure}[!h]
   \centering
-	\includegraphics[scale=0.85]{./gfx/hnoystag.pdf}
+	\includegraphics[scale=0.85]{./gfx/hnoystag.png}
 	\caption{Unidentified positive hadron multiplicities (with all corrections) as a function of $z$ in bins of $x$. The vertical staggering with $y$ has been suppressed showing that the different $y$ bins do overlap.}
 	\label{pic:mhnoy}
 \end{figure}
@@ -226,7 +269,7 @@ The y-averaged multiplicities are displayed as a function of $z$ and in bins of 
 
 \begin{figure}[!h]
   \centering
-	\includegraphics[scale=0.85]{./gfx/Kyavg.pdf}
+	\includegraphics[scale=0.85]{./gfx/Kyavg.png}
 	\caption{Positive (red) and negative (blue) kaon multiplicities (with all corrections) averaged over $y$ as a function of $z$ in bins of $x$.}
 	\label{pic:mkyavg}
 \end{figure}
@@ -320,7 +363,7 @@ For the very same reason as for hadrons and pions, the ratio of charged kaon mul
 
 \section{Sum of charged hadron multiplicities}
 
-An other interesting quantity to look at is the sum of charged hadron multiplicities (e.g. \mathscr{M}^{h^+}+\mathscr{M}^{h^-}) as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
+An other interesting quantity to look at is the sum of charged hadron multiplicities (e.g. $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$) as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
 
 \subsection{Sum of unidentified charged hadron multiplicities}
 
@@ -335,17 +378,15 @@ By integrating over $z$ the charged hadron multiplicities averaged over $y$, one
 
 The sum of charged hadron multiplicity $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The discrepancy in amplitude can be explained by the fact that the radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that all the points should be moved up by $\sim$6\%, which reconciles proton and isoscalar results within error bars, at least for low $x$. At high $x$ for the results on proton target, the problem comes likely from a bad description of semi-inclusive variable in the Monte-Carlo.
 
-\newpage
-
 \subsection{Sum of charged pion multiplicities}
 
 In Fig. \ref{pic:pisum}, the $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as :
 
 \begin{equation}
-  \mathsrc{M^{\pi^+}}+\mathsrc{M^{\pi^-}} = \mathsrc{D}^{\pi}_{fav} + \mathsrc{D}^{\pi}_{unf} - \frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S} \left( \mathsrc{D}^{\pi}_{fav} - \mathsrc{D}^{\pi}_{unf}\right)
+  \mathscr{M^{\pi^+}}+\mathscr{M^{\pi^-}} = \mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf} - \frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S} \left( \mathscr{D}^{\pi}_{fav} - \mathscr{D}^{\pi}_{unf} \right)
 \end{equation}
 
-where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathsrc{D}^K(Q^2) = \int D^K(z,Q^2) dz $. As $\frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S}$ is small and the $Q^2$ dependence of $\mathsrc{D}^{\pi}_{fav} + \mathsrc{D}^{\pi}_{unf}$ is weak, the pion multiplicity sum is expected to be almost flat. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values, though we also expect the pion multiplicity sum for a proton target to be also flat, from LO extrapolation.
+where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = \int D^K(z,Q^2) dz $. As $\frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S}$ is small and the $Q^2$ dependence of $\mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf}$ is weak, the pion multiplicity sum is expected to be almost flat. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values, though we also expect the pion multiplicity sum for a proton target to be also flat, from LO extrapolation.
 
 \begin{figure}[!h]
   \centering
@@ -361,10 +402,10 @@ The sum of charged pion multiplicity $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ f
 In Fig. \ref{pic:ksum}, the $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged kaon multiplicities integrated over $z$ can be expressed at LO pQCD as :
 
 \begin{equation}
-  \mathsrc{M^{K^+}}+\mathsrc{M^{K^-}} = \frac{U\mathsrc{D}^K_U+S\mathsrc{D}^K_S}{5U+2S}
+  \mathscr{M^{K^+}}+\mathscr{M^{K^-}} = \frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S}
 \end{equation}
 
-where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathsrc{D}^K(Q^2) = \int D^K(z,Q^2) dz $. Some assumptions can then be made for high or low $x$ values in order to directly access quantities like $\mathsrc{D}^K_U$ or $S\mathsrc{D}^K_S$. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values.
+where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = \int D^K(z,Q^2) dz $. Some assumptions can then be made for high or low $x$ values in order to directly access quantities like $\mathscr{D}^K_U$ or $S\mathscr{D}^K_S$. Unfortunately, this is not the case for a proton target, as the same expression at LO pQCD cannot be reduced to some simple quantities at given $x$ values.
 
 \begin{figure}[!h]
   \centering
@@ -385,6 +426,8 @@ In Fig. \ref{pic:psum}, the $\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ from COMPASS
 	\caption{Sum of $\mathscr{M}^{p}+\mathscr{M}^{\overline{p}}$ for COMPASS on proton target (blue closed points).}
 	\label{pic:psum}
 \end{figure}
+
+\newpage
 
 \section{Summary}
 

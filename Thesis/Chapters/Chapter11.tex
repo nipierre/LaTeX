@@ -63,25 +63,29 @@ where $x_g$, $y_g$ and $z_g$ are the generated kinematic values and $x_r$, $y_r$
 The acceptance correction factors $A^h(x,y,z)$ for unidentified hadrons, pions, kaons and protons are shown in Figs. \ref{pic:AccH} to \ref{pic:AccP} for the P07 sample. Note that the acceptance is very similar for positive and negative particles and for $\mu^+$ and $\mu^-$ beams.
 
 \begin{sidewaysfigure}[!]
+  \centering
 	\includegraphics[scale=0.6]{./gfx/AccH.png}
 	\caption{Charged hadron acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to hadrons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccH}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/AccPi.png}
+  \centering
+	\includegraphics[scale=0.6]{./gfx/AccPi.png}
 	\caption{Charged pion acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to pions obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccPi}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
-	\includegraphics[scale=0.5]{./gfx/AccK.png}
+  \centering
+	\includegraphics[scale=0.6]{./gfx/AccK.png}
 	\caption{Charged kaon acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to kaons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccK}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
-	% \includegraphics[scale=0.5]{./gfx/AccK.png}
+  \centering
+	\includegraphics[scale=0.5]{./gfx/AccP.png}
 	\caption{Charged proton acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to kaons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccP}
 \end{sidewaysfigure}
@@ -89,7 +93,8 @@ The acceptance correction factors $A^h(x,y,z)$ for unidentified hadrons, pions, 
 In Fig. \ref{pic:AccPer} are compared the acceptance correction factors for the P07 and P09 samples. The discrepancy is only visible in the highest $x$ bins.
 
 \begin{sidewaysfigure}[p]
-	% \includegraphics[scale=0.5]{./gfx/AccK.png}
+  \centering
+	\includegraphics[scale=0.6]{./gfx/SysAcc.png}
 	\caption{Ratio of P07 over P09 acceptance in $x$, $y$ and $z$ bins. The dashed lines represent a 5\% discrepancy.}
 	\label{pic:AccPer}
 \end{sidewaysfigure}
@@ -120,12 +125,77 @@ The correction is then applied to the raw multiplcities :
 It is usually assumed that hadrons produced in SIDIS originate from lepton-parton scattering. Nevertheless the scattering of a lepton off a nucleon can also result in the diffractive production of vector mesons. These particles decay into lighter mesons that cannot be distinguished from the one resulting from the hadronization of a quark originating from the target nucleon. This implies that fragmentation functions extracted from multiplicities contaminated with diffractive vector mesons would violate universality, as they would be process dependent. However, this is a complex theoretical discussion so the multiplicities both with and without subtracting the diffractive vector meson contribution are calculated as well as the separate correction factors for DIS events and hadrons.
 
 For pions and kaons, the dominant vector meson contribution comes from the diffractive production of $\rho^0$ and $\Phi$, respectively :
+
 \begin{equation}
     \begin{split}
       \gamma * p \rightarrow \rho^0 p \rightarrow p\pi^+\pi^- \\
       \gamma * p \rightarrow \Phi p \rightarrow pK^+K^-
     \end{split}
 \end{equation}
+
+\begin{figure}[!h]
+  \centering
+
+  \subfloat[]{\begin{tikzpicture} \begin{feynman}
+\vertex (i1) {\(l\)};
+\vertex[below right=2cm of i1] (a);
+\vertex[above right=2cm of a] (i2) {\(l'\)};
+\vertex[below=2cm of a] (b);
+\vertex[below=2cm of b] (c) {\(V\)};
+\vertex[dot, below=1cm of b] (e);
+\vertex[left=3cm of e] (d);
+\vertex[blob, below=2cm of c] (g) {};
+\vertex[above right=2cm of g] (f1) {\(\pi^+,K^+\)};
+\vertex[below right=2cm of g] (f2) {\(\pi^-,K^-\)};
+\vertex[above=2cm of d] (n1) {\(N\)};
+\vertex[below=2cm of d] (n2) {\(N\)};
+
+
+\diagram* { (i1) -- [fermion] (a) -- [fermion] (i2),
+(a) -- [photon, edge label=\(\gamma^*\)] (b),
+(n1) -- [double distance=7pt] (d) -- [double distance=7pt] (n2),
+(n1) -- [fermion] (d) -- [fermion] (n2),
+(b) -- [fermion, half left, looseness=1.5, edge label=\(q\)] (c),
+(b) -- [anti fermion, half right, looseness=1.5, edge label=\(\bar{q}\)] (c),
+(d)-- [plain, half left, looseness=1.5] (e),
+(d)-- [plain, half right, looseness=1.5] (e),
+(c) -- [double distance=7pt] (g) [blob],
+(g) [blob] -- [double distance=7pt] (f1),
+(g) [blob] -- [double distance=7pt] (f2),
+};
+\end{feynman} \end{tikzpicture}}
+\hspace{2cm}
+\subfloat[]{\begin{tikzpicture} \begin{feynman}
+\vertex (i1) {\(l\)};
+\vertex[below right=2cm of i1] (a);
+\vertex[above right=2cm of a] (i2) {\(l'\)};
+\vertex[dot, below=2cm of a] (b);
+\vertex[below=2cm of b] (c) {\(V\)};
+\vertex[below=1cm of b] (e);
+\vertex[left=3cm of e] (d);
+\vertex[blob, below=2cm of c] (g) {};
+\vertex[above right=2cm of g] (f1) {\(\pi^+,K^+\)};
+\vertex[below right=2cm of g] (f2) {\(\pi^-,K^-\)};
+\vertex[above=2cm of d] (n1) {\(N\)};
+\vertex[below=2cm of d] (n2) {\(X\)};
+
+
+\diagram* { (i1) -- [fermion] (a) -- [fermion] (i2),
+(a) -- [photon, edge label=\(\gamma^*\)] (b),
+(n1) -- [double distance=7pt] (d) -- [double distance=7pt] (n2),
+(n1) -- [fermion] (d) -- [plain] (n2),
+(b) -- [fermion, half left, looseness=1.5, edge label=\(q\)] (c),
+(b) -- [anti fermion, half right, looseness=1.5, edge label=\(\bar{q}\)] (c),
+(d) -- [plain, half left, looseness=1.5] (e),
+(d) -- [plain, half right, looseness=1.5] (e),
+(c) -- [double distance=7pt] (g) [blob],
+(g) [blob] -- [double distance=7pt] (f1),
+(g) [blob] -- [double distance=7pt] (f2),
+};
+\end{feynman} \end{tikzpicture}}
+	\caption{Vector meson diffractive production (V in the figure, being $\rho^0$, $\Phi$, etc..). In the VMD model\cite{VMD}, the $\gamma^*$ virtual photon creates a $q\bar{q}$ pair with compatible quantum numbers. Two cases can be encountered : vector meson exclusive production (where the same nucleon is found in the final state) (a) and vector meson production with nucleon diffractive dissociation (b).}
+	\label{pic:DVMprod}
+\end{figure}
 
 This process is mainly exclusive but in 20\% of cases a diffractive dissociation of the target nucleon occurs. Other channels (excited $\rho$, $\omega$, etc.) are expected to contribute much less and are not taken into account. As pions and kaons stemming from diffractive vector meson decay cannot be separated from the one resulting from SIDIS, the evaluation of their contribution to the multiplicities is based on a Monte Carlo study. Three Monte Carlo samples are produced based on different generators (SIDIS using DJANGOH, diffractive $\Phi$ using HEPGEN++) and the same event reconstruction chain. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the proton are simulated. The $\rho^0$ sample includes nuclear effects (coherent production and nuclear absorption).
 
@@ -170,13 +240,15 @@ where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJAN
 The diffractive vector meson events can also lead to a contamination in DIS events. Here, the two channels studied are diffractive $\rho^0$ and $\Phi$ with the fraction of the contamination expressed in Eqs. 13. Contrary to previous Eq. 11, the denominator only includes the DIS events from the DJANGOH generator because the cross-section used to generate the DJANGOH sample takes into account the diffractive contribution.
 
 \begin{sidewaysfigure}[!]
+  \centering
 	\includegraphics[scale=0.5]{./gfx/DVMpi.png}
 	\caption{Correction factor $B^{\pi}$ for diffractive vector meson contamination ($\rho^0$) as a function of $z$ for ($x$,$y$) bins. The red markers correspond to positive pions and blue markers for negative pions.}
 	\label{DVMpi}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[!]
-	\includegraphics[scale=0.5]{./gfx/DVMK.png}
+  \centering
+	\includegraphics[scale=0.7]{./gfx/DVMK.png}
 	\caption{Correction factor $B^{K}$ for diffractive vector meson contamination ($\Phi$) as a function of $z$ for ($x$,$y$) bins. The red markers correspond to positive kaons and blue markers for negative kaons.}
 	\label{DVMK}
 \end{sidewaysfigure}
