@@ -6,11 +6,17 @@
 
 %----------------------------------------------------------------------------------------
 
+In the previous chapter, we obtained charged kaon multiplicities $M^K(x,Q^2,z)$. As these multiplicities can be expressed as a combination of the PDFs $q(x,Q^2)$ and the FFs $D^K_q(z,Q^2)$, assuming that the PDFs are known, we will use them to extract the quark fragmentation functions into kaon.
+
+Two methods can be used to extract the multiplicities : a direct extraction and a fit. The direct extraction consists in extracting the FFs point by point. This method requires to have the same numbers of equation as the number of unknowns. The fit method is a simultaneous fit of all the data with predefined functional forms, including a $Q^2$ evolution in the fit.
+
+The two methods are both relying on assumptions to decrease dramatically the number of FFs to determine.
+
 \section{Direct extraction of quark fragmentation functions into kaons}
 
 \subsection{Three fragmentation functions case}
 
-Take the relation between the number of hadrons $\frac{dN^h}{dxdz}$, the unpolarized parton distributions $q(x,Q^2)$ and the fragmentation functions $D^h_q(z)$. By normalizing to the number of scattered leptons $\frac{dN^l}{dx}$, the relation gives at LO QCD :
+Let us take the relation between the number of hadrons $\frac{dN^h}{dxdz}$, the unpolarized parton distributions $q(x,Q^2)$ and the fragmentation functions $D^h_q(z)$. By normalizing to the number of scattered leptons $\frac{dN^l}{dx}$, the relation gives at LO QCD :
 
 \begin{equation} \label{eq:mult_basic}
   \frac{\frac{dN^h}{dxdQ^2dz}}{\frac{dN^l}{dxdQ^2}} = M^h(x,Q^2,z) = \frac{\sum_{q}e^2_qq(x,Q^2)\D{h}{q}(z))}{\sum_{q}e^2_q(x)}
@@ -29,7 +35,7 @@ Explicitating the result for respectively proton Eq.\eqref{eq:mult_prot} and deu
   M^h_d = \frac{(u+d)(4\D{h}{u}+\D{h}{d})+(\ubar+\dbar)(4\D{h}{\ubar}+\D{h}{\dbar})+2s\D{h}{s}+2\sbar\D{h}{\sbar}}{5(u+\ubar+d+\dbar)+2(s+\sbar)}
 \end{equation}
 
-Let us fix $h$ = $K^\pm$. In total there are 12 fragmentation functions arising from the expressions of $M^{K^+}$ and $M^{K^-}$. By assuming charge conjugation symmetry ($\D{K^+}{u}$ = $\D{K^-}{\ubar}$, etc.), this number is reduced to 6. These 6 fragmentation functions can then be classified in three groups (e.g. for $K^+$) : the favoured strange quark fragmentation function $\D{K^+}{str} = \D{K^+}{\sbar}$, the favoured up quark fragmentation function $\D{K^+}{fav} = \D{K^+}{u}$ and the unfavoured fragmentation functions $\D{K^+}{unf} = \D{K^+}{s},\D{K^+}{\ubar},\D{K^+}{\dbar},\D{K^+}{d}$. Thus, assuming $\D{K^+}{s} = \D{K^+}{\ubar}$, this leads to the following equations :
+Let us fix $h$ = $K^\pm$. In total there are 12 fragmentation functions arising from the expressions of $M^{K^+}$ and $M^{K^-}$. By assuming charge conjugation symmetry ($\D{K^+}{u}$ = $\D{K^-}{\ubar}$, etc.), this number is reduced to 6. These 6 fragmentation functions can then be classified in three groups (e.g. for $K^+$) : the favoured strange quark fragmentation function $\D{K^+}{str} = \D{K^+}{\sbar}$, the favoured up quark fragmentation function $\D{K^+}{fav} = \D{K^+}{u}$ and the unfavoured fragmentation functions $\D{K^+}{unf} = \D{K^+}{s},\D{K^+}{\ubar},\D{K^+}{\dbar},\D{K^+}{d}$, when assuming $\D{K^+}{s} = \D{K^+}{\ubar}$. This leads to the following equations :
 
 \begin{equation} \label{eq:mult_prot_K+}
   M^{K^+}_p = \frac{4u\D{K}{fav}+\sbar\D{K}{str}+(4\ubar+s+d+\dbar)\D{K}{unf}}{4(u+\ubar)+(d+\dbar)+(s+\sbar)}
@@ -76,7 +82,7 @@ Eventually, the following system is obtained :
   \end{split}
 \end{equation}
 
-Lets take a simple model where the nucleon is described by a valence ($q_v$) and a sea quark ($\qbar$) distribution, the quark distribution can be written as \cite{Jorg} :
+Let us take a simple model where the nucleon is described by a valence ($q_v$) and a sea quark ($\qbar$) distribution, the quark distribution can be written as \cite{Jorg} :
 
 \begin{center}
   \begin{tabular}{ l }
@@ -96,14 +102,14 @@ With this model, the previous matrix has the following form :
   \end{pmatrix}
 \end{equation}
 
-Assuming that the PDFs are not pathological, one is assured that the rank of this matrix is 3, then the extraction is feasable.
+Assuming that the PDFs are not pathological, one is assured that the rank of this matrix is 3, then the extraction is feasible.
 
-By performing matrix inversion, the result of $\D{K}{fav}(z)$, $\D{K}{str}(z)$ and $\D{K}{unf}(z)$ can be obtained using data from various $(x,y)$ bins which in fact cover different $Q^2$ ranges.
+By performing a matrix inversion, the result of $\D{K}{fav}(z)$, $\D{K}{str}(z)$ and $\D{K}{unf}(z)$ can be obtained using data from various $(x,y)$ bins which in fact cover different $Q^2$ ranges.
 
-\subsection{Extension to four fragmentation functions}
+\subsection{Extension to four fragmentation functions into kaons}
 
 As there were initially 4 fragmentation functions, we can adress the question of the assumption
-$\D{K^+}{s}=\D{K^+}{\ubar}=\D{K^+}{\dbar}=\D{K^+}{d}$. From PYTHIA simulation, one can find the following
+$\D{K^+}{s}=\D{K^+}{\ubar}=\D{K^+}{\dbar}=\D{K^+}{d}$ used in the previous section (3 independent kaon FFs). From PYTHIA simulation, one can find the following
 values for the fragmentation functions :
 
 \begin{center}
@@ -161,7 +167,7 @@ Thus, the system is :
 \end{split}
 \end{equation}
 
-Lets take again the same simple model for quark distributions, leading to the following matrix :
+Let us take again the same simple model for quark distributions, with $q_v$ (valence) and $\bar{q}$ (sea) quark distributions, leading to the following matrix :
 
 \begin{equation} \label{eq:mat_rank_4E}
   \begin{pmatrix}
@@ -173,7 +179,11 @@ Lets take again the same simple model for quark distributions, leading to the fo
 \end{equation}
 
 Assuming that the PDFs are not pathological, one is assured that the rank of this matrix is 4, then the extraction
-is feasable.
+is feasible.
+
+\subsection{Application to extracted kaon multiplicities}
+
+The two methods were tested to extract the FFs directecly from the kaon multiplicities. Unfortunately, it appears that the methods are not working as expected. The hypothesis that the formulas linking multiplicities to PDFs and FFs for a proton and a deuteron target should be enough decoupled to do a combined extraction of the FFs is not right. The only way to extract the FFs into kaons from the kaon multiplicities is then the LO QCD fit of multiplicities.
 
 %----------------------------------------------------------------------------------------
 
@@ -213,7 +223,16 @@ For the current analysis, the following parametrization is used :
   \end{split}
 \end{equation}
 
-The PDFs set from MSTW08 in LO \cite{}, provided by the LHAPDF data group \cite{} was chosen. The fits of the data for $K^+$ and $K^-$ are shown in Figs. \ref{pic:MFitKp} and \ref{pic:MFitKm}.
+The PDFs set from MSTW08 in LO \cite{}, provided by the LHAPDF data group \cite{} was chosen. The fits of the data for $K^+$ and $K^-$ are shown in Fig. \ref{pic:MFitK}.
+
+\begin{figure}[!h]
+  \centering
+	% \subfloat[$K^+$]\includegraphics[scale=0.4]{./gfx/fav.pdf}
+  % \subfloat[$K^-$]\includegraphics[scale=0.4]{./gfx/fav.pdf}
+  \caption{$K^+$ (a) and $K^-$ (b) multiplicities versus $z$ in bins of $z$ and scattered vertically with $y$. The curves correspond to the LO fit of $K^{\pm}$ multiplicities.}
+	\label{pic:MFitK}
+\end{figure}
+
 
 To determine the uncertainties of the extracted FFs, the replica method \cite{} is used. A number of resamples of the original multiplicity dataset is constructed. A reample is constructed by adding noise randomly generated from a zero-centered gaussian with a width of the data point's error to each data point of the oiginal dataset. Then, for each resample the FFs are extracted using the same fit procedure than for the real dataset. The error is then determined as the mean value with RMS of the extracted FFs from the resamples. For the current analysis, 100 replicas are used. Error bands for statistical and systematic errors are calculated. As it is assumed that the systematic errors are correlated, each resample's systematic error is weighted by the same randomly determined value. For both statistical and systematic error bands, the statistical errors are used for the calculation of the $\chi^2$.
 
@@ -249,3 +268,13 @@ The final parameters of the fit are displayed in Table. \ref{tab:Fitparam}. The 
 	\caption{The favoured (top left), unfavoured (top right), strange (bottom left) and gluon (bottom right) quark FFs $zD(z)$ into kaons from the COMPASS LO fit. The fit is done based on both the statistical and systematic errors.}
 	\label{pic:FFFit}
 \end{figure}
+
+%----------------------------------------------------------------------------------------
+
+\newpage
+
+\section{Summary}
+
+Kaon fragmentation functions have been extracted from a fit at LO of the charged kaon multiplicities. They have been extracted in the 0.2-0.85 $z$ domain. The direct extraction was considered due to the fact that multiplicities for a proton target and an isoscalar target have different equation linking them to PDFs and FFs. Nevertheless, the multiplicities for proton and isoscalar targets are still too similar to do such an extraction. Though the fit is still not stable due to the preliminary character of the multiplicities, it shows that the results from fragmentation functions are not far from what was obtained from COMPASS for an isoscalar target. (+ comparison with DSEHS and JAM)
+
+These data represent a high statistics data set which will be helpful for NLO QCD fits of world data. They will constrain the values of quark FFs into kaons at moderate $Q^2$.

@@ -307,7 +307,7 @@ The y-averaged multiplicities are displayed as a function of $z$ and in bins of 
 
 \section{Ratio of charged hadron multiplicities}
 
-From the $y$-averaged multiplicities, we can still integrate on $z$ to get rid of the $z$ dependence and be able to compare our results with other experiment and also have a scent of the underlying physics. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following :
+From the $y$-averaged multiplicities, we can still integrate on $z$ to get rid of the $z$ dependence, be able to compare our results with other experiment and also have a scent of the underlying physics. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following :
 
 \begin{equation}
   \frac{\mathscr{M}^{h^+}}{\mathscr{M}^{h^-}} = \frac{\int_{0.2}^{0.85} \langle M^{h^+} \rangle_y dz}{\int_{0.2}^{0.85} \langle M^{h^-} \rangle_y dz}
@@ -316,6 +316,8 @@ From the $y$-averaged multiplicities, we can still integrate on $z$ to get rid o
 Only the 8 $x$ bins that have a sufficient $z$ coverage subsist.
 
 \subsection{Ratio of unidentified charged hadron multiplicities}
+
+In Fig. \ref{pic:piratio}, the $\mathscr{M}^{h^+}/\mathscr{M}^{h^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points).
 
 \begin{figure}[!h]
   \centering
@@ -330,6 +332,8 @@ The ratio of unidentified charged hadron multiplicity for a proton target should
 
 \subsection{Ratio of charged pion multiplicities}
 
+In Fig. \ref{pic:piratio}, the $\mathscr{M}^{\pi^+}/\mathscr{M}^{\pi^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points). The same ratio from HERMES is presented for a proton target (violet open points) and a deuteron target (green open points).
+
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/pir.png}
@@ -337,22 +341,27 @@ The ratio of unidentified charged hadron multiplicity for a proton target should
 	\label{pic:piratio}
 \end{figure}
 
-For the very same reason as for hadrons, the ratio of charged pions multiplicity for a proton target is expected to be larger than COMPASS results for an isoscalar target by $\sim$10-20\%, as observed here.
+For the very same reason as for hadrons, the ratio of charged pions multiplicity for a proton target is expected to be larger than COMPASS results for an isoscalar target by $\sim$10-20\%, as observed here. The COMPASS results for proton and isoscalar targets are compared to HERMES results for proton and deuteron targets. On all the $x$ range, the proton results are compatible within error bars, as were the deuteron results.
 
 \subsection{Ratio of charged kaon multiplicities}
 
+In Fig. \ref{pic:kratio}, the $\mathscr{M}^{K^+}/\mathscr{M}^{K^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points). The same ratio from HERMES is presented for a proton target (violet open points) and a deuteron target (green open points).
+
 \begin{figure}[!h]
   \centering
+	\includegraphics[scale=0.5]{./gfx/Kr_noH.png}
 	\includegraphics[scale=0.5]{./gfx/Kr.png}
 	\caption{Ratio of $\frac{\mathscr{M}^{K^+}}{\mathscr{M}^{K^-}}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
 	\label{pic:kratio}
 \end{figure}
 
-For the very same reason as for hadrons and pions, the ratio of charged kaon multiplicity on proton target is expected to be larger than COMPASS results for isoscalar target by $\sim$10\%, as observed here.
+For the very same reason as for hadrons and pions, the ratio of charged kaon multiplicity on proton target is expected to be larger than COMPASS results for isoscalar target by $\sim$10\%, as observed here. Contrary to pion case, the comparison of results for the kaon case shows discrepancies between COMPASS and HERMES results for both proton and deuteron/isoscalar targets.
 
-\newpage
+This discrepancy was investigated by the COMPASS collaboration\cite{MarcinPubli}. By defining a missing mass parameter $M_X = \sqrt{M^2_p + 2M_p \nu (1-z) - Q^2 (1-z)^2}$, one can spot that the kaon ratio, especially at $z$ $>$ 0.75, is depending on this parameter. Thus, the ratio is in fact a function of $\nu$ and $z$. The COMPASS results for deuteron target were in tension with pQCD predictions hence pointing to the need of a correction within the pQCD formalism to take into account the phase-space available for the hadronisation of the target remnants. Moreover, for other experiments than COMPASS, deviations may even appear at lower $z$. Coming back to the comparison between COMPASS and HERMES results, when taking data points where there are the exact same kinematics, the results for kaon multiplicities ratio are agreeing, which makes sense at the light of the investigation mentionned before. This explanation might in fact explain at least part of the discrepancy observed between COMPASS and HERMES. Another lead to reconcile the results is to look for hadron mass correction\cite{Accardi}, which also explains part of the discrepancy observed.
 
 \subsection{Ratio of proton/anitproton multiplicities}
+
+In Fig. \ref{pic:pratio}, the $\mathscr{M}^{p}/\mathscr{M}^{\bar{p}}$ from COMPASS is depicted for a proton target (blue points). This is the first time that this quantity is measured.
 
 \begin{figure}[!h]
   \centering
@@ -363,11 +372,11 @@ For the very same reason as for hadrons and pions, the ratio of charged kaon mul
 
 \section{Sum of charged hadron multiplicities}
 
-An other interesting quantity to look at is the sum of charged hadron multiplicities (e.g. $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$) as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
+An other interesting quantity to look at is the sum of charged hadron multiplicities (e.g. $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$) as for an isoscalar target, it was easy to interpret this sum for given $x$ values. Unfortunately, such interpretations are not anymore feasible for a proton target. However they are still relevant quantity to compute as for some type of hadrons, the results between the multiplicities extracted on a proton target ($lH_2$, this analysis) and an isoscalar target ($^6LiD$, COMPASS published results) should be similar.
 
 \subsection{Sum of unidentified charged hadron multiplicities}
 
-By integrating over $z$ the charged hadron multiplicities averaged over $y$, one can obtain multiplicities that are only depending on one parameter, $x$. In order to get rid of of the charge dependence of the charged hadron multiplicities, the charged hadron multiplicity sum is studied. In Fig. \ref{pic:hsum}, the $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points).
+By integrating over $z$ the charged hadron multiplicities averaged over $y$, one can obtain multiplicities that are only depending on one parameter, $x$. In order to get rid of of the charge dependence of the charged hadron multiplicities, the charged hadron multiplicity sum is studied. In Fig. \ref{pic:hsum}, the $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points).
 
 \begin{figure}[!h]
   \centering
@@ -376,11 +385,11 @@ By integrating over $z$ the charged hadron multiplicities averaged over $y$, one
 	\label{pic:hsum}
 \end{figure}
 
-The sum of charged hadron multiplicity $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The discrepancy in amplitude can be explained by the fact that the radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that all the points should be moved up by $\sim$6\%, which reconciles proton and isoscalar results within error bars, at least for low $x$. At high $x$ for the results on proton target, the problem comes likely from a bad description of semi-inclusive variable in the Monte-Carlo.
+The sum of charged hadron multiplicity $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The discrepancy in amplitude can be explained by the fact that the radiative correction at the time of the publication were not correct and with our nowadays knowledge of radiative corrections, we know that all the points should be moved up by $\sim$6\%, which reconciles proton and isoscalar results within error bars, at least for low $x$. At high $x$ for the results on proton target, the problem comes likely from a bad description of semi-inclusive variable in the Monte-Carlo like $\theta_h$. In the 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in the 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the aforementionned issue.
 
 \subsection{Sum of charged pion multiplicities}
 
-In Fig. \ref{pic:pisum}, the $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as :
+In Fig. \ref{pic:pisum}, the $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points). The same sum from HERMES is presented for a proton target (violet open points) and a deuteron target (green open points). For an isoscalar target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as :
 
 \begin{equation}
   \mathscr{M^{\pi^+}}+\mathscr{M^{\pi^-}} = \mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf} - \frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S} \left( \mathscr{D}^{\pi}_{fav} - \mathscr{D}^{\pi}_{unf} \right)
@@ -395,11 +404,11 @@ where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = 
   \label{pic:pisum}
 \end{figure}
 
-The sum of charged pion multiplicity $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The same reasoning concerning the radiative corrections can be done as in the hadron case, which reconciles at low $x$ at least the COMPASS results for a proton target and for an isoscalar target. The discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. Though this discrepancy cannot be explained by the mean $Q^2$ of multiplicity sets (of $\sim$ 3-5\% for COMPASS data and $\sim$ 1.5\% for HERMES) as there is no $Q^2$ evolution of the multiplicity sum, we observed a $W$ dependence of the multiplicity sum. The multiplicity sum is indeed increasing with $W$ and this might explain at least partly the observed discrepancy.
+The sum of charged pion multiplicity $\mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-}$ for a proton target should lie at the same level than COMPASS results for an isoscalar target. The same reasoning concerning the radiative corrections can be done as in the hadron case, which reconciles at low $x$ at least the COMPASS results for a proton target and for an isoscalar target. The discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. Though this discrepancy cannot be explained by the mean $Q^2$ of multiplicity sets (of $\sim$ 3-5\% for COMPASS data and $\sim$ 1.5\% for HERMES) as there is no $Q^2$ evolution of the multiplicity sum, we observed a $W$ dependence of the multiplicity sum. The multiplicity sum is indeed increasing with $W$ and this might explain at least partly the observed discrepancy. Another possible explanation comes from the fact that HERMES was operating at a lower $\nu$ than in COMPASS and it was found that there might be phase space limitation effects which may be larger in the case of HERMES than in COMPASS, while it is already seen for $z>0.75$ data for COMPASS\cite{MarcinPubli}. In addition, it has to be noted that we find again the high $x$ drop as in the unidentified hadron case which might be due to the previously discussed problems.
 
 \subsection{Sum of charged kaon multiplicities}
 
-In Fig. \ref{pic:ksum}, the $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points). For an isoscalar target, the charged kaon multiplicities integrated over $z$ can be expressed at LO pQCD as :
+In Fig. \ref{pic:ksum}, the $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS is depicted for a proton target (blue points) and for an isoscalar target (orange points). The same sum from HERMES is presented for a proton target (violet open points) and a deuteron target (green open points). For an isoscalar target, the charged kaon multiplicities integrated over $z$ can be expressed at LO pQCD as :
 
 \begin{equation}
   \mathscr{M^{K^+}}+\mathscr{M^{K^-}} = \frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S}
@@ -409,16 +418,17 @@ where $U$ = $u+\bar{u}+d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = 
 
 \begin{figure}[!h]
   \centering
+	\includegraphics[scale=0.5]{./gfx/Ks_noH.png}
   \includegraphics[scale=0.5]{./gfx/Ks.png}
   \caption{Sum of $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ from COMPASS for a proton target (blue closed points) and an isoscalar target (orange closed points) and from HERMES for a proton target (violet open points) and a deuteron target (green open points).}
   \label{pic:ksum}
 \end{figure}
 
-The sum of charged kaon multiplicity $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ for a proton target should be slightly ($\sim$5-10\%) above COMPASS results on isoscalar target. For the isoscalar results for kaons, contrary to hadrons and pions, an additive correction of $5\%$ was applied to the published results to take into account radiative correction as estimated at the time. The discrepancy with HERMES results, already seen in the isoscalar case, remains. As for the pions, the discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. They lie well below the COMPASS points and exhibit a different $x$ behaviour. Towards low $x$, COMPASS data show a flat behaviour, unlike the rise that is suggested by the HERMES data.
+The sum of charged kaon multiplicity $\mathscr{M}^{K^+}+\mathscr{M}^{K^-}$ for a proton target should be slightly ($\sim$5-10\%) above COMPASS results on isoscalar target. For the isoscalar results for kaons, contrary to hadrons and pions, an additive correction of $5\%$ was applied to the published results to take into account radiative correction as estimated at the time. The discrepancy with HERMES results, already seen in the isoscalar case, remains. As for the pions, the discrepancy between COMPASS results and HERMES results, both for a proton and deuteron targets, has to be noted. They lie well below the COMPASS points and exhibit a different $x$ behaviour. Towards low $x$, COMPASS data show a flat behaviour, unlike the rise that is suggested by the HERMES data. The explanations made for the pions concerning the discrepancies with HERMES are also valid for the kaons.
 
 \subsection{Sum of proton/antiproton multiplicities}
 
-In Fig. \ref{pic:psum}, the $\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ from COMPASS are depicted for a proton target (blue points) and for an isoscalar target (orange points).
+In Fig. \ref{pic:psum}, the $\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ from COMPASS is depicted for a proton target (blue points). This is the first time that this quantity is measured.
 
 \begin{figure}[!h]
   \centering
@@ -431,4 +441,4 @@ In Fig. \ref{pic:psum}, the $\mathscr{M}^{p}+\mathscr{M}^{\bar{p}}$ from COMPASS
 
 \section{Summary}
 
-All the results for a proton target for the sum seem to suffer from a drop at high $x$, particularly visible on hadrons and pions. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables like $\theta_h$. In the 2006 analysis, the high-$p_T$ tuning of the Monte-Carlo simulation was giving solid description for this variable when in the 2016 analysis, with the same tuning, there is a great discrepancy between data and Monte-Carlo that might play a role in the aforementionned issue.
+The final unidentified hadron ($h^{\pm}$), pion ($\pi^{\pm}$), kaon ($K^{\pm}$) and proton/antiproton ($p/\bar{p}$) multiplicities extracted from 2016 COMPASS data of muon deep inelastic scattering on a pure proton (lH$_2$) target were presented as a function of $z$ and in bins of $x$ and $y$. Averaging these results over $y$, two dimensional projection are obtained. The subsequent integration over $z$ allows the comparison of the sum and ration of charged hadron multiplicities with COMPASS results for an isoscalar target \cite{COMPASS2006Pi,COMPASS2006K} and with the HERMES experiment results \cite{HERMESMult}. For the ratio, every results are in agreement with the expectations relative to the COMPASS results for an isoscalar target. The discrepancy that was already observed for the kaon ratio between COMPASS and HERMES for a deuteron/isoscalar target is also present for a proton target. For the sum, the results for hadrons and pions differs from the expectations relative to the COMPASS results for an isoscalar target in the high $x$ region. Overall, all the results for a proton target for the sum seem to suffer from a drop at high $x$, particularly visible on hadrons and pions, which should be flat. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation and might probably be caused by a bad tuning of some hadron variables. Nevertheless, comparing with HERMES results, a great discrepancy is observed at low $x$ in the pion case while in the kaon case, a major discrepancy is observed for all $x$. The proton results should interest the community as there is at the moment no major data set released for them.

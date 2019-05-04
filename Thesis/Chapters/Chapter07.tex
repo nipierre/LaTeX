@@ -138,8 +138,6 @@ between the first and last bin in energy of 13.9 nB for a mean total cross-secti
 change in the cross-section, it has to be taken into account for a proper event generation.}\label{fig:gridxs}
 \end{figure}
 
-\newpage
-
 A solution to circumvent this problem is the use
 of a grid of cross-sections. This grid is initialized after a rough specification of the
 type of dispersion in energy of the considered beam.
@@ -156,14 +154,10 @@ the total cross-section), it has to be taken into account for a proper event gen
 
 \section{TDJANGOH Interface}
 
-In order to create a C++ class (called TDJANGOH) that plays the role of an interface, I had to modify some
-FORTRAN parts of DJANGOH, especially the input method. DJANGOH is working with an input
-file where codewords with set values are specified in order to configure the generator.
-This was not convenient for the idea of an interface. Thus I have drawn
-correspondances between Common Blocks in FORTRAN and structures in C++ so that I can specify
-values in the C++ structure and the change is repercuted in the FORTRAN code and vice-versa.
-It is useful to specify the values for the input but also to recover the results of the
-hadronization that are located in the LUJETS Common Block.
-The idea is that within TGEANT the user specifies the input for DJANGOH, the interface
-pass it to the generator and the interface recovers the results of the generator and gives
-it to TGEANT.
+In order to create a C++ class (called TDJANGOH) that plays the role of an interface, I had to modify some FORTRAN parts of DJANGOH, especially the input method. DJANGOH is working with an input file where codewords with set values are specified in order to configure the generator. This was not convenient for the idea of an interface. Thus I have drawn correspondances between Common Blocks in FORTRAN and structures in C++ so that I can specify values in the C++ structure and the change is repercuted in the FORTRAN code and vice-versa. It is useful to specify the values for the input but also to recover the results of the hadronization that are located in the LUJETS Common Block. The idea is that within TGEANT the user specifies the input for DJANGOH, the interface pass it to the generator and the interface recovers the results of the generator and pass it to TGEANT (see Chapter \ref{ch:MC}).
+
+%----------------------------------------------------------------------------------------
+
+\section{Summary}
+
+The DJANGOH event generator including radiative events has been modified to simulate $\mu p$ interactions at the COMPASS experiment. After this modification, several consistency checks were performed. All were conclusive. Some further improvements were brought to the generator. The generator was designed to only work with one input energy and now can work with multiple input energies thanks to a system of cross-section grid binned in beam energy. DJANGOH being a FORTRAN framework at the age of C++, a C++ shell was built as an C++ interface to DJANGOH named TDJANGOH.
