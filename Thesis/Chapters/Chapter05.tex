@@ -129,28 +129,28 @@ The selection steps are similar the selection of the $K^0$/$\Lambda$ candidates.
 
 \section{RICH Particle Identification}
 
-The goal of the selection is a clean pion and kaon sample. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis. The likelihood cuts are listed in Table. \ref{tab:LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{tab:LHlessstrict}. Similar cuts were used in the analysis of the hadron multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination. The RICH particle identification efficiency is studied in the momentum range of 10 GeV/c $ \leq p \leq $ 50 GeV/c. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ 17 GeV protons are still below the threshold of
+The goal of the selection is a clean pion and kaon sample. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions. These stricter cuts are an improvement compared to previous COMPASS analysis and are used in the multiplicity analysis. The likelihood cuts are listed in Table. \ref{tab:LHcut}. Also less stricter likelihood cuts are used, which are listed in Table \ref{tab:LHlessstrict}. Similar cuts were used in the analysis of the hadron multiplicities using 2006 data. A further improvement is the inclusion of protons in the RICH particle identification efficiency determination. The RICH particle identification efficiency is studied in the momentum range of 10 GeV/$c$ $ \leq p \leq $ 50 GeV/$c$. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ 17 GeV protons are still below the threshold of
 
 \begin{equation}
   p_{thr,i} = \frac{m_i}{ \sqrt{n^{2}-1} }
 \end{equation}
 
-where $n$ is the refractive index. This is shown in Fig. \ref{pic:RefIndex} where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. As the momentum range is restricted to momenta larger than 10 GeV/c, no electron rejection can be performed. In this momentum range the Cherenkov angle for pions and electrons are too close to one another. Muons can also be not rejected using likelihood cuts as the Cherenkov angle for muon and pion is too close to one another. But they are identified using cuts on the radiation length passed by a particle. The identification of pions, kaons and protons above the momentum threshold is done by comparing the likelihood values with one another. The likelihood cuts for protons require its likelihood to be the largest one. These cuts are also given in Table. \ref{tab:LHcut}. Below the momentum threshold, protons do not emit Cherenkov light. Therefore, the likelihood values are used to test whether the detected light is consistent with random noise in the detector (background). In order to avoid possible problems due to the uncertainty on the reconstructed momentum or the uncertainty of the refractive index of the RICH gas, a region of $\pm$5 GeV/c around the proton threshold is used, where both hypothesis are applied for proton identification.
+where $n$ is the refractive index. This is shown in Fig. \ref{pic:RefIndex} where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. As the momentum range is restricted to momenta larger than 10 GeV/$c$, no electron rejection can be performed. In this momentum range the Cherenkov angle for pions and electrons are too close to one another. Muons can also be not rejected using likelihood cuts as the Cherenkov angle for muon and pion is too close to one another. But they are identified using cuts on the radiation length passed by a particle. The identification of pions, kaons and protons above the momentum threshold is done by comparing the likelihood values with one another. The likelihood cuts for protons require its likelihood to be the largest one. These cuts are also given in Table. \ref{tab:LHcut}. Below the momentum threshold, protons do not emit Cherenkov light. Therefore, the likelihood values are used to test whether the detected light is consistent with random noise in the detector (background). In order to avoid possible problems due to the uncertainty on the reconstructed momentum or the uncertainty of the refractive index of the RICH gas, a region of $\pm$5 GeV/$c$ around the proton threshold is used, where both hypothesis are applied for proton identification.
 
 \begin{table}[!h]
   \caption{Likelihood cuts for pion, kaon and protons}
   \label{tab:LHcut}
   \centering
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lccccc}
     \hline
-     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
+     & PION & KAON & \multicolumn{3}{c}{PROTON} \\
     \hline
-    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
-    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
-    LH(\textit{i})/LH($\pi$) & --- & > 1.08 & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
-    LH(\textit{i})/LH(bg) & > 1.0 & > 1.24 & --- & > 1.0 \\
+    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & \multicolumn{2}{c}{$p$ $\leq$ $p_{p,thr}$} & $p$ > $p_{p,thr}$ \\
+     & $\pi$ & $K$ & $p$ & $\bar{p}$ & $p/\bar{p}$ \\
+    LH($\pi$)/LH(2$^{nd}$) & > 1.02 & --- & --- & --- & --- \\
+    LH($\pi$)/LH(bg) & > 2.02 & --- & < 2.2 & < 2.1 & < 1.\\
+    LH($K$)/LH(2$^{nd}$) & --- & > 1.08 & --- & --- & --- \\
+    LH($K$)/LH(bg) & --- & > 2.08 & < 2.9 & < 2.8 & < 1. \\
     \hline
   \end{tabular}
 \end{table}
@@ -159,16 +159,16 @@ where $n$ is the refractive index. This is shown in Fig. \ref{pic:RefIndex} wher
   \caption{Less strict likelihood cuts for pion, kaon and protons}
   \label{tab:LHlessstrict}
   \centering
-  \begin{tabular}{lcccc}
+  \begin{tabular}{lccccc}
     \hline
-     & PION & KAON & \multicolumn{2}{c}{PROTON} \\
+     & PION & KAON & \multicolumn{3}{c}{PROTON} \\
     \hline
-    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & $p$ $\leq$ $p_{p,thr}$ & $p$ > $p_{p,thr}$ \\
-    Likelihood type \textit{i} & $\pi$ & $K$ & bg & $p$ \\
-    LH(\textit{i})/LH($\pi$) & --- & > 1.0 & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH(K) & > 1.0 & --- & > 1.0 & > 1.0 \\
-    LH(\textit{i})/LH($p$) & > 1.0 & > 1.0 & --- & --- \\
-    LH(\textit{i})/LH(bg) & > 1.0 & > 1.07 & --- & > 1.0 \\
+    MOMENTUM & $p$ > $p_{\pi,thr}$ & $p$ > $p_{K,thr}$ & \multicolumn{2}{c}{$p$ $\leq$ $p_{p,thr}$} & $p$ > $p_{p,thr}$ \\
+     & $\pi$ & $K$ & $p$ & $\bar{p}$ & $p/\bar{p}$ \\
+    LH($\pi$)/LH(2$^{nd}$) & > 1. & --- & --- & --- & --- \\
+    LH($\pi$)/LH(bg) & > 2. & --- & < 2.3 & < 2.2 & < 1. \\
+    LH($K$)/LH(2$^{nd}$) & --- & > 1.06 & --- & --- & ---\\
+    LH($K$)/LH(bg) & --- & > 2.06 & < 3. & < 2.9 & < 1. \\
     \hline
   \end{tabular}
 \end{table}
@@ -185,7 +185,7 @@ where $n$ is the refractive index. This is shown in Fig. \ref{pic:RefIndex} wher
 The particle identification efficiency of the RICH is studied as a function of the hadron phase space, which is given by the hadron momentum and the polar angle at the entrance of the RICH. This was already studied before, for example in References \cite{} and \cite{}. The binning used for this study is similar to a previous analysis described in Reference \cite{}. A fine binning is used for the momentum dependence since the Cherenkov effect depends on this variable. For the dependence on the polar angle, a coarse binning is used, since only a weak dependence is observed. The binning is given by:
 
 \begin{itemize}
-  \item Momentum $p_h$ (GeV/c) : \{3,5,7,10,12,13,15,17,19,22,25,27,30,35,40,50\}
+  \item Momentum $p_h$ (GeV/$c$) : \{3,5,7,10,12,13,15,17,19,22,25,27,30,35,40,50\}
   \item Angle $\theta_h$ (rad) : \{0,0.01,0.04,0.12,0.3\}
 \end{itemize}
 
@@ -214,7 +214,7 @@ The different elements are determined by $\varepsilon(t \rightarrow i)$ = $N(t \
 For each of these groups, the invariant $K^0$ mass spectra are shown in Fig. \ref{pic:K0MassSpectra}, for example, and the number of events in the peak and the background are determined by a simultaneous fit of all five spectra. These spectra are described using two Gaussian distributions with the same mean for the signal, $f_{sig}$, and a polynomial to describe the background, $f_{bg}$. Their expressions are given in Table. \ref{tab:FunctionForm}. The two Gaussian distributions account for the different resolutions of the two spectrometer stages. The fitted function for each of the groups is given by
 
 \begin{equation}
-  f(x) = N_{sig} \dot f_{sig} + N_{bg} \dot f_{bg}
+  f(x) = N_{sig} \cdot f_{sig} + N_{bg} \cdot f_{bg}
 \end{equation}
 
 where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background events. Here, the same width, $\sigma_1$ and $\sigma_2$, of the two Gaussian distributions was used for all five spectra.
@@ -237,7 +237,7 @@ where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background ev
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.3]{./gfx/K0MassSpectra.png}
-	\caption{Mass spectra for $K^0$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right : all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [25,27] GeV/$c^2$ and in the angle in the range [0.01,0.04].}
+	\caption{Mass spectra for $K^0$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right : all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [25,27] GeV/$c$ and in the angle in the range [0.01,0.04].}
 	\label{pic:K0MassSpectra}
 \end{figure}
 
@@ -247,7 +247,7 @@ Also the ratio $\delta$ of the amount of events in both Gaussian distributions i
   N^{all}(K^0) = N^{\pi}(K^0) + N^{K}(K^0) + N^{p}(K^0) + N^{noID}(K^0)
 \end{equation}
 
-where $N_i(K^0)$ (i = $\pi$, $K$, $p$, $noID$) is the number of $K^0$ obtained from the histogram where the pion is identified as $i$. This results in 16 free parameters of the fit. The same method is used in the case of kaons and protons. The main difference between those fits and the one for the $K^0$ sample is the description of the signal and the background. The functions describing both are also given in Table. \ref{tab:FunctionForm}. Again the parameters describing the shape are the same in all five spectra and the fit parameters  describing the integrals of the functions are used as free parameters, except for the parameter of the mass spectrum including all events. This results in 15 free parameters for the fit of the $\Phi$ sample and in 15 free parameters for the fit of the $\Lambda$ sample. Examples of the fits performed for the $\Phi$ and $\Lambda$ samples are shown in Figs. \ref{pic:PhiMassSpectra} and \ref{pic:LambdaMassSpectra}. The fits show the results for one momentum bin (25 GeV/c2 $< p <$ 27 GeV/c2) and angular bin (0.01 $< \theta <$ 0.04), which was also shown for the $K^0$ sample.
+where $N_i(K^0)$ (i = $\pi$, $K$, $p$, $noID$) is the number of $K^0$ obtained from the histogram where the pion is identified as $i$. This results in 16 free parameters of the fit. The same method is used in the case of kaons and protons. The main difference between those fits and the one for the $K^0$ sample is the description of the signal and the background. The functions describing both are also given in Table. \ref{tab:FunctionForm}. Again the parameters describing the shape are the same in all five spectra and the fit parameters  describing the integrals of the functions are used as free parameters, except for the parameter of the mass spectrum including all events. This results in 15 free parameters for the fit of the $\Phi$ sample and in 15 free parameters for the fit of the $\Lambda$ sample. Examples of the fits performed for the $\Phi$ and $\Lambda$ samples are shown in Figs. \ref{pic:PhiMassSpectra} and \ref{pic:LambdaMassSpectra}. The fits show the results for one momentum bin (25 GeV/$c$ $<$ $p_h$ $<$ 27 GeV/$c$) and angular bin (0.01 $< \theta <$ 0.04), which was also shown for the $K^0$ sample.
 
 \begin{figure}[!h]
   \centering
@@ -281,8 +281,8 @@ where $u_j$ are the diagonal elements of the covariance matrix, $u(i,j)$ are the
 
 \section{Results} \label{sec:Results}
 
-The results for the RICH particle identification efficiency are shown in Figs. \ref{pic:Effpip} to \ref{pic:Effpb} for the various particle types and charges for the stricter likelihood cuts. In each figure, the momentum dependence for the different angular bins is shown. The efficiencies are weakly dependent on the angle while it is more strongly correlated with the momentum, especially in the region near the threshold.
-The RICH performs a correct identification of pions in more than 95\% of the cases for momenta below 30 GeV/$c^2$ and the probability for a misidentification of a pion as a kaon is below $\sim$ 1\%. For kaons, near the threshold, a strong momentum dependence of the efficiencies is observed. At higher momenta the correct identification is given in $\sim$ 95\% of the cases. For protons, the momentum dependence around threshold level is even stronger. Below the threshold, protons are identified correctly in 50\% of the cases. Above the threshold numbers rise to $\sim$ 95\%. When using less strict likelihood cuts, the results are similar (Figs. \ref{pic:Lesspip} to \ref{pic:Lesspb}). The correct identification of pions below 30 GeV/$c^2$ is done in 95\% of the cases. Due to less strict likelihood cuts the misidentification of pions as kaons is a bit larger but still below 3\% for momenta higher than 30 GeV/$c^2$. For a larger momenta a larger fraction of pions is identified as kaons, which got no identification for stricter cuts. For kaons and protons the results are similar : the probability of correct identification for kaons is a bit smaller but still above 95\%.
+The results for the RICH particle identification efficiency are shown in Figs. \ref{pic:Effpip} to \ref{pic:Effpm} for the various particle types and charges for the stricter likelihood cuts. In each figure, the momentum dependence for the different angular bins is shown. The efficiencies are weakly dependent on the angle while it is more strongly correlated with the momentum, especially in the region near the threshold.
+The RICH performs a correct identification of pions in more than 95\% of the cases for momenta below 30 GeV/$c^2$ and the probability for a misidentification of a pion as a kaon is below $\sim$ 1\%. For kaons, near the threshold, a strong momentum dependence of the efficiencies is observed. At higher momenta the correct identification is given in $\sim$ 95\% of the cases. For protons, the momentum dependence around threshold level is even stronger. Below the threshold, protons are identified correctly in 50\% of the cases. Above the threshold numbers rise to $\sim$ 95\%. When using less strict likelihood cuts, the results are similar (Figs. \ref{pic:Effpipless} to \ref{pic:Effpmless}). The correct identification of pions below 30 GeV/$c^2$ is done in 95\% of the cases. Due to less strict likelihood cuts the misidentification of pions as kaons is a bit larger but still below 3\% for momenta below 30 GeV/$c^2$. For a larger momenta a larger fraction of pions is identified as kaons, which got no identification for stricter cuts. For kaons and protons the results are similar : the probability of correct identification for kaons is a bit smaller but still above 95\%.
 
 \begin{figure}[!p]
   \centering
@@ -311,7 +311,7 @@ The RICH performs a correct identification of pions in more than 95\% of the cas
   \includegraphics[scale=0.38]{./gfx/Kp_p.pdf}
   \includegraphics[scale=0.38]{./gfx/Kp_u.pdf}
 	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^+$.}
-	\label{pic:Effpip}
+	\label{pic:Effkp}
 \end{figure}
 
 \begin{figure}[!p]
@@ -321,7 +321,7 @@ The RICH performs a correct identification of pions in more than 95\% of the cas
   \includegraphics[scale=0.38]{./gfx/Km_p.pdf}
   \includegraphics[scale=0.38]{./gfx/Km_u.pdf}
 	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^-$.}
-	\label{pic:Effpim}
+	\label{pic:Effkm}
 \end{figure}
 
 \begin{figure}[!p]
@@ -331,7 +331,7 @@ The RICH performs a correct identification of pions in more than 95\% of the cas
   \includegraphics[scale=0.38]{./gfx/pp_p.pdf}
   \includegraphics[scale=0.38]{./gfx/pp_u.pdf}
 	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $p$.}
-	\label{pic:Effpip}
+	\label{pic:Effpp}
 \end{figure}
 
 \begin{figure}[!p]
@@ -341,14 +341,74 @@ The RICH performs a correct identification of pions in more than 95\% of the cas
   \includegraphics[scale=0.38]{./gfx/pm_p.pdf}
   \includegraphics[scale=0.38]{./gfx/pm_u.pdf}
 	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\bar{p}$.}
-	\label{pic:Effpim}
+	\label{pic:Effpm}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/pip_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pip_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pip_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pip_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^+$ for less stricter likelihood cuts.}
+	\label{pic:Effpipless}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/pim_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pim_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pim_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pim_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^-$ for less stricter likelihood cuts.}
+	\label{pic:Effpimless}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/Kp_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Kp_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Kp_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Kp_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^+$ for less stricter likelihood cuts.}
+	\label{pic:Effkpless}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/Km_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Km_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Km_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/Km_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^-$ for less stricter likelihood cuts.}
+	\label{pic:Effkmless}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/pp_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pp_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pp_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pp_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $p$ for less stricter likelihood cuts.}
+	\label{pic:Effppless}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.38]{./gfx/pm_pi_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pm_K_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pm_p_less.pdf}
+  \includegraphics[scale=0.38]{./gfx/pm_u_less.pdf}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\bar{p}$ for less stricter likelihood cuts.}
+	\label{pic:Effpmless}
 \end{figure}
 
 \newpage
 
 \section{Problem at high $z$}
 
-At some point it was discovered that in a particular kinematic region (35 GeV < $p_h$ < 40 GeV, $z$ > 0.7), non-linearities exist between the likelihood values of kaons and pions (Fig. \ref{pic:NonLin}). Instead of the expected separation between pions and kaons at $LH_{\pi} = LH_K$, pions are found at $LH_{\pi} < LH_K$.
+At some point we discovered that in a particular kinematic region (35 GeV < $p_h$ < 40 GeV, $z$ > 0.7), non-linearities exist between the likelihood values of kaons and pions (Fig. \ref{pic:NonLin}). Instead of the expected separation between pions and kaons at $LH_{\pi} = LH_K$, pions are found at $LH_{\pi} < LH_K$.
 
 \begin{figure}[!h]
   \centering
@@ -357,7 +417,7 @@ At some point it was discovered that in a particular kinematic region (35 GeV < 
 	\label{pic:NonLin}
 \end{figure}
 
-The larger the likelihood values are, the larger the effect is. This behaviour was already seen in 2006, 2007 and 2011 data (Fig. \ref{pic:NonLinother}). It was shown that the probability for the misidentification of pions as kaons differs from the value given in the RICH tables in this kinematic region using the $p_T$ spectra \cite{MarcinNote}. In order to see if the non-linearities are taken correctly into account in the RICH tables, the likelihood values for pions and kaonsare compared using the $K^0$ sample for high momenta and high $z$. This comparison is shown in Fig. \ref{pic:K0sample}, highlighting the fact that the problematic region is not covered by the $K^0$ sample and therefore the RICH table are not valid in this kinematic region. A new sample is then necessary for pions and it is obtained by using the $\rho^0$ decay into two pions. This sample contains, contrary to the $K^0$ one, events at high momenta and high $z$, which cover our region of interest. Moreover this sample shows the same symptoms as the SIDIS one (Fig. \ref{rho0}).
+The larger the likelihood values are, the larger the effect is. This behaviour was already seen in 2006, 2007 and 2011 data (Fig. \ref{pic:NonLinother}).
 
 \begin{figure}[!h]
   \centering
@@ -367,43 +427,75 @@ The larger the likelihood values are, the larger the effect is. This behaviour w
 	\label{pic:NonLinother}
 \end{figure}
 
-\section{PID using $\rho^0$}
+It was shown that the probability for the misidentification of pions as kaons differs from the value given in the RICH tables in this kinematic region using the $p_T$ spectra \cite{MarcinNote}. In order to see if the non-linearities are taken correctly into account in the RICH tables, the likelihood values for pions and kaonsare compared using the $K^0$ sample for high momenta and high $z$. This comparison is shown in Fig. \ref{pic:K0sample}, highlighting the fact that the problematic region is not covered by the $K^0$ sample and therefore the RICH table are not valid in this kinematic region.
 
-In order to calculate the RICH tables at high momenta and high $z$, a sample of $\rho^0$ candidates decaying into two charged pions is used. The selection is described in the following.
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.2]{./gfx/RICHLH2006.png}
+  \includegraphics[scale=0.3]{./gfx/RICHLH2011.png}
+	\caption{Likelihood for pions as a function of the likelihood for kaons using (from left to right) 2006, 2007 and 2011 data.}
+	\label{pic:K0sample}
+\end{figure}
 
-\subsection{Data Selection}
-
-The $\rho^0$ meson decay length is too short to separate the primary and the decay vertices. Therefore all outgoing particles from a primary vertex are taken into account for the search of possible $\rho^0$ mesons. This results in a large combinatorial background like in the case of the $\Phi$ mesons. The branching ratio of the decay into two pions is $\sim$ 100\%.
-
-\begin{enumerate}
-  \item Selection of possible good events with $\rho^0$ mesons
-  \begin{itemize}
-    \item At least 3 outgoing particles including scattered muon
-    \item Loop over all outgoing particles
-    \item Oppositely charged pairs of hadrons (none is a muon)
-  \end{itemize}
-  \item Select good hadron tracks
-  \begin{itemize}
-    \item First measured position in front of SM1
-    \item Last measured position behind SM1
-    \item Skip possible muon candidates with last measured positions $>$ 3300 cm or $X/X_0$ $>$ 10
-    \item Transverse momentum with respect to the mother particle larger than 23 MeV to suppress electrons
-    \item Good reconstructed track with $\chi^2$/ndf $<$ 10
-  \end{itemize}
-  \item Additional cuts
-  \begin{itemize}
-    \item $p_h$ $>$ 1 GeV/$c$
-    \item Mass difference smaller than 250 MeV/$c^2$ between the $\rho^0$ mass and the invariant mass of the two decay hadrons assuming the pion masse.
-    \item Invariant mass of the two hadrons smaller than 1.04 MeV/$c^2$ assuming the kaon mass to supress $\Phi$ mesons.
-  \end{itemize}
-\end{enumerate}
-
-The selection steps are similar to the selection of the $\Phi$ candidates. In the first step, primary vertices with oppositely charged hadron pairs are selected. During the second selection step, only particles with a measured momentum are kept and possible electrons are removed with a cut on low transverse momentum. In addition possible muon candidates are removed. Similar to the selection of $\Phi$ meson candidates, a large combinatorial background is obtained.
-
-\subsection{Fit and results}
-
+These non-linearities have been adressed recently by the COMPASS RICH group. They have been reporting that the mirrors were not placed at the right place. A refinement of the alignement has an effect on the refractive index extraction and subsequently improving the pion versus kaon likelihoods picture, apparently curing the non-linearities. Further tests must still be done in order to quantify the improvement.
 
 \section{Comparison of the efficiencies of 2006 to 2016}
+
+In order to see if the RICH has been stable in terms of efficiency and purity through time, it is possible to compare the RICH efficiencies for 2006, 2011 and 2016 (Fig. \ref{pic:comppip} to \ref{pic:comppm}). All these effiencies are extracted using the same likelihood cuts. The results point to a good stability of the RICH through time, even improving for some efficiencies, like pion identification for example.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/pip2pip.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pip2kp.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pip2pp.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^+$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:comppip}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/pim2pim.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pim2km.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pim2pm.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^-$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:comppim}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/kp2pip.png}
+  \includegraphics[scale=0.35]{./gfx/t1/kp2kp.png}
+  \includegraphics[scale=0.35]{./gfx/t1/kp2pp.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^+$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:compkp}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/km2pim.png}
+  \includegraphics[scale=0.35]{./gfx/t1/km2km.png}
+  \includegraphics[scale=0.35]{./gfx/t1/km2pm.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $K^-$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:compkm}
+\end{figure}
+
+\begin{figure}[!p]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/pp2pip.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pp2kp.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pp2pp.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $p$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:comppp}
+\end{figure}
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.35]{./gfx/t1/pm2pm.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pm2km.png}
+  \includegraphics[scale=0.35]{./gfx/t1/pm2pm.png}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\bar{p}$ in the bin 0.01 $<$ $\theta$ $<$ 0.04 for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\label{pic:comppm}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 
