@@ -5,14 +5,13 @@
 
 %----------------------------------------------------------------------------------------
 
-The particle identification is an important step in the hadron multiplicities extraction.
-In the COMPASS spectrometer, it is performed by a large Ring Imaging Cherenkov detector (RICH) capable of separating pions, kaons and protons in a wide momentum range ( $\sim$2 GeV/c to $\sim$60 GeV/c) and an angular overture of 0.01-0.4 radians.
+The particle identification is an important step in the hadron multiplicity extraction. In the COMPASS spectrometer it is performed by a large Ring Imaging Cherenkov detector (RICH) capable of separating pions, kaons and protons in a wide momentum range ( $\sim$$2$ GeV/$c$ to $\sim$$55$ GeV/$c$) and an angular aperture of $0.01$-$0.4$ radians.
 
 In this chapter the RICH detection principle is presented as well as the description of its main components : the gas and mirror system, the photon detectors, the readout electronics and the data reconstruction.
 
 \section{Cherenkov effect}
 
-When a charged particle is moving through a transparent medium with a speed $v$ greater than the speed of light ($v_{light} = c/n$, $n$ being the medium refractive index), a radiation known as \textit{Cherenkov radiation} is produced by the medium.
+When a charged particle is moving through a transparent medium with a speed v greater than the speed of light (v$_{light} = c/n$, $n$ being the medium refractive index), a radiation known as \textit{Cherenkov radiation} is produced by the medium.
 
 \begin{figure}[!h]
   \centering
@@ -21,23 +20,23 @@ When a charged particle is moving through a transparent medium with a speed $v$ 
 	\label{pic:CherenkovGeom}
 \end{figure}
 
-The Cherenkov radiation produced by a particle with a mass $M_h$ and momentum $p_h$ is emitted only at a particular angle $\Theta_C$ with respect to the particle track (Fig. \ref{pic:CherenkovGeom}).
+The Cherenkov radiation produced by a particle with a mass $M_h$ and momentum $p_h$ is emitted in a narrow cone around a particular angle $\Theta_C$ with respect to the particle track (Fig.~\ref{pic:CherenkovGeom}). The wavelength of these radiations goes from visible to UV.
 
-The coherence between waves (emitted between A and B) is achieved when the particle traverses $\overline{AB}$ at the same time as the radiation travels from A to C. The opening angle $\Theta_C$ is defined geometrically in Eq. \ref{eq:thetaC} with $\beta$ being the particle velocity.
-
+The coherence between waves (emitted between A and B) is achieved, when the particle traverses $\overline{AB}$ at the same time as the radiation travels from A to C. The opening angle $\Theta_C$ is defined geometrically in Eq.~\ref{eq:thetaC} with $\beta$ being the particle velocity over the speed of light.
+%
 \begin{equation}
-  cos\theta_C = \frac{c/n \Delta t}{\beta c \Delta t} = \frac{1}{n\beta}
+  cos\Theta_C = \frac{c/n \Delta t}{\beta c \Delta t} = \frac{1}{n\beta}
   \label{eq:thetaC}
 \end{equation}
-
+%
 Some limit cases can be devised :
 \begin{enumerate}
   \item Threshold limit : if $\beta \leq 1/n$ no Cherenkov radiation will be emitted.
   \item Maximum emission angle : $cos \Theta_C = \frac{1}{n}$ is reached for ultra-relativistic particles ($\beta = 1$).
 \end{enumerate}
 
-In order to perform a particle identification with a RICH detector, two variables are needed : $\Theta_C$ and $p_h$. $\Theta_C$ is measured when the photons emitted by the particle is detected. Different techniques can be used to recollect and transport the produced photons where light detectors are placed. The resulting image in the detector plane is a ring with radius propotional to $\Theta_C$. $p_h$ is measured independently by the spectrometer. The particle identification is done by a mass assignment given by :
-
+In order to perform particle identification with a RICH detector, two variables have to be measured : $\Theta_C$ and $p_h$. The angle can be measured detecting the emitted photons. Different techniques can be used to collect and transport the produced photons to the location of the light detectors. The resulting image in the detector plane is a ring, only for specific techniques, if one does a proper optical image. In such a case the ring has a radius proportional to $\Theta_C$. $p_h$ is measured independently by the spectrometer. The particle mass can thus be calculated by :
+%
 \begin{equation}
   M_h = p_h \sqrt{n^2 cos^2 \theta_C -1}
 \end{equation}
@@ -46,17 +45,11 @@ In order to perform a particle identification with a RICH detector, two variable
 
 \section{The COMPASS RICH detector}
 
-The COMPASS RICH detector is designed to distinguish between pions, kaons and protons at high-intensities. The momentum range covers the pion Cherenkov threshold ($\sim$2.67 GeV/c) to $\sim$ 60 GeV/c.
+The COMPASS RICH detector is designed to distinguish between pions, kaons and protons at high intensities. The momentum range covers the pion Cherenkov threshold ($\sim$ $2.67$ GeV/c) to $\sim$ $55$ GeV/c.
 
-The RICH is a large size detector ($\sim$ 3 x 5 x 6 m$^3$) filled with a gaseous radiator. Two spherical mirror systems reflect the photons into an array of photon detectors (multiwire proportional chambers and multianode photomultipliers tubes), sensitive to a large wavelength range, from visible to far UV, placed outside the spectrometer acceptance, one above and one below the beam line. The whole structure of the detector vessel is built mainly in thin aluminium in order to minimize the material budget.
+The RICH is a large size detector ($\sim$ $3$ x $5$ x $6$ m$^3$, see Fig.~\ref{pic:RICHview}) filled with a gaseous radiator. Two spherical mirror systems reflect the photons into an array of photon detectors sensitive to a large wavelength range, from visible to far UV, placed outside the spectrometer acceptance, one above and one below the beam line. The goal is to count as many photons as possible with a good spacial resolution. The whole structure of the detector vessel is built mainly in thin aluminium in order to minimize the material budget.
 
-\subsection{Gas System}
-
-One of the principal elements of a RICH detector is the radiator. At COMPASS it is a gas, C$_4$F$_10$. It has a refractive index of n $\approx$ 1.0015 and a low chromaticity$^(explain in footnote)$ (d$n$/dE $\sim$ 5.10$^{-5}$ eV$^{-1}$). These characteristics allow the particle identification (PID) to be performed in the aforementioned wide momentum range.
-
-The propagation of the Cherenkov photons in the vessel can be affected by the presence of water vapor and oxygen (high UV light absorption cross section). In order to remove these impurities, the gas is constantly circulating and filtered at a constant pressure (1 mbar higher than the atmospheric pressure) in a dedicated gas system\cite{}. The overpressure of the vessel is needed to prevent the air contamination and to avoid mechanical stress to the detector, given its large size. Other circulation system (known as \textit{fast circulation} system) allows a reshuffling of the gas inside the vessel, to avoid stratification that may cause a gradient in the value of the reffractive index from top to bottom.
-
-In order to absorb the photon emitted by the muon beam, a 10 cm diameter pipe filled with helium is positioned inside the vessel on the beam path.
+Until $2004$, MultiWire Proportional Chambers (MWPC) equipped with solid-state CsI photo-cathodes were used to detect Cherenkov photons. The gains of the MWPC operation was limited. The first stage of the electronic readout was characterized by a long integration time, which was a limiting factor in the COMPASS environment as there is a high-rate uncorrelated background due to the large muon halo beam. Moreover, the long base-line restoration time generated a non-negligible dead time. To overcome these limitations, the central region that covers $25$\% of the photo-detection surface was replaced with MultiAnode PhotoMultiplier Tubes (MAPMT). They are intrisically fast and have better time resolutions.
 
 \begin{figure}[!h]
   \centering
@@ -65,11 +58,19 @@ In order to absorb the photon emitted by the muon beam, a 10 cm diameter pipe fi
 	\label{pic:RICHview}
 \end{figure}
 
+\subsection{Gas System}
+
+One of the principal elements of a RICH detector is the radiator. At COMPASS it perfluorobutane (C$_4$F$_{10}$). It has a refractive index of n $\approx$ $1.0015$ and a low chromaticity\footnote{Dependence of the refractive index of a dielectric medium on the photon wavelength \cite{Dispersion}} ($dn/dE_{\gamma}$ $\sim$ $5.10^{-5}$ eV$^{-1}$). These characteristics allow the particle identification (PID) to be performed in the aforementioned wide momentum range.
+
+The propagation of the Cherenkov photons in the vessel can be affected by the presence of water vapor and oxygen (high UV light absorption cross section). In order to remove these impurities, the gas is constantly circulating and filtered at a constant pressure (1 mbar higher than the atmospheric pressure) in a dedicated gas system \cite{RICHGas}. The overpressure of the vessel is needed to prevent air contamination and to avoid mechanical stress to the detector, given its large size. Other circulation system (known as \textit{fast circulation} system) allows a reshuffling of the gas inside the vessel : as perfluorobutane has a density of $11.21$ kg/m$^3$ it avoids stratification that may cause a gradient in the value of the refractive index from top to bottom.
+
+In order to absorb the photon emitted by the muon beam, a $10$ cm diameter pipe filled with helium is positioned inside the vessel along the beam.
+
 \subsection{Mirror System}
 
-The RICH optical system covers an area of $\sim$ 21 m$^2$ and consists of two spherical surfaces, each one containing 58 spherical mirrors of different shapes (34 hexagons and 24 pentagons). The mirror pattern is shown in Fig. \ref{pic:RICHview}. All the mirrors have a reflectance above 80\% in the UV region.
+The RICH optical system covers an area of $\sim$ $21$ m$^2$ and consists of two spherical surfaces, each one containing $58$ spherical mirrors of different shapes ($34$ hexagons and $24$ pentagons). The mirror pattern is shown in Fig.~\ref{pic:RICHmirrors}. All the mirrors have a reflectance above $80$\% in the UV region.
 
-The mirror system has a radius of curvature of 6.6 m. The photon image is focused outside the spectrometer acceptance where the photon detectors are located. As the radius of the curvature is not the same for each mirror ($R$ = 6600 $\pm$ 1\% mm), the reflected image may be slightly blurred. This effect is more pronounced for particles at large angles : this aberration contributes to the dispersion of the photon angle with respect to the angle of emission, which affects the detection resolution.
+The mirror system has a radius of curvature of $6.6$ m. The photon image is focused outside the spectrometer acceptance where the photon detectors are located. As the radii of the curvature have a scatter of $1$\% (R = $6600\pm66$ mm), the reflected image is slightly blurred. This effect is more pronounced for particles at large angles \cite{RICHMirror} : this aberration contributes to the dispersion of the photon angle with respect to the angle of emission, which affects the detection resolution \cite{RICHPID}.
 
 \begin{figure}[!h]
   \centering
@@ -80,75 +81,41 @@ The mirror system has a radius of curvature of 6.6 m. The photon image is focuse
 
 \subsection{Photon Detectors}
 
-The photon detector array consists of two symmetric parts with respect to the beam line, each one is composed by 8 modules. The modules in the external regions are MultiWire Proportional Chambers (MWPC) equipped with solid state CsI photocathodes\cite{}. The central area is composed by MultiAnode Photomultiplier Tubes (MAPMT)\cite{} coupled to individual telescopes of fused silica lenses. The use of two different detector types employing different different photon converters results in the detection of photons in two wavelength regions : < 200 nm for MWPCs and $\sim$ 200 - 650 nm for MAPMT. The low momentum particles are mainly detected by the outer part (MWPC) while the high momentum ones are detected by the central part (MAPMT).
+The photon detector array consists of two symmetric parts with respect to the beam line, each one is composed by $8$ modules located at the mirror focal plan. The modules in the external regions are MultiWire Proportional Chambers (MWPC) equipped with solid state CsI photo-cathodes \cite{RICHLimits}. The central area is composed by MultiAnode Photomultiplier Tubes (MAPMT) \cite{RICHUpgrade} coupled to individual telescopes of fused silica lenses. The use of two different detector types employing different different photon converters results in the detection of photons in two wavelength regions : < $200$ nm for MWPCs and $\sim$ $200$ - $650$ nm for MAPMT. The low momentum particles are mainly detected by the outer part (MWPC) while the high momentum ones are detected by the central part (MAPMT). Only the central part is used in the following analysis.
 
-The spherical mirrors will focalize all the photons emitted parallel in the same point. A fortiori the image reflection in the photon detectors will be a ring. An example of a RICH event is shown in Fig. \ref{pic:RICHEvent}.
+The spherical mirrors will focus all the photons emitted parallel in the same point. Thus the Cherenkov light cone of our particle will result in a ring at the detector plan. The distribution of photons in the detectors for one physics event is shown in Fig.~\ref{pic:RICHEvent}.
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/RICHEvent.png}
-	\caption{An event from the online event display of COMPASS RICHONE; the squares represent the hits with signal amplitudes larger than a threshold, individually set for each channel. Figure taken from \cite{NIM}}
+	\caption{An event from the online event display of COMPASS RICHONE. The $16$ squares represent the detectors areas ; the four central ones are equipped with MAPMTs. the small squares represent the hits with signal amplitudes larger than a threshold, individually set for each channel. Figure taken from \cite{NIM2015}}
 	\label{pic:RICHEvent}
 \end{figure}
 
-\subsection{Readout Electronics}
+\subsection{RICH Infos Reconstruction}
 
-The readout electronics for the central part (MAPMT) consists of three elements : a chip card MAD4, a bus board (Roof) and a DREISAM card. The MAD chip amplifies and discrimates the signal. The latter is then tansported to the chip card DREISAM which functions as a time to digital converter. The signal acquired in a window of 100 ns centered on the time of the trigger is transformed into a temporal information with respect to the absolute time of the experiment with a resolution better than 130 ps. The Roof board acts as a two way bridge to carry the informations from MAD to DREISAM and to deliver to MAD informations about the thresholds. The readout system is free from cable connections to minimize the electrical noise.
-
-From the peripheral area, where events occur at a lower rate with a lower background level, the electronic of the readout system is based on a APV25 chip (128-channel preamplifier /shaper ASIC with analogue pipeline)\cite{}. The chip has an integration time of the signal < 400 ns.
-
-The large number of RICH channels (82944) corresponds to $\sim$ 40\% of the total number of COMPASS electronic channels. To reduce the data flow, empty channels are suppressed at thre front end stage and only the amplitude signals above threshold are read out in local FIFO arrays. Data are then transmitted via optical fibers to the general acquisition system at a rate of 40 MB/s.
-
-\subsection{RICH Event Reconstruction}
-
-RICHONE is a package contained in CORAL software. It is in charge of RICH event reconstruction viz. reconstructs the physical variables from the RICH active pads for each events. The reconstruction is divided in several parts, the first being decoding the data and clustering. Then the reconstruction of the Cherenkov angle for each individual photon is done. It is possible to perform the ring reconstruction which is used for studies on the apparatus. The particle identification (PID) is based on a maximum likelihood calculation. The PID will be explained more thouroughly afterwards.
+RICHONE is a package contained in the CORAL software, which is in charge of RICH infos reconstruction. The reconstruction is divided in several parts, the first being decoding the data and clustering. Then the reconstruction of the Cherenkov angle for each individual photon is done. It is possible to perform a ring reconstruction which is used for studies on the apparatus. The particle identification (PID) is based on a maximum likelihood calculation. The PID will be explained more thouroughly afterwards.
 
 \subsubsection*{Decoding and clustering}
 
-There are two different types of photon detectors and they have different decoding systems and clustering algorithms. For the MWPCs the analog signal comes from channels having signal (with a three-time sampling of the signal)\cite{}. Since more than one channel fires, a clustering is done. When the pads with the highest pulse height is found, all the adjacent pads with a smaller signal are included in the cluster\cite{}. The mean position of each active pad is evaluated in the cluster, weighting the signal with their maximum pulse height, to determine the center of gravity of the cluster. For the MAPMT signal, decoding is enough to read the time information comming from the PMT that was hit. The probability of having correlated hits in adjacent area being negligible, the MAPMT does not need clustering\cite{}.
+There are two different types of photon detectors and they have different decoding systems and clustering algorithms. For the MWPCs, if more than one channel fires, a clustering is done. When the pads with the highest pulse height is found, all the adjacent pads with a smaller signal are included in the cluster \cite{RICHPID}. The mean position of each active pad is evaluated in the cluster, weighting the signal with their maximum pulse height, to determine the center of gravity of the cluster. For the MAPMT signal, decoding is enough to read the time information coming from the PMT that was hit. As the probability of having correlated hits in adjacent area is negligible, the MAPMT data does not need clustering \cite{RICHElec}.
 
-The cluster or hit position is used to determine the trajectory of the photon. In addition, the time information coming from the MAPMT is used to reject out-of-time photons while the amplitude information from the MWPC serves to reduce the background both from out-of-time photons and from electronic noise.\cite{}
+The cluster or hit position is used to determine the trajectory of the photon. In addition, the time information coming from the MAPMT is used to reject out-of-time photons while the amplitude information from the MWPC serves to reduce the background both from out-of-time photons and from electronic noise \cite{RICHPID}.
 
 \subsubsection*{Cherenkov angle and ring reconstruction}
 
-The trajectory of each Cherenkov photon is calculated with respect to the plane containing the particle track and its virtual reflection in the mirror in order to reconstruct $\Theta_C$\cite{}. All the photons emitted by the particles are expected to have the same angle $\Theta_C$ and to be uniformly distributed in $\phi$. The photons emitted by other particles or from background have on the contrary a flat $\Theta_C$ distribution. The emitted photon with the same ($\Theta_C$,$\phi$) pair are reflected on the same point at the focal surface (neglecting any spherical aberration), resulting in a ring image of the photon detector. Since the emission point of the photon along the particle trajectory is not known, the middle point between the detector and the mirror is taken. A good determination of the track trajectory parameters and the momentum of the particle are mandatory in order to extract $\Theta_C$ with good precision.
+The trajectory of each Cherenkov photon is calculated with respect to the plane containing the particle track and its virtual reflection in the mirror in order to reconstruct $\Theta_C$ \cite{RICHTheory}. All the photons emitted by the particles are expected to have the same angle $\Theta_C$ and to be uniformly distributed in $\phi$. The photons emitted by other particles or from background have on the contrary a flat $\Theta_C$ distribution. The emitted photon with the same ($\Theta_C$,$\phi$) pair are reflected on the same location at the focal surface (neglecting any spherical aberration), resulting in a ring image of the photon detector. Since the emission point of the photon along the particle trajectory is not known, the middle point between the detector and the mirror is taken. A good determination of the track trajectory parameters and the momentum of the particle are mandatory in order to extract $\Theta_C$ with good precision.
 
-To characterize the RICH, determining its angular resolution for instance, the ring reconstruction of the emitted photons is needed. The ring reconstruction is based on the search of a peak in the $\Theta_C$ distribution. Small intervals of $\pm$3$\sigma$ ($\sigma$ being the single photon resolution : $\sigma_{MAPMT}$ = 2.0 mrad and $\sigma_{MWPC}$ = 2.5 mrad) on an overall range of 0 to 70 mrad is considered. The interval with the maximum number of entries defines the ring. This procedure associates a ring to each track and in order to reject tracks with only background photons a minimal amount of 4 photons per ring is required\cite{}. The resolution of the Cherenkov angle measurement provided by each single photon as a function of the particle momentum is illustrated in Fig. \ref{pic:RICHRez}. In the high momentum region where the Cherenkov angle saturates the resulting resolution is $\sim$ 1.2 mrad.
+To characterize the RICH, determining its angular resolution for instance, the ring reconstruction of the emitted photons is needed. The ring reconstruction is based on the search of a peak in the $\Theta_C$ distribution. Small intervals of $\pm$3$\sigma$ ($\sigma$ being the single photon resolution, $\sigma_{MAPMT}$ = $2.0$ mrad and $\sigma_{MWPC}$ = $2.5$ mrad) on an overall range of $0$ to $70$ mrad are considered. The interval with the maximum number of entries is used to define the ring. This procedure associates a ring to each track and for MAPMT in order to reject tracks with only background photons a minimal amount of four photons per ring is required \cite{RICHPID}. The resolution of the Cherenkov angle measurement provided by each single photon as a function of the particle momentum is illustrated in Fig.~\ref{pic:RICHRez}.
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.5]{./gfx/RICHRez.png}
-	\caption{Resolution of the Cherenkov angle for the reconstructed ring images, provided by each single photon, versus the particle momentum for a sample of identified pions. Figure taken from \cite{NIM}}
+	\caption{Resolution of the Cherenkov angle for the reconstructed ring images, provided by each single photon, versus the particle momentum for a sample of identified pions. Figure taken from \cite{NIM}.}
 	\label{pic:RICHRez}
 \end{figure}
 
-\subsubsection*{Mass separation}
-
-For the physical analysis of RICH events, the PHAST software is used. Tha available informations at PHAST is summarized in Tab. \ref{tab:RICHInfos}.
-
-The measured values of $\theta_C$ as a function of $p_h$ for the RICH detector are shown in Fig. \ref{pic:RICH}. In the low momentum region, the RICH detector is only sensitive to electrons, muons and pions. The bands corresponding to kaons and protons start to be visible respectively at $p_h \approx$ 9.45 GeV/c and $p_h \approx$ 17.95 GeV/c. For high momentum values viz. above 40 GeV/c, a saturation of the Cherenkov angle is observed, principally for pions and kaons.
-
-\begin{table}[!h]
-  \caption{RICH informations available in PHAST.}
-  \label{tab:RICHInfos}
-  \centering
-  \begin{tabular}{|c|}
-    \hline
-    $\pi$, $K$, $p$, $e$, $\mu$ and background likelihood \\
-    (LH($\pi$), LH($K$), LH($p$), LH($e$), LH($\mu$) and LH($bg$)) \\
-    $\pi$, $K$, $p$, $e$, $\mu$ and background likelihood derived\\
-    Maximum likelihood angle \\
-    $\Theta_{Cj}$, reconstructed ring angle \\
-    $N$, number of photons used in $\Theta_C$ reconstruction \\
-    $\Theta_{C}$, fitted ring angle \\
-    Ring, $\pi$, $K$, $p$, $e$ and $\mu$ $\chi^2$ \\
-    Mean ring time for photon in the PMT part \\
-    Number of photons per ring in the PMT part \\
-    \hline
-  \end{tabular}
-\end{table}
-
-The final particle identification is performed using likelihood methods and is described in the following chapter.
+The measured values of $\theta_C$ as a function of $p_h$ for the RICH detector are shown in Fig.~\ref{pic:RICH}. In the low momentum region, the RICH detector is only sensitive to electrons, muons and pions. The bands corresponding to kaons and protons start to be visible respectively at $p_h \approx$ $9.45$ GeV/c and $p_h \approx$ $17.95$ GeV/c. For high momentum values viz. above $40$ GeV/c, a saturation of the Cherenkov angle is observed, principally for pions and kaons. The final particle identification is performed using likelihood methods and is described in the following chapter.
 
 \begin{figure}[!h]
   \centering

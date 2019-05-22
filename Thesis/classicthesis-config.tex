@@ -82,7 +82,7 @@
 %backend=biber, % Instead of bibtex
 backend=bibtex8,bibencoding=ascii,%
 language=auto,%
-style=numeric,%
+style=numeric-comp,%
 %style=authoryear-comp, % Author 1999, 2010
 %bibstyle=authoryear,dashed=false, % dashed: substitute rep. author with ---
 sorting=none, % name, year, title
@@ -254,12 +254,14 @@ pdfproducer={LaTeX with hyperref and classicthesis}
 \usepackage{feynmp-auto}
 \usepackage{slashed}
 \usepackage{rotating}
+\usepackage[shortlabels]{enumitem}
 
 \newcommand\qbar{\bar{q}}
 \newcommand\ubar{\bar{u}}
 \newcommand\dbar{\bar{d}}
 \newcommand\sbar{\bar{s}}
 \newcommand\D[2]{D^{#1}_{#2}}
+
 
 %----------------------------------------------------------------------------------------
 %	CHANGING TEXT AREA
