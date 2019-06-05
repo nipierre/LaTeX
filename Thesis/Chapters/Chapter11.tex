@@ -34,19 +34,19 @@ The acceptance is calculated as the ratio of reconstructed over generated partic
   \item $0.2 < z < 0.85$
 \end{enumerate}
 
-The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variables $z$ and $p_h$ are shown in Figs.~\ref{pic:MCDISkin} and~\ref{pic:MCSIDISkin} for real data (red) and reconstructed MC data (blue). The ratio between real data and reconstructed MC data is shown at the bottom of each panel. A relative good agreement is reached, except in the low statistics high $x$ and high $Q^2$ regions. It was shown in previous work that the COMPASS acceptance nearly factorizes in $A_{muon} \cdot A_{hadron}$. Thus for multiplicities $A_{muon}$ drops out in a large extent and the difference of data and MC in edges of the muon kinematics does not introduce a bias.
+The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variables $z$ and $p_h$ are shown in Figs.~\ref{pic:MCDISkin} and~\ref{pic:MCSIDISkin} for real data (red) and reconstructed MC data (blue). The ratio between real data and reconstructed MC data is shown at the bottom of each panel. A relative good agreement is reached, except in the low statistics high $x$ and high $Q^2$ regions and for $\theta_h$. It was shown in previous work that the COMPASS acceptance nearly factorizes in $A_{muon} \cdot A_{hadron}$. Thus for multiplicities $A_{muon}$ drops out in a large extent and the difference of data and MC in edges of the muon kinematics does not introduce a bias. The description of $\theta_h$ should be improved.
 
 \begin{figure}[!h]
   \centering
-	\includegraphics[scale=0.45]{./gfx/DIS_kin.png}
+	\includegraphics[scale=0.50]{./gfx/DIS_kin.png}
 	\caption{Kinematical variables for DIS events ($Q^2$, $y$ and $x$) for Data (red) and Monte-Carlo (blue), as well as the ratio Data/Monte-Carlo.}
 	\label{pic:MCDISkin}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
-	\includegraphics[scale=0.45]{./gfx/SIDIS_kin.png}
-	\caption{Kinematical variables for charged hadrons ($z$ and $p_h$) for Data (red) and Monte-Carlo (blue), as well as the ratio Data/Monte-Carlo.}
+	\includegraphics[scale=0.50]{./gfx/SIDIS_kin.png}
+	\caption{Kinematical variables for charged hadrons ($z$, $p_h$ and $\theta_h$) for Data (red) and Monte-Carlo (blue), as well as the ratio Data/Monte-Carlo.}
 	\label{pic:MCSIDISkin}
 \end{figure}
 
@@ -75,39 +75,37 @@ where $G_h$ ($G_D$) are the generated hadrons (DIS events) in a given $x$, $y$, 
 
 The acceptance correction factors $A^h(x,y,z)$ for unidentified hadrons, pions, kaons and protons are shown in Figs.~\ref{pic:AccH} to \ref{pic:AccP} for the P$07$ sample. The acceptance results are displayed versus $z$ and each pad is a ($x,y$) bin, left to right for increasing $x$ and top to bottom for increasing $y$. Note that the acceptance is very similar for positive and negative particles and for $\mu^+$ and $\mu^-$ beams.
 
-+ thetah plot and discuss hadron plot + efficiency to be improved (positive) + more detailed look at the model + proposed to do acceptance in bins of thetah but need more MC.
-
 \begin{sidewaysfigure}[!]
   \centering
-	\includegraphics[scale=0.6]{./gfx/AccH.png}
+	\includegraphics[scale=0.7]{./gfx/AccH.png}
 	\caption{Charged hadron acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to hadrons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccH}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
   \centering
-	\includegraphics[scale=0.6]{./gfx/AccPi.png}
+	\includegraphics[scale=0.7]{./gfx/AccPi.png}
 	\caption{Charged pion acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to pions obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccPi}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
   \centering
-	\includegraphics[scale=0.6]{./gfx/AccK.png}
+	\includegraphics[scale=0.7]{./gfx/AccK.png}
 	\caption{Charged kaon acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to kaons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccK}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
   \centering
-	\includegraphics[scale=0.5]{./gfx/AccP.png}
+	\includegraphics[scale=0.7]{./gfx/AccP.png}
 	\caption{Charged proton acceptance in $x$, $y$ and $z$ bins. The red full markers correspond to positive hadrons, blue open markers to negative hadrons, circles markers correspond to kaons obtained with $\mu^+$ beam and diamonds markers to hadrons obtained with $\mu^-$ beam.}
 	\label{pic:AccP}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[p]
   \centering
-	\includegraphics[scale=0.6]{./gfx/SysAcc.png}
+	\includegraphics[scale=0.7]{./gfx/SysAcc.png}
 	\caption{Ratio of P$07$ over P$09$ acceptance in $x$, $y$ and $z$ bins. The dashed lines represent a $5$\% discrepancy.}
 	\label{pic:AccPer}
 \end{sidewaysfigure}
@@ -120,6 +118,7 @@ The acceptance correction is then applied to the raw multiplcities :
   M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}
 \end{equation}
 %
+The acceptance correction presented here was calculated with preliminary efficiencies, which should be improved in the future thus improving the correction. In addition, going back to the data over MC comparison of $theta_h$, two leads could help to improve the description. One would be to have a more detailed look at the model used inside the MC, an other would be to do acceptance in bins of $\theta_h$ but this would require more MC.
 
 \section{Diffractive vector meson correction} \label{sec:DVMf}
 
@@ -246,14 +245,14 @@ The same MC samples are also used to determine diffractive vector meson contribu
 
 \begin{sidewaysfigure}[!]
   \centering
-	\includegraphics[scale=0.5]{./gfx/DVMpi.png}
+	\includegraphics[scale=0.8]{./gfx/DVMpi.png}
 	\caption{Correction factor $B^{\pi}$ for diffractive vector meson contamination ($\rho^0$) as a function of $z$ for ($x$,$y$) bins. The red markers correspond to positive pions and blue markers for negative pions.}
 	\label{DVMpi}
 \end{sidewaysfigure}
 
 \begin{sidewaysfigure}[!]
   \centering
-	\includegraphics[scale=0.7]{./gfx/DVMK.png}
+	\includegraphics[scale=0.8]{./gfx/DVMK.png}
 	\caption{Correction factor $B^{K}$ for diffractive vector meson contamination ($\Phi$) as a function of $z$ for ($x$,$y$) bins. The red markers correspond to positive kaons and blue markers for negative kaons.}
 	\label{DVMK}
 \end{sidewaysfigure}
@@ -297,8 +296,6 @@ The pion (and thus hadron) sample is contaminated by electrons and positrons. Wi
 	\caption{Fraction of electron contamination for pions as a function of $z$ in bins of $x$ (columns) and $y$ (rows). Red markers are for $\pi^+$ and blue markers for $\pi^-$.}
 	\label{pic:epi}
 \end{sidewaysfigure}
-
-\newpage
 
 \section{Summary}
 

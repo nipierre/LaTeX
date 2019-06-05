@@ -40,13 +40,13 @@ lepton-proton scattering at $x=0.001$, $x=0.1$ and $x=0.505$. Figure taken from 
 \subsection{Radiative correction factors : Effect on Multiplicities}\label{sec:RCFMult}
 
 The calculation of the radiative correction factors to the multiplcities can be done by computing
-$M^{h^{\pm}}_{Born}$, multiplicities obtained without radiative corrections, and $M^{h^{\pm}}_{Born+o(\alpha)}$,
+$M^{h}_{Born}$, multiplicities obtained without radiative corrections, and $M^{h}_{Born+o(\alpha)}$,
 multiplicities obtained with radiative corrections. The factors can be defined as :
 %
 \begin{equation}
   \begin{split}
-    \eta^{h^{\pm}}(x,y,z)=\frac{M^{h^{\pm}}_{Born}(x,y,z)}{M^{h^{\pm}}_{Born+o(\alpha)}(x,y,z)} \\
-     = \frac{N^{h^{\pm}}_{Born}(x,y,z)/N^{DIS}_{Born}(x,y)}{N^{h^{\pm}}_{Born+o(\alpha)}(x,y,z)/N^{DIS}_{Born+o(\alpha)}(x,y)}
+    \eta^{h}(x,y,z)=\frac{M^{h}_{Born}(x,y,z)}{M^{h}_{Born+o(\alpha)}(x,y,z)} \\
+     = \frac{N^{h}_{Born}(x,y,z)/N^{DIS}_{Born}(x,y)}{N^{h}_{Born+o(\alpha)}(x,y,z)/N^{DIS}_{Born+o(\alpha)}(x,y)}
   \end{split}
 \end{equation}
 %
@@ -61,12 +61,11 @@ In the following plot, the cuts from the SIDIS analysis for the selection of DIS
 \item $12 \leq p_h \leq 40$ GeV
 \end{itemize}
 
-Fig.~\ref{fig:hadz_ratio} exhibits the semi-inclusive radiative correction factor $\eta^{h^{\pm}}(x,y,z)$. This factor goes from $2$\% correction at high $x$ to $20$\% correction at high $z$ and high $y$. This dependence on $y$ and $z$ is expected (e.g. if a hadron has a high $z$ in a non-radiative event, consider the same event but with the radiation of a real photon, $\nu_{lep}$ will remain the same but the hadron will have in reality less energy available from the virtual photon, thus having $z_{had} \leq z_{lep}$, leading to less events in the high $z$ region for the multiplicities obtained with radiative correction).
+Fig.~\ref{fig:hadz_ratio} exhibits the semi-inclusive radiative correction factor $\eta^{h}(x,y,z)$. This factor goes from $2$\% correction at high $x$ to $20$\% correction at high $z$ and high $y$. This dependence on $y$ and $z$ is expected (e.g. if a hadron has a high $z$ in a non-radiative event, consider the same event but with the radiation of a real photon, $\nu_{lep}$ will remain the same but the hadron will have in reality less energy available from the virtual photon, thus having $z_{had} \leq z_{lep}$, leading to less events in the high $z$ region for the multiplicities obtained with radiative correction).
 
 \begin{figure}[!htb]
 \centerline{\epsfig{file=gfx/hadron_ratio.pdf,width=16cm}}
-\caption{$\eta^{h^{\pm}}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$.
-The corrections go from $2$\% at high $x$ to 20\% at high $z$ and high $y$}\label{fig:hadz_ratio}
+\caption{$\eta^{h}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. The corrections go from $2$\% at high $x$ to $20$\% at high $z$ and high $y$}\label{fig:hadz_ratio}
 \end{figure}
 
 %----------------------------------------------------------------------------------------

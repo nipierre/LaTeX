@@ -1,0 +1,181 @@
+% Appendix X
+
+\chapter{Direct extraction of fragmentation functions into kaons}
+
+%----------------------------------------------------------------------------------------
+
+Two methods can be used to extract the multiplicities : a direct extraction and a fit. The direct extraction consists in extracting the FFs point by point. This method requires to have the same numbers of equation as the number of unknowns. The fit method is a simultaneous fit of all the data with predefined functional forms, including a $Q^2$ evolution in the fit.
+
+The two methods are both relying on assumptions to decrease dramatically the number of FFs to determine.
+
+\section{Direct extraction of quark fragmentation functions into kaons}
+
+\subsection{Three fragmentation functions case}
+
+Let us take the relation between the number of hadrons $\frac{dN^h}{dxdz}$, the unpolarized parton distributions $q(x,Q^2)$ and the fragmentation functions $D^h_q(z)$. By normalizing to the number of scattered leptons $\frac{dN^l}{dx}$, the relation gives at LO QCD :
+%
+\begin{equation} \label{eq:mult_basic}
+  \frac{\frac{dN^h}{dxdQ^2dz}}{\frac{dN^l}{dxdQ^2}} = M^h(x,Q^2,z) = \frac{\sum_{q}e^2_qq(x,Q^2)\D{h}{q}(z))}{\sum_{q}e^2_q(x)},
+\end{equation}
+%
+where $M^h(x,Q^2,z)$ is the multiplicities determined in the SIDIS analysis. The sums are running over q = $u,d,s,\ubar,\dbar,\sbar$.
+
+Explicitating the result for proton Eq. \eqref{eq:mult_prot} and deuteron target Eq.~\eqref{eq:mult_deut}, respectively \cite{Jorg} :
+%
+\begin{equation} \label{eq:mult_prot}
+  M^h_p = \frac{4u\D{h}{u}+d\D{h}{d}+s\D{h}{s}+4\ubar\D{h}{\ubar}+\dbar\D{h}{\dbar}+\sbar\D{h}{\sbar}}{4(u+\ubar)+(d+\dbar)+(s+\sbar)},
+\end{equation}
+%
+\begin{equation} \label{eq:mult_deut}
+  M^h_d = \frac{(u+d)(4\D{h}{u}+\D{h}{d})+(\ubar+\dbar)(4\D{h}{\ubar}+\D{h}{\dbar})+2s\D{h}{s}+2\sbar\D{h}{\sbar}}{5(u+\ubar+d+\dbar)+2(s+\sbar)}.
+\end{equation}
+%
+Now, only kaons are considered. As explained in Chapter~\ref{ch:thfw} there are only three independent fragmentation functions to evaluate. This leads to the following equations :
+%
+\begin{equation} \label{eq:mult_prot_K+}
+  M^{K^+}_p = \frac{4u\D{K}{fav}+\sbar\D{K}{str}+(4\ubar+s+d+\dbar)\D{K}{unf}}{4(u+\ubar)+(d+\dbar)+(s+\sbar)},
+\end{equation}
+%
+\begin{equation} \label{eq:mult_prot_K-}
+  M^{K^-}_p = \frac{4\ubar\D{K}{fav}+s\D{K}{str}+(4u+\sbar+d+\dbar)\D{K}{unf}}{4(u+\ubar)+(d+\dbar)+(s+\sbar)},
+\end{equation}
+%
+\begin{equation} \label{eq:mult_deut_K+}
+  M^{K^+}_d = \frac{4(u+d)\D{K}{fav}+2\sbar\D{K}{str}+((u+d)+5(\ubar+\dbar)+2s)\D{K}{unf}}{5(u+\ubar+d+\dbar)+2(s+\sbar)},
+\end{equation}
+%
+\begin{equation} \label{eq:mult_deut_K-}
+  M^{K^-}_d = \frac{4(\ubar+\dbar)\D{K}{fav}+2s\D{K}{str}+((\ubar+\dbar)+5(u+d)+2\sbar)\D{K}{unf}}{5(u+\ubar+d+\dbar)+2(s+\sbar)}.
+\end{equation}
+%
+As we only need three equations to have a Cramer system, we can combine Eq.~\eqref{eq:mult_deut_K+} and Eq.~\eqref{eq:mult_deut_K-} :
+%
+\begin{equation} \label{eq:mult_deut_K}
+  M^{K}_d = \frac{4(u+d+\ubar+\dbar)\D{K}{fav}+2(s+\sbar)\D{K}{str}+(6(u+d+\ubar+\dbar)+2(s+\sbar))\D{K}{unf}}{5(u+\ubar+d+\dbar)+2(s+\sbar)}.
+\end{equation}
+%
+Eventually, the following system is obtained :
+%
+\begin{equation} \label{eq:mult_sys}
+  \begin{split}
+  \begin{pmatrix}
+    M^{K^+}_p \\
+    M^{K^-}_p \\
+    M^{K}_d
+  \end{pmatrix}
+  = \\
+  \begin{pmatrix}
+    \frac{4u}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{\sbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{4\ubar+s+d+\dbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} \\
+    \frac{4\ubar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{s}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{4u+\sbar+d+\dbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} \\
+    \frac{4(u+d+\ubar+\dbar)}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{2(s+\sbar)}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{6(u+d+\ubar+\dbar)+2(s+\sbar)}{5(u+\ubar+d+\dbar)+2(s+\sbar)}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \D{K}{fav} \\
+    \D{K}{str} \\
+    \D{K}{unf}
+  \end{pmatrix}.
+  \end{split}
+\end{equation}
+%
+Let us take a simple model, in which the nucleon is described by a valence ($q_v$) and a sea quark ($\qbar$) distribution. Then the quark distribution can be written as \cite{Jorg} :
+
+\begin{center}
+  \begin{tabular}{ l }
+    $u = 2q_v + \alpha_u\qbar$ \\
+    $d = q_v + \alpha_d\qbar$ \\
+    $q = \alpha_q\qbar$ for $q=\ubar,\dbar,s,\sbar$ \\
+  \end{tabular}
+\end{center}
+
+With this model, the previous matrix has the following form :
+%
+\begin{equation} \label{eq:mat_rank}
+  \begin{pmatrix}
+    \frac{8q_v+4\qbar}{9q_v+12\qbar} & \frac{\qbar}{9q_v+12\qbar} & \frac{q_v+7\qbar}{9q_v+12\qbar} \\
+    \frac{4\qbar}{9q_v+12\qbar} & \frac{\qbar}{9q_v+12\qbar} & \frac{9q_v+7\qbar}{9q_v+12\qbar} \\
+    \frac{12q_v+16\qbar}{15q_v+24\qbar} & \frac{4\qbar}{15q_v+24\qbar} & \frac{18q_v+28\qbar}{15q_v+24\qbar}
+  \end{pmatrix}.
+\end{equation}
+%
+Assuming that the PDFs are not pathological, one is assured that the rank of this matrix is 3, then the extraction is feasible.
+
+By performing a matrix inversion, the result of $\D{K}{fav}(z)$, $\D{K}{str}(z)$ and $\D{K}{unf}(z)$ can be obtained using data from various $(x,y)$ bins which in fact cover different $Q^2$ ranges.
+
+\subsection{Extension to four fragmentation functions into kaons}
+
+As there were initially 4 fragmentation functions, we can adress the question of the assumption
+$\D{K^+}{s}=\D{K^+}{\ubar}=\D{K^+}{\dbar}=\D{K^+}{d}$ used in the previous section (3 independent kaon FFs). From PYTHIA simulation, one can find the following
+values for the fragmentation functions :
+
+\begin{center}
+  \begin{tabular}{ || c | c | c || }
+    \hline \hline
+    quark $q$ & hadron $h$ & $\int_{0.2}^{1}\D{h}{q}dz$ \\ \hline
+    $\sbar$ & $K^+$ & 0.35 \\
+    $u$ & $K^+$ & 0.09 \\
+    $d$ & $K^+$ & 0.06 \\
+    $s$ & $K^+$ & 0.05 \\
+    $\ubar$ & $K^+$ & 0.03 \\
+    $\dbar$ & $K^+$ & 0.03 \\
+    \hline \hline
+  \end{tabular}
+\end{center}
+
+The table clearly points that for example, $\D{K^+}{d} \approx 2\D{K^+}{\dbar}$. This can be explained
+in this case from the fact that $K^+$ may originate from $K^{0*} = (d\sbar) \rightarrow K^+\pi^+$ and
+not from $\bar{K}^{0*} \rightarrow K^-\pi^+$.
+
+A new unfavoured fragmentation function can be added by splitting the former unfavoured one into two, viz. :
+
+\begin{center}
+  \begin{tabular}{ l }
+    $\D{K}{fav}=\D{K^+}{u}$ \\
+    $\D{K}{str}=\D{K^+}{\sbar}$ \\
+    $\D{K}{unf_1}=\D{K^+}{s}=\D{K^+}{d}$ \\
+    $\D{K}{unf_2}=\D{K^+}{\ubar}=\D{K^+}{\dbar}$ \\
+  \end{tabular}
+\end{center}
+
+Thus, the system is :
+%
+\begin{equation} \label{eq:mult_sys4}
+  \begin{split}
+  \begin{pmatrix}
+    M^{K^+}_p \\
+    M^{K^-}_p \\
+    M^{K^+}_d \\
+    M^{K^-}_d \\
+  \end{pmatrix}
+  = \\
+  \begin{pmatrix}
+    \frac{4u}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{\sbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{s+d}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{4\ubar+\dbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} \\
+    \frac{4\ubar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{s}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{\sbar+\dbar}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} & \frac{4u+d}{4(u+\ubar)+(d+\dbar)+(s+\sbar)} \\
+    \frac{4(u+d)}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{2\sbar}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{u+d+2s}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{5(\ubar+\dbar)}{5(u+\ubar+d+\dbar)+2(s+\sbar)} \\
+    \frac{4(\ubar+\dbar)}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{2s}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{\ubar+\dbar+2\sbar}{5(u+\ubar+d+\dbar)+2(s+\sbar)} & \frac{5(u+d)}{5(u+\ubar+d+\dbar)+2(s+\sbar)}
+  \end{pmatrix}
+  \begin{pmatrix}
+    \D{K}{fav} \\
+    \D{K}{str} \\
+    \D{K}{unf_1} \\
+    \D{K}{unf_2}
+  \end{pmatrix}.
+\end{split}
+\end{equation}
+%
+Let us take again the same simple model for quark distributions, with $q_v$ (valence) and $\bar{q}$ (sea) quark distributions, leading to the following matrix :
+%
+\begin{equation} \label{eq:mat_rank_4E}
+  \begin{pmatrix}
+    \frac{8q_v+4\qbar}{9q_v+12\qbar} & \frac{\qbar}{9q_v+12\qbar} & \frac{q_v+2\qbar}{9q_v+12\qbar} & \frac{5\qbar}{9q_v+12\qbar} \\
+    \frac{4\qbar}{9q_v+12\qbar} & \frac{\qbar}{9q_v+12\qbar} & \frac{2\qbar}{9q_v+12\qbar} & \frac{9q_v+5\qbar}{9q_v+12\qbar} \\
+    \frac{12q_v+8\qbar}{15q_v+24\qbar} & \frac{2\qbar}{15q_v+24\qbar} & \frac{3q_v+4\qbar}{15q_v+24\qbar} & \frac{10\qbar}{15q_v+24\qbar} \\
+    \frac{8\qbar}{15q_v+24\qbar} & \frac{2\qbar}{15q_v+24\qbar} & \frac{4\qbar}{15q_v+24\qbar} & \frac{15q_v+10\qbar}{15q_v+24\qbar}
+  \end{pmatrix}.
+\end{equation}
+%
+Assuming that the PDFs are not pathological, one is assured that the rank of this matrix is 4, then the extraction
+is feasible.
+
+\subsection{Application to extracted kaon multiplicities}
+
+The two methods were tested to extract the FFs directecly from the kaon multiplicities. Unfortunately, it appears that the methods are not working as expected. The hypothesis that the formulas linking multiplicities to PDFs and FFs for a proton and a deuteron target should be enough decoupled to do a combined extraction of the FFs is not right. The only way to extract the FFs into kaons from the kaon multiplicities is then the LO QCD fit of multiplicities.
