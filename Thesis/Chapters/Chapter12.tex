@@ -6,7 +6,7 @@
 
 %----------------------------------------------------------------------------------------
 
-This chapter is divided in two parts : one is focused on the discussion on the systematic uncertainties, the other presents the final multiplicities of unidentified charged hadrons, charged pions, charged kaons and protons/antiprotons extracted from SIDIS of $160$ GeV muons off a pure proton target ($lH_2$). These results are obtained from the raw multiplicities of Chapter~\ref{ch:raw} and the correction factors of Chapter~\ref{ch:CF}.
+This chapter is divided in two parts: one is focused on the discussion on the systematic uncertainties, the other presents the final multiplicities of unidentified charged hadrons, charged pions, charged kaons and protons/antiprotons extracted from SIDIS of $160$ GeV muons off a pure proton target ($lH_2$). These results are obtained from the raw multiplicities of Chapter~\ref{ch:raw} and the correction factors of Chapter~\ref{ch:CF}.
 
 %----------------------------------------------------------------------------------------
 
@@ -18,7 +18,7 @@ The various systematic studies that were performed are summarized hereafter.
 
 \subsection{Systematic uncertainty associated to the RICH unfolding}
 
-The first stage of pion identification is based on the likelihood ratios : $LH(\pi)/LH(2^{nd})$ and $LH(\pi)/LH(bg)$. These cuts are optimized to minimize the
+The first stage of pion identification is based on the likelihood ratios: $LH(\pi)/LH(2^{nd})$ and $LH(\pi)/LH(bg)$. These cuts are optimized to minimize the
 pions misidentified as kaons. The systematic error associated to the selection of these cuts is performed varying the cuts around optimized values. Two sets of
 cuts \textit{loose} and \textit{severe} were used (see Table~\ref{tab:loose.severe})
 
@@ -43,7 +43,7 @@ cuts \textit{loose} and \textit{severe} were used (see Table~\ref{tab:loose.seve
 To evaluate the systematic error associated to the selection of the particle likelihood cuts, the particle identification is performed using the \textit{loose}
 and \textit{severe} sets of likelihood cuts and the corresponding RICH probability matrices and final multiplicities are extracted ($M^{h^{\pm},loose}_{raw}$
 and $M^{h^{\pm},severe}_{raw}$ respectively). The largest difference between $M^{h^{\pm},loose}_{raw}$ and $M^{h^{\pm},severe}_{raw}$ with the nominal
-multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error :
+multiplicity $M^{h^{\pm}}_{raw}$ is taken as an estimate of the systematic error:
 %
 \begin{equation}
   \sigma^{RICH_{LH}}_{sys} = MAX(|M^{h^{\pm},loose}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},severe}_{raw}-M^{h^{\pm}}_{raw}|).
@@ -81,7 +81,7 @@ A second source of systematic error is that associated with the calculation of t
 \end{equation}
 %
 The raw multiplicities $M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ are then recalculated using the altered probability matrices $M^{\pm}_{RICH}$. The largest difference between
-$M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is taken as the sytematic error :
+$M^{h^{\pm},+}_{raw}$ and $M^{h^{\pm},-}_{raw}$ with $M^{h^{\pm}}_{raw}$ is taken as the sytematic error:
 %
 \begin{equation}
   \sigma^{RICH_{stat}}_{sys} = MAX(|M^{h^{\pm},+}_{raw}-M^{h^{\pm}}_{raw}|,|M^{h^{\pm},-}_{raw}-M^{h^{\pm}}_{raw}|).
@@ -117,9 +117,9 @@ The rescue procedure might introduce background into the selected hadron sample.
 
 %------------------------------------------------
 
-\subsection{Systematic uncertainty associated to Monte Carlo sample : DJANGOH dependence}
+\subsection{Systematic uncertainty associated to Monte Carlo sample: DJANGOH dependence}
 
-To determine the acceptance dependence with the physical model chosen, different PDF sets were used to generate different MC samples. Moreover different JETSET parameters were also used \cite{PDFsys}. For each sample the acceptance is calculated and the hadron multiplicities are corrected with each acceptance. The systematic uncertainty of the acceptance, considering two acceptances $A^h$ and $A'^h$, is estimed in each kinematic bin ($x$,$y$,$z$) :
+To determine the acceptance dependence with the physical model chosen, different PDF sets were used to generate different MC samples. Moreover different JETSET parameters were also used \cite{PDFsys}. For each sample the acceptance is calculated and the hadron multiplicities are corrected with each acceptance. The systematic uncertainty of the acceptance, considering two acceptances $A^h$ and $A'^h$, is estimed in each kinematic bin ($x$,$y$,$z$):
 
 \begin{equation}
   \sigma^{A^h}_{syst} = \left| \frac{\left(\frac{A'^h}{A^h}-1 \right)M^h_{corr,acc}}{A^h} \right|
@@ -149,14 +149,14 @@ In HEPGEN, the cross section for exclusive vector meson production is given by t
 
 \section{Charged hadron multiplicities ($h^{\pm}$,$\pi^{\pm}$,$K^{\pm}$,$p/\bar{p}$)}
 
-The final results for the multiplicities are obtained as :
+The final results for the multiplicities are obtained as:
 %
 \begin{equation}
   	M^h_{Final}(x,y,z) = M^h_{raw}(x,y,z)\frac{\eta^h(x,y,z)}{A^h(x,y,z)}B^h(x,y,z),
 \end{equation}
 %
 including all corrections described in the previous section.
-The $x$,$y$ and $z$ binning is given in Table~\ref{tab:kinbinning}. $A^h$ corresponds to the acceptance correction (Section~\ref{sec:Acc}), $\eta^h$ to the radiative correction factor (Section~\ref{sec:rcf}) and $B^h$ to the diffractive vector meson correction factor (Section~\ref{sec:DVMf}). The statistical error propagation is performed in all ($x,y,z$) bins assuming that all corrections are independent :
+The $x$,$y$ and $z$ binning is given in Table~\ref{tab:kinbinning}. $A^h$ corresponds to the acceptance correction (Section~\ref{sec:Acc}), $\eta^h$ to the radiative correction factor (Section~\ref{sec:rcf}) and $B^h$ to the diffractive vector meson correction factor (Section~\ref{sec:DVMf}). The statistical error propagation is performed in all ($x,y,z$) bins assuming that all corrections are independent:
 %
 \begin{equation}
 \begin{split}
@@ -285,13 +285,13 @@ Then the multiplicities are shown as a function of $z$ and in bins of $x$ in Fig
 
 \section{Ratio and sum of charged hadron multiplicities}
 
-From the $y$-averaged multiplicities, we can still integrate on $z$. This allows us to have an idea of the underlying physics as some limiting cases for the $x$ dependence, when integrating over $z$, can be investigated. In addition it also allows us to compare our results with other experiments that have different binning in ($x,Q^2,z$). From the integration over $z$ only the 8 $x$ bins that have a sufficient $z$ coverage subsist. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following :
+From the $y$-averaged multiplicities, we can still integrate on $z$. This allows us to have an idea of the underlying physics as some limiting cases for the $x$ dependence, when integrating over $z$, can be investigated. In addition it also allows us to compare our results with other experiments that have different binning in ($x,Q^2,z$). From the integration over $z$ only the 8 $x$ bins that have a sufficient $z$ coverage subsist. One interesting quantity to look at is the ratio of charged hadron multiplicities as with this quantity most of the systematics cancel by and large. The ratio is calculated as following:
 %
 \begin{equation}
   \frac{\mathscr{M}^{h^+}}{\mathscr{M}^{h^-}} = \frac{\int_{0.2}^{0.85} \langle M^{h^+} \rangle_y dz}{\int_{0.2}^{0.85} \langle M^{h^-} \rangle_y dz}.
 \end{equation}
 %
-In some cases the multiplicities are only integrated over $z$ between $0.4$ and $0.6$ :
+In some cases the multiplicities are only integrated over $z$ between $0.4$ and $0.6$:
 %
 \begin{equation}
   \frac{\mathscr{M}^{h^+}_{r}}{\mathscr{M}^{h^-}_{r}} = \frac{\int_{0.4}^{0.6} \langle M^{h^+} \rangle_y dz}{\int_{0.4}^{0.6} \langle M^{h^-} \rangle_y dz}.
@@ -354,13 +354,13 @@ A lead to reconcile the results is to look for hadron mass correction \cite{Acca
 
 In Figs.~\ref{pic:hsum} to \ref{pic:psum}, the $\mathscr{M}^{h^+}+\mathscr{M}^{h^-}$ from COMPASS is depicted for a proton target (blue triangle) and for an isoscalar target (orange circles). The same sum from HERMES is presented for a proton target (violet open squares) and a deuteron target (green open stars) for charged pions and charged kaons.
 
-For a proton target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as :
+For a proton target, the charged pion multiplicities integrated over $z$ can be expressed at LO pQCD as:
 %
 \begin{equation}\label{eq:pisum}
   \mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-} = \mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf} - \frac{S}{U+D+S} \left( \mathscr{D}^{\pi}_{fav} - \mathscr{D}^{\pi}_{unf} \right),
 \end{equation}
 %
-where $U$ = $4u+4\bar{u}$, $D$ = $d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = \int D^K(z,Q^2) dz $. As $\frac{S}{U+D+S}$ is small and the $Q^2$ dependence of $\mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf}$ is weak, the pion multiplicity sum is expected to be almost flat. The same reasoning can be done for the isoscalar case :
+where $U$ = $4u+4\bar{u}$, $D$ = $d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D}^K(Q^2) = \int D^K(z,Q^2) dz $. As $\frac{S}{U+D+S}$ is small and the $Q^2$ dependence of $\mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf}$ is weak, the pion multiplicity sum is expected to be almost flat. The same reasoning can be done for the isoscalar case:
 %
 \begin{equation}
   \mathscr{M}^{\pi^+}+\mathscr{M}^{\pi^-} = \mathscr{D}^{\pi}_{fav} + \mathscr{D}^{\pi}_{unf} - \frac{2S}{5U'+2S} \left( \mathscr{D}^{\pi}_{fav} - \mathscr{D}^{\pi}_{unf} \right),
@@ -368,7 +368,7 @@ where $U$ = $4u+4\bar{u}$, $D$ = $d+\bar{d}$, $S$ = $us+\bar{s}$ and $\mathscr{D
 %
 where $U'$ = $u+\bar{u}+d+\bar{d}$. The expression of the sum for protons is the same than for pions for both targets. Thus the same conclusions can be made.
 
-Similarly for kaons, for a proton target :
+Similarly for kaons, for a proton target:
 %
 \begin{equation}
   \mathscr{M}^{K^+}+\mathscr{M}^{K^-} = \mathscr{D}^K_{fav}+\mathscr{D}^K_{unf}+\left[\frac{(s+\bar{s})\left( \mathscr{D}^K_{str}-\mathscr{D}^K_{fav} \right) + (d+\bar{d})\left( \mathscr{D}^K_{unf}-\mathscr{D}^K_{fav} \right)}{4(u+\bar{u}) + d + \bar{d} + s + \bar{s}} \right].
@@ -401,25 +401,25 @@ Similarly for kaons, for a proton target :
   \label{pic:ksum}
 \end{figure}
 
-At high value of $x$, the sea content of the nucleon can be neglected :
+At high value of $x$, the sea content of the nucleon can be neglected:
 %
 \begin{equation}
   \mathscr{M}^{K^+}+\mathscr{M}^{K^-} = \mathscr{D}^K_{fav}+\mathscr{D}^K_{unf}+\left[\frac{d\left( \mathscr{D}^K_{unf}-\mathscr{D}^K_{fav} \right)}{4u + d} \right],
 \end{equation}
 %
-and taking as approximation $u=2d$ :
+and taking as approximation $u=2d$:
 %
 \begin{equation}
   \mathscr{M}^{K^+}+\mathscr{M}^{K^-} = \frac{8\mathscr{D}^K_{fav}+10\mathscr{D}^K_{unf}}{9}.
 \end{equation}
 %
-For the isoscalar case :
+For the isoscalar case:
 %
 \begin{equation}\label{eq:ksum}
   \mathscr{M}^{K^+}+\mathscr{M}^{K^-} = \frac{U\mathscr{D}^K_U+S\mathscr{D}^K_S}{5U+2S},
 \end{equation}
 %
-At high value of $x$, the strange content of the nucleon can be neglected :
+At high value of $x$, the strange content of the nucleon can be neglected:
 %
 \begin{equation}\label{eq:ksum}
   \mathscr{M}^{K^+}+\mathscr{M}^{K^-} = \frac{\mathscr{D}^K_U}{5}.
@@ -439,4 +439,4 @@ The sum of charged pion (hence charged hadron as hadrons are mostly pions) multi
 
 \section{Summary}
 
-The final unidentified hadron ($h^{\pm}$), pion ($\pi^{\pm}$), kaon ($K^{\pm}$) and proton/antiproton ($p/\bar{p}$) multiplicities extracted from $2016$ COMPASS data of muon deep inelastic scattering on a pure proton (lH$_2$) target were presented as a function of $z$ and in bins of $x$ and $y$. Averaging these results over $y$, two dimensional projection are obtained. The subsequent integration over $z$ allows the comparison of the sum and ratio of charged hadron multiplicities with other experiments results like HERMES \cite{HERMESMult}. Comparisons are also made with COMPASS results for an isoscalar target \cite{COMPASS2006Pi,COMPASS2006K}. For the ratio, every results are in agreement with the expectations. The discrepancy that was already observed for the kaon ratio between COMPASS and HERMES for a deuteron/isoscalar target is also present for a proton target. For the sum, the results for hadrons and pions differs from the expectations in the high $x$ region. Overall, all the results for a proton target for the sum seem to suffer from a drop at high $x$, particularly visible on hadrons and pions, which should be flat. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation. A great discrepancy with HERMES results is observed in the shape for both pions and kaons. + improved results
+The final unidentified hadron ($h^{\pm}$), pion ($\pi^{\pm}$), kaon ($K^{\pm}$) and proton/antiproton ($p/\bar{p}$) multiplicities extracted from $2016$ COMPASS data of muon deep inelastic scattering on a pure proton (lH$_2$) target were presented as a function of $z$ and in bins of $x$ and $y$. Averaging these results over $y$, two dimensional projection are obtained. The subsequent integration over $z$ allows the comparison of the sum and ratio of charged hadron multiplicities with other experiments results like HERMES \cite{HERMESMult}. Comparisons are also made with COMPASS results for an isoscalar target \cite{COMPASS2006Pi,COMPASS2006K}. For the ratio, every results are in agreement with the expectations. The discrepancy that was already observed for the kaon ratio between COMPASS and HERMES for a deuteron/isoscalar target is also present for a proton target. For the sum, the results for hadrons and pions differs from the expectations in the high $x$ region. Overall, all the results for a proton target for the sum seem to suffer from a drop at high $x$, particularly visible on hadrons and pions, which should be flat. The kaons seem to be less harmed by this issue. The cause of this drop is still under investigation. A great discrepancy with HERMES results is observed in the shape for both pions and kaons.

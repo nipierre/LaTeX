@@ -19,7 +19,7 @@ region $Q^2 > 0.8$ (GeV/$c$)$^2$, $x$ $\in$ [$10^{-4},0.9$], $y$ $\in$ [$0.01,0.
 
 The events are generated with the DJANGOH generator with a parametrization of the parton distribution functions (MSTW08 \cite{MSTW08}). In addition, the use of JETSET inside DJANGOH allows the hadronization of quarks q to final-state hadrons h according to the Lund model. The COMPASS high $p_T$ tuning was used for the JETSET parameters. The events of DJANGOH are then propagated into the experimental setup simulated by TGEANT. The beam and beam reconstruction is not simulated but the reconstructed beam tracks from data are being used. The output of this chain is referred to as \textit{generated} sample. These events are then reconstructed with the same CORAL code as used to reconstruct real data. This new sample is called \textit{reconstructed} sample. The same DIS event and unidentified hadron selection that are used on real data (except cuts related to beam and beam reconstruction) are applied to the MC data sample for reconstructed MC events and particles.
 
-The acceptance is calculated as the ratio of reconstructed over generated particles. In both cases, the particle ID is taken from the MC truth. The following selection is made on the generated particles :
+The acceptance is calculated as the ratio of reconstructed over generated particles. In both cases, the particle ID is taken from the MC truth. The following selection is made on the generated particles:
 
 \begin{enumerate}
   \item Energy of the beam muon in range [140,180] GeV
@@ -54,7 +54,7 @@ The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variable
 
 In the following, $r$ and $g$ refers to 'reconstructed' and 'generated' quantities.
 
-The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r$ over the generated multiplicities $M^h_g$ and is binned as for the data in $x$, $y$ and $z$ :
+The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r$ over the generated multiplicities $M^h_g$ and is binned as for the data in $x$, $y$ and $z$:
 
 \begin{equation}
   A^h(x,y,z) = \frac{M^h_r(x_r,y_r,z_r)}{M^h_g(x_g,y_g,z_g)}=\frac{N^h_r(x_r,y_r,z_r)/N^{DIS}_r(x_r,y_r,z_r)}{N^h_g(x_g,y_g,z_g)/N^{DIS}_g(x_g,y_g,z_g)}
@@ -62,7 +62,7 @@ The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r
 
 where $x_g$, $y_g$ and $z_g$ are the generated kinematic values and $x_r$, $y_r$ and $z_r$ are the reconstructed kinematic values. The acceptance being calculated in this fashion, the kinematic bin migration due to reconstruction limitations is accounted for. A more rigorous bin migration correction would involve an unfolding procedure but is not done in this analysis.
 
-For this method, the error estimation is difficult to rigorously calculate as the numbers of evaluated hadrons and DIS events, in both the reconstructed and generated case, are not independent. In the following, all quantities are binned in ($x,y,z$). An estimate is made by assuming on the basis that there are much more DIS events than hadrons. Due to the $z$ kinematic bin migration effects, there exist particles in $N_r$, which does not belong to $N_g$. Decomposing $N_r$ into two contributions namely $N_{r^0}$, which are contained in $N_g$ and $N_{r'}$, which are not, the final acceptance error yields :
+For this method, the error estimation is difficult to rigorously calculate as the numbers of evaluated hadrons and DIS events, in both the reconstructed and generated case, are not independent. In the following, all quantities are binned in ($x,y,z$). An estimate is made by assuming on the basis that there are much more DIS events than hadrons. Due to the $z$ kinematic bin migration effects, there exist particles in $N_r$, which does not belong to $N_g$. Decomposing $N_r$ into two contributions namely $N_{r^0}$, which are contained in $N_g$ and $N_{r'}$, which are not, the final acceptance error yields:
 %
 \begin{equation}
   \begin{split}
@@ -112,7 +112,7 @@ The acceptance correction factors $A^h(x,y,z)$ for unidentified hadrons, pions, 
 
 In Fig.~\ref{pic:AccPer} are compared the acceptance correction factors for the P$07$ and P$09$ samples. The difference visible in the highest $x$ bins is expected and is due to the change in the trigger acceptance between P$07$ and P$08$.
 
-The acceptance correction is then applied to the raw multiplcities :
+The acceptance correction is then applied to the raw multiplcities:
 %
 \begin{equation}
   M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}
@@ -124,9 +124,9 @@ The acceptance correction presented here was calculated with preliminary efficie
 
 It is usually assumed that hadrons produced in SIDIS originate from lepton-parton scattering. But the scattering of a lepton off a nucleon can also result in the diffractive production of vector mesons. These particles decay into lighter mesons that cannot be distinguished from the one resulting from the hadronization of a quark originating from the target nucleon. The fragmentation functions extracted from multiplicities should only come from single quark fragmentation. Thus diffractive processes should be subtracted from multiplicities.
 
-In order to study these diffractive processes, the HEPGEN generator is used. HEPGEN \cite{HEPGEN} is a generator of Monte Carlo events, which is dedicated to studies of hard exclusive single photon or meson production processes at the COMPASS experiment kinematic domain. In addition, generation of single photon or meson production accompanied by the diffractive dissociation of the nucleon is allowed. Five processes are implemented in the generator : single photon production (DVCS+BH), exclusive $\pi^0$ production, exclusive $\rho^0$ production, exclusive $\rho^+$ production and exclusive $\Phi$ production. HEPGEN has been ported to C++ as HEPGEN++.
+In order to study these diffractive processes, the HEPGEN generator is used. HEPGEN \cite{HEPGEN} is a generator of Monte Carlo events, which is dedicated to studies of hard exclusive single photon or meson production processes at the COMPASS experiment kinematic domain. In addition, generation of single photon or meson production accompanied by the diffractive dissociation of the nucleon is allowed. Five processes are implemented in the generator: single photon production (DVCS+BH), exclusive $\pi^0$ production, exclusive $\rho^0$ production, exclusive $\rho^+$ production and exclusive $\Phi$ production. HEPGEN has been ported to C++ as HEPGEN++.
 
-For pions and kaons, the dominant vector meson contribution comes from the diffractive production of $\rho^0$ and $\Phi$ (Fig.~\ref{pic:DVMprod}), respectively :
+For pions and kaons, the dominant vector meson contribution comes from the diffractive production of $\rho^0$ and $\Phi$ (Fig.~\ref{pic:DVMprod}), respectively:
 %
 \begin{equation}
     \begin{split}
@@ -195,13 +195,13 @@ For pions and kaons, the dominant vector meson contribution comes from the diffr
 (g) [blob] -- [double distance=7pt] (f2),
 };
 \end{feynman} \end{tikzpicture}}
-	\caption{Vector meson diffractive production (V in the figure, being $\rho^0$, $\Phi$, etc..). In the VMD model \cite{VMD}, the $\gamma^*$ virtual photon creates a $q\bar{q}$ pair with compatible quantum numbers. Two cases can be encountered : vector meson exclusive production (where the same nucleon is found in the final state) (a) and vector meson production with nucleon diffractive dissociation (b).}
+	\caption{Vector meson diffractive production (V in the figure, being $\rho^0$, $\Phi$, etc..). In the VMD model \cite{VMD}, the $\gamma^*$ virtual photon creates a $q\bar{q}$ pair with compatible quantum numbers. Two cases can be encountered: vector meson exclusive production (where the same nucleon is found in the final state) (a) and vector meson production with nucleon diffractive dissociation (b).}
 	\label{pic:DVMprod}
 \end{figure}
 
 This process is mainly exclusive but in $20$\% of cases a diffractive dissociation of the target nucleon occurs. Other channels (excited $\rho$, $\omega$, etc.) are expected to contribute much less and are not taken into account. As pions and kaons stemming from diffractive vector meson decay cannot be separated from the one resulting from SIDIS, the evaluation of their contribution to the multiplicities is based on a Monte Carlo study. Three Monte Carlo samples are produced based on different generators (SIDIS using DJANGOH, diffractive $\Phi$ and $\rho^0$ using HEPGEN++). All this samples are reconstructed with the same event reconstruction chain as data. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the proton are simulated.
 
-The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as :
+The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as:
 %
 \begin{equation}\label{eq:DVMhad}
   \begin{split}
@@ -210,7 +210,7 @@ The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp.
   \end{split}
 \end{equation}
 %
-where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJANGOH}$ are the number of kaons reconstructed from the HEPGEN++ and DJANGOH MC samples normalized by the corresponding MC luminosity ($L_{MC}$). The luminosity depends on the event weighting and the process cross-section $\sigma_{int}$ (DIS for DJANGOH event and diffractive vector meson production for HEPGEN++ events) :
+where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJANGOH}$ are the number of kaons reconstructed from the HEPGEN++ and DJANGOH MC samples normalized by the corresponding MC luminosity ($L_{MC}$). The luminosity depends on the event weighting and the process cross-section $\sigma_{int}$ (DIS for DJANGOH event and diffractive vector meson production for HEPGEN++ events):
 %
 \begin{equation} \label{eq:reweight}
   \sum_{events} w_i = L_{MC} \cdot \sigma{int}.
@@ -264,7 +264,7 @@ The same MC samples are also used to determine diffractive vector meson contribu
   \end{split}
 \end{equation}
 %
-The total contribution from the diffractive vector-meson contribution to the DIS sample is $f^{VM}_{DIS} = f^{\rho^0}_{DIS} + f^{\Phi}_{DIS}$. The final correction reads as follows :
+The total contribution from the diffractive vector-meson contribution to the DIS sample is $f^{VM}_{DIS} = f^{\rho^0}_{DIS} + f^{\Phi}_{DIS}$. The final correction reads as follows:
 %
 \begin{equation}
   \begin{split}
@@ -279,7 +279,7 @@ and are displayed in Fig.~\ref{DVMpi} for the correction for pions and in Fig.~\
 
 \section{Radiative corrections} \label{sec:rcf}
 
-The experimental multiplicities are affected by QED radiative effects, which introduce a systematic bias of the measured kinematics with respect to the true kinematics. The correction factor taking into account these contributions is the radiative correction factor defined as :
+The experimental multiplicities are affected by QED radiative effects, which introduce a systematic bias of the measured kinematics with respect to the true kinematics. The correction factor taking into account these contributions is the radiative correction factor defined as:
 
 \begin{equation}
 	\eta(x,y,z) = \frac{d^2 M_{1\gamma}/dxdydz}{d^2 M_{measured}/dxdydz}
@@ -289,7 +289,7 @@ where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in t
 
 \section{Electron contamination}
 
-The pion (and thus hadron) sample is contaminated by electrons and positrons. With the DJANGOH event generator, we are able to describe almost correctly the electron production from radiative photons : in Fig.~\ref{pic:Eprod2016} one can see that the discrepancy of electroproduction in $\Phi$ in the hadron production plane is up to $10$\% at low $\Phi$. Given the overall small size of the correction it was decided to use the MC sample for corrections at momenta, where the electron identification cannot be provided by the RICH detector. The fraction of electrons in the pion samples obtained in the range $12$ $< p_h <$ $40$ GeV in the MC sample is shown in Fig.~\ref{pic:epi}. This contamination goes from $5$\% at low $z$ to $1$\% at high $z$. The correction is taken into account in the acceptance correction, taking the electrons in the reconstructed sample (as in data) and not in the generated one. The correction looks reasonable and further scrutinizing of this analysis is on the way.
+The pion (and thus hadron) sample is contaminated by electrons and positrons. With the DJANGOH event generator, we are able to describe almost correctly the electron production from radiative photons: in Fig.~\ref{pic:Eprod2016} one can see that the discrepancy of electroproduction in $\Phi$ in the hadron production plane is up to $10$\% at low $\Phi$. Given the overall small size of the correction it was decided to use the MC sample for corrections at momenta, where the electron identification cannot be provided by the RICH detector. The fraction of electrons in the pion samples obtained in the range $12$ $< p_h <$ $40$ GeV in the MC sample is shown in Fig.~\ref{pic:epi}. This contamination goes from $5$\% at low $z$ to $1$\% at high $z$. The correction is taken into account in the acceptance correction, taking the electrons in the reconstructed sample (as in data) and not in the generated one. The correction looks reasonable and further scrutinizing of this analysis is on the way.
 
 \begin{sidewaysfigure}[!p]
 	\includegraphics[scale=0.7]{./gfx/econt.png}

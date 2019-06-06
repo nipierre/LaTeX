@@ -15,13 +15,13 @@ In the previous chapter, we obtained charged kaon multiplicities $M^K(x,Q^2,z)$.
 
 \subsection{General Fit method}
 
-$D^K$ can be obtained from a pQCD fit to the existing multiplicities. While DSEHS or JAM are doing such studies in NLO, in COMPASS only a LO QCD code is available. The extraction of FFs from the measured $K^{\pm}$ multiplicities is performed in a LO pQCD fashion according to Eq.~\ref{eq:MultpQCD} :
+$D^K$ can be obtained from a pQCD fit to the existing multiplicities. While DSEHS or JAM are doing such studies in NLO, in COMPASS only a LO QCD code is available. The extraction of FFs from the measured $K^{\pm}$ multiplicities is performed in a LO pQCD fashion according to Eq.~\ref{eq:MultpQCD}:
 %
 \begin{equation}
   \frac{dM^h(x,Q^2,z)}{dz} = \frac{d^3\sigma^h(x,Q^2,z)/dxdQ^2dz}{d^3\sigma^{DIS}(x,Q^2,z)/dxdQ^2} = \frac{\sum_q e^2_q(x,Q^2)D^h_q(z,Q^2)}{\sum_q e^2_qq(x,Q^2)},
 \end{equation}
 %
-with $q(x,Q^2)$ are the quark PDFs for the flavour $q$. Using a standard $\chi^2$ minimization over the data points with the minimization framework Minuit2 of the ROOT package :
+with $q(x,Q^2)$ are the quark PDFs for the flavour $q$. Using a standard $\chi^2$ minimization over the data points with the minimization framework Minuit2 of the ROOT package:
 %
 \begin{equation} \label{eq:MultpQCD}
   \chi^2 = \sum_j \frac{\left[T_j\left(x_j,Q^2_j,z_j\right) - M_j\left(x_j,Q^2_j,z_j\right)\right]^2}{\sigma^2_j},
@@ -29,8 +29,8 @@ with $q(x,Q^2)$ are the quark PDFs for the flavour $q$. Using a standard $\chi^2
 %
 where $M_j$ are the measured multiplicities and $\sigma^2_j$ are the quadratic sum of the statistical errors. $T_j$ are the multiplicities evaluated for a set of parameters for a given parametrisation. Due to the large $Q^2$ span covered by the data, it is mandatory to properly take into account the $Q^2$ dependence of FFs and PDFs. Thus the $T_j$ are evaluated at $Q^2_0$ = 1 (GeV/$c$)$^2$ and evolved to their actual $Q^2_j$ using the LO DGLAP $Q^2$ evolution code provided by M. Hirai and S. Kumano \cite{HKNS}.
 
-As described in Chapter~\ref{ch:thfw}, four independent FFs (see Eq.~\ref{eq:FFKaon}) are extracted : $D^K_{fav}$, $D^K_{unf}$, $D^K_{s}$ and $D^K_{g}$.
-For the current analysis, the following parametrization, similar to the one from DSEHS described in Chapter~\ref{ch:thfw} is used :
+As described in Chapter~\ref{ch:thfw}, four independent FFs (see Eq.~\ref{eq:FFKaon}) are extracted: $D^K_{fav}$, $D^K_{unf}$, $D^K_{s}$ and $D^K_{g}$.
+For the current analysis, the following parametrization, similar to the one from DSEHS described in Chapter~\ref{ch:thfw} is used:
 %
 \begin{equation}
   \begin{split}
@@ -43,20 +43,20 @@ The PDFs set from MSTW$08$ in LO pQCD \cite{MSTW08}, stored by the LHAPDF data g
 
 \subsection{Uncertainties calculation}
 
-The statistical and systematic uncertainties of the extracted FFs are determined by using a bootstrap method \cite{replicas}. Therefore a number of resamples of the original multiplicity data are constructed. For each resample the data points are fluctuated proportional to their uncertainty, resulting in a set of data points :
+The statistical and systematic uncertainties of the extracted FFs are determined by using a bootstrap method \cite{replicas}. Therefore a number of resamples of the original multiplicity data are constructed. For each resample the data points are fluctuated proportional to their uncertainty, resulting in a set of data points:
 %
 \begin{equation}\label{eq:replica}
   M'_j = M_j + R \cdot \sigma_j,
 \end{equation}
 %
 where $M_j$ and $\sigma_j$ are the original value and the corresponding uncertainty of data point $j$, respectively. The factor $R$ is a Gaussian randomly distributed value in the range [$-\infty,\infty$]. Its determination is differently treated for statistical and systematic uncertainties.
-The statistical uncertainties are uncorrelated and the deviation of each data point $j$ is calculated with an individual random value $R_j$. Thus, for statistical uncertainties, Eq.~\ref{eq:replica} can be written as :
+The statistical uncertainties are uncorrelated and the deviation of each data point $j$ is calculated with an individual random value $R_j$. Thus, for statistical uncertainties, Eq.~\ref{eq:replica} can be written as:
 %
 \begin{equation}\label{eq:replica}
   M'_{j,stat} = M_j + R_j \cdot \sigma_{j,stat}.
 \end{equation}
 %
-For systematic uncertainties, for each resample only one random value $R'$ of the standard Gaussian distribution is generated :
+For systematic uncertainties, for each resample only one random value $R'$ of the standard Gaussian distribution is generated:
 %
 \begin{equation}\label{eq:replica}
   M'_{j,sys} = M_j + R' \cdot \sigma_{j,sys}.

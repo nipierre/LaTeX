@@ -5,17 +5,17 @@
 
 %----------------------------------------------------------------------------------------
 
-For particle tracks with a measured momentum using the RICH information enables us to determine the particle mass and thus identify the particle. As the detector efficiency is not perfect, the misidentification probability is not zero ; one thus has to determine the identification performance of the RICH detector. The RICH performance study relies on extracting the identification and misidentification probabilities for pions, kaons and protons. From samples of pure pions, kaons and protons the RICH detector response is measured : the hadrons are identified using RICH information and the identification and misidentification probabilities are calculated in the hadron ($p_h$,$\theta_h$) phase space for pions, kaons and protons. The method used for identification is a likelihood estimation for different hypotheses. At first order, the mass assignment corresponds to the highest likelihood, but further requirements can be added to improve the result.
+For particle tracks with a measured momentum using the RICH information enables us to determine the particle mass and thus identify the particle. As the detector efficiency is not perfect, the misidentification probability is not zero ; one thus has to determine the identification performance of the RICH detector. The RICH performance study relies on extracting the identification and misidentification probabilities for pions, kaons and protons. From samples of pure pions, kaons and protons the RICH detector response is measured: the hadrons are identified using RICH information and the identification and misidentification probabilities are calculated in the hadron ($p_h$,$\theta_h$) phase space for pions, kaons and protons. The method used for identification is a likelihood estimation for different hypotheses. At first order, the mass assignment corresponds to the highest likelihood, but further requirements can be added to improve the result.
 
 \section{Determination of RICH Detector Performance}
 
-The identification and misidentification efficiency is given by the ratio of the number of particles correctly and wrongly identified respectively, out of pure sample of specific hadron type species over the total number of hadrons composing the pure sample :
+The identification and misidentification efficiency is given by the ratio of the number of particles correctly and wrongly identified, respectively, out of a pure sample of specific hadron type species over the total number of hadrons composing the pure sample:
 
 \begin{equation}
-    P(t \rightarrow i) = \frac{N(t \rightarrow i)}{N(t)}
+    \epsilon(t \rightarrow i) = \frac{N(t \rightarrow i)}{N(t)}
 \end{equation}
 
-$P(t \rightarrow i)$ is the probability that a particle $t$ is identified as a particle $i$, $N(t \rightarrow i)$ is the number of particles $t$ identified as $i$ and $N(t)$ is the total number of hadron $t$ of the pure sample. The identification ($P(t \rightarrow t)$) and misidentification ($P(t \rightarrow i)$) efficiencies are properties of the RICH and can be displayed in an efficiency matrix with the identification efficiencies on the diagonal and the misidentification ones off-diagonal :
+$\epsilon(t \rightarrow i)$ is the probability that a particle $t$ is identified as a particle $i$, $N(t \rightarrow i)$ is the number of particles $t$ identified as $i$ and $N(t)$ is the total number of hadron $t$ of the pure sample. The identification ($\epsilon(t \rightarrow t)$) and misidentification ($\epsilon(t \rightarrow i)$) efficiencies are properties of the RICH and can be displayed in an efficiency matrix with the identification efficiencies on the diagonal and the misidentification ones off-diagonal:
 
 \begin{equation}
   M_R
@@ -31,7 +31,7 @@ $P(t \rightarrow i)$ is the probability that a particle $t$ is identified as a p
 
 To obtain the efficiency matrix, three pure hadron samples are needed. The RICH performance analysis is based on the study of the pion, kaon and proton samples originating from $\Phi$, $K^0$ and $\Lambda$ decays.
 
-For the determination of the RICH efficiency, it is necessary to have a source of events where the true kind of the particle passing the RICH is known. That kind of events is obtained using two body particle decays, namely the decay of a $K^0$ into two pions ($K^0 \rightarrow \pi^+\pi^-$), the $\Phi$ decay into two kaons ($\Phi \rightarrow K^+K^-$), the $\Lambda$ decay into a pion and a proton ($\Lambda \rightarrow p\pi^-$). In order to select events with such decays, scattering events with a scattered muon are selected. The typical cuts are thus applied to the data:
+For the determination of the RICH efficiency, it is necessary to have a source of events where the true kind of the particle passing the RICH is known. That kind of events is obtained using two body particle decays, namely the decay of a $K^0$ into two pions ($K^0 \rightarrow \pi^+\pi^-$), the $\Phi$ decay into two kaons ($\Phi \rightarrow K^+K^-$), the $\Lambda$ decay into a pion and a proton ($\Lambda \rightarrow p\pi^-$). In order to select events with such decays, scattering events with a scattered muon are selected. The following cuts are thus applied to the data:
 \begin{itemize}
   \item Exclude bad spills
   \item Select best primary vertex with incoming and scattered muon
@@ -69,7 +69,7 @@ For $K^0$ mesons the decay into $\pi^+$ and $\pi^-$ with a branching ration of (
   \end{itemize}
 \end{enumerate}
 
-The same cuts except for the mass cuts are used for $K^0$ and $\Lambda$ candidates. The transverse momentum of K, $\Lambda$ or dacay product is shown as a function of the ratio of the longitudinal momentum ratio of two particles :
+The same cuts except for the mass cuts are used for $K^0$ and $\Lambda$ candidates. The transverse momentum of K, $\Lambda$ or dacay product is shown as a function of the ratio of the longitudinal momentum ratio of two particles:
 %
 \begin{equation}
   \alpha = \frac{p_{L,1}-p_{L,2}}{p_{L,1}+p_{L,2}},
@@ -89,7 +89,7 @@ The three visible arcs are produced by the decay of the $K^0$ mesons and the $\L
 
 \subsection{$\Phi$ selection}
 
-The branching ratio of the $\Phi$ decay into two kaons is ($48.9$~$\pm$~$0.5$)\% \cite{PDG}. The $\Phi$ meson decay length is too short to separate the primary and decay vertex. Therefore, all outgoing particles from a primary vertex are taken into account for the search of possible $\Phi$ mesons. The selection steps are similar the selection of the $K^0$/$\Lambda$ candidates :
+The branching ratio of the $\Phi$ decay into two kaons is ($48.9$~$\pm$~$0.5$)\% \cite{PDG}. The $\Phi$ meson decay length is too short to separate the primary and decay vertex. Therefore, all outgoing particles from a primary vertex are taken into account for the search of possible $\Phi$ mesons. The selection steps are similar the selection of the $K^0$/$\Lambda$ candidates:
 
 \begin{enumerate}
   \item Selection of possible good events with $\Phi$ mesons
@@ -110,13 +110,13 @@ The branching ratio of the $\Phi$ decay into two kaons is ($48.9$~$\pm$~$0.5$)\%
   \end{itemize}
 \end{enumerate}
 
-The selection of $\Phi$ meson candidates results in a large combinatorial background.
+The selection of $\Phi$ meson candidates results in a large combinatorial background. The three regions in the Armenteros plots in Fig.~\ref{pic:Armenteros} (b) are produced by the decay of the $\Phi$ mesons. The decay of $\Phi$ mesons in two particles with the same mass results in symmetric regions. All particles below the red dashed line are rejected as in the $K^0/\Lambda$ case.
 
 \section{Likelihood method}
 
 The likelihood (LH) method is a statistical method that can be used to find a suitable model for describing a data set or to estimate the values of the parameters used in this model \cite{LH1,LH2}.
 
-The first step is to define the LH function. With a sample $\mathbf{s}$ of elements $s_i$, $i \in \llbracket 1,l \rrbracket$ :
+The first step is to define the LH function. Let $\mathbf{s}$ be a sample of elements $s_i$, $i \in \llbracket 1,l \rrbracket$:
 %
 \begin{equation}
   \mathbf{s} = \left( s_1,s_2,..,s_l \right),
@@ -125,96 +125,96 @@ The first step is to define the LH function. With a sample $\mathbf{s}$ of eleme
 which follows a distribution with the probability density $f(s|\theta)$. This probabilty density is determined by a set of parameters $\theta = \theta_1,..,\theta_m$. In order to fit the sample with the model some requirements must be met.
 
 \begin{enumerate}
-  \item The sample can be considered as a $l$-dimensional random variable and can be assigned a probability density $g(\mathbf{s})$ :
+  \item The sample can be considered as a $l$-dimensional random variable and can be assigned a probability density $g(\mathbf{s})$:
   \begin{equation}
     g(\mathbf{s}) = g\left( s_1,s_2,..,s_l \right).
   \end{equation}
   \item The sample is random.
   \begin{enumerate}[(a)]
-    \item The $s_i$ are independent :
+    \item The $s_i$ are independent:
     \begin{equation}
       g(\mathbf{s}) = g_1\left(s_1 \right) \cdot g_2\left(s_2 \right) \cdot .. \cdot g_l\left(s_l \right).
     \end{equation}
-    \item Each element $s_i$ follows the probability density of the distribution :
+    \item Each element $s_i$ follows the probability density of the distribution:
     \begin{equation}
       g(s_i) = f(s|\theta).
     \end{equation}
   \end{enumerate}
 \end{enumerate}
 
-If these conditions are fulfilled, the LH function $L\left(s_1,..,s_l|\theta \right)$ is defined as :
+If these conditions are fulfilled, the LH function $L\left(s_1,..,s_l|\theta \right)$ is defined as:
 %
 \begin{equation}
   L\left(s_1,..,s_l|\theta \right) = \prod_{i=1}^{l} f(s_i|\theta),
 \end{equation}
 %
-and states that the probability of occurence of the sample is equal to the product of the occurence of each element of the sample. The probability density of the sample is normalized to its domain of definition $\Omega$ :
+and states that the probability of occurence of the sample is equal to the product of the occurence of each element of the sample. The probability density of the sample is normalized to its domain of definition $\Omega$:
 %
 \begin{equation}
   \int_{\Omega} L\left(s_1,..,s_l|\theta \right) ds_1 .. ds_l = 1.
 \end{equation}
 %
-In order to select from all possible sets of parameters in $\Theta$ the estimator $\hat{\theta}$, which gives the best description of the true description, one applies the Maximum Likelihood Estimation (MLE) method. The method can be formulated as follows :
+In order to select from all possible sets of parameters in the parameter space $\Theta$ the estimator $\hat{\theta}$, which gives the best description of the true description, one applies the Maximum Likelihood Estimation (MLE) method. The method can be formulated as follows:
 %
 \begin{equation}
   \hat{\theta} \in \left \{ \underset{\theta \in \Theta}{arg\,max}\,L\left(s_1,..,s_l|\theta \right) \right \},
 \end{equation}
 %
-if a maximum exists. This means that the maximum of the LH function has to be found in relation to the parameters. Having found the maximum, one has also found the best estimate of the parameters. Since the LH function can yield very small values as a probability density, it is common to defin the logarithmic LH function instead :
+if a maximum exists. This means that the maximum of the LH function has to be found in relation to the parameters. Having found the maximum, one has also found the best estimate of the parameters. Since the LH function can yield very small values as a probability density, it is common to define the logarithmic LH function instead:
 %
 \begin{equation}
   \mathscr{L}\left(s_1,..,s_l|\theta \right) = \text{ln}\,L\left(s_1,..,s_l|\theta \right) = \sum_{i=1}^{l} \text{ln}\,f(s_i|\theta).
 \end{equation}
 %
-The maximization condition for several parameters $\theta = \theta_1,..,\theta_m$ is thus :
+The maximization condition for several parameters $\theta = \theta_1,..,\theta_m$ is thus:
 %
 \begin{equation}\label{eq:maximization}
   \frac{\delta \mathscr{L}\left(s_1,..,s_l|\delta\theta \right)}{\delta\theta_j} = \frac{\delta}{\delta\theta_j} \sum_{i=1}^{l} \text{ln}\,f(s_i|\theta) = 0 \quad for \quad \theta = \hat{\theta}.
 \end{equation}
 %
-In many physics systems one can find geometrical or kinematic constraints such as the sum of the impulses equal to zero and the sum of the energies equal to twice the photon energy in the electron-positron annihilation in the center-of-mass system. These conditions can be used to eliminate one of the parameters of the system. However, this is often not desirable since this elimination is often only possible through complicated algorithm or the equivalent treatment of the parameters after the adaptation is no longer guaranteed. In order to consider the constraints further, they can be included in the LH functions as functions $c_{k}(\theta)(k=1,..,z_c)$, analogous to the method of Lagrange multipliers :
+In many physics systems one can find geometrical or kinematic constraints such as the sum of the impulses equal to zero and the sum of the energies equal to twice the photon energy in the electron-positron annihilation in the center-of-mass system. These conditions can be used to eliminate one of the parameters of the system. However, this is often not desirable since this elimination is often only possible through complicated algorithm or the equivalent treatment of the parameters after the adaptation is no longer guaranteed. In order to consider the constraints further, they can be included in the LH functions as functions $c_{k}(\theta)(k=1,..,z_c)$, analogous to the method of Lagrange multipliers:
 %
 \begin{equation}
   \mathscr{L}\left(s_1,..,s_l|\delta\theta \right) = \text{ln}\, L\left(s_1,..,s_l|\theta \right) = \sum_{i=1}^{l} \text{ln}\, f(s_i|\theta) - \sum_{k=1}^{z_{c}} \lambda_k c_k(\theta)
 \end{equation}
 %
-The overall $z_c$ Lagrange multipliers $\lambda_k$ are treated as additional parameters. Thus the $z_c$ conditions of the constraints still come to the maximization conditions in Eq.~\ref{eq:maximization} :
+The overall $z_c$ Lagrange multipliers $\lambda_k$ are treated as additional parameters. Thus the $z_c$ conditions of the constraints still come to the maximization conditions in Eq.~\ref{eq:maximization}:
 %
 \begin{equation}
   \frac{\delta \mathscr{L}}{\delta \lambda_k} = c_k(\theta) = 0.
 \end{equation}
 %
-Since the LH method is used not only for particle identification by the RICH detector but also for the fits to determine the RICH efficiencies, the extended Maximum Likelihood Estimation (eMLE) method is discussed further below. This method is used primarily for problems in which the fit also supplies the number of expected events and these are to be adapted to the observed events. For example this is the case if there are $n$ events that results from a sum of several sources $n_i$. The constraint that follows is that $n = \sum_{i=1}^{j} n_i$. This condition can now be used as an additional factor in the LH function. The factor then corresponds to a Poisson distribution, which describes the probability that $n$ events are also observed at an expected value $\lambda$ :
+Since the LH method is used not only for particle identification by the RICH detector but also for the fits to determine the RICH efficiencies, the extended Maximum Likelihood Estimation (eMLE) method is discussed further below. This method is used primarily for problems, in which the fit also supplies the number of expected events and these are to be adapted to the observed events. For example this is the case if there are $n$ events that results from a sum of several sources $n_i$. The constraint that follows is that $n = \sum_{i=1}^{j} n_i$. This condition can now be used as an additional factor in the LH function. The factor then corresponds to a Poisson distribution, which describes the probability that $n$ events are also observed at an expected value $\lambda$:
 %
 \begin{equation}
   L\left(s_1,..,s_l|\theta \right) = \frac{\lambda^n e^{-\lambda}}{n!} \prod_{i=1}^{n} f(s_i|\theta).
 \end{equation}
 %
-For the logarithmic LH function follows :
+For the logarithmic LH function follows:
 %
 \begin{equation}\label{eq:loglambda}
-  \mathscr{L}\left(s_1,..,s_l|\theta \right) = n \,\text{ln}\, \lambda - \lambda + \sum_{i=1}^{n} \text{ln},f(s_i|\theta)
+  \mathscr{L}\left(s_1,..,s_l|\theta \right) = n \,\text{ln}\, \lambda - \lambda + \sum_{i=1}^{n} \text{ln}\,f(s_i|\theta)
 \end{equation}
 %
-The term $- \text{ln} n!$ is irrelevant for the following maximization and has been omitted. With the help of the following simplification :
+The term $- \text{ln} (n!)$ is irrelevant for the following maximization and has been omitted. With the help of the following simplification:
 %
 \begin{equation}
   n \,\text{ln}\, \lambda + \sum_{i=1}^{n} \text{ln}\, f(s_i|\theta) =  \sum_{i=1}^{n} \left(\text{ln}\, f(s_i|\theta) + \text{ln}\, \lambda \right) = \sum_{i=1}^{n} \text{ln}\, (\lambda f(s_i|\theta)),
 \end{equation}
 %
-is it possible to define a function $g(s_i|\theta) = \lambda f(s_i|\theta)$, which is normalized by $\lambda$ :
+is it possible to define a function $g(s_i|\theta) = \lambda f(s_i|\theta)$, which is normalized by $\lambda$:
 %
 \begin{equation}
   \int_{\Omega} g(s_i|\theta) ds_1 .. ds_l = \lambda \int_{\Omega} f(s_i|\theta)ds_1 .. ds_l  = \lambda.
 \end{equation}
 %
-Thus Eq.~\ref{eq:loglambda} can be rewritten into the common form of extended LH function :
+Thus Eq.~\ref{eq:loglambda} can be rewritten into the common form of an extended LH function:
 %
 \begin{equation}
   \mathscr{L}\left(s_1,..,s_l|\theta \right) = \sum_{i=1}^{n} \text{ln}\, g(s_i|\theta) - \int_{\Omega} g(s_i|\theta) ds_1 .. ds_l.
 \end{equation}
 %
-It follows that $\mathscr{L}\left(s_1,..,s_l|\theta \right)$ becomes maximal when the additional term equals the number of actual events $n$.
+It follows that $\mathscr{L}\left(s_1,..,s_l|\theta \right)$ becomes maximal, when the additional term equals the number of actual events $n$.
 
 \section{RICH Particle Identification}
 
@@ -230,7 +230,7 @@ where
   G\left(\Theta_k^{Ph},\Phi_k^{Ph} \right) = \frac{1}{\sqrt{2\pi} \cdot \sigma_{\theta,k}^{Ph}} e^{-\frac{1}{2}\frac{\left(\Theta_k^{Ph}-\Theta_k^{Ph} \right)^2}{\left(\sigma_{\theta,k}^{Ph} \right)^2}} \cdot \frac{\Theta_k^{Ph}}{\Theta^{M}}
 \end{equation}
 %
-is a Gaussian distribution with which the signal (see Fig.~\ref{pic:Photonfit} (b)) can be described. The standard deviation $\sigma_{\theta}^{Ph}(\Phi_P^{Ph},\beta)$ originates from the accuracy with which the photon distribution can be determined. This in turn depends on the azimuthal photon angle ($\Phi_P^{Ph}$) in the plane of the photodetectors, which is characterized by the index $P$, and on the particle velocity relative to the speed of light $\beta$. $\Theta^M$ is the mass hypothesis is designated. It is determined by the expected Cherenkov angle for a particular particle type or particle mass with $\beta$. Possible particles are electrons, pions, kaons and protons.
+is a Gaussian distribution with which the signal (see Fig.~\ref{pic:Photonfit} (b)) can be described. The standard deviation $\sigma_{\theta}^{Ph}(\Phi_P^{Ph},\beta)$ originates from the accuracy with which the photon distribution can be determined. This in turn depends on the azimuthal photon angle ($\Phi_P^{Ph}$) in the plane of the photodetectors, which is characterized by the index $P$, and on the particle velocity relative to the speed of light $\beta$. $\Theta^M$ is the mass hypothesis for the considered particle. It is determined by the expected Cherenkov angle for a particular particle type or particle mass with $\beta$. Possible particles are electrons, pions, kaons and protons.
 
 \begin{figure}[!h]
   \centering
@@ -240,13 +240,13 @@ is a Gaussian distribution with which the signal (see Fig.~\ref{pic:Photonfit} (
 	\label{pic:Photonfit}
 \end{figure}
 
-The goal of the selection is a clean pion and kaon sample. The RICH particle identification efficiency is studied in the momentum range of $3$ GeV/$c$ $ \leq p \leq $ $50$ GeV/$c$. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ $17$ GeV protons are still below the threshold of :
+The RICH particle identification efficiency is studied in the momentum range of $3$ GeV/$c$ $ \leq p \leq $ $50$ GeV/$c$. In this range, pions and kaons are emitting Cherenkov light, while up to $\sim$ $17$ GeV protons are still below the threshold of:
 %
 \begin{equation}
   p_{thr,i} = \frac{m_i}{ \sqrt{n^{2}-1} }
 \end{equation}
 %
-where $n$ is the refractive index. This is shown in Fig.~\ref{pic:RefIndex} where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. The identification of pions, kaons and protons above the momentum threshold is done by comparing the likelihood values with one another. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions. Due to the larger amount of pions compared to kaons stricter selection cuts are imposed for kaons. The likelihood cuts for protons require its likelihood to be the largest one.  Below the momentum threshold, protons do not emit Cherenkov light. Therefore, the likelihood values are used to test whether the detected light is consistent with random noise in the detector (background). In order to avoid possible problems due to the uncertainty on the reconstructed momentum or the uncertainty of the refractive index of the RICH gas, a region of $\pm$ $5$ GeV/$c$ around the proton threshold is used, where both hypothesis are applied for proton identification. The likelihood cuts are listed in Table~\ref{tab:LHcut}. As the electrons cannot be distinguished from pions for momentum above $8$ GeV, they are not separated at this stage of the analysis. This contamination is dealt with the Monte-Carlo later in the analysis (Chapter~\ref{ch:CF}).
+where $n$ is the refractive index. This is shown in Fig.~\ref{pic:RefIndex} where the reconstructed Cherenkov angle is shown as a function of the hadron momentum. The identification of pions, kaons and protons above the momentum threshold is done by comparing the likelihood values with one another. The identification of these particles is done using likelihood cuts. Using the likelihood values, the particle identification is done by comparing these values with one another. In the simplest case, the highest one determines the particle type. This method is used in the case of pions. In the case of kaons, stricter likelihood cuts are applied to suppress misidentified pions as the goal of the selection is to obtain a clean pion and kaon sample.  The likelihood cuts for protons require its likelihood to be the largest one.  Below the momentum threshold, protons do not emit Cherenkov light. Therefore, the likelihood values are used to test, whether the detected light is consistent with random noise in the detector (background). In order to avoid possible problems due to the uncertainty on the reconstructed momentum or the uncertainty of the refractive index of the RICH gas, a region of $\pm$ $5$ GeV/$c$ around the proton threshold is used, where both hypothesis are applied for proton identification. The likelihood cuts are listed in Table~\ref{tab:LHcut}. As the electrons cannot be distinguished from pions for momentum above $8$ GeV, they are not separated at this stage of the analysis. This contamination is dealt with the Monte-Carlo later in the analysis (Chapter~\ref{ch:CF}).
 
 \begin{table}[!h]
   \caption{Likelihood cuts for pion, kaon and protons}
@@ -278,23 +278,11 @@ where $n$ is the refractive index. This is shown in Fig.~\ref{pic:RefIndex} wher
 The particle identification efficiency of the RICH is studied as a function of the hadron phase space. Here we use the hadron momentum and the polar angle at the entrance of the RICH, as already studied before, for example in Reference \cite{Curiel}. A fine binning is used for the momentum dependence, since the Cherenkov effect depends strongly on this variable. For the dependence on the polar angle, a coarse binning can be used, since only a weak dependence is observed. The binning used is:
 
 \begin{itemize}
-  \item Momentum $p_h$ (GeV/$c$) : \{$3,5,7,10,12,13,15,17,19,22,25,27,30,35,40,50$\}
-  \item Angle $\theta_h$ (rad) : \{$0,0.01,0.04,0.12,0.3$\}
+  \item Momentum $p_h$ (GeV/$c$): \{$3,5,7,10,12,13,15,17,19,22,25,27,30,35,40,50$\}
+  \item Angle $\theta_h$ (rad): \{$0,0.01,0.04,0.12,0.3$\}
 \end{itemize}
 
-For each bin, the elements of the efficiency matrix $M_R$ are determined separately for positive and negative particles. The elements of this matrix contain the probability for a particle $t$ to be identified as a particle of type $i$, for example a pion that is correctly identified as pion or wrongly as a kaon. The full matrix is given by:
-
-\begin{equation}
-  M_R
-  =
-  \begin{bmatrix}
-  \epsilon(\pi \rightarrow \pi) & \epsilon(K \rightarrow \pi) & \epsilon(p \rightarrow \pi)\\
-  \epsilon(\pi \rightarrow K) & \epsilon(K \rightarrow K) & \epsilon(p \rightarrow K) \\
-  \epsilon(\pi \rightarrow p) & \epsilon(K \rightarrow p) & \epsilon(p \rightarrow p)
-  \end{bmatrix}
-\end{equation}
-
-The different elements are determined by $\varepsilon(t \rightarrow i)$ = $N(t \rightarrow i)/N(t)$ where $N(t)$ is the total number of particles $t$ and $N(t \rightarrow i)$ is the number of particles~$t$, which are identified as particle~$i$ using the clean samples described above. In the case of positive pions, the events from the $K^0$ sample are used, where the negative hadron is identified as a pion using the likelihood cuts shown in Table~\ref{tab:LHcut}.  Therefore, the second particle has to be a pion too, if the decaying particle was a $K^0$. Using the RICH, the particle type is determined for the second particle, which  results in the number $N(\pi^+ \rightarrow i)$. An equivalent procedure is used for positive kaons and protons using the $\Phi$ and $\Lambda$ samples. In order to obtain these numbers for the negative particles, the same samples are used but this time performing the identification of the positive particle in the first place. The numbers $N(t \rightarrow i)$ are extracted using a fit, which is described here for the $K^0$ sample, where the negative pion is already identified. The events are put into five different groups, depending on the particle type determined by the RICH :
+For each bin, the elements of the efficiency matrix $M_R$ are determined separately for positive and negative particles. The elements of this matrix contain the probability for a particle $t$ to be identified as a particle of type $i$, for example a pion that is correctly identified as pion or wrongly as a kaon. In the case of positive pions, the events from the $K^0$ sample are used, where the negative hadron is identified as a pion using the likelihood cuts shown in Table~\ref{tab:LHcut}.  Therefore, the second particle has to be a pion too, if the decaying particle was a $K^0$. Using the RICH, the particle type is determined for the second particle, which  results in the number $N(\pi^+ \rightarrow i)$. An equivalent procedure is used for positive kaons and protons using the $\Phi$ and $\Lambda$ samples. In order to obtain these numbers for the negative particles, the same samples are used but this time performing the identification of the positive particle in the first place. The numbers $N(t \rightarrow i)$ are extracted using a fit, which is described here for the $K^0$ sample, where the negative pion is already identified. The events are put into five different groups, depending on the particle type determined by the RICH:
 
 \begin{itemize}
   \item All events (RICH not used for second particle)
@@ -305,11 +293,11 @@ The different elements are determined by $\varepsilon(t \rightarrow i)$ = $N(t \
 \end{itemize}
 
 For each of these groups, the invariant $K^0$ mass spectra are shown in Fig.~\ref{pic:K0MassSpectra}, for a selected momentum bin. The number of events in the peak and the background are determined by a simultaneous fit of all five spectra. These spectra are described using two Gaussian distributions with the same mean for the signal, $f_{sig}$, and a polynomial to describe the background, $f_{bg}$. Their expressions are given in Table~\ref{tab:FunctionForm}. The two Gaussian distributions account for the different resolutions of the two spectrometer stages. The fitted function for each of the groups is given by
-
+%
 \begin{equation}
-  f(x) = N_{sig} \cdot f_{sig} + N_{bg} \cdot f_{bg}
+  f(x) = N_{sig} \cdot f_{sig} + N_{bg} \cdot f_{bg},
 \end{equation}
-
+%
 where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background events. Here, the same widths, $\sigma_1$ and $\sigma_2$, of the two Gaussian distributions was used for all five spectra.
 
 \begin{table}[!h]
@@ -330,31 +318,31 @@ where $N_{sig}$ is the amount of $K^0$ and $N_{bgd}$ the amount of background ev
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.3]{./gfx/K0MassSpectra.png}
-	\caption{Mass spectra for $K^0$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right : all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c$ and in the angle in the range [$0.01$,$0.04$] rad.}
+	\caption{Mass spectra for $K^0$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right: all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c$ and in the angle in the range [$0.01$,$0.04$] rad.}
 	\label{pic:K0MassSpectra}
 \end{figure}
 
-Also the ratio $\delta$ of the amount of events in both Gaussian distributions is assumed to be the same. The shape of the background is the same for all spectra, except for the one where the pion is identified as a proton. In this case, a possible background contribution due to decays from $\Lambda$ baryons into a pion and an proton can be found. This results in a slightly different background shape. The integral of the background remains a independent parameter in all five cases. In order to ensure that the sum of all efficiencies  ($\varepsilon(\pi^+ \rightarrow \pi^+)  + \varepsilon(\pi^+ \rightarrow K^+ ) + \varepsilon(\pi^+ \rightarrow p ) + \varepsilon(\pi^+ \rightarrow noID)$) is $100$\%, an additional constraint is introduced to the fit.
-
+Also the ratio $\delta$ of the amount of events in both Gaussian distributions is assumed to be the same. The shape of the background is the same for all spectra, except for the one where the pion is identified as a proton. In this case, a possible background contribution due to decays from $\Lambda$ baryons into a pion and an proton can be found. This results in a slightly different background shape. The integral of the background remains as an independent parameter in all five cases. In order to ensure that the sum of all efficiencies  ($\varepsilon(\pi^+ \rightarrow \pi^+)  + \varepsilon(\pi^+ \rightarrow K^+ ) + \varepsilon(\pi^+ \rightarrow p ) + \varepsilon(\pi^+ \rightarrow noID)$) is $100$\%, an additional constraint is introduced to the fit.
+%
 \begin{equation}
-  N^{all}(K^0) = N^{\pi}(K^0) + N^{K}(K^0) + N^{p}(K^0) + N^{noID}(K^0)
+  N^{all}(K^0) = N^{\pi}(K^0) + N^{K}(K^0) + N^{p}(K^0) + N^{noID}(K^0),
 \end{equation}
-
+%
 where $N_i(K^0)$ (i = $\pi$, $K$, $p$, $noID$) is the number of $K^0$ obtained from the histogram where the pion is identified as $i$. This results in $16$ free parameters of the fit.
 
-The main difference between the fits of $K^0$, $\Phi$ and $\Lambda$ samples is the description of the signal and the background, while the same method is used. The functions describing both are also given in Table~\ref{tab:FunctionForm}. Again the parameters describing the shape are the same in all five spectra and the fit parameters  describing the integrals of the functions are used as free parameters, except for the parameter of the mass spectrum including all events. This results in $15$ free parameters for the fit of the $\Phi$ sample and in $15$ free parameters for the fit of the $\Lambda$ sample. Examples of the fits performed for the $\Phi$ and $\Lambda$ samples are shown in Figs.~\ref{pic:PhiMassSpectra} and \ref{pic:LambdaMassSpectra}. The fits show the results for the same momentum bin ($25$ GeV/$c$ $<$ $p_h$ $<$ $27$ GeV/$c$) and angular bin ($0.01$ rad $< \theta <$ $0.04$ rad), which was also shown for the $K^0$ sample.
+The main difference between the fits of $K^0$, $\Phi$ and $\Lambda$ samples is the description of the signal and the background, while the same method is used. The functions describing both are also given in Table~\ref{tab:FunctionForm}. Again the parameters describing the shape are the same in all five spectra and the fit parameters  describing the integrals of the functions are used as free parameters, except for the parameter of the mass spectrum including all events. This results in $15$ free parameters for the fit of the $\Phi$ sample and in $15$ free parameters for the fit of the $\Lambda$ sample. Examples of the fits performed for the $\Phi$ and $\Lambda$ samples are shown in Figs.~\ref{pic:PhiMassSpectra} and \ref{pic:LambdaMassSpectra}. The figures show the results for the same momentum bin ($25$ GeV/$c$ $<$ $p_h$ $<$ $27$ GeV/$c$) and angular bin ($0.01$ rad $< \theta <$ $0.04$ rad), which was also shown for the $K^0$ sample.
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.3]{./gfx/PhiMassSpectra.png}
-	\caption{Mass spectra for $\Phi$ candidates with an identified $K^-$ for various hypotheses for the second hadron (from left to right : all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c^2$ and in the angle in the range [$0.01$,$0.04$] rad.}
+	\caption{Mass spectra for $\Phi$ candidates with an identified $K^-$ for various hypotheses for the second hadron (from left to right: all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c^2$ and in the angle in the range [$0.01$,$0.04$] rad.}
 	\label{pic:PhiMassSpectra}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.3]{./gfx/LambdaMassSpectra.png}
-	\caption{Mass spectra for $\Lambda$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right : all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c^2$ and in the angle in the range [$0.01$,$0.04$] rad.}
+	\caption{Mass spectra for $\Lambda$ candidates with an identified $\pi^-$ for various hypotheses for the second hadron (from left to right: all, $\pi$, $K$, $p$, no ID). The momentum of the positive hadron is in the range of [$25$,$27$] GeV/$c^2$ and in the angle in the range [$0.01$,$0.04$] rad.}
 	\label{pic:LambdaMassSpectra}
 \end{figure}
 
@@ -451,7 +439,7 @@ In order to see if the RICH has been stable in terms of efficiency and purity th
 	\includegraphics[scale=0.35]{./gfx/t1/pip2pip.png}
   \includegraphics[scale=0.35]{./gfx/t1/pip2kp.png}
   \includegraphics[scale=0.35]{./gfx/t1/pip2pp.png}
-	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^+$ in the bin $0.01$ rad $<$ $\theta_h$ $<$ $0.04$ rad for 3 different years : 2006 (blue), 2011 (orange) and 2016 (green).}
+	\caption{Identification probabilities $\epsilon(p \rightarrow j)$ for $\pi^+$ in the bin $0.01$ rad $<$ $\theta_h$ $<$ $0.04$ rad for 3 different years: 2006 (blue), 2011 (orange) and 2016 (green).}
 	\label{pic:comppip}
 \end{figure}
 
