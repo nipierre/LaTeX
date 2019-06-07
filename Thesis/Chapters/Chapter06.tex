@@ -10,12 +10,12 @@ In the past, COMPASS has been using two programs for radiative corrections estim
 
 \section{TERAD}
 
-The TERAD program is based on the calculations described in Refs \cite{TERAD1,TERAD2,TERAD3}. These calculations are also referred to as the Dubna radiative correction scheme. A model-independent approach and the QPM are used for computing the deep inelastic processes. An example of the former are radiative corrections to the leptonic current. The QPM is used for all other corrections, i.e. for computing the double photon exchange, real photon emission from quark lines, quark self-energy and weak loop corrections. Also implemented were the $O(\alpha^2)$ corrections, corresponding to $\alpha^4$ contributions to the cross-section. The diagrams corresponding to the $O(\alpha^2)$ corrections are shown in Fig.~\ref{pic:order2corr}.
+The TERAD program is based on the calculations described in Refs \cite{TERAD1,TERAD2,TERAD3}. These calculations are also referred to as the Dubna radiative correction scheme. A model-independent approach and the QPM are used for computing the deep inelastic processes. An example of the former are radiative corrections to the leptonic current. The QPM is used for all other corrections, i.e. for computing the double photon exchange, real photon emission from quark lines, quark self-energy and weak loop corrections. Also implemented were the $\mathscr{O}(\alpha^2)$ corrections, corresponding to $\alpha^4$ contributions to the cross-section. The diagrams corresponding to the $\mathscr{O}(\alpha^2)$ corrections are shown in Fig.~\ref{pic:order2corr}.
 
 \begin{figure}[!h]
   \centering
 	\includegraphics[scale=0.8]{./gfx/order2corr.png}
-	\caption{$O(\alpha^2)$ corrections implemented inside TERAD. Double photon exchange (a) and hadron current corrections (b,c) in the Dubna scheme.}
+	\caption{$\mathscr{O}(\alpha^2)$ corrections implemented inside TERAD. Double photon exchange (a) and hadron current corrections (b,c) in the Dubna scheme.}
 	\label{pic:order2corr}
 \end{figure}
 
@@ -50,6 +50,99 @@ DJANGOH is able to perform:
 \item Generation of events as an event generator in a Monte-Carlo chain
 \end{itemize}
 
+\subsection{Radiative scattering}
+
+The treatment of the non-radiative part of the cross-section is straightforward: the Monte-Carlo program HERACLES is used to generate events at the parton level, which in turn are fragmented and hadronized by DJANGO6 using routines from LEPTO and JETSET. For that reason, in the following we only consider the radiative process:
+
+\begin{equation}
+  l(p_l) + p(p_p) \rightarrow l'(p_{l'}) + \gamma(k) + X(p_X).
+\end{equation}
+
+The particle momenta are given in parentheses. The standard DIS variables (the lepton variables) are defined as the ones given by the inclusive lepton measurement:
+%
+\begin{equation}\label{eq:lepvar}
+  \begin{split}
+    q_{lep} = p_l - p_{l'},\quad Q_{lep}^2 = -q_{lep}^2 \\
+    x_{lep} = \frac{Q^2_{lep}}{2p_p \cdot q_{lep}},\quad y_{lep} = \frac{p_p \cdot q_{lep}}{p_p \cdot p_l},\quad W^2 = (p_p+q_{lep})^2 = (p_x + k)^2.
+  \end{split}
+\end{equation}
+%
+The invariant mass $W$ includes the contribution of the radiative photon. At a given center-of-mass energy $\sqrt{s} = p_p+p_l$, only two variables in Eq.~\ref{eq:lepvar} are independent of the relations:
+%
+\begin{equation}\label{eq:leprel}
+  Q^2_{lep} = x_{lep}y_{lep}s,\quad W^2 = (1-x_{lep})y_{lep}s + m^2_p.
+\end{equation}
+%
+The kinematics can also be defined through the hadronic state. If the real photon can be identified, one can measure the hadron variables:
+%
+\begin{equation}
+  \begin{split}
+    q_{had} = p_l - p_{l'},\quad Q_{had}^2 = -q_{had}^2 \\
+    x_{had} = \frac{Q^2_{had}}{2p_p \cdot q_{had}},\quad y_{had} = \frac{p_p \cdot q_{had}}{p_p \cdot p_l},\quad W_{had}^2 = (p_p+q_{had})^2 = (p_x + k)^2.
+  \end{split}
+\end{equation}
+%
+Note that the variable $y_{had}$ is defined in terms of $p_p \cdot p_l$ rather than in terms of $p_p \cdot (p_l-k)$. The hadron variables obey relations in analogy to Eq.~\ref{eq:leprel}:
+%
+\begin{equation}\label{eq:leprel}
+  Q^2_{had} = x_{had}y_{had}s,\quad W^2 = (1-x_{had})y_{had}s + m^2_p.
+\end{equation}
+%
+In HERACLES, cuts can be imposed on the lepton variables $x_{lep}$, $y_{lep}$ and $Q^2_{lep}$ and, in addition, on the mass of hadronic final state $W_h$.
+
+\subsection{Factorization}
+
+HERACLES is used to generate variables for the semi-inclusive reaction. The momenta $p_l$ and $p_p$ are input quantities, thus $k$ and $p_{l'}$ output quantities of HERACLES. A given event is then classified according to the channels of HERACLES as being either non-radiative, with leptonic initial-state radiation (ISR), with leptonic final-state radiation (FSR) or a Compton event. For radiative events a rescaled Born-term-like is defined so that in any case we are left with:
+%
+\begin{equation}
+  L(p_L) + p(p_p) \rightarrow L'(p_{L'}) + X(p_X).
+\end{equation}
+%
+
+In general both $L$ and $L'$ will be virtual particles. Since our considerations are restricted to $\mathscr{O}(\alpha^3)$, only one of them will be virtual.
+
+\subsubsection*{Initial state radiation}
+
+In case the event is classified as resulting from leptonic ISR, we imagine the two-step process:
+%
+\begin{equation}
+  l(p_l) \rightarrow \widetilde{l}(p_{\widetilde{l}}) + \gamma(k),\quad \widetilde{l}(p_{\widetilde{l}}) + p(p_p) \rightarrow l'(p_{l'}) + \gamma(k) + X(p_X),
+\end{equation}
+%
+thus $L(p_L) = \widetilde{l}(p_{\widetilde{l}})$ and $L'(p_{L'}) = l'(p_{l'})$. Here $p_{\widetilde{l}} = p_l - k$ and DIS variables for the $\widetilde{l}p$ subprocess yield:
+%
+\begin{equation}
+  \begin{split}
+    \widetilde{s} = (p_{\widetilde{l}}+p_p)^2 = s - 2k \cdot (p_l+p_p),\quad \widetilde{Q}^2 = -\widetilde{q}^2 = -(p_{\widetilde{l}}-l')^2 \\
+    \widetilde{x} = \frac{\widetilde{Q}^2}{2p_p \cdot \widetilde{q}} = \frac{\widetilde{Q}^2}{ys-2p_p \cdot k},\quad \widetilde{y} = \frac{\widetilde{Q}^2}{\widetilde{x}\widetilde{s}},\quad \widetilde{W}^2 = (p_p+\widetilde{q})^2 = (1-\widetilde{x})\widetilde{y}\widetilde{s} + m^2_p.
+  \end{split}
+\end{equation}
+%
+The tilde variables coincide with the hadron variables except for $s$ and $y$.
+
+\subsubsection*{Final state radiation}
+
+A similar rescaling of variables is done for events with leptonic FSR, imagining the process as a hard scattering followed by a decay:
+%
+\begin{equation}
+   l(p_{l}) + p(p_p) \rightarrow \widetilde{l'}(p_{\widetilde{l'}}) + \gamma(k) + X(p_X),\quad \widetilde{l'}(p_{\widetilde{l'}}) \rightarrow l'(p_{l'}) + \gamma(k),
+\end{equation}
+%
+where $p_{\widetilde{l'}} = p_l' - k$ and:
+%
+\begin{equation}
+  \begin{split}
+    \widetilde{s} = s,\quad \widetilde{Q}^2 = -\widetilde{q}^2 = -(p_l-p_{\widetilde{l'}})^2 \\
+    \widetilde{x} = \frac{\widetilde{Q}^2}{2p_p \cdot \widetilde{q}} = \frac{\widetilde{Q}^2}{ys-2p_p \cdot k},\quad \widetilde{y} = \frac{\widetilde{Q}^2}{\widetilde{x}\widetilde{s}}.
+  \end{split}
+\end{equation}
+%
+
+\subsubsection*{Compton events}
+
+Compton events are characterized by typically small $Q^2$ and small $W_{had}$. For this reason they are not fragmented and no hadronic final state is generated for them. The number of Compton events is small, typically a fraction of a percent if a cut on the mass of the hadronic final state of $W_h \geq W_{had}^{min} \sim 2$ GeV is imposed.
+
+
 \subsection{Technical description of DJANGOH}
 
 The computational procedures applied in DJANGOH are based on the methods used in AXO \cite{AXO} library for Monte-Carlo integration and event generation. AXO relies on the Monte-Carlo integration algorithm VEGAS \cite{VEGAS}. The computation is made in this order:
@@ -69,12 +162,12 @@ In order to test the self-consistency of DJANGOH, I generated a certain number o
 \caption{Energy distribution for, from left to right, radiative photon, outgoing lepton and struck quark. The emission of low energy radiative photon is privileged by DJANGOH, while the rest of the energy is distributed between the outgoing muon and the struck quark.} \label{fig:edist}
 \end{figure}
 
-We expect naively a peak around $E_{\gamma} = 0$ as soft photons (low energy photons) are more likely to be emitted than hard photons (high energy photons). The rest of the energy of the incoming muon is distributing accordingly between outgoing muon and struck quark.
+We expect naively a peak around $E_{\gamma} = 0$ GeV as soft photons (low energy photons) are more likely to be emitted than hard photons (high energy photons). The rest of the energy of the incoming muon is distributing accordingly between outgoing muon and struck quark.
 
-Fig.~\ref{fig:anglesp} shows the $\theta_{\gamma}$ and $\theta_{\mu}$
+Fig.~\ref{fig:anglesp} shows the $\theta_{\gamma}$ and $\theta_{\mu'}$
 distributions. As discussed before in Chapter~\ref{ch:Renorm}, the radiated photon has two privileged directions of emission, namely the s-peak and the p-peak, collinear to the direction of propagation of the incoming and outgoing muons. In Fig.~\ref{fig:anglesp}, the two distributions are plotted next to each other, enabling to see if the p-peak is matching with the position of the peak in the scattering angle of the outgoing muon, which is the case. The s-peak is around $0$, which is also expected.
 
-A last exercise that I have done is to see whether DJANGOH, when we put a $Q^2_{lep}>1$ constraint on event generation, is producing radiative events with $Q^2_{had}<1$, which would be the case if a radiative photon was emitted by the incoming lepton. A quick proof of this can be made starting from the relation between $Q^2_{lep}$ and $Q^2_{had}$:
+A last exercise that I have done is to see whether DJANGOH, when we put a $Q^2_{lep}>1$ (Gev/$c$)$^2$ constraint on event generation, is producing radiative events with $Q^2_{had}<1$ (Gev/$c$)$^2$, which would be the case if a radiative photon was emitted by the incoming lepton. A quick proof of this can be made starting from the relation between $Q^2_{lep}$ and $Q^2_{had}$:
 
 \[Q^2_{had}=Q^2_{lep}+2E_\gamma(\nu_{lep}-\sqrt{\nu_{lep}^2+Q^2_{lep}}cos\theta_\gamma)\]
 

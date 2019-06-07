@@ -6,24 +6,21 @@
 
 %----------------------------------------------------------------------------------------
 
-The \textit{raw} charged multiplicities presented in the previous chapter need to be corrected. The corrections discussed here are the acceptance correction i.e. the correction due to the geometrical limitation of the spectrometer and the data reconstruction efficiency as well as the diffractive vector meson correction and the radiative correction. the electron contamination correction, which is included in the acceptance correction,
+The \textit{raw} charged multiplicities presented in the previous chapter have to be corrected. The corrections discussed here are the acceptance correction, i.e. the correction due to the geometrical limitation of the spectrometer and the data reconstruction efficiency, as well as the diffractive vector meson correction and the radiative correction. The electron contamination correction is included in the acceptance correction.
 
 \section{Determination of the spectrometer acceptance} \label{sec:Acc}
 
 \subsection{Monte Carlo sample from DJANGOH}
 
-The COMPASS detector does not cover the full phase-space, thus the measured multiplicities have
-to be corrected for the finite detector acceptance, which is of the order of $70$\%. The correction is
-done using a Monte-Carlo dataset containing about $400$ million events generated in the kinematic
-region $Q^2 > 0.8$ (GeV/$c$)$^2$, $x$ $\in$ [$10^{-4},0.9$], $y$ $\in$ [$0.01,0.95$], thanks to the Blue Waters facility computing power \cite{Bode2013,Kramer2015}. The kinematic region is larger than the one of interest in the analysis. This is done in order to be able to take into account bin-to-bin migration of events. Two different MC samples with a different beam charge are providing $200$ millions events in total to take into account any asymmetry in the spectrometer relative to the beam charge. As there is a difference of two slabs in the OT in the experimental setup between the periods P$07$ and P$08$ onwards, two different acceptance corrections should be applied. The two different MC samples were both reconstructed twice. One reconstruction is done without the two inefficient OT slabs and will give P$07$ acceptance while the other is done with all the slabs and will give P$08^+$ (P08 and following periods) acceptances. Eventually from two samples, four different acceptances are computed (P$07$-$\mu^+$, P$07$-$\mu^-$, P$08^+$-$\mu^+$ and P$08^+$-$\mu^+$).
+The COMPASS detector does not cover the full phase-space, thus the measured multiplicities have to be corrected for the finite detector acceptance, which is of the order of $70$\%. The correction is done using a Monte-Carlo dataset containing about $400$ million events generated in the kinematic region $Q^2 > 0.8$ (GeV/$c$)$^2$, $x$ $\in$ [$10^{-4},0.9$], $y$ $\in$ [$0.01,0.95$], thanks to the Blue Waters facility computing power \cite{Bode2013,Kramer2015}. The kinematic region is larger than the one of interest in the analysis. This is done in order to be able to take into account bin-to-bin migration of events. Two different MC samples with a different beam charge are providing $200$ millions events each to take into account any asymmetry in the spectrometer related to the beam charge. As there is a difference of two slabs in the OT in the experimental setup between the periods P$07$ and P$08$ onwards, two different acceptance corrections have been determined. The two different MC samples were both reconstructed twice. One reconstruction is done without the two inefficient OT slabs and will give P$07$ acceptance while the other is done with all the slabs and will give P$08^+$ (P08 and following periods) acceptances. Eventually from two samples, four different acceptances are computed (P$07$-$\mu^+$, P$07$-$\mu^-$, P$08^+$-$\mu^+$ and P$08^+$-$\mu^+$).
 
-The events are generated with the DJANGOH generator with a parametrization of the parton distribution functions (MSTW08 \cite{MSTW08}). In addition, the use of JETSET inside DJANGOH allows the hadronization of quarks q to final-state hadrons h according to the Lund model. The COMPASS high $p_T$ tuning was used for the JETSET parameters. The events of DJANGOH are then propagated into the experimental setup simulated by TGEANT. The beam and beam reconstruction is not simulated but the reconstructed beam tracks from data are being used. The output of this chain is referred to as \textit{generated} sample. These events are then reconstructed with the same CORAL code as used to reconstruct real data. This new sample is called \textit{reconstructed} sample. The same DIS event and unidentified hadron selection that are used on real data (except cuts related to beam and beam reconstruction) are applied to the MC data sample for reconstructed MC events and particles.
+The events are generated with the DJANGOH generator with a parametrization of the parton distribution functions (MSTW08 \cite{MSTW08}). In addition, the use of JETSET inside DJANGOH allows the hadronization of quarks q to final-state hadrons h according to the Lund model. The COMPASS high $p_T$ tuning was used for the JETSET parameters \cite{PTTuning}. The events of DJANGOH are then propagated into the experimental setup simulated by TGEANT. The beam and beam reconstruction is not simulated, but reconstructed beam tracks from data are being used. The output of this chain is referred to as \textit{generated} sample. These events are then reconstructed with the same CORAL code as used to reconstruct real data. This new sample is called \textit{reconstructed} sample. The same DIS event and unidentified hadron selection that are used on real data (except cuts related to beam and beam reconstruction) are applied to the MC data sample for reconstructed MC events and particles.
 
 The acceptance is calculated as the ratio of reconstructed over generated particles. In both cases, the particle ID is taken from the MC truth. The following selection is made on the generated particles:
 
 \begin{enumerate}
   \item Energy of the beam muon in range [140,180] GeV
-	\item Z coordinate of event vertex ($z_{vtx}$) within the target region $\in$ [-325 cm, -71 cm]
+	\item Z coordinate of the generated event vertex ($z_{vtx}$) within the target region $\in$ [-325 cm, -71 cm]
 	\item Primary interaction in the target material (PHAST routine PaAlgo:InTarget() for both data and MC (Section \ref{sec:targetcut}) target positions to have a complete overlap of coverage)
 	\item Beam track crossing the entire target (PHAST routine PaAlgo:CrossCells())
   \item $Q^2>1$ (GeV/c)$^2$
@@ -34,7 +31,7 @@ The acceptance is calculated as the ratio of reconstructed over generated partic
   \item $0.2 < z < 0.85$
 \end{enumerate}
 
-The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variables $z$ and $p_h$ are shown in Figs.~\ref{pic:MCDISkin} and~\ref{pic:MCSIDISkin} for real data (red) and reconstructed MC data (blue). The ratio between real data and reconstructed MC data is shown at the bottom of each panel. A relative good agreement is reached, except in the low statistics high $x$ and high $Q^2$ regions and for $\theta_h$. It was shown in previous work that the COMPASS acceptance nearly factorizes in $A_{muon} \cdot A_{hadron}$. Thus for multiplicities $A_{muon}$ drops out in a large extent and the difference of data and MC in edges of the muon kinematics does not introduce a bias. The description of $\theta_h$ should be improved.
+The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variables $z$ and $p_h$ are shown in Figs.~\ref{pic:MCDISkin} and~\ref{pic:MCSIDISkin} for real data (red) and reconstructed MC data (blue). The ratio between real data and reconstructed MC data is shown at the bottom of each panel. A relative good agreement is reached, except in the low statistics high $x$ and high $Q^2$ regions and for $\theta_h$. It was shown in previous work that the COMPASS acceptance nearly factorizes in $A_{muon} \cdot A_{hadron}$. Thus for multiplicities $A_{muon}$ drops out to a large extent and the difference of data and MC in edges of the muon kinematics does not introduce a bias. The description of $\theta_h$ should be improved in future analyses.
 
 \begin{figure}[!h]
   \centering
@@ -52,7 +49,7 @@ The inclusive kinematic variables $Q^2$, $x$ and $y$ and semi-inclusive variable
 
 \subsection{Acceptance calculation}
 
-In the following, $r$ and $g$ refers to 'reconstructed' and 'generated' quantities.
+In the following, $r$ and $g$ refers to 'reconstructed' and 'generated' quantities. The lepton variables are used for both reconstructed and generated samples.
 
 The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r$ over the generated multiplicities $M^h_g$ and is binned as for the data in $x$, $y$ and $z$:
 
@@ -62,7 +59,7 @@ The acceptance is determined as the ratio of reconstructed multiplicities $M^h_r
 
 where $x_g$, $y_g$ and $z_g$ are the generated kinematic values and $x_r$, $y_r$ and $z_r$ are the reconstructed kinematic values. The acceptance being calculated in this fashion, the kinematic bin migration due to reconstruction limitations is accounted for. A more rigorous bin migration correction would involve an unfolding procedure but is not done in this analysis.
 
-For this method, the error estimation is difficult to rigorously calculate as the numbers of evaluated hadrons and DIS events, in both the reconstructed and generated case, are not independent. In the following, all quantities are binned in ($x,y,z$). An estimate is made by assuming on the basis that there are much more DIS events than hadrons. Due to the $z$ kinematic bin migration effects, there exist particles in $N_r$, which does not belong to $N_g$. Decomposing $N_r$ into two contributions namely $N_{r^0}$, which are contained in $N_g$ and $N_{r'}$, which are not, the final acceptance error yields:
+For this method, the error estimation is difficult to rigorously calculate as the numbers of evaluated hadrons and DIS events, as in both the reconstructed and generated case, they are not independent. In the following, all quantities are binned in ($x,y,z$). An estimate is made by assuming on the basis that there are much more DIS events than hadrons. Due to the $z$ kinematic bin migration effects, there exist particles in $N_r$, which does not belong to $N_g$. Decomposing $N_r$ into two contributions namely $N_{r^0}$, which are contained in $N_g$ and $N_{r'}$, which are not, the final acceptance error yields:
 %
 \begin{equation}
   \begin{split}
@@ -110,19 +107,19 @@ The acceptance correction factors $A^h(x,y,z)$ for unidentified hadrons, pions, 
 	\label{pic:AccPer}
 \end{sidewaysfigure}
 
-In Fig.~\ref{pic:AccPer} are compared the acceptance correction factors for the P$07$ and P$09$ samples. The difference visible in the highest $x$ bins is expected and is due to the change in the trigger acceptance between P$07$ and P$08$.
+In Fig.~\ref{pic:AccPer} the acceptance correction factors are compared for the P$07$ and P$09$ samples. The difference visible in the highest $x$ bins is expected and is due to the change in the trigger acceptance between P$07$ and P$08$.
 
-The acceptance correction is then applied to the raw multiplcities:
+The acceptance correction is then applied to the raw multiplcities
 %
 \begin{equation}
-  M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}
+  M^h(x,y,z) = \frac{M^h_{raw}(x,y,z)}{A^h(x,y,z)}.
 \end{equation}
 %
-The acceptance correction presented here was calculated with preliminary efficiencies, which should be improved in the future thus improving the correction. In addition, going back to the data over MC comparison of $theta_h$, two leads could help to improve the description. One would be to have a more detailed look at the model used inside the MC, an other would be to do acceptance in bins of $\theta_h$ but this would require more MC.
+The acceptance correction presented here was calculated with preliminary efficiencies, which should be improved in the future thus improving the correction. In addition, going back to the data over MC comparison of $\theta_h$, two leads could help to improve the description. One would be to have a more detailed look at the model used inside the MC, an other would be to do acceptance in bins of $\theta_h$, which would require to generate more MC events.
 
 \section{Diffractive vector meson correction} \label{sec:DVMf}
 
-It is usually assumed that hadrons produced in SIDIS originate from lepton-parton scattering. But the scattering of a lepton off a nucleon can also result in the diffractive production of vector mesons. These particles decay into lighter mesons that cannot be distinguished from the one resulting from the hadronization of a quark originating from the target nucleon. The fragmentation functions extracted from multiplicities should only come from single quark fragmentation. Thus diffractive processes should be subtracted from multiplicities.
+It is usually assumed that hadrons produced in SIDIS originate from lepton-parton scattering. But the scattering of a lepton off a nucleon can also result in the diffractive production of vector mesons. These particles decay into lighter mesons that cannot be distinguished from the ones resulting from the hadronization of a quark originating from the target nucleon. The fragmentation functions extracted from multiplicities describe single quark fragmentation only. Thus diffractive processes have to be subtracted from multiplicities.
 
 In order to study these diffractive processes, the HEPGEN generator is used. HEPGEN \cite{HEPGEN} is a generator of Monte Carlo events, which is dedicated to studies of hard exclusive single photon or meson production processes at the COMPASS experiment kinematic domain. In addition, generation of single photon or meson production accompanied by the diffractive dissociation of the nucleon is allowed. Five processes are implemented in the generator: single photon production (DVCS+BH), exclusive $\pi^0$ production, exclusive $\rho^0$ production, exclusive $\rho^+$ production and exclusive $\Phi$ production. HEPGEN has been ported to C++ as HEPGEN++.
 
@@ -199,21 +196,21 @@ For pions and kaons, the dominant vector meson contribution comes from the diffr
 	\label{pic:DVMprod}
 \end{figure}
 
-This process is mainly exclusive but in $20$\% of cases a diffractive dissociation of the target nucleon occurs. Other channels (excited $\rho$, $\omega$, etc.) are expected to contribute much less and are not taken into account. As pions and kaons stemming from diffractive vector meson decay cannot be separated from the one resulting from SIDIS, the evaluation of their contribution to the multiplicities is based on a Monte Carlo study. Three Monte Carlo samples are produced based on different generators (SIDIS using DJANGOH, diffractive $\Phi$ and $\rho^0$ using HEPGEN++). All this samples are reconstructed with the same event reconstruction chain as data. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the proton are simulated.
+These processes are mainly exclusive but in $20$\% of cases a diffractive dissociation of the target nucleon occurs. Other channels (excited $\rho$, $\omega$, etc.) are expected to contribute much less and are not taken into account. As pions and kaons stemming from diffractive vector meson decay cannot be separated from the ones resulting from SIDIS, the evaluation of their contribution to the multiplicities is based on a Monte Carlo study. Three Monte Carlo samples are produced based on different generators (SIDIS using DJANGOH, diffractive $\Phi$ and $\rho^0$ using HEPGEN++). All this samples are reconstructed with the same event reconstruction chain as data. For the diffractive vector meson samples, both exclusive events and events with diffractive dissociation of the proton are simulated.
 
 The fraction of pions (resp. kaons) resulting from a diffractive $\rho^0$ (resp. $\Phi$) is calculated in the same binning as the raw multiplicities as:
 %
 \begin{equation}\label{eq:DVMhad}
   \begin{split}
     f^{\pi}_{\rho^0}(x,y,z) = \frac{N^{\pi}_{HEPGEN++}(x,y,z)}{N^{\pi}_{DJANGOH}(x,y,z)+N^{\pi}_{HEPGEN++}(x,y,z)} \\
-    f^K_{\Phi}(x,y,z) = \frac{N^K_{HEPGEN++}(x,y,z)}{N^K_{DJANGOH}(x,y,z)+N^K_{HEPGEN++}(x,y,z)}
+    f^K_{\Phi}(x,y,z) = \frac{N^K_{HEPGEN++}(x,y,z)}{N^K_{DJANGOH}(x,y,z)+N^K_{HEPGEN++}(x,y,z)},
   \end{split}
 \end{equation}
 %
 where $N^{\pi}_{HEPGEN++}$, $N^{\pi}_{DJANGOH}$, $N^K_{HEPGEN++}$ and $N^K_{DJANGOH}$ are the number of kaons reconstructed from the HEPGEN++ and DJANGOH MC samples normalized by the corresponding MC luminosity ($L_{MC}$). The luminosity depends on the event weighting and the process cross-section $\sigma_{int}$ (DIS for DJANGOH event and diffractive vector meson production for HEPGEN++ events):
 %
 \begin{equation} \label{eq:reweight}
-  \sum_{events} w_i = L_{MC} \cdot \sigma{int}.
+  \sum_{events} w_i = L_{MC} \cdot \sigma_{int}.
 \end{equation}
 %
 The final weighted number of DIS events and hadrons is summarized in Table~\ref{DVM}.
@@ -241,7 +238,7 @@ The final weighted number of DIS events and hadrons is summarized in Table~\ref{
   \label{DVM}
 \end{table}
 
-The same MC samples are also used to determine diffractive vector meson contribution to the DIS sample. The diffractive vector meson events can also lead to a contamination in DIS events. Here, the two channels studied are diffractive $\rho^0$ and $\Phi$ with the fraction of the contamination expressed in Eq.~\ref{eq:DVMDIS}.
+The same MC samples are also used to determine diffractive vector meson contribution to the DIS sample. The diffractive vector meson events can also lead to a contamination in DIS events. Here, the two channels studied are diffractive $\rho^0$ and $\Phi$ with the fraction of the contamination expressed as:
 
 \begin{sidewaysfigure}[!]
   \centering
@@ -259,12 +256,12 @@ The same MC samples are also used to determine diffractive vector meson contribu
 %
 \begin{equation}\label{eq:DVMDIS}
   \begin{split}
-    f^{\rho^0}_{DIS}(x,y,z) = \frac{N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)} \\
-    f^{\Phi}_{DIS}(x,y,z) = \frac{N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}
+    f^{\rho^0}_{DIS}(x,y,z) = \frac{N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}, \\
+    f^{\Phi}_{DIS}(x,y,z) = \frac{N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}{N^{DIS}_{DJANGOH}(x,y,z)+N^{DIS}_{\rho^0,HEPGEN++}(x,y,z)+N^{DIS}_{\Phi,HEPGEN++}(x,y,z)}.
   \end{split}
 \end{equation}
 %
-The total contribution from the diffractive vector-meson contribution to the DIS sample is $f^{VM}_{DIS} = f^{\rho^0}_{DIS} + f^{\Phi}_{DIS}$. The final correction reads as follows:
+The total contribution from the diffractive vector-meson contribution to the DIS sample is $f^{VM}_{DIS} = f^{\rho^0}_{DIS} + f^{\Phi}_{DIS}$. The final corrections read as follows
 %
 \begin{equation}
   \begin{split}
@@ -279,13 +276,13 @@ and are displayed in Fig.~\ref{DVMpi} for the correction for pions and in Fig.~\
 
 \section{Radiative corrections} \label{sec:rcf}
 
-The experimental multiplicities are affected by QED radiative effects, which introduce a systematic bias of the measured kinematics with respect to the true kinematics. The correction factor taking into account these contributions is the radiative correction factor defined as:
+The experimental multiplicities include also QED radiative effects that should be corrected for the differential cross-section with respect to the $1\gamma$ cross-section. The correction factor taking into account these contributions is the radiative correction factor defined as:
 
 \begin{equation}
-	\eta(x,y,z) = \frac{d^2 M_{1\gamma}/dxdydz}{d^2 M_{measured}/dxdydz}
+	\eta(x,y,z) = \frac{d^2 M_{1\gamma}/dxdydz}{d^2 M_{measured}/dxdydz},
 \end{equation}
 
-where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in the one photon exchange approximation and $M_{measured}$ denotes multiplicities obtained using the measured cross-section which includes radiative effects. The bias on the $\mu$ kinematics upon real photon emission affects in turn the reconstruction of the kinematic variables $x$, $y$ and $z$. This effect is now taken into account thanks to DJANGOH. Previously in this chapter, DJANGOH was used as an event generator for our Monte Carlo simulation but it can also be used to compute radiative corrections. At generator level, one sample of multiplicities with radiative corrections and one without are generated and from these two samples $\eta(x,y,z)$ is calculated. Fig.~\ref{fig:hadz_ratio} in Chapter~\ref{ch:RC}, Section~\ref{sec:RCFMult} shows the effect of the correction. A statistical error is associated to this correction due to the non-analytical nature of the calculation. Obtaining the radiative correction in bins of ($x,y,z$) is a novelty in COMPASS.
+where $M_{1\gamma}$ denotes multiplicities obtained using the cross-section in the one photon exchange approximation and $M_{measured}$ denotes multiplicities obtained using the measured cross-section which includes radiative effects. The bias on the $\mu$ kinematics upon real photon emission affects in turn the reconstruction of the kinematic variables $x$, $y$ and $z$. This effect is now taken into account thanks to the use of DJANGOH. Previously in this chapter, DJANGOH was used as an event generator for our Monte Carlo simulation but it can also be used to compute radiative corrections. At generator level, one sample of multiplicities with radiative corrections and one without are generated and from these two samples $\eta(x,y,z)$ is calculated. Fig.~\ref{fig:hadz_ratio} in Chapter~\ref{ch:RC}, Section~\ref{sec:RCFMult} shows the obtained correction factor. A statistical error is associated to this correction due to the non-analytical nature of the calculation. This is the first time that radiative corrections in bins of ($x,y,z$) are used in a COMPASS analysis.
 
 \section{Electron contamination}
 
@@ -299,8 +296,8 @@ The pion (and thus hadron) sample is contaminated by electrons and positrons. Wi
 
 \section{Summary}
 
-The most important correction is the acceptance $A(x,y,z)$, which accounts for the geometrical limitations of the apparatus, the data reconstruction efficiency and the detector efficiencies. This correction for charged hadrons is mostly of $70$\% but can drop down to $30$\% in some bins. The electron contamination correction, which corrects for the inability of the RICH to distinguish electrons and pions above $8$ GeV/$c$, is embedded inside the acceptance correction.
+The most important correction is the acceptance $A(x,y,z)$, which accounts for the geometrical limitations of the apparatus, the data reconstruction efficiency and the detector efficiencies. The acceptance for charged hadrons is mostly about $70$\% but can drop down to $30$\% in some bins. The electron contamination correction, which corrects for the inability of the RICH to distinguish electrons and pions above $8$ GeV/$c$, is embedded inside the acceptance correction.
 
-The correction factor for the vector meson production $B^h(x,y,z)$ contaminating the hadron sample varies from $0$ to $40$\% at high $z$ for pions and $0$ to $20$\% at medium $z$ for kaons. As these cross-sections are experimentally not known, model calculations are to evaluate this correction.
+The correction factor for the vector meson production $B^h(x,y,z)$ contaminating the hadron sample varies from $0$ to $40$\% at high $z$ for pions and $0$ to $20$\% at medium $z$ for kaons. As these cross-sections are experimentally not known, model calculations are used to evaluate this correction.
 
-The correction factor related to the radiative corrections, taking into account the change of hadron and lepton kinematic variables due to the emission of a real photon, hence biaising the kinematic distributions, is going from $0$ to $20$\%, the highest correction being located at high $y$, high $z$ and low $x$.
+The correction factor related to the radiative corrections, taking into account the different cross-section and the change of hadron and lepton kinematic variables due to the emission of a real photon, hence biaising the kinematic distributions, is going from $2$ to $20$\%, the highest correction being located at high $y$, high $z$ and low $x$.

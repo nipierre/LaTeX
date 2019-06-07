@@ -1,103 +1,127 @@
-% Chapter 9
+% Chapter 8
 
-\chapter{Results on Radiative Corrections} % Chapter title
+\chapter{Integration of DJANGOH in the Monte-Carlo Chain} % Chapter title
 
-\label{ch:RC} % For referencing the chapter elsewhere, use \autoref{ch:name}
-
-%----------------------------------------------------------------------------------------
-
-The DJANGOH generator can have two usage : be used as a event generator inside a MC simulation or be used in a standalone way to compute radiative corrections. As we saw previously, DJANGOH as an event generator in TGEANT is giving consistent results. In addition, DJANGOH is able to compute radiative correction factors in bins of ($x$,$y$,$z$). For these reasons we were interested to calculate radiative correction factors with DJANGOH.
-
-\section{Inclusive and Semi-Inclusive Radiative Correction factors}\label{sec:RCF}
-
-The calculation of the inclusive radiative correction factors can be done by computing $\sigma_{Born}$ and $\sigma_{Born+o(\alpha)}$. A correct way to obtain these factors is the following :
-%
-\begin{equation}
-  \eta(x,y)=\frac{\sigma_{Born}(x,y)}{\sigma_{Born+o(\alpha)}(x,y)}
-  =\frac{\frac{\sigma_{Born,tot}*N_{Born}(x,y)}{N_{Born,tot}}}{\frac{\sigma_{Born+o(\alpha),tot}*N_{Born+o(\alpha)}(x,y)}{N_{Born+o(\alpha),tot}}}
-\end{equation}
-%
-The results that are presented below are obtained with the TERAD $F_{2}$ and R parametrizations, which
-describes accurately the behaviour of $F_{2}$ at low $Q^{2}$ \cite{BPnote} :
-
-\begin{itemize}
-\item $F^{p}_{2}(x,Q2)$ for $Q^2 > 0.2$ GeV$^2$ and $0.000035 < x < 0.85$, as obtained from a fit to the
-world proton (and deuteron) data made by the SMC \cite{SMC}.
-\item For $Q^2 < 0.2$ GeV$^2$, a phenomenological model of Badelek and Kwiecinski \cite{BK}, valid at $10^{-5} < x < 0.1$
-and $0 < Q^2 < 1000$ GeV$^2$.
-\item $R(x, Q^2)$ as parameterised by SLAC (newer version, called R1998 \cite{R1998}), valid for $Q^2 > 0.5$ GeV$^2$, extended
-to lower values of $Q^2$, including the $R \simeq Q^2$ behaviour at $Q^2 = 0$.
-\end{itemize}
-
-All first order QED corrections are included except for quark line radiation. The reason why these corrections are not included is that these corrections are negligible except at large $x \geq 0.5$ and $Q^{2} \geq 10^3$ (GeV/$c$)$^2$, where the corrections reach the magnitude of barely one percent (see Fig.~\ref{fig:quarkline}). These corrections are often not subtracted inside the parametrization, thus they are already taken into account in the parametrization \cite{HubertF2Rad}. Nevertheless this is not the case for TERAD $F_2$.
-
-\begin{figure}[htb]
-\centerline{\epsfig{file=gfx/quarkline.png,width=12cm}}
-\caption{$Q^2$ dependence of the quarkonic QED corrections (in percent) to the structure function $F^p_2$ for deep inelastic
-lepton-proton scattering at $x=0.001$, $x=0.1$ and $x=0.505$. Figure taken from \cite{HubertF2Rad}.}\label{fig:quarkline}
-\end{figure}
-
-\subsection{Radiative correction factors : Effect on Multiplicities}\label{sec:RCFMult}
-
-The calculation of the radiative correction factors to the multiplcities can be done by computing
-$M^{h}_{Born}$, multiplicities obtained without radiative corrections, and $M^{h}_{Born+o(\alpha)}$,
-multiplicities obtained with radiative corrections. The factors can be defined as :
-%
-\begin{equation}
-  \begin{split}
-    \eta^{h}(x,y,z)=\frac{M^{h}_{Born}(x,y,z)}{M^{h}_{Born+o(\alpha)}(x,y,z)} \\
-     = \frac{N^{h}_{Born}(x,y,z)/N^{DIS}_{Born}(x,y)}{N^{h}_{Born+o(\alpha)}(x,y,z)/N^{DIS}_{Born+o(\alpha)}(x,y)}
-  \end{split}
-\end{equation}
-%
-where $N^h$ is the number of hadrons and $N^{DIS}$ the number of DIS events.
-
-
-In the following plot, the cuts from the SIDIS analysis for the selection of DIS events and hadrons are used (see Chapter~\ref{ch:raw} for further details). The kinematical cuts used are :
-
-\begin{itemize}
-\item $0.004 \leq x \leq 0.4, x \in \{.004,.01,.02,.03,.04,.06,.1,.14,.18,.4\}$
-\item $0.1 \leq y \leq 0.7, y \in \{.1,.15,.2,.3,.5,.\}$
-\item $12 \leq p_h \leq 40$ GeV
-\end{itemize}
-
-Fig.~\ref{fig:hadz_ratio} exhibits the semi-inclusive radiative correction factor $\eta^{h}(x,y,z)$. This factor goes from $2$\% correction at high $x$ to $20$\% correction at high $z$ and high $y$. This dependence on $y$ and $z$ is expected (e.g. if a hadron has a high $z$ in a non-radiative event, consider the same event but with the radiation of a real photon, $\nu_{lep}$ will remain the same but the hadron will have in reality less energy available from the virtual photon, thus having $z_{had} \leq z_{lep}$, leading to less events in the high $z$ region for the multiplicities obtained with radiative correction).
-
-\begin{figure}[!htb]
-\centerline{\epsfig{file=gfx/hadron_ratio.pdf,width=16cm}}
-\caption{$\eta^{h}(x,y,z)$, positive hadrons in full points, negative in open points, in bins of $x$, staggered with $y$ and versus $z$. The corrections go from $2$\% at high $x$ to $20$\% at high $z$ and high $y$}\label{fig:hadz_ratio}
-\end{figure}
+\label{ch:MC} % For referencing the chapter elsewhere, use \autoref{ch:name}
 
 %----------------------------------------------------------------------------------------
 
-\section{Comparison between DJANGOH and TERAD}
+As DJANGOH was giving encouraging results, we decided to implement the generator in our Monte-Carlo simulation named TGEANT. In this chapter we present TGEANT, what it is and how it works. The integration of the DJANGOH generator is then discussed. Lastly result of Monte-Carlo with DJANGOH for electron production is compared with real data.
 
-In the next figures, DJANGOH results are compared with TERAD \cite{TERAD}. The two programs are using the same set of $F^{p}_{2}$ and $R$. This are the only inputs (apart from the process input ie. $\mu p$ scattering at 160 GeV muon energy) that need to be identical so that the comparison is relevant. One thing to be noted is that TERAD is using in addition $O(\alpha^2)$ corrections. They should have an impact on the cross-section of TERAD, but are negligible.
+\section{TGEANT}
 
-The first check for consistency done in Fig.~\ref{fig:BRy} is to compare the $\sigma_{Born}$ of both programs. Using the same input information on $F^{p}_{2}(x,Q2)$ and $R(x, Q^2)$ does not guarantee that $\sigma_{Born}$ for both program, called $\sigma^{D}_{Born}$ and $\sigma^{T}_{Born}$, is the same : the reason is that for example in TERAD, $\sigma^{T}_{Born}$ is computed without constants like $\pi$, $M_{proton}$, $\alpha$, etc. and its functional form is unknown, unlike in DJANGOH. This means that the ratio $r=\frac{\sigma^{D}_{Born}}{\sigma^{T}_{Born}}$ may differ from 1 but must be constant as a function of $x$ and $y$.
+TGEANT \cite{Tobias} is the COMPASS MC tool that was developed in object-oriented C++ and based on the Geant$4$ toolkit. TGEANT has extended the basic framework of Geant$4$ in order to simulate all aspects of the COMPASS experiment. A short insight into the event simulation is given in this section.
+The concept of application programming interfaces ensures a highly flexible design. Up to now TGEANT could be used with a number of generator as LEPTO, HEPGEN, PYTHIA etc.
+
+\subsection{Software package}
+
+The measured data is a convolution of physics signals with effects related to the experimental acceptance. These effects are introduced by the geometry of the experimental apparatus, by the reconstruction algorithms, by efficicies and by resolution of detectors. The extraction of physics signals requires an extensive knowledge of experimental acceptance, which can only be obtained by Monte Carlo.
+To perform a full Monte Carlo simulation, several aspects have to be taken into account. For the simulation of the primary physics interaction a dedicated event generator is used, the transport of all secondary particles through the experimental apparatus and the simulation of their interactions with material and of the detector response is carried out by the Monte Carlo software.
+The goal of TGEANT is to simulate the response of the experimental setup for a physics process under study. Basic requirement is an accurate geometry description of the experimental apparatus. The implementation of particles and physics models is necessary to simulate the physics interactions of particles with matter and the particle transportation. Geant$4$ offers data bases, which comprise a huge field of applications for all kinds of particles and processes. In TGEANT, the list of physics processes and particles is optimized to the kinematic range of the COMPASS experiment.
+TGEANT is delivered in a software package with four other sub-packages, namely the graphical user interface and the Toolbox as well as the two libraries libSettings and libEvent, which are needed for the data exchange between the different packages. The whole project is maintained in a Git repository on a CERN server. The interplay of the different software packages is presented in Fig.~\ref{pic:TGEANTflowchart}. The TGEANT output files can be either used in CORAL or in the Toolbox. The former case is the standard way of the Monte Carlo reconstruction, while the Toolbox is used particularly with regard to detector studies and tuning.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/TGEANTflowchart.png}
+	\caption{Flow chart of the TGEANT software package. The simulation software TGEANT is controlled by a setup file, which is easily created with the graphical user interface. The GUI can draw on different default setup files from the resources folder. The output files can either be analyzed with the Toolbox for the purpose of Monte Carlo studies or processed by CORAL in order to produce mDST files. For the latter case, TGEANT also provides the alignment and geometry files. Figure taken from \cite{Tobias}.}
+	\label{pic:TGEANTflowchart}
+\end{figure}
+
+\subsection{Event simulation}
+
+The event loop in TGEANT is the major part of the simulation software. One or more so-called primary particles are placed with a given momentum vector in the world volume. After the initialization phase, the event loop is started and primary particles are tracked by the Geant$4$ algorithm through the experimental setup. During the event loop, new particles can only be created by implemented physics processes, applied according to their cross sections. Once the event loop has ended, the output of simulated detector responses is processed. The flow chart of the event loop in TGEANT is illustrated in Fig.~\ref{pic:EventLoop}.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/EventLoop.png}
+	\caption{Flow chart of the event loop in TGEANT. Figure taken from \cite{Tobias}.}
+	\label{pic:EventLoop}
+\end{figure}
+
+\subsection{Primary vertex generation}
+
+The algorithm to generate a primary vertex in TGEANT is responsible for stopping the primary beam particle and for calling an event generator. The \textit{target extrapolation} algorithm is used to trigger the event generator.
+
+The goal of the target extrapolation method is to stop the movement of the primary beam particle at a random position inside the target volume. A flow chart of the method is presented in Fig.~\ref{pic:Targetextrap}. It is a multi-purpose method to generate vertices within the target volume. A realistic vertex distribution can easily be simulated by using a beam file and a precise target alignment. The event generator is triggered exactly after the beam particle has traversed a random distance inside the target volumes.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/Targetextrap.png}
+	\caption{Flow chart of the target extrapolation method: The T$4$Extrapolate class extrapolates the primary particle to the desired starting z position. After traversing a random distance inside the target volumes, the beam particle is stopped by the T$4$TargetTracking class. At this point, the event generator is applied. This random distance is dictated by the T$4$TargetBackend derived target class. An estimated distance, which the beam particle is able to traverse in the target volume, is provided by the T$4$Extrapolate class and can be used optionally. Figure taken from \cite{Tobias}.}
+	\label{pic:Targetextrap}
+\end{figure}
+
+\subsection{Event generators}
+
+Several interfaces for different event generators are already installed in TGEANT and ready to use, see Fig.~\ref{pic:Processbackend}. The event generators are implemented as discrete Geant$4$ processes using the abstract T$4$ProcessBackend base class, which handles the interface to TGEANT. This involves the call of the event generator function and the forwarding of the $4$-momentum of the incoming beam particle at the vertex position.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.5]{./gfx/Processbackend.png}
+	\caption{Inheritance diagram for the T$4$ProcessBackend base class. The four- momentum of the incoming beam particle is forwarded to the used event generator. The four-momenta of the final state particles are received in return. Figure taken from \cite{Tobias}.}
+	\label{pic:Processbackend}
+\end{figure}
+
+The simplified procedure of an event generator can be described as follows. The four-momentum of the incoming beam particle serves as input parameter and the target nucleon is at rest. During the simulated interaction, one or more outgoing particles are generated. The momentum distribution between these final state particles may be a complex procedure and needs to be randomized by the event generator according to the cross section of the interaction. At the end, however, the energy and momentum conservation needs to be ensured and TGEANT has to exchange the initial state beam particle with all final state particles.
+
+
+%----------------------------------------------------------------------------------------
+
+\section{DJANGOH as a physics generator for TGEANT}
+
+There are two ways to implement a generator in TGEANT:
+\begin{itemize}
+\item As an internal generator (Pythia and HEPGEN++ way): a C++ interface to the generator is needed, the conservation of $P(p,E)$ is perfect and it only needs a beamfile for the primary generator.
+\item As an external generator (Lepto): the beamfile is read by the standalone
+generator, the primary generation and process infos are stored inside a file and TGEANT has to do an extrapolation to -$9$ meters as the primary generation of the event was done by LEPTO outside of the TGEANT simulation, occasioning $P(p,E)$ being not perfectly conserved.
+\end{itemize}
+
+The external implementation is quite complicated as three classes are needed in order to use the generator in TGEANT. First, the beamfile has to be read by the generator which then outputs a file containing the beamfile infos but in its own format. Then a first class has to be dedicated to the reading of the beamfile, recovering the information about the selected muon in the file. A second class takes care of passing information between the generator and TGEANT. The last class is the class of the generator itself (Fig.~\ref{fig:leptoex}).
 
 \begin{figure}[!htb]
-\centerline{\epsfig{file=gfx/BRy.pdf,width=14cm}}
-\caption{Ratio of the Born cross-sections calculated with DJANGOH and TERAD, for the same $F_2$ and $R$ parametrizations, as a function of $y$ at different values of $x$ (staggered points at fixed $y$)}\label{fig:BRy}
+\centerline{\epsfig{file=gfx/leptoex.png,width=12cm}}
+\caption{Diagram explaining the philosophy of the external generator implementation, taking the
+implementation of LEPTO as an example. First and foremost, a specific beamfile is created after the
+initial one. The external generator will read this pregenerated file to extract infos about the incoming
+particle. As these informations are at the interaction point, a backward propagation extrapolation in the
+target material has to be made, inducing some small violations of energy conservation.
+Then the generator is producing the event and sends the results to TGEANT.}\label{fig:leptoex}
 \end{figure}
 
-The radiative correction factors $\eta(x,y)$ for DJANGOH ($\eta_D$) and TERAD ($\eta_T$) are compared in Fig.~\ref{fig:RCy}. The absolute difference is then plotted in Fig.~\ref{fig:ERy}, showing that the two programs differ at most $3$\% in the region of lowest $x$ and highest $y$. This results is extremely good, knowing that DJANGOH and TERAD are not using the same renormalization scheme.
+If you apply this method to DJANGOH, then you encounter several problems:
+\begin{itemize}
+\item A new file for the converted beamfile has to be created.
+\item DJANGOH has to be modified to allow backward propagation of the incoming muon.
+\item The result of fragmentation (LUJETS) has to be recovered in a file.
+\end{itemize}
+This results in many file accesses and consequently it is a non-efficient way to implement DJANGOH inside TGEANT.
 
+The internal implementation recquires perhaps more work on the generator itself however this solution is much more efficient. Here, only two class are needed. One is the interface class that creates instances of DJANGOH that can be manipulated in any C++ environment. This class is a C++ interface that is handling the FORTRAN part of DJANGOH. The other class is taking care of passing the information between the interface to the generator and TGEANT (Fig.~\ref{fig:pythiaex}). This second method was used to implement DJANGOH inside TGEANT.
 
-\begin{figure}[htb]
-\centerline{\epsfig{file=gfx/RCy.pdf,width=14cm}}
-\caption{Comparison of radiative corrections factor $\eta(y)$ for fixed values of $x$, computed for proton target at 160 GeV and with the same $F^p_2$ and $R$ parametrizations. Green dots mark results of TERAD, blue triangles the results of DJANGOH.}\label{fig:RCy}
+\begin{figure}[!htb]
+\centerline{\epsfig{file=gfx/pythiaex.png,width=12cm}}
+\caption{Diagram explaining the philosophy of the internal generator implementation.
+The beamfile is read by TGEANT and the C++ interface to the generator is recovering the
+informations of the incoming particle. This interface then runs the generator as a subroutine
+and sends back the results of the generation to TGEANT, which then creates the outgoing particles
+accordingly.}\label{fig:pythiaex}
 \end{figure}
 
-\begin{figure}[htb]
-\centerline{\epsfig{file=gfx/ERy_scat.pdf,width=14cm}}
-\caption{Ratio of radiative corrections factors obtained in Fig~\ref{fig:RCy} $(\eta_T/\eta_D)-1$ as a function of $y$ for fixed values of $x$}\label{fig:ERy}
-\end{figure}
+%----------------------------------------------------------------------------------------
 
-\newpage
+\section{Results on electroproduction from photon conversion}
+
+At this point, with DJANGOH fully integrated as an event generator for TGEANT, we can go back to our original goal: see if DJANGOH describes better the electroproduction from photon conversion at COMPASS than RADGEN did. Comparing the distribution of the absolute value of the $\Phi$ angle in the $\gamma$-nucleon reference frame from DJANGOH reconstructed MC with CORAL with real data as displayed in Fig.~\ref{pic:Eprod2016}, we see an improvement compared to the factor $1.8$ difference seen with RADGEN (Fig.~\ref{fig:ph_pl}). The shape is well described and the comparison is much improved. The discrepancy is only of the order of $10$\% at $|\Phi| \sim 0$ and less than $5$\% elsewhere; showing that DJANGOH is able to reproduce with a good fidelity the electroproduction from photon conversion observed in data.
+
+\begin{figure}[!h]
+  \centering
+	\includegraphics[scale=0.6]{./gfx/Eprod2016.png}
+	\caption{Electron distribution versus $\Phi$ in the $\gamma$-nucleon reference plane for 3 $< p_e <$ 8 GeV (region where RICH can discriminate electron in real data). Real Data are in red, Monte-Carlo with DJANGOH in blue, with the ratio data over MC on the bottom panel.}
+	\label{pic:Eprod2016}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 
 \section{Summary}
 
-The DJANGOH event generator with radiative events is a way to access radiative correction factor in a three dimensional ($x$,$y$,$z$) binning, like in the multiplicity analysis. This kind of correction are unprecedented for this analysis inside the COMPASS collaboration. The size of the correction, going from $2$ to $20$\% is within the expectations. Moreover, this correction can directly be applied on the multiplicities. When compared with TERAD computation on the inclusive corrections, the results of DJANGOH are shown to be compatible within $3$\%, a really good result knowing that DJANGOH and TERAD are not using the same renormalization scheme.
+TGEANT is a flexible Monte Carlo simulation, which allows a precise reproduction of the experimental setup. This flexibility allows one to use the event generator one sees fit to his needs, choosing between the internal or external implementation of this generator to the simulation. DJANGOH, after being integrated as an internal generator inside TGEANT, shows good performances in the data versus MC comparison, especially when comparing the electroproduction from photon conversion, being more accurate than previously used generator RADGEN.
