@@ -11,9 +11,7 @@ In the previous chapter, we obtained charged kaon multiplicities $M^K(x,Q^2,z)$.
 
 %----------------------------------------------------------------------------------------
 
-\section{Extraction of quark FFs into kaons from a LO QCD fit of kaon multiplicities}
-
-\subsection{General Fit method}
+\section{LO QCD fit of kaon multiplicities}
 
 $D^K$ can be obtained from a pQCD fit to the existing multiplicities. While DSEHS or JAM are doing such studies in NLO, in COMPASS only a LO QCD code is available. The extraction of FFs from the measured $K^{\pm}$ multiplicities is performed in a LO pQCD fashion according to Eq.~\ref{eq:MultpQCD}:
 %
@@ -41,7 +39,7 @@ For the current analysis, the following parametrization, similar to the one from
 %
 The PDFs set from MSTW$08$ in LO pQCD \cite{MSTW08}, stored by the LHAPDF data group \cite{LHAPDF} was chosen.
 
-\subsection{Uncertainties calculation}
+\section{Uncertainties calculation}
 
 The statistical and systematic uncertainties of the extracted FFs are determined by using a bootstrap method \cite{replicas}. Therefore a number of resamples of the original multiplicity data are constructed. For each resample the data points are fluctuated proportional to their uncertainty, resulting in a set of data points:
 %
@@ -64,11 +62,11 @@ For systematic uncertainties, for each resample only one random value $R'$ of th
 %
 For both statistical and systematic uncertainties, a set of $100$ resamples is created. Then for each resample the fit is performed as it is done for the original data. To calculate the uncertainty bands, for each $z$ bin, the mean and the RMS values are calculated from the resulting FFs. The uncertainties are centered around the mean value and have the width of the corresponding RMS value.
 
-\subsection{Kaon fragmentation functions}
+\section{Kaon fragmentation functions}
 
-The final parameters of the fit are displayed in Table~\ref{tab:Fitparam}. The $\chi^2$ per degrees of freedom for the results is of 3.5. A similar fit has been performed with COMPASS data on isoscalar target (see Appendix~\ref{app:Fit}). In Fig.~\ref{pic:FFFit}, the four FFs are shown. The values obtained are significantly higher for $\D{K}{fav}$ and $\D{K}{unf}$ compared to DSS'07 LO results and in agreement with the LO fit of COMPASS data on isoscalar target, while for $\D{K}{str}$ the values are much smaller than DSS'07 LO, which points to a problem. The reason I chose the DSS$07$ fit and not a newer one is that this is the only fit of DSS/DSEHS that is done at LO and it makes more sense to compare LO order extraction than for example LO versus NLO. The fragmentation functions are calculted up to $z = 0.85$ and in the previous chapter, we saw that pQCD is not describing the ratio of charged kaons for $z$ above $0.7$. In this thesis it was assumed that this region is not contraining much the fit hence it should not be a problem but a prolongation of this work could be to look whether it is the case or not.
+The final parameters of the fit are displayed in Table~\ref{tab:Fitparam}. The $\chi^2$ per degrees of freedom for the results is 3.5. A similar fit has been performed with COMPASS data on isoscalar target (see Appendix~\ref{app:Fit}). In Fig.~\ref{pic:FFFit}, the four FFs are shown. The values obtained are significantly higher for $\D{K}{fav}$ and $\D{K}{unf}$ compared to DSS'07 LO results and in agreement with the LO fit of COMPASS data on isoscalar target, while for $\D{K}{str}$ the values are much smaller than DSS'07 LO for both sets. This needs a more detailed investigation and also a fit in NLO. The reason I chose the DSS$07$ fit and not a newer one is that this is the only fit of DSS/DSEHS that is done at LO and it makes more sense to compare LO order extraction than for example LO versus NLO. The fragmentation functions are calculted up to $z = 0.85$ and in the previous chapter, we saw that pQCD is not describing the ratio of charged kaons for $z$ above $0.7$. In this thesis it was assumed that this region is not contraining much the fit hence it should not be a problem but future work should perform a close examination.
 
-These results point out that there is a bad sensitivity of these proton target measurements to the strange quark. In fact these measurement are $u$ dominated and going down to $x\sim10^{-2}$ is not probing far into the sea. There is not enough sensitivity to the three fragmentation functions to kaons favoured, unfavoured and strange (the gluon FF is not considered as in LO it only comes from the DGLAP evolution) as one can see that the favoured and unfavoured are too high, which means that in the fit too much goes into the favoured and unfavoured fragmentation functions at the expense of the strange fragmentation function. An extension of this study would be to look to do a $K^0$ analysis, which would bring a sample with a different acceptance and with independent equation, to see whether it improves the fit. For COMPASS data on isoscalar target such study was conducted but was not conclusive as the $K^0$ sample was not good enough due to reinteractions in the isoscalar target. In the pure proton target there are no such reinteractions hence the $K^0$ sample might be useable.
+These results point out that there is a bad sensitivity of these proton target measurements to the strange quark. In fact these measurement are $u$ dominated and go down to $x\sim10^{-2}$ only, thus is not probing far into the sea. There is not enough sensitivity to the three fragmentation functions to kaons favoured, unfavoured and strange (the gluon FF is not considered as in LO it only comes from the DGLAP evolution). A more refined analysis of COMPASS plus HERMES data taking into account our findings on the multiplicity ratio is needed. An extension of this study would be to do a $K^0$ analysis, which would bring a sample with an extended kinematic range and with independent equation, to study whether it improves the fit. For COMPASS data on isoscalar target such study was conducted but was not conclusive as the $K^0$ sample was not good enough due to reinteractions in the isoscalar target. In the pure proton target there are no such reinteractions, hence the $K^0$ sample needs smaller corrections.
 
 \begin{table}[!h]
   \begin{center}
@@ -102,11 +100,3 @@ These results point out that there is a bad sensitivity of these proton target m
 \end{figure}
 
 %----------------------------------------------------------------------------------------
-
-\newpage
-
-\section{Summary}
-
-Kaon fragmentation functions have been extracted from a fit at LO of the charged kaon multiplicities. They have been extracted in the $0.2-0.85$ $z$ domain. Though the fit is still not stable as the multiplicities needs improved statistics and systematics, it shows that the results from fragmentation functions are not far from what was obtained from COMPASS for an isoscalar target. It also shows that the measurement on a proton target are not much sensible to the strange quark. A subsequent study of $K^0$ would add a new sample with a different acceptance and a different equation, possibly improving the fit.
-
-These data represent a high statistics data set which will be helpful for NLO QCD fits of world data. They will constrain the values of quark FFs into kaons at moderate $Q^2$.

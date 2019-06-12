@@ -59,10 +59,10 @@ The BMS system was designed to measure the momentum of more than $10^8$ individu
   \centering
 	\includegraphics[scale=0.3]{./gfx/Target.png}
 	\caption{Target geometry for the 2016/2017 setup.}
-	\label{pic:Target}
+	\label{pic:TargetSetup}
 \end{figure}
 
-The target is liquid $H_2$ contained in a $2.5$ meter long cylinder (Fig. \ref{pic:Target}). The target material is contained in a mylar tube with a diameter of $4$ cm. The total volume of the target cell and the liquid hydrogen system is located in a cryostat made of carbon fiber. The operation temperature of hydrogen is $18$ K with a pressure of $1020$~mbar. The material for the target cell was chosen in order to minimise proton absorption.
+The target is liquid $H_2$ contained in a $2.5$ meter long cylinder (Fig. \ref{pic:TargetSetup}). The target material is contained in a mylar tube with a diameter of $4$ cm. The total volume of the target cell and the liquid hydrogen system is located in a cryostat made of carbon fiber. The operation temperature of hydrogen is $18$ K with a pressure of $1020$~mbar. The material for the target cell was chosen in order to minimise proton absorption.
 
 %----------------------------------------------------------------------------------------
 
@@ -83,7 +83,7 @@ The silicon detector size is $5$x$7$ cm$^2$ with a space and time resolution of 
 
 The radial region between $2.5$ cm and $20$ cm is covered by two types of gaseous detectors~: PixelMicromegas (MICRO MEsh GAseous Structure) and (Pixel)GEM (Gas Electron Multiplier) detectors. These detector have a high rate capability ($\sim$ $10^4$/s/mm$^2$) and good spatial resolution ($<$ $100$ $\mu$m). They also present a minimal material budget.
 
-The principle of the PixelMicromegas is explained in Fig.~\ref{pic:MM} (a). The particle ionizes the gas in the conversion gap, the produced electrons drift in a moderate field of $1.5$ kV/cm to prevent secondary ionization, towards the amplification gap. The field in the amplification area is large enough to accelerate the electrons to produce an avalanche. The conversion and amplification gaps are separated by a \textit{micromesh}, which collects the positive ions produced during the avalanche in a short period of time ($<$ $100$ ns). This feature is possible because of the small width of the gap ($\sim$ $100$ $\mu$m). The PixelMicromegas have an active area of $40 \times 40$ cm$^2$ with a central area made of 1280 pixels of $400$ $\mu$ m $\times$ $2.5$ mm and $400$ $\mu$ m $\times$ $6.5$ \cite{FloThi} as shown in Fig.~\ref{pic:MM} (b). All PixelMicromegas detectors operate with a detection efficiency of $98$\% and with a spatial resolution of better than $100$ $\mu$m. There are three PixelMicromegas stations located at LAS. They are composed by four detectors each with different directions: horizontal (X), vertical (Y), and two (U,V) rotated by $\pm$ $45$° with respect to the vertical. Each plane has an active area of $40 \times 40$ cm$^2$ with a deactivated central area of $5$ cm diameter.
+The principle of the PixelMicromegas is explained in Fig.~\ref{pic:MM} (a). The particle ionizes the gas in the conversion gap, the produced electrons drift in a moderate field of $1.5$ kV/cm to prevent secondary ionization, towards the amplification gap. The field in the amplification area is large enough to accelerate the electrons to produce an avalanche. The conversion and amplification gaps are separated by a \textit{micromesh}, which collects the positive ions produced during the avalanche in a short period of time ($<$ $100$ ns). This feature is possible because of the small width of the gap ($\sim$ $100$ $\mu$m). The PixelMicromegas have an active area of $40 \times 40$ cm$^2$ with a central area made of 1280 pixels of $400$ $\mu$ m $\times$ $2.5$ mm and $400$ $\mu$ m $\times$ $6.5$ \cite{FloThi} as shown in Fig.~\ref{pic:MM} (b). All PixelMicromegas detectors operate with a detection efficiency of $98$\% and with a spatial resolution of better than $100$ $\mu$m. There are three PixelMicromegas stations located at LAS. They are composed by four detectors each with different directions: horizontal (X), vertical (Y), and two (U,V) rotated by $\pm$ $45$° with respect to the vertical. Each plane has an active area of $40 \times 40$ cm$^2$.
 
 \begin{figure}[!h]
   \centering
@@ -140,7 +140,7 @@ There are three types of MWPCs in COMPASS, which differ by the number of layers,
 
 \section{Particle Identification}
 
-Following the nature of the particles, several techniques are used to identify them. Two types of calorimeters are used to measure the energy of the hadrons, photons and electrons: hadron calorimeters (HCAL1 and HCAL2) separate hadrons and muons and electromagnetic calorimeters (ECAL1 and ECAL2) detect and identify photons. Two muon wall detectors (MW1 and MW2) are used together with a hadron absorber for muon identification (muon filter). A RICH detector allows to separate between pions, kaons and protons in the momentum range from $3$ to $50$ GeV. While the RICH will be further described in a dedicated chapter (Chapter~\ref{ch:PID}), the other identification detectors will be briefly described in the following subsections.
+Following the nature of the particles, several techniques are used to identify them. Two types of calorimeters are used to measure the energy of the hadrons, photons and electrons: hadron calorimeters (HCAL$1$ and HCAL$2$) separate hadrons and muons and electromagnetic calorimeters (ECAL$0$, ECAL$1$ and ECAL$2$) detect and identify photons. Two muon wall detectors (MW$1$ and MW$2$) are used together with a hadron absorber for muon identification (muon filter). A RICH detector allows to separate between pions, kaons and protons in the momentum range from $3$ to $50$ GeV. While the RICH will be further described in a dedicated chapter (Chapter~\ref{ch:PID}), the other identification detectors will be briefly described in the following subsections.
 
 \subsection{Hadron Calorimeters}
 
@@ -148,7 +148,7 @@ A hadron calorimeter allows to separate hadron and muon tracks using the energy 
 
 \subsection{Electromagnetic Calorimeters}
 
-The electromagnetic calorimeters are used to measure the energy of electrons and photons. ECAL$1$ and ECAL$2$ are formed by blocks of lead glass connected to photomultipliers with light guides. An electromagnetic shower is initiated when the incoming electrons or photon reach the calorimeter. This electromagnetic shower produces Cherenkov radiation inside the lead glass and this light intensity is proportional to the energy deposited. The inner-most part of ECAL$2$ has radiation-hard Shashlyk-type lead/scintillator modules.
+The electromagnetic calorimeters are used to measure the energy of electrons and photons. ECAL$0$ is made of radiation-hard Shashlyk-type lead/scintillator modules. ECAL$1$ and ECAL$2$ are formed by blocks of lead glass connected to photomultipliers with light guides. An electromagnetic shower is initiated when the incoming electrons or photon reach the calorimeter. This electromagnetic shower produces Cherenkov radiation inside the lead glass and this light intensity is proportional to the energy deposited. The inner-most part of ECAL$2$ has Shashlyk modules.
 
 \subsection{Muon Identification with Muon Walls and Muon Filters}
 

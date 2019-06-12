@@ -1,4 +1,4 @@
-% Chapter 8
+% Chapter 9
 
 \chapter{Integration of DJANGOH in the Monte-Carlo Chain} % Chapter title
 
@@ -73,7 +73,7 @@ There are two ways to implement a generator in TGEANT:
 \begin{itemize}
 \item As an internal generator (Pythia and HEPGEN++ way): a C++ interface to the generator is needed, the conservation of $P(p,E)$ is perfect and it only needs a beamfile for the primary generator.
 \item As an external generator (Lepto): the beamfile is read by the standalone
-generator, the primary generation and process infos are stored inside a file and TGEANT has to do an extrapolation to -$9$ meters as the primary generation of the event was done by LEPTO outside of the TGEANT simulation, occasioning $P(p,E)$ being not perfectly conserved.
+generator, the primary generation and process infos are stored inside a file and TGEANT has to do an extrapolation from the beamfile position (z=$0$ m) to the beam starting position (z=-$9$ m) when the primary generation of the event was done by LEPTO outside of the TGEANT simulation, occasioning $P(p,E)$ being not perfectly conserved.
 \end{itemize}
 
 The external implementation is quite complicated as three classes are needed in order to use the generator in TGEANT. First, the beamfile has to be read by the generator which then outputs a file containing the beamfile infos but in its own format. Then a first class has to be dedicated to the reading of the beamfile, recovering the information about the selected muon in the file. A second class takes care of passing information between the generator and TGEANT. The last class is the class of the generator itself (Fig.~\ref{fig:leptoex}).
